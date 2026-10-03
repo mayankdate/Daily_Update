@@ -9,7 +9,7 @@ Personal "daily newspaper" built from Notion (tasks + workout dashboard), live w
 3. **Music** — new releases if any, else a Spotify "soundtrack of the day" embed.
 4. **Comics + Headlines** — comics on the left, grouped news on the right with links to per-topic pages.
 
-Each news group also gets its own page under `output/news/<slug>.html` with the full set of stories for that group.
+Each news group also gets its own page under `docs/news/<slug>.html` with the full set of stories for that group.
 
 ## Layout
 
@@ -18,7 +18,8 @@ Each news group also gets its own page under `output/news/<slug>.html` with the 
 ├── .github/workflows/daily-brief.yml
 ├── data/                               (reserved)
 ├── documents/                          (reserved)
-├── output/
+├── docs/                               GitHub Pages serves this folder
+│   ├── index.html                      redirect to daily_brief.html
 │   ├── daily_brief.html                front page
 │   └── news/
 │       ├── ai.html                     per-topic pages
@@ -70,7 +71,7 @@ jupyter notebook scripts/build_brief.ipynb
 jupyter nbconvert --to notebook --execute scripts/build_brief.ipynb --output /tmp/executed.ipynb
 ```
 
-Open `output/daily_brief.html`.
+Open `docs/daily_brief.html`.
 
 ## GitHub Actions
 
