@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THE DAILY BRIEF — 2026-10-03</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;900&display=swap" rel="stylesheet">
+<style>
+:root {
+    --ink: #1a1a1a;
+    --paper: #f5f1e8;
+    --muted: #5a5a5a;
+    --accent: #8b1a1a;
+    --rule: #1a1a1a;
+    --soft-rule: #b8b0a0;
+    --card-bg: #faf7f0;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --ink: #e8e3d6;
+        --paper: #1a1814;
+        --muted: #9c9686;
+        --accent: #d47878;
+        --rule: #e8e3d6;
+        --soft-rule: #3a3630;
+        --card-bg: #221f1a;
+    }
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Georgia', 'Palatino', serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 32px 80px;
+}
+
+.masthead {
+    text-align: center;
+    border-bottom: 3px double var(--rule);
+    padding-bottom: 16px;
+    margin-bottom: 8px;
+}
+
+.masthead h1 {
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    font-weight: 900;
+    font-size: clamp(44px, 7vw, 76px);
+    letter-spacing: 0.02em;
+    margin: 0;
+    line-height: 1;
+}
+
+.masthead .tagline {
+    font-style: italic;
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.dateline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    border-bottom: 1px solid var(--rule);
+    padding: 8px 0;
+    margin-bottom: 32px;
+}
+
+.dateline .center {
+    font-weight: bold;
+    color: var(--ink);
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+section > h2 {
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    font-size: 28px;
+    font-weight: 900;
+    margin: 0 0 4px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+section > h2 .kicker {
+    display: block;
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+}
+
+section > .section-rule {
+    border: none;
+    border-top: 2px solid var(--rule);
+    margin: 8px 0 20px;
+}
+
+.cols-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+}
+
+@media (max-width: 720px) {
+    .cols-2 { grid-template-columns: 1fr; }
+    .page { padding: 24px 16px 60px; }
+}
+
+/* Tasks */
+.task-list { list-style: none; padding: 0; margin: 0; }
+.task-list li {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px dotted var(--soft-rule);
+}
+.task-list li:last-child { border-bottom: none; }
+.task-type {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 0.12em;
+    padding: 2px 6px;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+    min-width: 72px;
+    text-align: center;
+    flex-shrink: 0;
+}
+.task-type.PRIORITY { background: var(--accent); color: var(--paper); border-color: var(--accent); }
+.task-type.WORK { background: var(--ink); color: var(--paper); }
+.task-done { text-decoration: line-through; color: var(--muted); }
+.task-text { flex: 1; }
+
+/* Workouts */
+.workout-list { list-style: none; padding: 0; margin: 0; }
+.workout-item {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--soft-rule);
+}
+.workout-item:last-child { border-bottom: none; }
+.workout-name {
+    font-size: 17px;
+    font-weight: bold;
+    margin: 0;
+}
+.workout-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 4px;
+}
+.workout-meta span strong { color: var(--ink); }
+.muscle-tags {
+    margin-top: 6px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+}
+.workout-progression {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--muted);
+    margin-top: 4px;
+}
+
+/* Feed items (comics / music / news) */
+.feed-list { list-style: none; padding: 0; margin: 0; }
+.feed-item {
+    padding: 10px 0;
+    border-bottom: 1px dotted var(--soft-rule);
+}
+.feed-item:last-child { border-bottom: none; }
+.feed-item a {
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: bold;
+}
+.feed-item a:hover { color: var(--accent); text-decoration: underline; }
+.feed-source {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin-right: 8px;
+}
+.feed-time {
+    font-size: 12px;
+    color: var(--muted);
+    margin-left: 6px;
+}
+.feed-summary {
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 4px;
+}
+
+.empty-note {
+    font-style: italic;
+    color: var(--muted);
+    padding: 8px 0;
+}
+
+footer {
+    text-align: center;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    border-top: 3px double var(--rule);
+    padding-top: 16px;
+    margin-top: 48px;
+}
+
+.topic-block { margin-bottom: 24px; }
+.topic-block h3 {
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    font-size: 18px;
+    margin: 0 0 6px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--soft-rule);
+}
+
+</style>
+</head>
+<body>
+<div class="page">
+
+    <header class="masthead">
+        <h1>THE DAILY BRIEF</h1>
+        <div class="tagline">All the news fit to serve one subscriber.</div>
+    </header>
+
+    <div class="dateline">
+        <span>Vol. 1, No. 276</span>
+        <span class="center">Saturday, October 3rd, 2026</span>
+        <span>Loadout: 1 · Full Gym</span>
+    </div>
+
+    <section>
+        <h2><span class="kicker">The Day Ahead</span>Today's Tasks</h2>
+        <hr class="section-rule">
+        
+            <ul class="task-list">
+            
+                <li>
+                    <span class="task-type PERSONAL">PERSONAL</span>
+                    <span class="task-text ">Expand Daily Brief</span>
+                </li>
+            
+                <li>
+                    <span class="task-type PERSONAL">PERSONAL</span>
+                    <span class="task-text ">Github Personal Page</span>
+                </li>
+            
+                <li>
+                    <span class="task-type ">TASK</span>
+                    <span class="task-text ">(untitled)</span>
+                </li>
+            
+            </ul>
+        
+    </section>
+
+    <section>
+        <h2><span class="kicker">Iron &amp; Sweat</span>Today's Workout</h2>
+        <hr class="section-rule">
+        
+            <ul class="workout-list">
+            
+                <li class="workout-item">
+                    <p class="workout-name">Rowing Machine</p>
+                    <div class="workout-meta">
+                        
+                        <span><strong>20–30 min</strong> reps</span>
+                        
+                        
+                        <span>Cardio</span>
+                    </div>
+                    <div class="muscle-tags">Full Body · Upper Back · Quads</div>
+                    <div class="workout-progression">Progression: Damper 3–5. Intervals: 30 s hard / 90 s easy, start at 6 rounds. Too hard if your back rounds or your split time climbs each round. Add a round per week up to 10, or hold a 2–3 s faster split.</div>
+                </li>
+            
+                <li class="workout-item">
+                    <p class="workout-name">Incline Treadmill Walk</p>
+                    <div class="workout-meta">
+                        
+                        <span><strong>30–45 min</strong> reps</span>
+                        
+                        
+                        <span>Cardio</span>
+                    </div>
+                    <div class="muscle-tags">Full Body · Glutes · Calves</div>
+                    <div class="workout-progression">Progression: Effort comes from incline, not speed. Too hard if you need the handrails — drop the incline instead. When you can hold a conversation the whole way, add 1% incline or 0.2 km/h.</div>
+                </li>
+            
+                <li class="workout-item">
+                    <p class="workout-name">Stationary Bike</p>
+                    <div class="workout-meta">
+                        
+                        <span><strong>30–45 min</strong> reps</span>
+                        
+                        
+                        <span>Cardio</span>
+                    </div>
+                    <div class="muscle-tags">Full Body · Quads · Glutes</div>
+                    <div class="workout-progression">Progression: Swap-in for the rower or treadmill. Resistance is right when you can just about speak in short sentences during intervals. Add one resistance level when a session feels easy throughout.</div>
+                </li>
+            
+            </ul>
+        
+    </section>
+
+    <div class="cols-2">
+        <section>
+            <h2><span class="kicker">The Funny Pages</span>Webcomics</h2>
+            <hr class="section-rule">
+            
+                <ul class="feed-list">
+                
+                    <li class="feed-item">
+                        <span class="feed-source">SMBC</span>
+                        <a href="https://www.smbc-comics.com/comic/interesting-5" target="_blank" rel="noopener">Saturday Morning Breakfast Cereal - Interesting</a>
+                        <span class="feed-time">Oct 2, 20:50</span>
+                    </li>
+                
+                    <li class="feed-item">
+                        <span class="feed-source">xkcd</span>
+                        <a href="https://xkcd.com/3306/" target="_blank" rel="noopener">Accelerator Energies</a>
+                        <span class="feed-time">Oct 2, 09:30</span>
+                    </li>
+                
+                    <li class="feed-item">
+                        <span class="feed-source">SMBC</span>
+                        <a href="https://www.smbc-comics.com/comic/equations" target="_blank" rel="noopener">Saturday Morning Breakfast Cereal - Equations</a>
+                        <span class="feed-time">Oct 1, 20:50</span>
+                    </li>
+                
+                </ul>
+            
+        </section>
+
+        <section>
+            <h2><span class="kicker">Pressing Vinyl</span>Music Releases</h2>
+            <hr class="section-rule">
+            
+                <ul class="feed-list">
+                
+                    <li class="feed-item">
+                        <span class="feed-source">Ghost</span>
+                        <a href="https://musicbrainz.org/release-group/d97c84b5-0d03-434e-88f2-2765d8fe65da" target="_blank" rel="noopener">2 Big to Rig: Original Motion Picture Soundtrack</a>
+                        <span class="feed-time">Aug 27, 2026 · Album</span>
+                    </li>
+                
+                </ul>
+            
+        </section>
+    </div>
+
+    <section>
+        <h2><span class="kicker">From the Wires</span>News</h2>
+        <hr class="section-rule">
+        
+            <div class="topic-block">
+                <h3>Witcher</h3>
+                
+                    <ul class="feed-list">
+                    
+                        <li class="feed-item">
+                            <a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxQcmVaWXV3ckhnQVo0RHBVY0dZWHZQNk92RmVISTdOWDZsSnFldTFad1M3YWprXzVHSWxkQkMtODNfMER0d3J3RTVUSUVCa05SZklTNzNJcWxraTJwTzlIc3dlcUFtRWh1Ml9oZWFEQjRMb251YzJNS2VySEFpNFl0c2E5OEhGalhmWURZUmdVRkdCak5QNUVEREctTjNILXJPWmgwdzZYSnk5dkNLNDlpV08zWnFBdw?oc=5" target="_blank" rel="noopener">The Witcher 3: Wild Hunt Remastered Review Update Video</a>
+                            <span class="feed-time">IGN India · Oct 3, 02:19</span>
+                        </li>
+                    
+                        <li class="feed-item">
+                            <a href="https://news.google.com/rss/articles/CBMijwFBVV95cUxPTWpHR2Y0WVdzWjAtbDQ2NE5TUmFqN3h2QW9RbzV3LURoc0lWcFd6Sl9oRzgzQjNuVEZsTUpOZEx6YjUxY08zV3lmQTV5a3pGVFhtSUZ3ODFxajNtSkVIV0JVSkxXT0dwQmRFVzI2VjFJOUdERnlOOVgwOXV0LVY2MnFOTnJMclNKTW9sMTV1bw?oc=5" target="_blank" rel="noopener">Netflix’s The Witcher final season is now set for 2027</a>
+                            <span class="feed-time">en.softonic.com · Oct 2, 16:06</span>
+                        </li>
+                    
+                        <li class="feed-item">
+                            <a href="https://news.google.com/rss/articles/CBMipAFBVV95cUxPVG5iX2FGOUpEZEd5UHJPdGVxbkpuRmFfcEpWTnFROFJ5VEJkQWdsbTdQVExNcFZHRTdScjZBU0N2OFktVVFlR2otVzZXcmhvd1MyelpTcHZZT2VndmxZMkxPRUpXVzc3REgwSV9ITjlPVGJJekNpZkExYlNvMjJMZWxUb0w5VWhVREtMdEp5WVhxM1hHMlZFYUd6UVBqMVE0RVpHMA?oc=5" target="_blank" rel="noopener">The Witcher 3: Songs of the Past detailed: changes after Blood and Wine</a>
+                            <span class="feed-time">en.softonic.com · Oct 1, 23:29</span>
+                        </li>
+                    
+                        <li class="feed-item">
+                            <a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxOUDN0UHlEZEh5ZlFJejlMWGJJakFyYk15NzQyQlhINHEzTmJMOU9BdTZTaFZXbmhONjNtTjQ1QUxIWkJTbm94WjhvamYzY2dGa09ac1g2ZUZUSVlkclhBVDFBWDhUOWtJWEo0aHBaZnlOdkRsZGhKVnBjV1pIVnplR2doWlEwUXN1OGluc2hBNXE0Q3U3TEdNelA3U3ZqbWMyTTF0aGhSdEQ2OEVxZ040c3Zn?oc=5" target="_blank" rel="noopener">The Witcher 3 Remastered gets Cyberpunk 2077 crossover: two new Geralt cosmetics</a>
+                            <span class="feed-time">en.softonic.com · Oct 1, 23:29</span>
+                        </li>
+                    
+                        <li class="feed-item">
+                            <a href="https://news.google.com/rss/articles/CBMi5wFBVV95cUxPT2kxMEg1aVdscklEUHQ3OFZPTUlwcEdZMjZQLWNOSFk2TUc5M210R2pnUjJmcl9ENG83NDJSeDZiQTR0RVd5a0hscUJvck95WHFGYW9OTUN2cUxKMzRLUXBKci1uUDZqYnZtTVRXSFdUSV84VXVManhzbkZCaXlCSHItT3dSaDk3aFktbEY0YW5nNEt6RW1IVktKdHdDOXc2R2tpcnNjaXVKMjVzTkJPSkV3SnU2YWFBY1ROaF9vY1NaY01Uak40UHRCZkFJZEdNMC0tMHFQLU93LWpVVGVUY3R4emoyMU3SAewBQVVfeXFMTkV0dWNHWm9idXVLLXZaeWR5UEtzMG55RTNzb0M1MWhSb2pnbDY0MkM4a1RQcy16anR2TWoyODlMeURMalNsX3cxUWo1NnIyM1d1Z0dNUzVWU2o2cGRQTGY2bFVTNk5EdHB6alBTQ0RITzJwV0gyc2hPUk9mS0phVXA0eHdBd2NpZWREeWNiQXJuZVp4SFplZV93TktNY0JYRkdkVnpTc3ZlaVJ3U2pUYV8wQm45bDBNOXdnSjNTU002TXNDUnRkeGZ5cnFhZXc1NlpQMzBlNHZSUU93enNodDlpeEJvNDliNldoZWg?oc=5" target="_blank" rel="noopener">The Witcher 3 Remaster received patch 5.00c - the ability to launch the classic version was returned and graphics were updated</a>
+                            <span class="feed-time">ixbt.games · Oct 1, 22:20</span>
+                        </li>
+                    
+                    </ul>
+                
+            </div>
+        
+            <div class="topic-block">
+                <h3>Harry Potter</h3>
+                
+                    <ul class="feed-list">
+                    
+                        <li class="feed-item">
+                            <a href="https://news.google.com/rss/articles/CBMid0FVX3lxTE1CZVN0QWhVaFhRQmxVSVFUZkdVQktOU3lHeHVMOEhpbXk0ZVFMTkhCSlctU1JXTE0xbldEbTE0YlY4MldLeTU5Wjc0akROMEVqakdKSnd1cG5DVE81RE1MVFBqLTA2YWhrcERxaGlmUkh4OVZXQ2Rv?oc=5" target="_blank" rel="noopener">Harry Potter Season 1 Gets Glowing Early Review From HBO CEO</a>
+                            <span class="feed-time">ScreenRant · Oct 2, 21:19</span>
+                        </li>
+                    
+                        <li class="feed-item">
+                            <a href="https://news.google.com/rss/articles/CBMiyAFBVV95cUxQSjMtOXJpTkEwZGx1S18wRlpaUmYwRkxwbHRQVm9LUTJjb25HS0RwUDZJOHJzNjRHZnNvZXVqTVUtN0g0cTZIVGQ2aTFNdWx2cXkxWkU2LU5hQlRscFJkZnhXMkhfbGQ3d2ZXa3BuaWlaVHFTdUhualN4TGZqVWt3VWRaU3Z0c1JiekZVOXducTgtZW5pSnp2Wmw0RzIzTzhCWmxkMUktVWZMVGFRd0VIVkhYSDBWajVUQjlLMkp2U0JjMUxGSDdLYw?oc=5" target="_blank" rel="noopener">From ‘Harry Potter’ To ‘Game Of Thrones,’ Every IP David Ellison’s Skydance Now Owns</a>
+                            <span class="feed-time">forbes.com · Oct 2, 19:34</span>
+                        </li>
+                    
+                        <li class="feed-item">
+                            <a href="https://news.google.com/rss/articles/CBMijAFBVV95cUxNQ0dtUldkekdDUE1pTHRXMGQwWDJ4bzhQbThwcnhLWUtuLTVUclRDaExRMVZuMU00ekp5Ny1mT0h4Z3BoWjNNSFl1ODAteHNsdWVWaVVrcnlYQUphN1NDSXRERnBCUUxPQnRrTkk1OU1sbDNNN0FrVm5qcTZLX2w1d3ZoeE03aWZMbnNrYw?oc=5" target="_blank" rel="noopener">HBO's Harry Potter and Hagrid Officially Arrive on Streaming 2 Months Early</a>
+                            <span class="feed-time">Collider · Oct 1, 21:01</span>
+                        </li>
+                    
+                        <li class="feed-item">
+                            <a href="https://news.google.com/rss/articles/CBMiuAFBVV95cUxPRGZ1YUR2Y3Bick9BcGNuNGNIMzJkVWotaWFPclpNdDdWdUdNcVBsYTRWb20wY25FNDdLQU5ObGludGdWSTloZmhkaUZoZE1yU2lLa19BUEVFSUFlZnNtbnlZb0NGbDdEWGgxVGR0ai1XWXRhaFFIRFZna0lfajZUME5IU0txNkZ1Y1pKOHV4YmU5UXJ5LUNCN05FQmhZT1I0eWhmVVRZVV9NbzJ5RVZJV0lzbjBCYk1T?oc=5" target="_blank" rel="noopener">Harry Potter fans will be spellbound by this Ghent hotel haunt</a>
+                            <span class="feed-time">The Independent · Oct 2, 23:26</span>
+                        </li>
+                    
+                        <li class="feed-item">
+                            <a href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxOV3g5OTZmVVhETHdKNnpLcXBSUnNzRlF4b0d0djloVnNuX0Zaekt0Z1JVMXJaRXRUVWxjUDRqTlZ1MHBJelFJTVl3bnBrR0Y2c21GWjdfVDZPNmplbDhXaXF3QWIweHZYbE0zdnNscUFtRWpid2RqNG5yUTZ2c1N5d05QNEdUbGFoZHoxVWxoeWRmYW1zRTdRS0kyV2N6Zm1rSkJSX2dySUp6dXM?oc=5" target="_blank" rel="noopener">This Harry Potter Edition Phone From Realme Is the Coolest Collab of 2026</a>
+                            <span class="feed-time">CNET · Oct 3, 17:30</span>
+                        </li>
+                    
+                    </ul>
+                
+            </div>
+        
+    </section>
+
+    <footer>
+        Built 2026-10-03 20:00 IST · Edition for Mayank
+    </footer>
+
+</div>
+</body>
+</html>
