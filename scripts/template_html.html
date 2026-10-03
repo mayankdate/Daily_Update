@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ masthead_title }} — {{ date_short }}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;900&display=swap" rel="stylesheet">
+<style>
+{{ css }}
+</style>
+</head>
+<body>
+<div class="page">
+
+    <header class="masthead">
+        <h1>{{ masthead_title }}</h1>
+        <div class="tagline">All the news fit to serve one subscriber.</div>
+    </header>
+
+    <div class="dateline">
+        <span>Vol. {{ volume }}, No. {{ issue }}</span>
+        <span class="center">{{ date_long }}</span>
+        <span>Loadout: {{ loadout }}</span>
+    </div>
+
+    <section>
+        <h2><span class="kicker">The Day Ahead</span>Today's Tasks</h2>
+        <hr class="section-rule">
+        {% if tasks %}
+            <ul class="task-list">
+            {% for t in tasks %}
+                <li>
+                    <span class="task-type {{ t.type_class }}">{{ t.type or 'TASK' }}</span>
+                    <span class="task-text {% if t.done %}task-done{% endif %}">{{ t.title }}</span>
+                </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p class="empty-note">No tasks scheduled for today. Enjoy the breathing room.</p>
+        {% endif %}
+    </section>
+
+    <section>
+        <h2><span class="kicker">Iron &amp; Sweat</span>Today's Workout</h2>
+        <hr class="section-rule">
+        {% if workouts %}
+            <ul class="workout-list">
+            {% for w in workouts %}
+                <li class="workout-item">
+                    <p class="workout-name">{{ w.name }}</p>
+                    <div class="workout-meta">
+                        {% if w.sets %}<span><strong>{{ w.sets }}</strong> sets</span>{% endif %}
+                        {% if w.reps %}<span><strong>{{ w.reps }}</strong> reps</span>{% endif %}
+                        {% if w.weight_kg %}<span><strong>{{ w.weight_kg }} kg</strong> ({{ w.weight_lb }} lb)</span>{% endif %}
+                        {% if w.rest %}<span>Rest <strong>{{ w.rest }}s</strong></span>{% endif %}
+                        {% if w.type %}<span>{{ w.type }}</span>{% endif %}
+                    </div>
+                    {% if w.muscles %}<div class="muscle-tags">{{ w.muscles | join(' · ') }}</div>{% endif %}
+                    {% if w.progression %}<div class="workout-progression">Progression: {{ w.progression }}</div>{% endif %}
+                </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p class="empty-note">Rest day. Nothing scheduled for {{ weekday }} on loadout "{{ loadout }}".</p>
+        {% endif %}
+    </section>
+
+    <div class="cols-2">
+        <section>
+            <h2><span class="kicker">The Funny Pages</span>Webcomics</h2>
+            <hr class="section-rule">
+            {% if comics %}
+                <ul class="feed-list">
+                {% for c in comics %}
+                    <li class="feed-item">
+                        <span class="feed-source">{{ c.source }}</span>
+                        <a href="{{ c.url }}" target="_blank" rel="noopener">{{ c.title }}</a>
+                        <span class="feed-time">{{ c.when }}</span>
+                    </li>
+                {% endfor %}
+                </ul>
+            {% else %}
+                <p class="empty-note">No new strips today.</p>
+            {% endif %}
+        </section>
+
+        <section>
+            <h2><span class="kicker">Pressing Vinyl</span>Music Releases</h2>
+            <hr class="section-rule">
+            {% if music %}
+                <ul class="feed-list">
+                {% for m in music %}
+                    <li class="feed-item">
+                        <span class="feed-source">{{ m.artist }}</span>
+                        <a href="{{ m.url }}" target="_blank" rel="noopener">{{ m.title }}</a>
+                        <span class="feed-time">{{ m.date }} · {{ m.type }}</span>
+                    </li>
+                {% endfor %}
+                </ul>
+            {% else %}
+                <p class="empty-note">No recent releases from the followed artists.</p>
+            {% endif %}
+        </section>
+    </div>
+
+    <section>
+        <h2><span class="kicker">From the Wires</span>News</h2>
+        <hr class="section-rule">
+        {% for topic in news %}
+            <div class="topic-block">
+                <h3>{{ topic.name }}</h3>
+                {% if topic.entries %}
+                    <ul class="feed-list">
+                    {% for n in topic.entries %}
+                        <li class="feed-item">
+                            <a href="{{ n.url }}" target="_blank" rel="noopener">{{ n.title }}</a>
+                            <span class="feed-time">{{ n.source }} · {{ n.when }}</span>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                {% else %}
+                    <p class="empty-note">Nothing new under this topic today.</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </section>
+
+    <footer>
+        Built {{ built_at }} · Edition for {{ owner_name }}
+    </footer>
+
+</div>
+</body>
+</html>

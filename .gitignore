@@ -1,0 +1,24 @@
+# Project-specific
+notion_tasks_token.txt
+notion_workoutdash_token.txt
+*.token
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# R / RStudio
+.Rproj.user/
+.Rhistory
+.RData
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
