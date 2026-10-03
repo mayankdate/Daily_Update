@@ -1,3 +1,4 @@
+/* Light theme (default) */
 :root {
     --ink: #1a1a1a;
     --paper: #f5f1e8;
@@ -10,8 +11,22 @@
     --sun-arc: #f0d070;
 }
 
+/* Dark theme — explicit (user toggled it) */
+:root[data-theme="dark"] {
+    --ink: #e8e3d6;
+    --paper: #15130f;
+    --muted: #9c9686;
+    --accent: #e07878;
+    --accent-soft: #d49070;
+    --rule: #e8e3d6;
+    --soft-rule: #3a3630;
+    --card-bg: #1f1c17;
+    --sun-arc: #786428;
+}
+
+/* Dark theme — system default, but only when the user hasn't explicitly picked light */
 @media (prefers-color-scheme: dark) {
-    :root {
+    :root:not([data-theme="light"]) {
         --ink: #e8e3d6;
         --paper: #15130f;
         --muted: #9c9686;
@@ -40,6 +55,41 @@ html, body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 32px 28px 64px;
+    position: relative;
+}
+
+/* ---------- THEME TOGGLE ---------- */
+.theme-toggle {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--soft-rule);
+    background: var(--card-bg);
+    color: var(--ink);
+    border-radius: 50%;
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.15s ease, color 0.15s ease;
+    z-index: 10;
+}
+.theme-toggle:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+/* Shows the icon for the current theme. */
+.theme-toggle .theme-icon-dark { display: none; }
+.theme-toggle .theme-icon-light { display: inline; }
+:root[data-theme="dark"] .theme-toggle .theme-icon-light { display: none; }
+:root[data-theme="dark"] .theme-toggle .theme-icon-dark { display: inline; }
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .theme-toggle .theme-icon-light { display: none; }
+    :root:not([data-theme="light"]) .theme-toggle .theme-icon-dark { display: inline; }
 }
 
 /* ---------- MASTHEAD ---------- */
@@ -308,14 +358,7 @@ section > h2 .kicker {
     max-width: 700px;
 }
 
-/* ---------- 2-COLUMN (comics + news) ---------- */
-.cols-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-}
 @media (max-width: 760px) {
-    .cols-2 { grid-template-columns: 1fr; }
     .page { padding: 24px 16px 48px; }
 }
 
@@ -332,11 +375,6 @@ section > h2 .kicker {
     font-weight: 700;
 }
 .feed-item a:hover { color: var(--accent); text-decoration: underline; }
-.feed-item.top-headline a {
-    font-size: 17px;
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-}
 .feed-source {
     display: inline-block;
     font-size: 10px;
@@ -354,36 +392,7 @@ section > h2 .kicker {
     letter-spacing: 0.05em;
 }
 
-.topic-block { margin-bottom: 18px; }
-.topic-block h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 17px;
-    margin: 0 0 4px;
-    padding-bottom: 4px;
-    border-bottom: 1px solid var(--soft-rule);
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-}
-.topic-block h3 a {
-    color: var(--ink);
-    text-decoration: none;
-}
-.topic-block h3 a:hover { color: var(--accent); }
-.topic-more {
-    font-family: 'Inter', sans-serif;
-    font-size: 10px;
-    color: var(--muted);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    font-weight: 500;
-}
-
-/* ---------- TOPIC PAGE ---------- */
-.topic-page-title {
-    font-size: 44px;
-    margin: 8px 0;
-}
+/* ---------- NEWS STORIES ---------- */
 .story-list {
     list-style: none;
     padding: 0;

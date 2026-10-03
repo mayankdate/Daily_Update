@@ -7,7 +7,17 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<script>
+    // Apply saved theme before CSS loads so there's no flash of wrong theme.
+    (function () {
+        var saved = localStorage.getItem("theme");
+        if (saved === "dark" || saved === "light") {
+            document.documentElement.setAttribute("data-theme", saved);
+        }
+    })();
+</script>
 <style>
+/* Light theme (default) */
 :root {
     --ink: #1a1a1a;
     --paper: #f5f1e8;
@@ -20,8 +30,22 @@
     --sun-arc: #f0d070;
 }
 
+/* Dark theme — explicit (user toggled it) */
+:root[data-theme="dark"] {
+    --ink: #e8e3d6;
+    --paper: #15130f;
+    --muted: #9c9686;
+    --accent: #e07878;
+    --accent-soft: #d49070;
+    --rule: #e8e3d6;
+    --soft-rule: #3a3630;
+    --card-bg: #1f1c17;
+    --sun-arc: #786428;
+}
+
+/* Dark theme — system default, but only when the user hasn't explicitly picked light */
 @media (prefers-color-scheme: dark) {
-    :root {
+    :root:not([data-theme="light"]) {
         --ink: #e8e3d6;
         --paper: #15130f;
         --muted: #9c9686;
@@ -50,6 +74,41 @@ html, body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 32px 28px 64px;
+    position: relative;
+}
+
+/* ---------- THEME TOGGLE ---------- */
+.theme-toggle {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--soft-rule);
+    background: var(--card-bg);
+    color: var(--ink);
+    border-radius: 50%;
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.15s ease, color 0.15s ease;
+    z-index: 10;
+}
+.theme-toggle:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+/* Shows the icon for the current theme. */
+.theme-toggle .theme-icon-dark { display: none; }
+.theme-toggle .theme-icon-light { display: inline; }
+:root[data-theme="dark"] .theme-toggle .theme-icon-light { display: none; }
+:root[data-theme="dark"] .theme-toggle .theme-icon-dark { display: inline; }
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .theme-toggle .theme-icon-light { display: none; }
+    :root:not([data-theme="light"]) .theme-toggle .theme-icon-dark { display: inline; }
 }
 
 /* ---------- MASTHEAD ---------- */
@@ -318,14 +377,7 @@ section > h2 .kicker {
     max-width: 700px;
 }
 
-/* ---------- 2-COLUMN (comics + news) ---------- */
-.cols-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-}
 @media (max-width: 760px) {
-    .cols-2 { grid-template-columns: 1fr; }
     .page { padding: 24px 16px 48px; }
 }
 
@@ -342,11 +394,6 @@ section > h2 .kicker {
     font-weight: 700;
 }
 .feed-item a:hover { color: var(--accent); text-decoration: underline; }
-.feed-item.top-headline a {
-    font-size: 17px;
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-}
 .feed-source {
     display: inline-block;
     font-size: 10px;
@@ -364,36 +411,7 @@ section > h2 .kicker {
     letter-spacing: 0.05em;
 }
 
-.topic-block { margin-bottom: 18px; }
-.topic-block h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 17px;
-    margin: 0 0 4px;
-    padding-bottom: 4px;
-    border-bottom: 1px solid var(--soft-rule);
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-}
-.topic-block h3 a {
-    color: var(--ink);
-    text-decoration: none;
-}
-.topic-block h3 a:hover { color: var(--accent); }
-.topic-more {
-    font-family: 'Inter', sans-serif;
-    font-size: 10px;
-    color: var(--muted);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    font-weight: 500;
-}
-
-/* ---------- TOPIC PAGE ---------- */
-.topic-page-title {
-    font-size: 44px;
-    margin: 8px 0;
-}
+/* ---------- NEWS STORIES ---------- */
 .story-list {
     list-style: none;
     padding: 0;
@@ -469,6 +487,11 @@ footer a:hover { color: var(--accent); }
 </head>
 <body>
 <div class="page">
+
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light/dark mode" title="Toggle light/dark mode">
+        <span class="theme-icon-light">☀</span>
+        <span class="theme-icon-dark">☾</span>
+    </button>
 
     <header class="masthead">
         <h1>THE DAILY BRIEF</h1>
@@ -643,120 +666,222 @@ footer a:hover { color: var(--accent); }
     </section>
 
     
-    <div class="cols-2">
-        <section>
-            <h2><span class="kicker">The Funny Pages</span>Webcomics</h2>
-            <hr class="section-rule">
+    <section>
+        <h2><span class="kicker">The Funny Pages</span>Webcomics</h2>
+        <hr class="section-rule">
+        
+            <ul class="feed-list">
             
-                <ul class="feed-list">
-                
-                    <li class="feed-item">
-                        <span class="feed-source">xkcd</span>
-                        <a href="https://xkcd.com/3306/" target="_blank" rel="noopener">Accelerator Energies</a>
-                        <span class="feed-time">Oct 2</span>
-                    </li>
-                
-                </ul>
+                <li class="feed-item">
+                    <span class="feed-source">xkcd</span>
+                    <a href="https://xkcd.com/3306/" target="_blank" rel="noopener">Accelerator Energies</a>
+                    <span class="feed-time">Oct 2</span>
+                </li>
             
-        </section>
+            </ul>
+        
+    </section>
 
-        <section>
-            <h2><span class="kicker">From the Wires</span>Headlines</h2>
-            <hr class="section-rule">
+    
+    
+    <section>
+        <h2><span class="kicker">From the Wires</span>AI</h2>
+        <hr class="section-rule">
+        
+            <ul class="story-list">
             
-                <div class="topic-block">
-                    <h3>
-                        <a href="news/ai.html">AI</a>
-                        
-                            <span class="topic-more">+153 more</span>
-                        
-                    </h3>
-                    
-                        <ul class="feed-list">
-                        
-                            <li class="feed-item top-headline">
-                                <a href="https://news.google.com/rss/articles/CBMidkFVX3lxTE5ocF9yX3pWaGNWUlpOdHNabDRqNzNTOXJKR2xmZjA1aEFYZXNIcGJ2UmJDOS1oNXl6clNVOTRrZ0R1aGtVSWpvSWlnenNPZTZiYjNuVko2S1hqVmd4T241Z2VINnVwUWYyNm5kM240Y3BUcy00ekE?oc=5" target="_blank" rel="noopener">ChatGPT Wallet and World Money showed up the same day. Coincidence?</a>
-                                <div class="feed-time">TestingCatalog AI News · Oct 4, 01:25</div>
-                            </li>
-                        
-                            <li class="feed-item ">
-                                <a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxQYjVlSUg1ODdRS0U2N2Y0WUhyS3Q4T0hSWkszVGdpT2l1bXlHdnZXZEZDS1Y5UVZoeHZsd1lvZlM3ZmY4WGc0bU44U1Q4TjVyYXdsWTZqbHBPMnhJLU94aHBuTU1YeWFKUFpBRG9KSzVmSnBwWGhRbDVJQ3pNNnp1WFpDUGNmcWtoLTVhQzkxQWlWZGVYRUxidnVjVUdlZm8?oc=5" target="_blank" rel="noopener">Score ChatGPT, Claude, Gemini, and More in One Spot for Only $55 Until Oct. 4</a>
-                                <div class="feed-time">PCMag · Oct 4, 00:56</div>
-                            </li>
-                        
-                            <li class="feed-item ">
-                                <a href="https://news.google.com/rss/articles/CBMijgFBVV95cUxPc3p1VGhjX1pJckNGUUdBLXl2bktCSllpNnZBOHVHY2M0MWVmV3JOVE5ocENWcUVzSFBIZ3ZKQmJERkNyZVhrbDh3dk04c1RQck9wN01UN05CWFhJNGI0TFdLWVFraWN1UkN2OUtRM201MmYtSHhuWEhpeWx0SzVRYU1KVXZHOW9xT1pIc2dR?oc=5" target="_blank" rel="noopener">Don’t Write With AI, Say People Who Write With A</a>
-                                <div class="feed-time">The Atlantic · Oct 4, 00:51</div>
-                            </li>
-                        
-                        </ul>
-                    
-                </div>
+                <li class="story-card story-lead">
+                    <a class="story-link" href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE02dTZNZ3pqWnFpcjhabDBiaTJSUE9KR1RsNWI5Rk1mNGYxb1pVR2xvUFF4M1g3cG81NGNYSjhyajRpSnRSaFNZaGVBSFo4T01sSzhKaHh0Q2gxZw?oc=5" target="_blank" rel="noopener">
+                        <h3 class="story-title">AI models could harm young people's body image, warn experts</h3>
+                        <div class="story-meta">
+                            <span class="story-source">BBC</span>
+                            <span class="story-time">Oct 4, 02:10</span>
+                        </div>
+                    </a>
+                </li>
             
-                <div class="topic-block">
-                    <h3>
-                        <a href="news/witcher.html">Witcher</a>
-                        
-                            <span class="topic-more">+18 more</span>
-                        
-                    </h3>
-                    
-                        <ul class="feed-list">
-                        
-                            <li class="feed-item top-headline">
-                                <a href="https://news.google.com/rss/articles/CBMie0FVX3lxTE9xMHpGZ1pUUklKVWlPdkRseHB6TW42R2FOMHNjdy1kQ3A4N2w1TlJNb2I3N2tSa0loMndLa0lKTGNVakt5MW1RQVlhb212Q29IV3c5Vjc0ajFsQk5WYWtycENEcGQ1ajVxV0tjZHVPWFlVc3d3Q0wwZUx6cw?oc=5" target="_blank" rel="noopener">Netflix Sets The Witcher Season 5's Fate</a>
-                                <div class="feed-time">Polygon.com · Oct 4, 01:43</div>
-                            </li>
-                        
-                        </ul>
-                    
-                </div>
+                <li class="story-card ">
+                    <a class="story-link" href="https://news.google.com/rss/articles/CBMidkFVX3lxTE5ocF9yX3pWaGNWUlpOdHNabDRqNzNTOXJKR2xmZjA1aEFYZXNIcGJ2UmJDOS1oNXl6clNVOTRrZ0R1aGtVSWpvSWlnenNPZTZiYjNuVko2S1hqVmd4T241Z2VINnVwUWYyNm5kM240Y3BUcy00ekE?oc=5" target="_blank" rel="noopener">
+                        <h3 class="story-title">ChatGPT Wallet and World Money showed up the same day. Coincidence?</h3>
+                        <div class="story-meta">
+                            <span class="story-source">TestingCatalog AI News</span>
+                            <span class="story-time">Oct 4, 01:25</span>
+                        </div>
+                    </a>
+                </li>
             
-                <div class="topic-block">
-                    <h3>
-                        <a href="news/gta-6.html">GTA 6</a>
-                        
-                            <span class="topic-more">+55 more</span>
-                        
-                    </h3>
-                    
-                        <ul class="feed-list">
-                        
-                            <li class="feed-item top-headline">
-                                <a href="https://news.google.com/rss/articles/CBMiaEFVX3lxTFBuV1dOamM5SndaNlpfQXlWQVNEOVV6dmhIb3BaMzl4QWFSQlBUU3NYYk5ocXctZm1jcldMYTJpaFdGV3VKX2k3dVBuSVZaYl91V3pHM0JOaWc0XzZ3NjZya21Qa1RHNzVL?oc=5" target="_blank" rel="noopener">Rockstar Adds Four New GTA 6 Images to Its Promotional Push</a>
-                                <div class="feed-time">Gamereactor UK · Oct 4, 01:30</div>
-                            </li>
-                        
-                        </ul>
-                    
-                </div>
+                <li class="story-card ">
+                    <a class="story-link" href="https://news.google.com/rss/articles/CBMinwFBVV95cUxQYjVlSUg1ODdRS0U2N2Y0WUhyS3Q4T0hSWkszVGdpT2l1bXlHdnZXZEZDS1Y5UVZoeHZsd1lvZlM3ZmY4WGc0bU44U1Q4TjVyYXdsWTZqbHBPMnhJLU94aHBuTU1YeWFKUFpBRG9KSzVmSnBwWGhRbDVJQ3pNNnp1WFpDUGNmcWtoLTVhQzkxQWlWZGVYRUxidnVjVUdlZm8?oc=5" target="_blank" rel="noopener">
+                        <h3 class="story-title">Score ChatGPT, Claude, Gemini, and More in One Spot for Only $55 Until Oct. 4</h3>
+                        <div class="story-meta">
+                            <span class="story-source">PCMag</span>
+                            <span class="story-time">Oct 4, 00:56</span>
+                        </div>
+                    </a>
+                </li>
             
-                <div class="topic-block">
-                    <h3>
-                        <a href="news/harry-potter.html">Harry Potter</a>
-                        
-                            <span class="topic-more">+16 more</span>
-                        
-                    </h3>
-                    
-                        <ul class="feed-list">
-                        
-                            <li class="feed-item top-headline">
-                                <a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE1jUUpGNlZucENFeHFTbUxjcTZjZy1DV2t2SnFVY1lJX1ZkSU9HZlBzSjdtaEthQzk2Wm1qSmZiN3VEV0E3SlF6bW9YNkQtQUJYdm8wWkcxd2Z6cGRVUW1pR3VyeDdrR3JWRGZpWFhKLUJ4ejhGV0NLZmpmeFZHVFU?oc=5" target="_blank" rel="noopener">WB’s Value Lies in More than Just Capes, Harry Potter, and IP</a>
-                                <div class="feed-time">Den of Geek · Oct 3, 19:30</div>
-                            </li>
-                        
-                        </ul>
-                    
-                </div>
+                <li class="story-card ">
+                    <a class="story-link" href="https://news.google.com/rss/articles/CBMijgFBVV95cUxPc3p1VGhjX1pJckNGUUdBLXl2bktCSllpNnZBOHVHY2M0MWVmV3JOVE5ocENWcUVzSFBIZ3ZKQmJERkNyZVhrbDh3dk04c1RQck9wN01UN05CWFhJNGI0TFdLWVFraWN1UkN2OUtRM201MmYtSHhuWEhpeWx0SzVRYU1KVXZHOW9xT1pIc2dR?oc=5" target="_blank" rel="noopener">
+                        <h3 class="story-title">Don’t Write With AI, Say People Who Write With A</h3>
+                        <div class="story-meta">
+                            <span class="story-source">The Atlantic</span>
+                            <span class="story-time">Oct 4, 00:51</span>
+                        </div>
+                    </a>
+                </li>
             
-        </section>
-    </div>
+                <li class="story-card ">
+                    <a class="story-link" href="https://news.google.com/rss/articles/CBMi0AFBVV95cUxOVC1ZSGVpWFotRXVmaGFEMVNOOU1qZWxnTkkzUEctWm5zX1AxSFBYd0k1a0Vab1c4YkV4N3RLZXh4dThNTElqS1lVaXpKMlplV0E2R0I0VU1Bd1F5U0JYRFJNaG5VRUJLcFBRMkMtWXhwbk9NeXNXRVdEOXZSWVZYZ2VDRzduWUloaklrc2tBTGZ4cGU1RWVtdVZHRFZCY0Z5a3FZNDZoVUl1M2pQaVQ3VlhWa0ZfNENxc3NuVUljWklad3RCTTM2MDhjeFVwRnRM?oc=5" target="_blank" rel="noopener">
+                        <h3 class="story-title">Omar Al-Mukhtar University Wins Two Awards at International Artificial Intelligence Conference in South Africa</h3>
+                        <div class="story-meta">
+                            <span class="story-source">libyaupdate.com</span>
+                            <span class="story-time">Oct 4, 00:44</span>
+                        </div>
+                    </a>
+                </li>
+            
+            </ul>
+        
+    </section>
+    
+    <section>
+        <h2><span class="kicker">From the Wires</span>Witcher</h2>
+        <hr class="section-rule">
+        
+            <ul class="story-list">
+            
+                <li class="story-card story-lead">
+                    <a class="story-link" href="https://news.google.com/rss/articles/CBMiZkFVX3lxTE03QXZHbEp0S2tqcmxiNy1CaWhmclN3T3M2aUNPX1BQRVd5NDlzeG5yemJmVFJzVkR6OHhHTVZQaWxmVVBRUURfSE10R1BaNHhIQXYtdXZGRjBMYVBpc0JmSTdOVXBKUQ?oc=5" target="_blank" rel="noopener">
+                        <h3 class="story-title">10+ Best Games Like The WITCHER 3 With Engaging Worlds</h3>
+                        <div class="story-meta">
+                            <span class="story-source">Loot and Grind</span>
+                            <span class="story-time">Oct 4, 02:09</span>
+                        </div>
+                    </a>
+                </li>
+            
+                <li class="story-card ">
+                    <a class="story-link" href="https://news.google.com/rss/articles/CBMie0FVX3lxTE9xMHpGZ1pUUklKVWlPdkRseHB6TW42R2FOMHNjdy1kQ3A4N2w1TlJNb2I3N2tSa0loMndLa0lKTGNVakt5MW1RQVlhb212Q29IV3c5Vjc0ajFsQk5WYWtycENEcGQ1ajVxV0tjZHVPWFlVc3d3Q0wwZUx6cw?oc=5" target="_blank" rel="noopener">
+                        <h3 class="story-title">Netflix Sets The Witcher Season 5's Fate</h3>
+                        <div class="story-meta">
+                            <span class="story-source">Polygon.com</span>
+                            <span class="story-time">Oct 4, 01:43</span>
+                        </div>
+                    </a>
+                </li>
+            
+                <li class="story-card ">
+                    <a class="story-link" href="https://news.google.com/rss/articles/CBMi6AFBVV95cUxQbS1TaEw0OFVwQXdvX0NRU2xuWTFqcENNdmpnN3kwNlBIaVdZVkdUMFozUmxaOHVzQVVQYkRaODl6Nk1CcGFFMmNucDVmQ2pFVmNPNVZBUnVJQWpROG0zSDhhWkVKYVBHOVJGQmJMaURzczdwN3FQTHFyYVNJc3JaVVlmNkVuNTdlQVl3VWlHS3lKMW5GMlV1TGJWeUhZZzJ1cHNlQnlxcEROTVhDYi1LQ3V5amFuUzg0SHlhR2puQzRfTXRMUUx3M1hiWE5paTlyZWUwb1hMcEFzcHNBbnhaUTF4bGRoWWdD0gHuAUFVX3lxTFBTdTczUnBKc1NTNlpoWUc5VVJBSTdIUTltSldEVGRJTjdDSjRINlplVDdyQlZNNDMtcGJmWVBnTW5pZzlNNTd2QzFGRVplVkxxOXBqZW1PYnowMzRBb1V1RFpGTllWTVhleURDR0hXeGpCM3BEMXZyeENxMkVzRUxJTkI0TGRUZ3RzX1R3SF8zZEwyMEp0dVJmSVRkNE50eWxKd0sxYnZNRVNRSlF0aUhveTlDYzhHSEpuVGtSbjluTjRIWTRkV2U3TmdYWGROdzdNUHdTZmhxWXhhMGxuSXhkTzJrejA0eHE2NG5FT0E?oc=5" target="_blank" rel="noopener">
+                        <h3 class="story-title">The Witcher 3 Remastered Gift Giveaway Broke Down - CD Projekt RED Warned Players About the Problem</h3>
+                        <div class="story-meta">
+                            <span class="story-source">ixbt.games</span>
+                            <span class="story-time">Oct 4, 01:19</span>
+                        </div>
+                    </a>
+                </li>
+            
+            </ul>
+        
+    </section>
+    
+    <section>
+        <h2><span class="kicker">From the Wires</span>GTA 6</h2>
+        <hr class="section-rule">
+        
+            <ul class="story-list">
+            
+                <li class="story-card story-lead">
+                    <a class="story-link" href="https://news.google.com/rss/articles/CBMiaEFVX3lxTFBuV1dOamM5SndaNlpfQXlWQVNEOVV6dmhIb3BaMzl4QWFSQlBUU3NYYk5ocXctZm1jcldMYTJpaFdGV3VKX2k3dVBuSVZaYl91V3pHM0JOaWc0XzZ3NjZya21Qa1RHNzVL?oc=5" target="_blank" rel="noopener">
+                        <h3 class="story-title">Rockstar Adds Four New GTA 6 Images to Its Promotional Push</h3>
+                        <div class="story-meta">
+                            <span class="story-source">Gamereactor UK</span>
+                            <span class="story-time">Oct 4, 01:30</span>
+                        </div>
+                    </a>
+                </li>
+            
+                <li class="story-card ">
+                    <a class="story-link" href="https://news.google.com/rss/articles/CBMi_AFBVV95cUxNVlBQZEh4U3F2dXBaak9YcV8yaUw4YTlCeGE1dFgyWF96T2N4ZFd5c3BDbnVxeTVFWTRXSWxZbVg4cHNka1NMTzJtMm11cXJaUnBVU1BDMXpVVEIwWnFtZG9FdjRCVjNXdElKQWV3clE1cXVpdEdZOEJFNzF5c0h5cGlUYkd2RlgyNzFYcmtrQnJQR1BCci04WmYtdWNZMlpjajhJMkxEMnVxUkt3ZkNpQW8tbG9JcWhUNVRVdURMTDdJbTdycVVrUUsteUNDLVNFQVlSNnY1VXVudlRNX2tGdU85VDItZjVrcmRrSVNwdzRLNTA3QWhlWlVnM2nSAYICQVVfeXFMTnUwN1NVdUxzemQ2YlB3TW9oc3QyWjlCSVhaUmhGNW0zaW9mTWc2MGlLc2F3WlJ2cEpXd0c2aFhwckdXM0I1VHlFaVIyRng3WHI4NFNQT0dvdXRFcHQ1Qk15TnVCM2pDM2M5OGczbC1Wb29iamVtM0I1cjNGRERaeDdROXd5RU9BQmktOHljZThjVUQteFBzNTQyTjhCU05yY0ZHNUxpdDlXMFB1QTNkQmtQUU1oZnpaRXBPUkxCQldMTG1XLWJZNEtYZmlZUjRPbXZZTVBPc1RPQ3NjM0lvbmpKVzMyenk2ekJ2TThCRmdzTlBCeVhoMDM0OU8tZ2xBY2JB?oc=5" target="_blank" rel="noopener">
+                        <h3 class="story-title">GTA 6 could get more controversial than expected after rating reveals new adult content</h3>
+                        <div class="story-meta">
+                            <span class="story-source">The Times of India</span>
+                            <span class="story-time">Oct 4, 00:27</span>
+                        </div>
+                    </a>
+                </li>
+            
+                <li class="story-card ">
+                    <a class="story-link" href="https://news.google.com/rss/articles/CBMihAFBVV95cUxPbVFoOXo1UDFkMGhyUUdJMldrYzFwajhpcm9mdS1DZFJGM3BaSGlyMWdEckl6LXpTMnFLbXFwa3BuYW9pWHhnZ1pFUVZ4VVlYRk5ibmpKVzMteFZlVzNnMVFMLUhlenlkTG96bTBWSXBWalpLLWtPV3J5QkczTGNIUHIyUkE?oc=5" target="_blank" rel="noopener">
+                        <h3 class="story-title">Shack Chat: What past Grand Theft Auto character do you want to make a cameo in GTA 6?</h3>
+                        <div class="story-meta">
+                            <span class="story-source">Shacknews</span>
+                            <span class="story-time">Oct 3, 22:30</span>
+                        </div>
+                    </a>
+                </li>
+            
+            </ul>
+        
+    </section>
+    
+    <section>
+        <h2><span class="kicker">From the Wires</span>Harry Potter</h2>
+        <hr class="section-rule">
+        
+            <ul class="story-list">
+            
+                <li class="story-card story-lead">
+                    <a class="story-link" href="https://news.google.com/rss/articles/CBMif0FVX3lxTE1jUUpGNlZucENFeHFTbUxjcTZjZy1DV2t2SnFVY1lJX1ZkSU9HZlBzSjdtaEthQzk2Wm1qSmZiN3VEV0E3SlF6bW9YNkQtQUJYdm8wWkcxd2Z6cGRVUW1pR3VyeDdrR3JWRGZpWFhKLUJ4ejhGV0NLZmpmeFZHVFU?oc=5" target="_blank" rel="noopener">
+                        <h3 class="story-title">WB’s Value Lies in More than Just Capes, Harry Potter, and IP</h3>
+                        <div class="story-meta">
+                            <span class="story-source">Den of Geek</span>
+                            <span class="story-time">Oct 3, 19:30</span>
+                        </div>
+                    </a>
+                </li>
+            
+                <li class="story-card ">
+                    <a class="story-link" href="https://news.google.com/rss/articles/CBMikAFBVV95cUxQV3prb2ZKbDE0c25hMlluU2pmam1oNVhvMHJpa3ZRWk1kaFRpR0ZLQzlGYzhJRC0zSHRtU3ZNbXFvX21VY21MRUp3cVVVUWtha0l3ZXFBeVY5bHRRc3p2ZzhldjdtVkgxTk9wOHJjZkw1MFNqWVJtR0NybWVySG4xbXUyUlh3Z0o3RlpPY1h5OWw?oc=5" target="_blank" rel="noopener">
+                        <h3 class="story-title">What The Stars Of Harry Potter Had To Say About Robbie Coltrane</h3>
+                        <div class="story-meta">
+                            <span class="story-source">Yahoo</span>
+                            <span class="story-time">Oct 3, 18:45</span>
+                        </div>
+                    </a>
+                </li>
+            
+                <li class="story-card ">
+                    <a class="story-link" href="https://news.google.com/rss/articles/CBMifEFVX3lxTE1TcmVYalZweWQ0X3dkZXVOZEdEQ0o2eUJsbWFwaWVMNGYzeUl0cWs1b283VjdkTUNIdGl1X1Q5X1AtcEc0X3N1NVp6V3M4bXl2OG5mcVVaUmNGV1NXVzRXUERaM0JkRWRXWnpjNHdNUjZ5dTRPUG5xRVg3SEg?oc=5" target="_blank" rel="noopener">
+                        <h3 class="story-title">First Review Arrives for ‘Harry Potter’ Reboot, 2 Months Before Premiere</h3>
+                        <div class="story-meta">
+                            <span class="story-source">Inside the Magic</span>
+                            <span class="story-time">Oct 3, 18:26</span>
+                        </div>
+                    </a>
+                </li>
+            
+            </ul>
+        
+    </section>
+    
 
     <footer>
-        Built 2026-10-04 02:04 IST · Edition for Mayank
+        Built 2026-10-04 02:15 IST · Edition for Mayank
     </footer>
 
 </div>
+
+<script>
+    function toggleTheme() {
+        var cur = document.documentElement.getAttribute("data-theme");
+        if (!cur) {
+            cur = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        var next = cur === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", next);
+        localStorage.setItem("theme", next);
+    }
+</script>
+
 </body>
 </html>

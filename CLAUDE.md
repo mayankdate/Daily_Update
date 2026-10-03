@@ -1,15 +1,16 @@
 # Daily Brief
 
-Personal "daily newspaper" built from Notion (tasks + workout dashboard), live weather, countdown dates, webcomic RSS feeds, MusicBrainz release data, Spotify as a music fallback, and Google News. GitHub Actions runs it each morning, renders a front page plus one page per news topic, and commits them back.
+Personal "daily newspaper" built from Notion (tasks + workout dashboard), live weather, countdown dates, webcomic RSS feeds, MusicBrainz release data, Spotify as a music fallback, and Google News. GitHub Actions runs it each morning, renders a single scrolling HTML page, and commits it back.
 
-## Front page sections
+## Sections (top to bottom)
 
 1. **Weather** — horizontal timeline across 24 hours (every 3h), sunrise/sunset markers, min/max.
 2. **Tasks + Workout + Countdowns** — three slim columns.
 3. **Music** — new releases if any, else a Spotify "soundtrack of the day" embed.
-4. **Comics + Headlines** — comics on the left, grouped news on the right with links to per-topic pages.
+4. **Comics** — latest strips from each configured feed.
+5. **News** — one full section per topic group, lead card + grid of recent stories.
 
-Each news group also gets its own page under `docs/news/<slug>.html` with the full set of stories for that group.
+A small light/dark toggle sits in the top-right corner. Preference is remembered in the browser (localStorage).
 
 ## Layout
 
@@ -20,16 +21,11 @@ Each news group also gets its own page under `docs/news/<slug>.html` with the fu
 ├── documents/                          (reserved)
 ├── docs/                               GitHub Pages serves this folder
 │   ├── index.html                      redirect to daily_brief.html
-│   ├── daily_brief.html                front page
-│   └── news/
-│       ├── ai.html                     per-topic pages
-│       ├── witcher.html
-│       └── …
+│   └── daily_brief.html                the brief
 ├── scripts/
 │   ├── build_brief.ipynb               config + build
-│   ├── template_html.html              front-page shell
-│   ├── template_topic_html.html        topic-page shell
-│   └── template_css.css                shared styles
+│   ├── template_html.html              page shell
+│   └── template_css.css                styles
 ├── .gitignore
 ├── CLAUDE.md
 ├── notion_tasks_token.txt              LOCAL ONLY, gitignored

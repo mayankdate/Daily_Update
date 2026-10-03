@@ -7,12 +7,26 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<script>
+    // Apply saved theme before CSS loads so there's no flash of wrong theme.
+    (function () {
+        var saved = localStorage.getItem("theme");
+        if (saved === "dark" || saved === "light") {
+            document.documentElement.setAttribute("data-theme", saved);
+        }
+    })();
+</script>
 <style>
 {{ css }}
 </style>
 </head>
 <body>
 <div class="page">
+
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light/dark mode" title="Toggle light/dark mode">
+        <span class="theme-icon-light">☀</span>
+        <span class="theme-icon-dark">☾</span>
+    </button>
 
     <header class="masthead">
         <h1>{{ masthead_title }}</h1>
@@ -25,7 +39,7 @@
         <span>Loadout: {{ loadout }}</span>
     </div>
 
-    {# ---------- WEATHER TIMELINE ---------- #}
+    {# ---------- WEATHER ---------- #}
     <section class="weather">
         <div class="weather-head">
             <div class="weather-headline">
@@ -151,58 +165,67 @@
         {% endif %}
     </section>
 
-    {# ---------- COMICS + NEWS HEADLINES ---------- #}
-    <div class="cols-2">
-        <section>
-            <h2><span class="kicker">The Funny Pages</span>Webcomics</h2>
-            <hr class="section-rule">
-            {% if comics %}
-                <ul class="feed-list">
-                {% for c in comics %}
-                    <li class="feed-item">
-                        <span class="feed-source">{{ c.source }}</span>
-                        <a href="{{ c.url }}" target="_blank" rel="noopener">{{ c.title }}</a>
-                        <span class="feed-time">{{ c.when }}</span>
-                    </li>
-                {% endfor %}
-                </ul>
-            {% else %}
-                <p class="empty-note">No new strips today.</p>
-            {% endif %}
-        </section>
-
-        <section>
-            <h2><span class="kicker">From the Wires</span>Headlines</h2>
-            <hr class="section-rule">
-            {% for feed in news %}
-                <div class="topic-block">
-                    <h3>
-                        <a href="{{ feed.topic_page }}">{{ feed.name }}</a>
-                        {% if feed.total_found > feed.front_entries|length %}
-                            <span class="topic-more">+{{ feed.total_found - feed.front_entries|length }} more</span>
-                        {% endif %}
-                    </h3>
-                    {% if feed.front_entries %}
-                        <ul class="feed-list">
-                        {% for n in feed.front_entries %}
-                            <li class="feed-item {% if loop.first %}top-headline{% endif %}">
-                                <a href="{{ n.url }}" target="_blank" rel="noopener">{{ n.title }}</a>
-                                <div class="feed-time">{{ n.source }} · {{ n.when }}</div>
-                            </li>
-                        {% endfor %}
-                        </ul>
-                    {% else %}
-                        <p class="empty-note">Quiet on this front.</p>
-                    {% endif %}
-                </div>
+    {# ---------- COMICS ---------- #}
+    <section>
+        <h2><span class="kicker">The Funny Pages</span>Webcomics</h2>
+        <hr class="section-rule">
+        {% if comics %}
+            <ul class="feed-list">
+            {% for c in comics %}
+                <li class="feed-item">
+                    <span class="feed-source">{{ c.source }}</span>
+                    <a href="{{ c.url }}" target="_blank" rel="noopener">{{ c.title }}</a>
+                    <span class="feed-time">{{ c.when }}</span>
+                </li>
             {% endfor %}
-        </section>
-    </div>
+            </ul>
+        {% else %}
+            <p class="empty-note">No new strips today.</p>
+        {% endif %}
+    </section>
+
+    {# ---------- NEWS: one section per topic ---------- #}
+    {% for feed in news %}
+    <section>
+        <h2><span class="kicker">From the Wires</span>{{ feed.name }}</h2>
+        <hr class="section-rule">
+        {% if feed.entries %}
+            <ul class="story-list">
+            {% for n in feed.entries %}
+                <li class="story-card {% if loop.first %}story-lead{% endif %}">
+                    <a class="story-link" href="{{ n.url }}" target="_blank" rel="noopener">
+                        <h3 class="story-title">{{ n.title }}</h3>
+                        <div class="story-meta">
+                            <span class="story-source">{{ n.source }}</span>
+                            <span class="story-time">{{ n.when }}</span>
+                        </div>
+                    </a>
+                </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p class="empty-note">Quiet on this front.</p>
+        {% endif %}
+    </section>
+    {% endfor %}
 
     <footer>
         Built {{ built_at }} · Edition for {{ owner_name }}
     </footer>
 
 </div>
+
+<script>
+    function toggleTheme() {
+        var cur = document.documentElement.getAttribute("data-theme");
+        if (!cur) {
+            cur = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        var next = cur === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", next);
+        localStorage.setItem("theme", next);
+    }
+</script>
+
 </body>
 </html>
