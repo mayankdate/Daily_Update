@@ -1,0 +1,601 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harry Potter — THE DAILY BRIEF 2026-10-04</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --ink: #1a1a1a;
+    --paper: #f5f1e8;
+    --muted: #6a6659;
+    --accent: #8b1a1a;
+    --accent-soft: #b85a3c;
+    --rule: #1a1a1a;
+    --soft-rule: #c4bcac;
+    --card-bg: #faf7ef;
+    --sun-arc: #f0d070;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --ink: #e8e3d6;
+        --paper: #15130f;
+        --muted: #9c9686;
+        --accent: #e07878;
+        --accent-soft: #d49070;
+        --rule: #e8e3d6;
+        --soft-rule: #3a3630;
+        --card-bg: #1f1c17;
+        --sun-arc: #786428;
+    }
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 28px 64px;
+}
+
+/* ---------- MASTHEAD ---------- */
+.masthead {
+    text-align: center;
+    border-bottom: 3px double var(--rule);
+    padding-bottom: 14px;
+    margin-bottom: 8px;
+}
+.masthead h1 {
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    font-weight: 900;
+    font-size: clamp(42px, 7vw, 80px);
+    letter-spacing: 0.015em;
+    margin: 0;
+    line-height: 1;
+}
+.masthead .tagline {
+    font-style: italic;
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+.dateline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    border-bottom: 1px solid var(--rule);
+    padding: 8px 0;
+    margin-bottom: 24px;
+    gap: 8px;
+}
+.dateline .center {
+    font-weight: 700;
+    color: var(--ink);
+    text-align: center;
+}
+.back-link {
+    color: var(--muted);
+    text-decoration: none;
+}
+.back-link:hover { color: var(--accent); }
+
+/* ---------- SECTIONS ---------- */
+section {
+    margin-bottom: 32px;
+}
+
+section > h2 {
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    font-size: 26px;
+    font-weight: 900;
+    margin: 0 0 2px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+section.minimal > h2 { font-size: 22px; }
+
+section > h2 .kicker {
+    display: block;
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.22em;
+    margin-bottom: 2px;
+    font-family: 'Inter', sans-serif;
+}
+
+.section-rule {
+    border: none;
+    border-top: 2px solid var(--rule);
+    margin: 6px 0 16px;
+}
+
+/* ---------- WEATHER ---------- */
+.weather {
+    background: var(--card-bg);
+    border: 1px solid var(--soft-rule);
+    border-radius: 4px;
+    padding: 18px 20px;
+    margin-bottom: 28px;
+}
+.weather-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.weather-headline {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.weather-emoji { font-size: 36px; line-height: 1; }
+.weather-location {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.weather-summary {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 2px;
+}
+.weather-sun {
+    display: flex;
+    gap: 16px;
+    font-size: 13px;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+}
+
+.timeline { position: relative; }
+.timeline-bar {
+    position: relative;
+    height: 24px;
+    margin-bottom: 6px;
+}
+.sun-arc {
+    position: absolute;
+    top: 10px;
+    height: 4px;
+    background: var(--sun-arc);
+    border-radius: 2px;
+    opacity: 0.6;
+}
+.sun-marker {
+    position: absolute;
+    top: 2px;
+    transform: translateX(-50%);
+    font-size: 16px;
+    line-height: 1;
+    color: var(--accent-soft);
+}
+.sun-marker.set { color: var(--muted); }
+
+.timeline-cells {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 6px;
+}
+.hour-cell {
+    text-align: center;
+    padding: 8px 4px;
+    border-left: 1px dotted var(--soft-rule);
+    font-size: 12px;
+}
+.hour-cell:first-child { border-left: none; }
+.hour-emoji { font-size: 18px; line-height: 1; }
+.hour-temp {
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 4px;
+    font-variant-numeric: tabular-nums;
+}
+.hour-time {
+    color: var(--muted);
+    margin-top: 2px;
+    font-variant-numeric: tabular-nums;
+}
+.hour-precip {
+    color: var(--accent-soft);
+    font-size: 11px;
+    margin-top: 2px;
+}
+
+/* ---------- THREE-UP (tasks, workout, countdowns) ---------- */
+.three-up {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 8px;
+}
+@media (max-width: 900px) {
+    .three-up { grid-template-columns: 1fr; }
+}
+
+/* ---------- TASKS ---------- */
+.task-list { list-style: none; padding: 0; margin: 0; }
+.task-list li {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 6px 0;
+    border-bottom: 1px dotted var(--soft-rule);
+    font-size: 14px;
+}
+.task-list li:last-child { border-bottom: none; }
+.task-type {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 2px 5px;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+    min-width: 60px;
+    text-align: center;
+    flex-shrink: 0;
+}
+.task-type.PRIORITY { background: var(--accent); color: var(--paper); border-color: var(--accent); }
+.task-type.WORK { background: var(--ink); color: var(--paper); }
+.task-done { text-decoration: line-through; color: var(--muted); }
+.task-text { flex: 1; }
+
+/* ---------- WORKOUTS (minimal) ---------- */
+.workout-min { list-style: none; padding: 0; margin: 0; }
+.workout-min li {
+    padding: 8px 0;
+    border-bottom: 1px dotted var(--soft-rule);
+}
+.workout-min li:last-child { border-bottom: none; }
+.workout-name-min {
+    font-weight: 700;
+    font-size: 14px;
+}
+.workout-meta-min {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 2px;
+    font-variant-numeric: tabular-nums;
+}
+
+/* ---------- COUNTDOWNS ---------- */
+.countdown-list { list-style: none; padding: 0; margin: 0; }
+.countdown-item {
+    padding: 10px 0;
+    border-bottom: 1px dotted var(--soft-rule);
+}
+.countdown-item:last-child { border-bottom: none; }
+.countdown-days {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 1;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+}
+.countdown-days.today { color: var(--accent-soft); }
+.countdown-days.past { color: var(--muted); font-size: 16px; }
+.countdown-name {
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 4px;
+}
+.countdown-date {
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 2px;
+}
+
+/* ---------- SPOTIFY ---------- */
+.spotify-embed {
+    border-radius: 4px;
+    overflow: hidden;
+    max-width: 700px;
+}
+
+/* ---------- 2-COLUMN (comics + news) ---------- */
+.cols-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+}
+@media (max-width: 760px) {
+    .cols-2 { grid-template-columns: 1fr; }
+    .page { padding: 24px 16px 48px; }
+}
+
+/* ---------- FEED ITEMS ---------- */
+.feed-list { list-style: none; padding: 0; margin: 0; }
+.feed-item {
+    padding: 10px 0;
+    border-bottom: 1px dotted var(--soft-rule);
+}
+.feed-item:last-child { border-bottom: none; }
+.feed-item a {
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 700;
+}
+.feed-item a:hover { color: var(--accent); text-decoration: underline; }
+.feed-item.top-headline a {
+    font-size: 17px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+.feed-source {
+    display: inline-block;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-right: 8px;
+    font-weight: 700;
+}
+.feed-time {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.topic-block { margin-bottom: 18px; }
+.topic-block h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    margin: 0 0 4px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--soft-rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.topic-block h3 a {
+    color: var(--ink);
+    text-decoration: none;
+}
+.topic-block h3 a:hover { color: var(--accent); }
+.topic-more {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* ---------- TOPIC PAGE ---------- */
+.topic-page-title {
+    font-size: 44px;
+    margin: 8px 0;
+}
+.story-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+@media (max-width: 760px) {
+    .story-list { grid-template-columns: 1fr; }
+}
+.story-card {
+    background: var(--card-bg);
+    border: 1px solid var(--soft-rule);
+    border-radius: 4px;
+    padding: 16px 18px;
+    transition: border-color 0.15s ease;
+}
+.story-card:hover { border-color: var(--accent); }
+.story-lead {
+    grid-column: 1 / -1;
+    background: var(--card-bg);
+}
+.story-lead .story-title {
+    font-size: 28px;
+    line-height: 1.15;
+}
+.story-link {
+    display: block;
+    color: var(--ink);
+    text-decoration: none;
+}
+.story-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 8px;
+    line-height: 1.25;
+}
+.story-link:hover .story-title { color: var(--accent); }
+.story-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+}
+.story-source { color: var(--accent); font-weight: 700; }
+
+/* ---------- MISC ---------- */
+.empty-note {
+    font-style: italic;
+    color: var(--muted);
+    padding: 8px 0;
+    font-size: 14px;
+}
+
+footer {
+    text-align: center;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    border-top: 3px double var(--rule);
+    padding-top: 16px;
+    margin-top: 40px;
+}
+footer a { color: var(--muted); text-decoration: none; }
+footer a:hover { color: var(--accent); }
+
+</style>
+</head>
+<body>
+<div class="page">
+
+    <header class="masthead">
+        <h1>THE DAILY BRIEF</h1>
+        <div class="tagline">Est. 2026 · The Harry Potter desk.</div>
+    </header>
+
+    <div class="dateline">
+        <span><a class="back-link" href="../daily_brief.html">← Front page</a></span>
+        <span class="center">Sunday, October 4th, 2026</span>
+        <span>17 stories</span>
+    </div>
+
+    <section>
+        <h2 class="topic-page-title">Harry Potter</h2>
+        <hr class="section-rule">
+
+        
+            <ul class="story-list">
+            
+                <li class="story-card story-lead">
+                    <a class="story-link" href="https://news.google.com/rss/articles/CBMif0FVX3lxTE1jUUpGNlZucENFeHFTbUxjcTZjZy1DV2t2SnFVY1lJX1ZkSU9HZlBzSjdtaEthQzk2Wm1qSmZiN3VEV0E3SlF6bW9YNkQtQUJYdm8wWkcxd2Z6cGRVUW1pR3VyeDdrR3JWRGZpWFhKLUJ4ejhGV0NLZmpmeFZHVFU?oc=5" target="_blank" rel="noopener">
+                        <h3 class="story-title">WB’s Value Lies in More than Just Capes, Harry Potter, and IP</h3>
+                        <div class="story-meta">
+                            <span class="story-source">Den of Geek</span>
+                            <span class="story-time">Oct 3, 19:30</span>
+                        </div>
+                    </a>
+                </li>
+            
+                <li class="story-card ">
+                    <a class="story-link" href="https://news.google.com/rss/articles/CBMikAFBVV95cUxQV3prb2ZKbDE0c25hMlluU2pmam1oNVhvMHJpa3ZRWk1kaFRpR0ZLQzlGYzhJRC0zSHRtU3ZNbXFvX21VY21MRUp3cVVVUWtha0l3ZXFBeVY5bHRRc3p2ZzhldjdtVkgxTk9wOHJjZkw1MFNqWVJtR0NybWVySG4xbXUyUlh3Z0o3RlpPY1h5OWw?oc=5" target="_blank" rel="noopener">
+                        <h3 class="story-title">What The Stars Of Harry Potter Had To Say About Robbie Coltrane</h3>
+                        <div class="story-meta">
+                            <span class="story-source">Yahoo</span>
+                            <span class="story-time">Oct 3, 18:45</span>
+                        </div>
+                    </a>
+                </li>
+            
+                <li class="story-card ">
+                    <a class="story-link" href="https://news.google.com/rss/articles/CBMifEFVX3lxTE1TcmVYalZweWQ0X3dkZXVOZEdEQ0o2eUJsbWFwaWVMNGYzeUl0cWs1b283VjdkTUNIdGl1X1Q5X1AtcEc0X3N1NVp6V3M4bXl2OG5mcVVaUmNGV1NXVzRXUERaM0JkRWRXWnpjNHdNUjZ5dTRPUG5xRVg3SEg?oc=5" target="_blank" rel="noopener">
+                        <h3 class="story-title">First Review Arrives for ‘Harry Potter’ Reboot, 2 Months Before Premiere</h3>
+                        <div class="story-meta">
+                            <span class="story-source">Inside the Magic</span>
+                            <span class="story-time">Oct 3, 18:26</span>
+                        </div>
+                    </a>
+                </li>
+            
+                <li class="story-card ">
+                    <a class="story-link" href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxOV3g5OTZmVVhETHdKNnpLcXBSUnNzRlF4b0d0djloVnNuX0Zaekt0Z1JVMXJaRXRUVWxjUDRqTlZ1MHBJelFJTVl3bnBrR0Y2c21GWjdfVDZPNmplbDhXaXF3QWIweHZYbE0zdnNscUFtRWpid2RqNG5yUTZ2c1N5d05QNEdUbGFoZHoxVWxoeWRmYW1zRTdRS0kyV2N6Zm1rSkJSX2dySUp6dXM?oc=5" target="_blank" rel="noopener">
+                        <h3 class="story-title">This Harry Potter Edition Phone From Realme Is the Coolest Collab of 2026</h3>
+                        <div class="story-meta">
+                            <span class="story-source">CNET</span>
+                            <span class="story-time">Oct 3, 17:30</span>
+                        </div>
+                    </a>
+                </li>
+            
+                <li class="story-card ">
+                    <a class="story-link" href="https://news.google.com/rss/articles/CBMihwFBVV95cUxOTFhqckRYdm1hbDhmR2lDR2hGMlJzTUxNNXZMR0g2Z241eHVTb3poTjVtSzZESG9zcmRBcmFMUlhPTzBUblNIa3NDZFRRYjl6cWtIb015X0hIQkxtdWRYdE1PM1NrRERNcnREVTZDZTVBanNKNHBUdGpTVDROWjlMZzdPd1NPVFU?oc=5" target="_blank" rel="noopener">
+                        <h3 class="story-title">‘Harry Potter’ Season 1: Everything We Know So Far</h3>
+                        <div class="story-meta">
+                            <span class="story-source">Men's Journal</span>
+                            <span class="story-time">Oct 3, 16:00</span>
+                        </div>
+                    </a>
+                </li>
+            
+                <li class="story-card ">
+                    <a class="story-link" href="https://news.google.com/rss/articles/CBMizgFBVV95cUxOcU92Zzl5TU1UYWE3ZndEbnhuTVBrM1lRbnA4YnNQNVpZUHlQaGptR2hscGNkcWN0OUItZkVydnUtb3lXaHhNbF9wcmNRZ0VFekIwcHFDNjVoa0tCNlI5MDNFZDAzVEh6clZFOGhDQ3VhWGswM2dYZlhXczJRRGNxX3RxenBWWGFBYTZpYzdpMENyTkoyMHNTc3VTY1IwbUJnS2pyWF95RlFXV1QwSTlTelNhNlMxZFlORmF6OTZFMG1NRE0xVWxKdGxiZ253d9IB0wFBVV95cUxQVmJnVGlfQ3d4SUVEQXVKejZmVW1nLW11Z2RoMkxIMHhZT3lKRHhoR3Z2dENrS1l3cUpNTWhlTUE2UGROYjBmN2VYb1FVVlVTMDJJXy1vWUNGU1lYczNLblRDeHRtS3drZFFCVXVoYWdRaDJtMlVwaDZCdGhnWHcyVE1qZWh2amFMRlJxeDI5WHV2ckN1Z2pyNVRvR2xZWHlEZzNvYVRnQzZ4S1Y2WDhBXzNyd3lCWGJhck04aC1FenNvZDM2UGZFTi11OFM5Q0VoRlBr?oc=5" target="_blank" rel="noopener">
+                        <h3 class="story-title">Inart Opens Pre-Order for Voldemort Figure - The Dark Lord from the "Harry Potter" Universe</h3>
+                        <div class="story-meta">
+                            <span class="story-source">ixbt.games</span>
+                            <span class="story-time">Oct 3, 13:01</span>
+                        </div>
+                    </a>
+                </li>
+            
+                <li class="story-card ">
+                    <a class="story-link" href="https://news.google.com/rss/articles/CBMi9AJBVV95cUxQcnd6eWs2SjRUU3NRc2o1dXBqRUNFTzlXZ3F6eFJNTWt3c0I1dTg1ejVobEpNUFRMZ0N4aTM0QjAxRGFmbVJaNzZjREU4dmNObnZtYVFkN1J0Qk04QUkxWVRoZVowUnR4MmdJT0xvN3l0a2tvLVJMWDg1M3N4X1BxdkF2V1d1YUl6SXZPTDVkSHB6dHNGTTVKSlhNYmJ2Qm5VU25WZ1dTMGx2WmYtVUNCSmxnMGdaUFB4bmg5RU1lemsxQWtBU2I1TWtvNmlMeEZVR3gxVF8zd2JsTkcxei1QbC05QTZKelA3eHlhaFdXcmkzV0UtU2lJR0FPNGZuWUYxYnkzVk93SW1KTS13d2VQNHM5TjY1eENZSEpFSXVBYWtfZG15WDB5aXNDZkFGQWFrT1BjOW51RnVNaTBZWHR1ejd1VVpZck5qdWVSMGozMlI4VTZoSUY3anE2NHhlSk1OOHNfdWV3TWg1eGQ5NU10NU45WGbSAfoCQVVfeXFMTzJaLU5NdGpEM2JyQ0w1TGNBeEl6bGxObi1ISk0wUkYweGRuSV8zYjJpMjB0ano3MTcwZW5mQzBZamh0U1lNUzFvcGVQa3hCQ0pCN2M3aGdiNHQxdDlCWmhWT1laLWRLbTZxblcxVmxhZkY4ZUZna1NwYnlZQzNlWEVwZFlHTndJcTVxSzdtMGdmYWtpT3BRckRwS25zRkFkSVBlZnhaQzE0ajQ4Q29uMU40VlJXNVUwU2U3SDUxM0dPTFViSnF4N1pIeGtVUVFZR1prczlwTUt2WE8wUmhyZUVuZnZVbnV5elFKWE1YdlMtcUtpck4xUkQ0aENrU0dON2JjVGhVZ3NEbXlYMW5nSnIweEZsMG1QRHRnMDc4cTc2TEdZeVFPWHVsVUpicjgtRU8tTWwweVI3eGY0ZHo2a2c3WWZaaWdyXy1NRzI0c2FfaERTNkdtcDdET2w4OVdDVTFBY2Z1VUpFaXQ4b1AyR2ZuODJ2Ti1DLXBn?oc=5" target="_blank" rel="noopener">
+                        <h3 class="story-title">Paramount and Warner Bros Discovery finalize merger under Skydance name; David Ellison led company to inc</h3>
+                        <div class="story-meta">
+                            <span class="story-source">The Times of India</span>
+                            <span class="story-time">Oct 3, 02:59</span>
+                        </div>
+                    </a>
+                </li>
+            
+                <li class="story-card ">
+                    <a class="story-link" href="https://news.google.com/rss/articles/CBMibEFVX3lxTE1mMURyOUZyT2Y1bGhaTHJnUmJTT09RTDduSFptTnZLMHJCREdqOTVZb053cHBEcWwzLVdYT3pJX3E4REktX3FQUzlDMXBHaTM1dDRiOERnYi0xaDVhQ0QzMDNqX2ZoUVpnSHdHTw?oc=5" target="_blank" rel="noopener">
+                        <h3 class="story-title">'Harry Potter' Season 1 Early Reaction Reveals Magical Verdict on HBO Reboot</h3>
+                        <div class="story-meta">
+                            <span class="story-source">MovieWeb</span>
+                            <span class="story-time">Oct 3, 02:46</span>
+                        </div>
+                    </a>
+                </li>
+            
+                <li class="story-card ">
+                    <a class="story-link" href="https://news.google.com/rss/articles/CBMikAFBVV95cUxNd0lxUWVZSW9ZY2FZRnp3U1ktNlhqMzBPLUx2UUJqQ2dCVmRlMUxIM1pqeVQ2emxVOVdVRE83R0h3bGNBZllMbVZUWlZFSHcyNzN3X2V6M3VKdHZoVlRWbS1ZdlNsZHRicThGendNUzVOeVRtVWxIVGJLVVpiaUFCcVc2M1NWNUxVaVQwSTRPSl8?oc=5" target="_blank" rel="noopener">
+                        <h3 class="story-title">Harry Potter: How HBO Turns Britain Into One Wizarding World</h3>
+                        <div class="story-meta">
+                            <span class="story-source">Collider</span>
+                            <span class="story-time">Oct 2, 23:57</span>
+                        </div>
+                    </a>
+                </li>
+            
+                <li class="story-card ">
+                    <a class="story-link" href="https://news.google.com/rss/articles/CBMiuAFBVV95cUxPRGZ1YUR2Y3Bick9BcGNuNGNIMzJkVWotaWFPclpNdDdWdUdNcVBsYTRWb20wY25FNDdLQU5ObGludGdWSTloZmhkaUZoZE1yU2lLa19BUEVFSUFlZnNtbnlZb0NGbDdEWGgxVGR0ai1XWXRhaFFIRFZna0lfajZUME5IU0txNkZ1Y1pKOHV4YmU5UXJ5LUNCN05FQmhZT1I0eWhmVVRZVV9NbzJ5RVZJV0lzbjBCYk1T?oc=5" target="_blank" rel="noopener">
+                        <h3 class="story-title">Harry Potter fans will be spellbound by this Ghent hotel haunt</h3>
+                        <div class="story-meta">
+                            <span class="story-source">independent.co.uk</span>
+                            <span class="story-time">Oct 2, 23:26</span>
+                        </div>
+                    </a>
+                </li>
+            
+            </ul>
+        
+    </section>
+
+    <footer>
+        Built 2026-10-04 01:57 IST · Edition for Mayank · <a class="back-link" href="../daily_brief.html">Back to front page</a>
+    </footer>
+
+</div>
+</body>
+</html>

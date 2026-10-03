@@ -3,30 +3,34 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>THE DAILY BRIEF — 2026-10-03</title>
+<title>THE DAILY BRIEF — 2026-10-04</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root {
     --ink: #1a1a1a;
     --paper: #f5f1e8;
-    --muted: #5a5a5a;
+    --muted: #6a6659;
     --accent: #8b1a1a;
+    --accent-soft: #b85a3c;
     --rule: #1a1a1a;
-    --soft-rule: #b8b0a0;
-    --card-bg: #faf7f0;
+    --soft-rule: #c4bcac;
+    --card-bg: #faf7ef;
+    --sun-arc: #f0d070;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
         --ink: #e8e3d6;
-        --paper: #1a1814;
+        --paper: #15130f;
         --muted: #9c9686;
-        --accent: #d47878;
+        --accent: #e07878;
+        --accent-soft: #d49070;
         --rule: #e8e3d6;
         --soft-rule: #3a3630;
-        --card-bg: #221f1a;
+        --card-bg: #1f1c17;
+        --sun-arc: #786428;
     }
 }
 
@@ -37,37 +41,36 @@ html, body {
     padding: 0;
     background: var(--paper);
     color: var(--ink);
-    font-family: 'Georgia', 'Palatino', serif;
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
     font-size: 16px;
     line-height: 1.5;
 }
 
 .page {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 32px 80px;
+    padding: 32px 28px 64px;
 }
 
+/* ---------- MASTHEAD ---------- */
 .masthead {
     text-align: center;
     border-bottom: 3px double var(--rule);
-    padding-bottom: 16px;
+    padding-bottom: 14px;
     margin-bottom: 8px;
 }
-
 .masthead h1 {
     font-family: 'Playfair Display', 'Times New Roman', serif;
     font-weight: 900;
-    font-size: clamp(44px, 7vw, 76px);
-    letter-spacing: 0.02em;
+    font-size: clamp(42px, 7vw, 80px);
+    letter-spacing: 0.015em;
     margin: 0;
     line-height: 1;
 }
-
 .masthead .tagline {
     font-style: italic;
     color: var(--muted);
-    font-size: 14px;
+    font-size: 13px;
     margin-top: 8px;
 }
 
@@ -75,79 +78,183 @@ html, body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 13px;
+    font-size: 12px;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     color: var(--muted);
     border-bottom: 1px solid var(--rule);
     padding: 8px 0;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
+    gap: 8px;
 }
-
 .dateline .center {
-    font-weight: bold;
+    font-weight: 700;
     color: var(--ink);
+    text-align: center;
 }
+.back-link {
+    color: var(--muted);
+    text-decoration: none;
+}
+.back-link:hover { color: var(--accent); }
 
+/* ---------- SECTIONS ---------- */
 section {
-    margin-bottom: 40px;
+    margin-bottom: 32px;
 }
 
 section > h2 {
     font-family: 'Playfair Display', 'Times New Roman', serif;
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 900;
-    margin: 0 0 4px 0;
+    margin: 0 0 2px 0;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.03em;
 }
+section.minimal > h2 { font-size: 22px; }
 
 section > h2 .kicker {
     display: block;
-    font-size: 11px;
-    font-weight: 400;
+    font-size: 10px;
+    font-weight: 500;
     color: var(--accent);
-    letter-spacing: 0.2em;
+    letter-spacing: 0.22em;
     margin-bottom: 2px;
-    text-transform: uppercase;
+    font-family: 'Inter', sans-serif;
 }
 
-section > .section-rule {
+.section-rule {
     border: none;
     border-top: 2px solid var(--rule);
-    margin: 8px 0 20px;
+    margin: 6px 0 16px;
 }
 
-.cols-2 {
+/* ---------- WEATHER ---------- */
+.weather {
+    background: var(--card-bg);
+    border: 1px solid var(--soft-rule);
+    border-radius: 4px;
+    padding: 18px 20px;
+    margin-bottom: 28px;
+}
+.weather-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.weather-headline {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.weather-emoji { font-size: 36px; line-height: 1; }
+.weather-location {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.weather-summary {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 2px;
+}
+.weather-sun {
+    display: flex;
+    gap: 16px;
+    font-size: 13px;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+}
+
+.timeline { position: relative; }
+.timeline-bar {
+    position: relative;
+    height: 24px;
+    margin-bottom: 6px;
+}
+.sun-arc {
+    position: absolute;
+    top: 10px;
+    height: 4px;
+    background: var(--sun-arc);
+    border-radius: 2px;
+    opacity: 0.6;
+}
+.sun-marker {
+    position: absolute;
+    top: 2px;
+    transform: translateX(-50%);
+    font-size: 16px;
+    line-height: 1;
+    color: var(--accent-soft);
+}
+.sun-marker.set { color: var(--muted); }
+
+.timeline-cells {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 6px;
+}
+.hour-cell {
+    text-align: center;
+    padding: 8px 4px;
+    border-left: 1px dotted var(--soft-rule);
+    font-size: 12px;
+}
+.hour-cell:first-child { border-left: none; }
+.hour-emoji { font-size: 18px; line-height: 1; }
+.hour-temp {
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 4px;
+    font-variant-numeric: tabular-nums;
+}
+.hour-time {
+    color: var(--muted);
+    margin-top: 2px;
+    font-variant-numeric: tabular-nums;
+}
+.hour-precip {
+    color: var(--accent-soft);
+    font-size: 11px;
+    margin-top: 2px;
 }
 
-@media (max-width: 720px) {
-    .cols-2 { grid-template-columns: 1fr; }
-    .page { padding: 24px 16px 60px; }
+/* ---------- THREE-UP (tasks, workout, countdowns) ---------- */
+.three-up {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 8px;
+}
+@media (max-width: 900px) {
+    .three-up { grid-template-columns: 1fr; }
 }
 
-/* Tasks */
+/* ---------- TASKS ---------- */
 .task-list { list-style: none; padding: 0; margin: 0; }
 .task-list li {
     display: flex;
     align-items: baseline;
-    gap: 10px;
-    padding: 8px 0;
+    gap: 8px;
+    padding: 6px 0;
     border-bottom: 1px dotted var(--soft-rule);
+    font-size: 14px;
 }
 .task-list li:last-child { border-bottom: none; }
 .task-type {
     display: inline-block;
-    font-size: 10px;
-    font-weight: bold;
-    letter-spacing: 0.12em;
-    padding: 2px 6px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 2px 5px;
     border: 1px solid var(--ink);
     color: var(--ink);
-    min-width: 72px;
+    min-width: 60px;
     text-align: center;
     flex-shrink: 0;
 }
@@ -156,42 +263,73 @@ section > .section-rule {
 .task-done { text-decoration: line-through; color: var(--muted); }
 .task-text { flex: 1; }
 
-/* Workouts */
-.workout-list { list-style: none; padding: 0; margin: 0; }
-.workout-item {
-    padding: 12px 0;
-    border-bottom: 1px solid var(--soft-rule);
+/* ---------- WORKOUTS (minimal) ---------- */
+.workout-min { list-style: none; padding: 0; margin: 0; }
+.workout-min li {
+    padding: 8px 0;
+    border-bottom: 1px dotted var(--soft-rule);
 }
-.workout-item:last-child { border-bottom: none; }
-.workout-name {
-    font-size: 17px;
-    font-weight: bold;
-    margin: 0;
+.workout-min li:last-child { border-bottom: none; }
+.workout-name-min {
+    font-weight: 700;
+    font-size: 14px;
 }
-.workout-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
+.workout-meta-min {
     font-size: 13px;
     color: var(--muted);
-    margin-top: 4px;
-}
-.workout-meta span strong { color: var(--ink); }
-.muscle-tags {
-    margin-top: 6px;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--muted);
-}
-.workout-progression {
-    font-size: 13px;
-    font-style: italic;
-    color: var(--muted);
-    margin-top: 4px;
+    margin-top: 2px;
+    font-variant-numeric: tabular-nums;
 }
 
-/* Feed items (comics / music / news) */
+/* ---------- COUNTDOWNS ---------- */
+.countdown-list { list-style: none; padding: 0; margin: 0; }
+.countdown-item {
+    padding: 10px 0;
+    border-bottom: 1px dotted var(--soft-rule);
+}
+.countdown-item:last-child { border-bottom: none; }
+.countdown-days {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 1;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+}
+.countdown-days.today { color: var(--accent-soft); }
+.countdown-days.past { color: var(--muted); font-size: 16px; }
+.countdown-name {
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 4px;
+}
+.countdown-date {
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 2px;
+}
+
+/* ---------- SPOTIFY ---------- */
+.spotify-embed {
+    border-radius: 4px;
+    overflow: hidden;
+    max-width: 700px;
+}
+
+/* ---------- 2-COLUMN (comics + news) ---------- */
+.cols-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+}
+@media (max-width: 760px) {
+    .cols-2 { grid-template-columns: 1fr; }
+    .page { padding: 24px 16px 48px; }
+}
+
+/* ---------- FEED ITEMS ---------- */
 .feed-list { list-style: none; padding: 0; margin: 0; }
 .feed-item {
     padding: 10px 0;
@@ -201,31 +339,117 @@ section > .section-rule {
 .feed-item a {
     color: var(--ink);
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 700;
 }
 .feed-item a:hover { color: var(--accent); text-decoration: underline; }
+.feed-item.top-headline a {
+    font-size: 17px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
 .feed-source {
+    display: inline-block;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-right: 8px;
+    font-weight: 700;
+}
+.feed-time {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.topic-block { margin-bottom: 18px; }
+.topic-block h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    margin: 0 0 4px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--soft-rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.topic-block h3 a {
+    color: var(--ink);
+    text-decoration: none;
+}
+.topic-block h3 a:hover { color: var(--accent); }
+.topic-more {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* ---------- TOPIC PAGE ---------- */
+.topic-page-title {
+    font-size: 44px;
+    margin: 8px 0;
+}
+.story-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+@media (max-width: 760px) {
+    .story-list { grid-template-columns: 1fr; }
+}
+.story-card {
+    background: var(--card-bg);
+    border: 1px solid var(--soft-rule);
+    border-radius: 4px;
+    padding: 16px 18px;
+    transition: border-color 0.15s ease;
+}
+.story-card:hover { border-color: var(--accent); }
+.story-lead {
+    grid-column: 1 / -1;
+    background: var(--card-bg);
+}
+.story-lead .story-title {
+    font-size: 28px;
+    line-height: 1.15;
+}
+.story-link {
+    display: block;
+    color: var(--ink);
+    text-decoration: none;
+}
+.story-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 8px;
+    line-height: 1.25;
+}
+.story-link:hover .story-title { color: var(--accent); }
+.story-meta {
+    display: flex;
+    justify-content: space-between;
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: var(--accent);
-    margin-right: 8px;
-}
-.feed-time {
-    font-size: 12px;
     color: var(--muted);
-    margin-left: 6px;
 }
-.feed-summary {
-    font-size: 14px;
-    color: var(--muted);
-    margin-top: 4px;
-}
+.story-source { color: var(--accent); font-weight: 700; }
 
+/* ---------- MISC ---------- */
 .empty-note {
     font-style: italic;
     color: var(--muted);
     padding: 8px 0;
+    font-size: 14px;
 }
 
 footer {
@@ -236,17 +460,10 @@ footer {
     color: var(--muted);
     border-top: 3px double var(--rule);
     padding-top: 16px;
-    margin-top: 48px;
+    margin-top: 40px;
 }
-
-.topic-block { margin-bottom: 24px; }
-.topic-block h3 {
-    font-family: 'Playfair Display', 'Times New Roman', serif;
-    font-size: 18px;
-    margin: 0 0 6px;
-    padding-bottom: 4px;
-    border-bottom: 1px solid var(--soft-rule);
-}
+footer a { color: var(--muted); text-decoration: none; }
+footer a:hover { color: var(--accent); }
 
 </style>
 </head>
@@ -255,89 +472,177 @@ footer {
 
     <header class="masthead">
         <h1>THE DAILY BRIEF</h1>
-        <div class="tagline">All the news fit to serve one subscriber.</div>
+        <div class="tagline">Est. 2026 · All the news fit to serve one subscriber.</div>
     </header>
 
     <div class="dateline">
-        <span>Vol. 1, No. 276</span>
-        <span class="center">Saturday, October 3rd, 2026</span>
+        <span>Vol. 1, No. 277</span>
+        <span class="center">Sunday, October 4th, 2026</span>
         <span>Loadout: 1 · Full Gym</span>
     </div>
 
+    
+    <section class="weather">
+        <div class="weather-head">
+            <div class="weather-headline">
+                <span class="weather-emoji">🌤️</span>
+                <div>
+                    <div class="weather-location">Mumbai</div>
+                    <div class="weather-summary">Mostly clear · 26°C / 36°C</div>
+                </div>
+            </div>
+            <div class="weather-sun">
+                <span>↑ 06:29</span>
+                <span>↓ 18:24</span>
+            </div>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-bar">
+                <div class="sun-arc" style="left: 27.013888888888886%; width: 49.65277777777777%"></div>
+                <span class="sun-marker rise" style="left: 27.013888888888886%" title="Sunrise 06:29">☀</span>
+                <span class="sun-marker set"  style="left: 76.66666666666666%"  title="Sunset 18:24">☾</span>
+            </div>
+            <div class="timeline-cells">
+                
+                <div class="hour-cell">
+                    <div class="hour-emoji">☀️</div>
+                    <div class="hour-temp">29°</div>
+                    <div class="hour-time">00:00</div>
+                    
+                </div>
+                
+                <div class="hour-cell">
+                    <div class="hour-emoji">☀️</div>
+                    <div class="hour-temp">26°</div>
+                    <div class="hour-time">03:00</div>
+                    
+                </div>
+                
+                <div class="hour-cell">
+                    <div class="hour-emoji">☀️</div>
+                    <div class="hour-temp">26°</div>
+                    <div class="hour-time">06:00</div>
+                    
+                </div>
+                
+                <div class="hour-cell">
+                    <div class="hour-emoji">☀️</div>
+                    <div class="hour-temp">33°</div>
+                    <div class="hour-time">09:00</div>
+                    
+                </div>
+                
+                <div class="hour-cell">
+                    <div class="hour-emoji">☀️</div>
+                    <div class="hour-temp">36°</div>
+                    <div class="hour-time">12:00</div>
+                    
+                </div>
+                
+                <div class="hour-cell">
+                    <div class="hour-emoji">🌤️</div>
+                    <div class="hour-temp">35°</div>
+                    <div class="hour-time">15:00</div>
+                    
+                </div>
+                
+                <div class="hour-cell">
+                    <div class="hour-emoji">☀️</div>
+                    <div class="hour-temp">32°</div>
+                    <div class="hour-time">18:00</div>
+                    
+                </div>
+                
+                <div class="hour-cell">
+                    <div class="hour-emoji">☀️</div>
+                    <div class="hour-temp">29°</div>
+                    <div class="hour-time">21:00</div>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    
+    <div class="three-up">
+
+        <section class="minimal">
+            <h2><span class="kicker">The Day Ahead</span>Tasks</h2>
+            <hr class="section-rule">
+            
+                <ul class="task-list">
+                
+                    <li>
+                        <span class="task-type PRIORITY">PRIORITY</span>
+                        <span class="task-text ">(private task)</span>
+                    </li>
+                
+                    <li>
+                        <span class="task-type PRIORITY">PRIORITY</span>
+                        <span class="task-text ">(private task)</span>
+                    </li>
+                
+                    <li>
+                        <span class="task-type PRIORITY">PRIORITY</span>
+                        <span class="task-text ">(private task)</span>
+                    </li>
+                
+                    <li>
+                        <span class="task-type PERSONAL">PERSONAL</span>
+                        <span class="task-text ">Data Backup</span>
+                    </li>
+                
+                </ul>
+            
+        </section>
+
+        <section class="minimal">
+            <h2><span class="kicker">Iron &amp; Sweat</span>Workout</h2>
+            <hr class="section-rule">
+            
+                <p class="empty-note">Rest day on Sunday.</p>
+            
+        </section>
+
+        <section class="minimal countdown-section">
+            <h2><span class="kicker">The Horizon</span>Countdowns</h2>
+            <hr class="section-rule">
+            
+                <ul class="countdown-list">
+                
+                    <li class="countdown-item">
+                        <div class="countdown-days ">
+                            88 days
+                        </div>
+                        <div class="countdown-name">90-Day Fitness Challenge</div>
+                        <div class="countdown-date">Dec 31, 2026</div>
+                    </li>
+                
+                </ul>
+            
+        </section>
+
+    </div>
+
+    
     <section>
-        <h2><span class="kicker">The Day Ahead</span>Today's Tasks</h2>
-        <hr class="section-rule">
         
-            <ul class="task-list">
-            
-                <li>
-                    <span class="task-type PERSONAL">PERSONAL</span>
-                    <span class="task-text ">Expand Daily Brief</span>
-                </li>
-            
-                <li>
-                    <span class="task-type PERSONAL">PERSONAL</span>
-                    <span class="task-text ">Github Personal Page</span>
-                </li>
-            
-                <li>
-                    <span class="task-type ">TASK</span>
-                    <span class="task-text ">(untitled)</span>
-                </li>
-            
-            </ul>
+            <h2><span class="kicker">Today's Soundtrack</span>Woodkid</h2>
+            <hr class="section-rule">
+            <div class="spotify-embed">
+                <iframe
+                    src="https://open.spotify.com/embed/artist/44TGR1CzjKBxSHsSEy7bi9?utm_source=generator&theme=0"
+                    width="100%" height="152" frameborder="0"
+                    allowtransparency="true"
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"></iframe>
+            </div>
         
     </section>
 
-    <section>
-        <h2><span class="kicker">Iron &amp; Sweat</span>Today's Workout</h2>
-        <hr class="section-rule">
-        
-            <ul class="workout-list">
-            
-                <li class="workout-item">
-                    <p class="workout-name">Rowing Machine</p>
-                    <div class="workout-meta">
-                        
-                        <span><strong>20–30 min</strong> reps</span>
-                        
-                        
-                        <span>Cardio</span>
-                    </div>
-                    <div class="muscle-tags">Full Body · Upper Back · Quads</div>
-                    <div class="workout-progression">Progression: Damper 3–5. Intervals: 30 s hard / 90 s easy, start at 6 rounds. Too hard if your back rounds or your split time climbs each round. Add a round per week up to 10, or hold a 2–3 s faster split.</div>
-                </li>
-            
-                <li class="workout-item">
-                    <p class="workout-name">Incline Treadmill Walk</p>
-                    <div class="workout-meta">
-                        
-                        <span><strong>30–45 min</strong> reps</span>
-                        
-                        
-                        <span>Cardio</span>
-                    </div>
-                    <div class="muscle-tags">Full Body · Glutes · Calves</div>
-                    <div class="workout-progression">Progression: Effort comes from incline, not speed. Too hard if you need the handrails — drop the incline instead. When you can hold a conversation the whole way, add 1% incline or 0.2 km/h.</div>
-                </li>
-            
-                <li class="workout-item">
-                    <p class="workout-name">Stationary Bike</p>
-                    <div class="workout-meta">
-                        
-                        <span><strong>30–45 min</strong> reps</span>
-                        
-                        
-                        <span>Cardio</span>
-                    </div>
-                    <div class="muscle-tags">Full Body · Quads · Glutes</div>
-                    <div class="workout-progression">Progression: Swap-in for the rower or treadmill. Resistance is right when you can just about speak in short sentences during intervals. Add one resistance level when a session feels easy throughout.</div>
-                </li>
-            
-            </ul>
-        
-    </section>
-
+    
     <div class="cols-2">
         <section>
             <h2><span class="kicker">The Funny Pages</span>Webcomics</h2>
@@ -348,7 +653,19 @@ footer {
                     <li class="feed-item">
                         <span class="feed-source">xkcd</span>
                         <a href="https://xkcd.com/3306/" target="_blank" rel="noopener">Accelerator Energies</a>
-                        <span class="feed-time">Oct 2, 09:30</span>
+                        <span class="feed-time">Oct 2</span>
+                    </li>
+                
+                    <li class="feed-item">
+                        <span class="feed-source">IRO</span>
+                        <a href="https://www.irovedout.com/comic/p-264-4/" target="_blank" rel="noopener">p.264</a>
+                        <span class="feed-time">Sep 12</span>
+                    </li>
+                
+                    <li class="feed-item">
+                        <span class="feed-source">IRO</span>
+                        <a href="https://www.irovedout.com/comic/p-263-4/" target="_blank" rel="noopener">p.263</a>
+                        <span class="feed-time">Sep 9</span>
                     </li>
                 
                 </ul>
@@ -356,124 +673,100 @@ footer {
         </section>
 
         <section>
-            <h2><span class="kicker">Pressing Vinyl</span>Music Releases</h2>
+            <h2><span class="kicker">From the Wires</span>Headlines</h2>
             <hr class="section-rule">
             
-                <p class="empty-note">No recent releases from the followed artists.</p>
+                <div class="topic-block">
+                    <h3>
+                        <a href="news/ai.html">AI</a>
+                        
+                            <span class="topic-more">+154 more</span>
+                        
+                    </h3>
+                    
+                        <ul class="feed-list">
+                        
+                            <li class="feed-item top-headline">
+                                <a href="https://news.google.com/rss/articles/CBMidkFVX3lxTE5ocF9yX3pWaGNWUlpOdHNabDRqNzNTOXJKR2xmZjA1aEFYZXNIcGJ2UmJDOS1oNXl6clNVOTRrZ0R1aGtVSWpvSWlnenNPZTZiYjNuVko2S1hqVmd4T241Z2VINnVwUWYyNm5kM240Y3BUcy00ekE?oc=5" target="_blank" rel="noopener">ChatGPT Wallet and World Money showed up the same day. Coincidence?</a>
+                                <div class="feed-time">TestingCatalog AI News · Oct 4, 01:25</div>
+                            </li>
+                        
+                            <li class="feed-item ">
+                                <a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxQYjVlSUg1ODdRS0U2N2Y0WUhyS3Q4T0hSWkszVGdpT2l1bXlHdnZXZEZDS1Y5UVZoeHZsd1lvZlM3ZmY4WGc0bU44U1Q4TjVyYXdsWTZqbHBPMnhJLU94aHBuTU1YeWFKUFpBRG9KSzVmSnBwWGhRbDVJQ3pNNnp1WFpDUGNmcWtoLTVhQzkxQWlWZGVYRUxidnVjVUdlZm8?oc=5" target="_blank" rel="noopener">Score ChatGPT, Claude, Gemini, and More in One Spot for Only $55 Until Oct. 4</a>
+                                <div class="feed-time">PCMag · Oct 4, 00:56</div>
+                            </li>
+                        
+                            <li class="feed-item ">
+                                <a href="https://news.google.com/rss/articles/CBMijgFBVV95cUxPc3p1VGhjX1pJckNGUUdBLXl2bktCSllpNnZBOHVHY2M0MWVmV3JOVE5ocENWcUVzSFBIZ3ZKQmJERkNyZVhrbDh3dk04c1RQck9wN01UN05CWFhJNGI0TFdLWVFraWN1UkN2OUtRM201MmYtSHhuWEhpeWx0SzVRYU1KVXZHOW9xT1pIc2dR?oc=5" target="_blank" rel="noopener">Don’t Write With AI, Say People Who Write With A</a>
+                                <div class="feed-time">The Atlantic · Oct 4, 00:51</div>
+                            </li>
+                        
+                        </ul>
+                    
+                </div>
+            
+                <div class="topic-block">
+                    <h3>
+                        <a href="news/witcher.html">Witcher</a>
+                        
+                            <span class="topic-more">+18 more</span>
+                        
+                    </h3>
+                    
+                        <ul class="feed-list">
+                        
+                            <li class="feed-item top-headline">
+                                <a href="https://news.google.com/rss/articles/CBMie0FVX3lxTE9xMHpGZ1pUUklKVWlPdkRseHB6TW42R2FOMHNjdy1kQ3A4N2w1TlJNb2I3N2tSa0loMndLa0lKTGNVakt5MW1RQVlhb212Q29IV3c5Vjc0ajFsQk5WYWtycENEcGQ1ajVxV0tjZHVPWFlVc3d3Q0wwZUx6cw?oc=5" target="_blank" rel="noopener">Netflix Sets The Witcher Season 5's Fate</a>
+                                <div class="feed-time">Polygon.com · Oct 4, 01:43</div>
+                            </li>
+                        
+                        </ul>
+                    
+                </div>
+            
+                <div class="topic-block">
+                    <h3>
+                        <a href="news/gta-6.html">GTA 6</a>
+                        
+                            <span class="topic-more">+52 more</span>
+                        
+                    </h3>
+                    
+                        <ul class="feed-list">
+                        
+                            <li class="feed-item top-headline">
+                                <a href="https://news.google.com/rss/articles/CBMiaEFVX3lxTFBuV1dOamM5SndaNlpfQXlWQVNEOVV6dmhIb3BaMzl4QWFSQlBUU3NYYk5ocXctZm1jcldMYTJpaFdGV3VKX2k3dVBuSVZaYl91V3pHM0JOaWc0XzZ3NjZya21Qa1RHNzVL?oc=5" target="_blank" rel="noopener">Rockstar Adds Four New GTA 6 Images to Its Promotional Push</a>
+                                <div class="feed-time">Gamereactor UK · Oct 4, 01:30</div>
+                            </li>
+                        
+                        </ul>
+                    
+                </div>
+            
+                <div class="topic-block">
+                    <h3>
+                        <a href="news/harry-potter.html">Harry Potter</a>
+                        
+                            <span class="topic-more">+16 more</span>
+                        
+                    </h3>
+                    
+                        <ul class="feed-list">
+                        
+                            <li class="feed-item top-headline">
+                                <a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE1jUUpGNlZucENFeHFTbUxjcTZjZy1DV2t2SnFVY1lJX1ZkSU9HZlBzSjdtaEthQzk2Wm1qSmZiN3VEV0E3SlF6bW9YNkQtQUJYdm8wWkcxd2Z6cGRVUW1pR3VyeDdrR3JWRGZpWFhKLUJ4ejhGV0NLZmpmeFZHVFU?oc=5" target="_blank" rel="noopener">WB’s Value Lies in More than Just Capes, Harry Potter, and IP</a>
+                                <div class="feed-time">Den of Geek · Oct 3, 19:30</div>
+                            </li>
+                        
+                        </ul>
+                    
+                </div>
             
         </section>
     </div>
 
-    <section>
-        <h2><span class="kicker">From the Wires</span>News</h2>
-        <hr class="section-rule">
-        
-            <div class="topic-block">
-                <h3>Witcher</h3>
-                
-                    <ul class="feed-list">
-                    
-                        <li class="feed-item">
-                            <a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxQcmVaWXV3ckhnQVo0RHBVY0dZWHZQNk92RmVISTdOWDZsSnFldTFad1M3YWprXzVHSWxkQkMtODNfMER0d3J3RTVUSUVCa05SZklTNzNJcWxraTJwTzlIc3dlcUFtRWh1Ml9oZWFEQjRMb251YzJNS2VySEFpNFl0c2E5OEhGalhmWURZUmdVRkdCak5QNUVEREctTjNILXJPWmgwdzZYSnk5dkNLNDlpV08zWnFBdw?oc=5" target="_blank" rel="noopener">The Witcher 3: Wild Hunt Remastered Review Update Video</a>
-                            <span class="feed-time">IGN India · Oct 3, 02:19</span>
-                        </li>
-                    
-                        <li class="feed-item">
-                            <a href="https://news.google.com/rss/articles/CBMijwFBVV95cUxPTWpHR2Y0WVdzWjAtbDQ2NE5TUmFqN3h2QW9RbzV3LURoc0lWcFd6Sl9oRzgzQjNuVEZsTUpOZEx6YjUxY08zV3lmQTV5a3pGVFhtSUZ3ODFxajNtSkVIV0JVSkxXT0dwQmRFVzI2VjFJOUdERnlOOVgwOXV0LVY2MnFOTnJMclNKTW9sMTV1bw?oc=5" target="_blank" rel="noopener">Netflix’s The Witcher final season is now set for 2027</a>
-                            <span class="feed-time">en.softonic.com · Oct 2, 16:06</span>
-                        </li>
-                    
-                        <li class="feed-item">
-                            <a href="https://news.google.com/rss/articles/CBMipAFBVV95cUxPVG5iX2FGOUpEZEd5UHJPdGVxbkpuRmFfcEpWTnFROFJ5VEJkQWdsbTdQVExNcFZHRTdScjZBU0N2OFktVVFlR2otVzZXcmhvd1MyelpTcHZZT2VndmxZMkxPRUpXVzc3REgwSV9ITjlPVGJJekNpZkExYlNvMjJMZWxUb0w5VWhVREtMdEp5WVhxM1hHMlZFYUd6UVBqMVE0RVpHMA?oc=5" target="_blank" rel="noopener">The Witcher 3: Songs of the Past detailed: changes after Blood and Wine</a>
-                            <span class="feed-time">en.softonic.com · Oct 1, 23:29</span>
-                        </li>
-                    
-                        <li class="feed-item">
-                            <a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxOUDN0UHlEZEh5ZlFJejlMWGJJakFyYk15NzQyQlhINHEzTmJMOU9BdTZTaFZXbmhONjNtTjQ1QUxIWkJTbm94WjhvamYzY2dGa09ac1g2ZUZUSVlkclhBVDFBWDhUOWtJWEo0aHBaZnlOdkRsZGhKVnBjV1pIVnplR2doWlEwUXN1OGluc2hBNXE0Q3U3TEdNelA3U3ZqbWMyTTF0aGhSdEQ2OEVxZ040c3Zn?oc=5" target="_blank" rel="noopener">The Witcher 3 Remastered gets Cyberpunk 2077 crossover: two new Geralt cosmetics</a>
-                            <span class="feed-time">en.softonic.com · Oct 1, 23:29</span>
-                        </li>
-                    
-                        <li class="feed-item">
-                            <a href="https://news.google.com/rss/articles/CBMi5wFBVV95cUxPT2kxMEg1aVdscklEUHQ3OFZPTUlwcEdZMjZQLWNOSFk2TUc5M210R2pnUjJmcl9ENG83NDJSeDZiQTR0RVd5a0hscUJvck95WHFGYW9OTUN2cUxKMzRLUXBKci1uUDZqYnZtTVRXSFdUSV84VXVManhzbkZCaXlCSHItT3dSaDk3aFktbEY0YW5nNEt6RW1IVktKdHdDOXc2R2tpcnNjaXVKMjVzTkJPSkV3SnU2YWFBY1ROaF9vY1NaY01Uak40UHRCZkFJZEdNMC0tMHFQLU93LWpVVGVUY3R4emoyMU3SAewBQVVfeXFMTkV0dWNHWm9idXVLLXZaeWR5UEtzMG55RTNzb0M1MWhSb2pnbDY0MkM4a1RQcy16anR2TWoyODlMeURMalNsX3cxUWo1NnIyM1d1Z0dNUzVWU2o2cGRQTGY2bFVTNk5EdHB6alBTQ0RITzJwV0gyc2hPUk9mS0phVXA0eHdBd2NpZWREeWNiQXJuZVp4SFplZV93TktNY0JYRkdkVnpTc3ZlaVJ3U2pUYV8wQm45bDBNOXdnSjNTU002TXNDUnRkeGZ5cnFhZXc1NlpQMzBlNHZSUU93enNodDlpeEJvNDliNldoZWg?oc=5" target="_blank" rel="noopener">The Witcher 3 Remaster received patch 5.00c - the ability to launch the classic version was returned and graphics were updated</a>
-                            <span class="feed-time">ixbt.games · Oct 1, 22:20</span>
-                        </li>
-                    
-                    </ul>
-                
-            </div>
-        
-            <div class="topic-block">
-                <h3>GTA 6</h3>
-                
-                    <ul class="feed-list">
-                    
-                        <li class="feed-item">
-                            <a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxNVDdIMUc0ZUdHOFhrbWtoUFJfS1BlWTFYODA3Vk04WjZnVW9KRS1uWVRWWlNtRkhiXzBUOWZJcDNvX1BsblNtOHJuTUVmbFZ2MnBZdkR0SGdHRDllX3FaenpOaDdpLW00Vm5nWlVkcFZyTGNybUFLRjdxMFo1QUZEZ05ubUFGT2lfSEhYbDk3MzdQcVcxY1BPcVJYOWxuekpmNnc?oc=5" target="_blank" rel="noopener">Rockstar Vet Dan Houser on GTA 6, New Games, Absurd Ventures</a>
-                            <span class="feed-time">Variety · Oct 2, 21:30</span>
-                        </li>
-                    
-                        <li class="feed-item">
-                            <a href="https://news.google.com/rss/articles/CBMidkFVX3lxTFBKbHNnSnIzQUJYZGlzR0dZMnI2QVpnY3ZrZWpoWG9sSS0zU3FxVEZKdFY2SktOclE5SENfRmZjNDA0MjgzR1lLSnY3UzdETFhpMktRMU5NeFpUSHNBdU1VbTNjV09pQlNWX3VQSFZGSU9FNGljbUE?oc=5" target="_blank" rel="noopener">Grand Theft Auto 6 may be the first GTA to have full-on "sex scenes", Hot Coffee not included</a>
-                            <span class="feed-time">eurogamer.net · Oct 2, 19:29</span>
-                        </li>
-                    
-                        <li class="feed-item">
-                            <a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxObDBTN28wZXN5bFJIZWdxYUZKcEFMR2t5cC13SFZUZGpuRV81NW1fSVdvNGFOdHhidnFyd2RzVEszaEdYZlpZbHhVN1paV3ZqMW5XZDdpcjZRakNpTG9GNXlTM1BoTXhPemdXbVNrLUQyWXZLa0dsX3FXaG4teDNkTW9MVThLeTVNV3BfWFlIWlBjajZoeDZJa3dfa2pDX0FRa3dGNGdDazZXY0R3QzQ5VWNn?oc=5" target="_blank" rel="noopener">Brand New GTA 6 Screenshots Focus on Lucia and Jason's Relationship</a>
-                            <span class="feed-time">IGN India · Oct 2, 21:31</span>
-                        </li>
-                    
-                        <li class="feed-item">
-                            <a href="https://news.google.com/rss/articles/CBMikwFBVV95cUxNREVPekhscXVRbC1aYTJYZ19DVWprRUJabDdOZmE2eGdsb0hGWGtwWjRTOF83VFNQVE5Ta0xTNW0wUVFQZVFrdWh1SUt2OWt2WHJtVU5kZGdoQnJTQnBEanB5NHh3RFRpQ2tOb3N2OWZPa2U4ZE41WDFPMVJUUDVnbkdGZ3hCWTM3S2dZaEVQUUR3MnM?oc=5" target="_blank" rel="noopener">Miami Heat and GTA 6 announce Vice City night for Nov. 18</a>
-                            <span class="feed-time">en.softonic.com · Oct 2, 22:59</span>
-                        </li>
-                    
-                        <li class="feed-item">
-                            <a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxOa1NMcGRYRDY4YkE2aTVROU9Xd3JoSDJvcmNqRmQtdDFUVzdSZGJLVGQ2VWpxZDNETUVnUTc0UmpTWjM1U3ZucUFBUnBTSW15NlVRVTdvR2QycmEtVDh5SXRzYmxMbmxoeDhNVkZWN2lnVnJxUDk3R0dpdHdXNHdkOEtLa1hHbDFWLWVnTkJVMm1tNFVkekJXeXN6bWtjU0cwTjFzcTln0gGrAUFVX3lxTE8wZmRldk5EM056bV9VMGViWmtpZmRmZGFxN0NQSzBKRXBIdkQtRGpKVzlwcV9kU01SZUczbVRneEdneEVsWkY2SkVFb2tmZVQ2cE84bTJkWFd1ekVua19ZRVFwcnJlV3ZyaUEzQlNYMTdHbWhRejY2OHRoQzNZRHA5RTc4VF9kQ2N6OWtzeTc5S3Z6dzVYRjU1TWloTTNDN1hFU0lVM0VJelJYQQ?oc=5" target="_blank" rel="noopener">GTA 6 receives official age ratings globally ahead of launch | Tap to know more | Inshorts</a>
-                            <span class="feed-time">Inshorts · Oct 2, 18:37</span>
-                        </li>
-                    
-                    </ul>
-                
-            </div>
-        
-            <div class="topic-block">
-                <h3>Harry Potter</h3>
-                
-                    <ul class="feed-list">
-                    
-                        <li class="feed-item">
-                            <a href="https://news.google.com/rss/articles/CBMid0FVX3lxTE1CZVN0QWhVaFhRQmxVSVFUZkdVQktOU3lHeHVMOEhpbXk0ZVFMTkhCSlctU1JXTE0xbldEbTE0YlY4MldLeTU5Wjc0akROMEVqakdKSnd1cG5DVE81RE1MVFBqLTA2YWhrcERxaGlmUkh4OVZXQ2Rv?oc=5" target="_blank" rel="noopener">Harry Potter Season 1 Gets Glowing Early Review From HBO CEO</a>
-                            <span class="feed-time">screenrant.com · Oct 2, 21:19</span>
-                        </li>
-                    
-                        <li class="feed-item">
-                            <a href="https://news.google.com/rss/articles/CBMiyAFBVV95cUxQSjMtOXJpTkEwZGx1S18wRlpaUmYwRkxwbHRQVm9LUTJjb25HS0RwUDZJOHJzNjRHZnNvZXVqTVUtN0g0cTZIVGQ2aTFNdWx2cXkxWkU2LU5hQlRscFJkZnhXMkhfbGQ3d2ZXa3BuaWlaVHFTdUhualN4TGZqVWt3VWRaU3Z0c1JiekZVOXducTgtZW5pSnp2Wmw0RzIzTzhCWmxkMUktVWZMVGFRd0VIVkhYSDBWajVUQjlLMkp2U0JjMUxGSDdLYw?oc=5" target="_blank" rel="noopener">From ‘Harry Potter’ To ‘Game Of Thrones,’ Every IP David Ellison’s Skydance Now Owns</a>
-                            <span class="feed-time">Forbes · Oct 2, 19:34</span>
-                        </li>
-                    
-                        <li class="feed-item">
-                            <a href="https://news.google.com/rss/articles/CBMijAFBVV95cUxNQ0dtUldkekdDUE1pTHRXMGQwWDJ4bzhQbThwcnhLWUtuLTVUclRDaExRMVZuMU00ekp5Ny1mT0h4Z3BoWjNNSFl1ODAteHNsdWVWaVVrcnlYQUphN1NDSXRERnBCUUxPQnRrTkk1OU1sbDNNN0FrVm5qcTZLX2w1d3ZoeE03aWZMbnNrYw?oc=5" target="_blank" rel="noopener">HBO's Harry Potter and Hagrid Officially Arrive on Streaming 2 Months Early</a>
-                            <span class="feed-time">Collider · Oct 1, 21:01</span>
-                        </li>
-                    
-                        <li class="feed-item">
-                            <a href="https://news.google.com/rss/articles/CBMiuAFBVV95cUxPRGZ1YUR2Y3Bick9BcGNuNGNIMzJkVWotaWFPclpNdDdWdUdNcVBsYTRWb20wY25FNDdLQU5ObGludGdWSTloZmhkaUZoZE1yU2lLa19BUEVFSUFlZnNtbnlZb0NGbDdEWGgxVGR0ai1XWXRhaFFIRFZna0lfajZUME5IU0txNkZ1Y1pKOHV4YmU5UXJ5LUNCN05FQmhZT1I0eWhmVVRZVV9NbzJ5RVZJV0lzbjBCYk1T?oc=5" target="_blank" rel="noopener">Harry Potter fans will be spellbound by this Ghent hotel haunt</a>
-                            <span class="feed-time">The Independent · Oct 2, 23:26</span>
-                        </li>
-                    
-                        <li class="feed-item">
-                            <a href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxOV3g5OTZmVVhETHdKNnpLcXBSUnNzRlF4b0d0djloVnNuX0Zaekt0Z1JVMXJaRXRUVWxjUDRqTlZ1MHBJelFJTVl3bnBrR0Y2c21GWjdfVDZPNmplbDhXaXF3QWIweHZYbE0zdnNscUFtRWpid2RqNG5yUTZ2c1N5d05QNEdUbGFoZHoxVWxoeWRmYW1zRTdRS0kyV2N6Zm1rSkJSX2dySUp6dXM?oc=5" target="_blank" rel="noopener">This Harry Potter Edition Phone From Realme Is the Coolest Collab of 2026</a>
-                            <span class="feed-time">CNET · Oct 3, 17:30</span>
-                        </li>
-                    
-                    </ul>
-                
-            </div>
-        
-    </section>
-
     <footer>
-        Built 2026-10-03 20:11 IST · Edition for Mayank
+        Built 2026-10-04 01:57 IST · Edition for Mayank
     </footer>
 
 </div>

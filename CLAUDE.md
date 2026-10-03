@@ -1,36 +1,58 @@
 # Daily Brief
 
-A personal "daily newspaper" built from Notion tasks + workout dashboard, webcomic RSS feeds, MusicBrainz release data for followed artists, and Google News RSS for followed topics. GitHub Actions runs the notebook every morning, renders a styled HTML page, and commits it back to the repo. GitHub Pages serves the result.
+Personal "daily newspaper" built from Notion (tasks + workout dashboard), live weather, countdown dates, webcomic RSS feeds, MusicBrainz release data, Spotify as a music fallback, and Google News. GitHub Actions runs it each morning, renders a front page plus one page per news topic, and commits them back.
+
+## Front page sections
+
+1. **Weather** — horizontal timeline across 24 hours (every 3h), sunrise/sunset markers, min/max.
+2. **Tasks + Workout + Countdowns** — three slim columns.
+3. **Music** — new releases if any, else a Spotify "soundtrack of the day" embed.
+4. **Comics + Headlines** — comics on the left, grouped news on the right with links to per-topic pages.
+
+Each news group also gets its own page under `output/news/<slug>.html` with the full set of stories for that group.
 
 ## Layout
 
 ```
 .
-├── .github/workflows/daily-brief.yml   # Daily cron + manual trigger
-├── data/                               # (reserved for intermediate CSVs if ever needed)
-├── documents/                          # (reserved)
+├── .github/workflows/daily-brief.yml
+├── data/                               (reserved)
+├── documents/                          (reserved)
 ├── output/
-│   └── daily_brief.html                # Rebuilt daily, committed by Actions
+│   ├── daily_brief.html                front page
+│   └── news/
+│       ├── ai.html                     per-topic pages
+│       ├── witcher.html
+│       └── …
 ├── scripts/
-│   ├── build_brief.ipynb               # Config + all build logic
-│   ├── template_html.html              # Jinja2 shell
-│   └── template_css.css                # Styling (inlined at build time)
+│   ├── build_brief.ipynb               config + build
+│   ├── template_html.html              front-page shell
+│   ├── template_topic_html.html        topic-page shell
+│   └── template_css.css                shared styles
 ├── .gitignore
 ├── CLAUDE.md
-├── notion_tasks_token.txt              # LOCAL ONLY — gitignored
-├── notion_workoutdash_token.txt        # LOCAL ONLY — gitignored
+├── notion_tasks_token.txt              LOCAL ONLY, gitignored
+├── notion_workoutdash_token.txt        LOCAL ONLY, gitignored
 └── requirements.txt
 ```
 
-## What goes in the brief
+## Config highlights
 
-- **Today's tasks** — Notion rows where `Task Date == today`.
-- **Today's workout** — Notion rows where `Day` contains today's weekday, `Loadout` contains the configured loadout, `In Rotation` is checked.
-- **Webcomics** — latest strips from each configured RSS feed in the last couple of days.
-- **Music releases** — release-groups from MusicBrainz for each configured artist in the last `music_lookback_days`.
-- **News** — Google News RSS for each configured topic.
+All in the `CONFIG` dict at the top of `scripts/build_brief.ipynb`.
 
-All of this is editable from the `CONFIG` cell at the top of `scripts/build_brief.ipynb`. There is no separate config file.
+- `mask_private_tasks: True` + a `Private` checkbox column on the Notion Tasks database → private tasks render as `(private task)` in the HTML. Safe for a public repo.
+- `loadout` — exact match to a Notion `Loadout` multi-select option.
+- `weather` — latitude, longitude, name, metric/imperial. No API key.
+- `countdowns` — list of `{name, date}`. Shows days remaining.
+- `webcomic_feeds` — each entry has its own `lookback_days` and `items` cap.
+- `music_artists` — name + Spotify artist ID. The ID is the last path segment of the artist's `open.spotify.com` URL. Leave blank to skip the soundtrack.
+- `news_feeds` — each entry has a `name`, a list of `queries` (merged + deduped), and an `items` cap for the front page. `news_items_on_topic_page` controls the per-topic page.
+
+## Spotify soundtrack behavior
+
+- Picked deterministically by day-of-year, so you get a different artist each morning.
+- Only shown when there are no new music releases from `music_artists`.
+- **Autoplay with sound is blocked by every modern browser** unless you've already clicked something on the page. The embed loads ready; one click plays it. There is no browser-side workaround for this.
 
 ## Running locally
 
@@ -40,7 +62,6 @@ source .venv/bin/activate       # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 pip install jupyter
 
-# Put your Notion integration tokens in these two files (gitignored):
 echo "secret_xxx..." > notion_tasks_token.txt
 echo "secret_yyy..." > notion_workoutdash_token.txt
 
@@ -49,32 +70,14 @@ jupyter notebook scripts/build_brief.ipynb
 jupyter nbconvert --to notebook --execute scripts/build_brief.ipynb --output /tmp/executed.ipynb
 ```
 
-Open `output/daily_brief.html` in a browser.
+Open `output/daily_brief.html`.
 
-## GitHub Actions setup
+## GitHub Actions
 
-See the step-by-step guide in the chat where this project was created. The short version:
-
-1. Push this repo to GitHub.
-2. **Settings → Secrets and variables → Actions** → add two repository secrets:
-   - `NOTION_TASKS_TOKEN`
-   - `NOTION_WORKOUT_TOKEN`
-3. Share each Notion database with the matching integration (so the token has access).
-4. **Settings → Actions → General → Workflow permissions** → "Read and write permissions".
-5. **Settings → Pages** → source: "Deploy from a branch", branch `main`, folder `/output`. Your brief will be live at `https://<username>.github.io/<repo>/daily_brief.html`.
-6. The workflow runs at 00:30 UTC (06:00 IST) daily and whenever you click **Run workflow**.
+Secrets: `NOTION_TASKS_TOKEN`, `NOTION_WORKOUT_TOKEN`.
+Permissions: Settings → Actions → General → "Read and write permissions".
+Schedule: 00:30 UTC = 06:00 IST, daily.
 
 ## Cost
 
-Public repo: GitHub Actions is free with no cap. One run is under a minute.
-
-Private repo: 2,000 free Actions minutes/month on the Free tier. One run of this is ~1 minute, so ~30 minutes/month — well under the limit.
-
-## Changing the loadout, feeds, bands or topics
-
-Edit the `CONFIG` dict in `scripts/build_brief.ipynb` and commit. The next scheduled run picks it up. Keys you'll touch most:
-
-- `loadout` — must match a Notion `Loadout` option exactly (e.g. `"1 · Full Gym"`).
-- `webcomic_feeds` — list of `{name, url}`.
-- `bands` — list of artist names (matched via MusicBrainz search).
-- `news_topics` — list of search strings for Google News.
+Public repo: Actions unlimited. Private repo: 2,000 min/month free; one run ~1 min.
