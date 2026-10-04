@@ -1,19 +1,27 @@
 name: Build the Daily Brief
 on:
   schedule:
-    # 00:00 and 12:00 IST (UTC+5:30) are 18:30 and 06:30 UTC
-    - cron: '30 6,18 * * *'
-    
-    # --- ALTERNATIVE TIMEZONE OPTIONS (Run at 00:00 & 12:00 local time) ---
-    # - cron: '0 0,12 * * *'   # 00:00 & 12:00 UTC / GMT
-    # - cron: '0 5,17 * * *'   # 00:00 & 12:00 EST / 05:00 & 17:00 UTC (US Eastern Standard, UTC-5)
-    # - cron: '0 4,16 * * *'   # 00:00 & 12:00 EDT / 04:00 & 16:00 UTC (US Eastern Daylight, UTC-4)
-    # - cron: '0 8,20 * * *'   # 00:00 & 12:00 PST / 08:00 & 20:00 UTC (US Pacific Standard, UTC-8)
-    # - cron: '0 11,23 * * *'  # 00:00 & 12:00 CET / 11:00 & 23:00 UTC (Central European, UTC+1)
-    # - cron: '0 10,22 * * *'  # 00:00 & 12:00 CEST / 10:00 & 22:00 UTC (Central European Summer, UTC+2)
-    # - cron: '0 3,15 * * *'   # 00:00 & 12:00 JST / 03:00 & 15:00 UTC (Japan Standard, UTC+9)
-    # - cron: '0 1,13 * * *'   # 00:00 & 12:00 AEDT / 01:00 & 13:00 UTC (Australian Eastern Daylight, UTC+11)
-    
+    # Four runs daily: 00:47, 06:47, 12:47 and 18:47 in your chosen timezone.
+    # Keep EXACTLY ONE cron line uncommented. All cron expressions below use UTC.
+    # Switch timezone by commenting the active line and uncommenting an alternative.
+    # UTC schedules do not adjust for daylight saving: switch seasonal lines as needed.
+    # These are target times; GitHub may delay or skip scheduled runs.
+
+    - cron: '17 1,7,13,19 * * *'     # IST  (India, UTC+5:30): 00:47, 06:47, 12:47, 18:47
+
+    # --- HOT-SWAPPABLE TIMEZONE OPTIONS: SAME FOUR LOCAL TIMES ---
+    # - cron: '47 0,6,12,18 * * *'   # UTC / GMT             : 00:47, 06:47, 12:47, 18:47
+    # - cron: '47 5,11,17,23 * * *'  # EST  (US Eastern, -5)  : 00:47, 06:47, 12:47, 18:47
+    # - cron: '47 4,10,16,22 * * *'  # EDT  (US Eastern, -4)  : 00:47, 06:47, 12:47, 18:47
+    # - cron: '47 2,8,14,20 * * *'   # PST  (US Pacific, -8)  : 00:47, 06:47, 12:47, 18:47
+    # - cron: '47 1,7,13,19 * * *'   # PDT  (US Pacific, -7)  : 00:47, 06:47, 12:47, 18:47
+    # - cron: '47 5,11,17,23 * * *'  # BST  (UK summer, +1)   : 00:47, 06:47, 12:47, 18:47
+    # - cron: '47 5,11,17,23 * * *'  # CET  (Central Europe,+1): 00:47, 06:47, 12:47, 18:47
+    # - cron: '47 4,10,16,22 * * *'  # CEST (Central Europe,+2): 00:47, 06:47, 12:47, 18:47
+    # - cron: '47 3,9,15,21 * * *'   # JST  (Japan, +9)       : 00:47, 06:47, 12:47, 18:47
+    # - cron: '47 2,8,14,20 * * *'   # AEST (Australia, +10)  : 00:47, 06:47, 12:47, 18:47
+    # - cron: '47 1,7,13,19 * * *'   # AEDT (Australia, +11)  : 00:47, 06:47, 12:47, 18:47
+
   workflow_dispatch:
 permissions:
   contents: write
