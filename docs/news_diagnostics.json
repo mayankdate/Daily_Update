@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-10-04T19:10:03.637541+05:30",
+  "built_at": "2026-10-04T19:11:10.857202+05:30",
   "sources": [
     {
       "id": "ars",
@@ -87,11 +87,11 @@
       "discovery": false,
       "group_id": "ai",
       "group_name": "AI & Models",
-      "score": 52.7,
+      "score": 52.6,
       "parts": {
         "relevance": 15.0,
         "reliability": 21.2,
-        "freshness": 11.5,
+        "freshness": 11.4,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -1487,11 +1487,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 49.5,
+      "score": 49.4,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.0,
-        "freshness": 3.5,
+        "freshness": 3.4,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -3129,11 +3129,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 59.6,
+      "score": 59.5,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.0,
-        "freshness": 13.6,
+        "freshness": 13.5,
         "usefulness": 3.0,
         "importance": 2.0
       },
