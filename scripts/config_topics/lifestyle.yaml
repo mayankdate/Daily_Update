@@ -1,0 +1,91 @@
+# Edit this topic’s watchlist in keywords/boost/query; source IDs refer to config_sources.yaml.
+# UTF-8; spaces for indentation; quote dates and IDs. Tokens stay outside YAML.
+id: lifestyle
+name: Lifestyle
+description: Men’s style, world cuisines & travel beyond the usual destinations.
+sources:
+- fashionbeans
+- guardian_fashion
+- guardian_food
+- guardian_travel
+- seriouseats
+- lonelyplanet
+- cnalifestyle
+- scmp
+- japantimes
+dedicated_sources:
+- guardian_food
+- guardian_travel
+- seriouseats
+- lonelyplanet
+keywords:
+- men's fashion
+- mens fashion
+- menswear
+- men’s style
+- men's style
+- mens style
+- male grooming
+- mens grooming
+- capsule wardrobe
+- tailoring
+- streetwear
+- sneakers
+- outfit
+- linen
+- recipe
+- cuisine
+- cooking
+- restaurant
+- street food
+- coffee
+- food culture
+- culinary
+- travel
+- destination
+- itinerary
+- rail travel
+- train journey
+- hiking
+- city break
+- national park
+- tourism
+- hotel
+- sustainable travel
+- visa-free
+boost:
+- menswear
+- capsule wardrobe
+- tailoring
+- breathable
+- tropical climate
+- recipe
+- high protein
+- world cuisine
+- street food
+- coffee
+- itinerary
+- rail travel
+- slow travel
+- local culture
+- off-season
+- budget travel
+exclude:
+- coupon
+- promo code
+- shopping deals
+- celebrity diet
+- miracle weight loss
+- detox cleanse
+query: menswear OR "men's style" OR "world cuisine" OR "street food" OR "travel guide" OR "rail travel"
+  OR "new destinations"
+useful_terms:
+- guide
+- how to
+- recipe
+- itinerary
+- practical
+- packing
+- seasonal
+- budget
+- review

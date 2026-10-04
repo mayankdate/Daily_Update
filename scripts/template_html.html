@@ -26,10 +26,11 @@
  <div class="weather-main">
   <div class="weather-heading"><div><span class="eyebrow">LOCAL ATMOSPHERE</span><h2 id="weather-location">{{ weather_client.location }} <span id="weather-summary">{% if weather %}{{ weather.emoji }} {{ weather.summary }}{% endif %}</span></h2></div>
   <div class="sun-times" id="weather-range">{% if weather %}{{ weather.min }}–{{ weather.max }}{{ weather.unit }}<br>Sun ↑ {{ weather.sunrise }} / ↓ {{ weather.sunset }}{% endif %}</div></div>
-  <p class="weather-note" id="weather-note">{% if weather %}{{ weather.date }} · 00:00–23:00 · rain probability in % · updated {{ weather.updated }}{% else %}Weather unavailable at build time.{% endif %}</p>
+  <p class="weather-current" id="weather-current" aria-live="polite">Hourly forecast · enable JavaScript for the current-hour marker.</p>
+  <p class="weather-note" id="weather-note">{% if weather %}{{ weather.date }} · 00:00–23:00 · cached forecast · updated {{ weather.updated }}{% else %}Weather unavailable at build time.{% endif %}</p>
   <div class="hourly-scroll" tabindex="0" role="region" aria-label="Hourly forecast, scroll horizontally">
    <div class="hourly-cells" id="hourly-cells">
-   {% if weather %}{% for c in weather.cells %}<div class="hour-cell">
+   {% if weather %}{% for c in weather.cells %}<div class="hour-cell" data-time="{{ c.time }}" data-label="{{ c.label }}" data-emoji="{{ c.emoji }}" data-temp="{{ c.temp }}">
     <span class="hour-time">{{ c.day }} {{ c.hour }}</span><span class="weather-symbol" title="{{ c.label }}">{{ c.emoji }}</span>
     <strong>{{ c.temp }}°</strong><span>Feels {{ c.feels }}°</span><span class="rain">Rain {{ c.precip }}%</span><span>RH {{ c.humidity }}%</span><span>{{ c.wind }} {{ weather.wind_unit }}</span>
    </div>{% endfor %}{% endif %}
@@ -77,13 +78,12 @@
  </div>
  <p class="results-note" id="results-note" aria-live="polite">Ranked for your interests · source details on every story.</p>
  <div class="stories" id="stories">
- {% for n in news %}<article class="story {% if loop.first %}lead-story{% endif %}" data-group="{{ n.group_id }}" data-score="{{ n.score }}" data-time="{{ n.timestamp }}">
+ {% for n in news %}<article class="story" data-group="{{ n.group_id }}" data-score="{{ n.score }}" data-time="{{ n.timestamp }}">
   <div class="story-top"><span class="eyebrow topic-name">{{ n.group_name }}</span><span class="story-tag">{{ n.tag }}</span></div>
   <h3><a href="{{ n.url }}" target="_blank" rel="noopener noreferrer">{{ n.title }} <span class="external-arrow" aria-hidden="true">↗</span></a></h3>
-  {% if n.summary %}<p class="story-excerpt">{{ n.summary }}</p>{% endif %}
   <div class="story-bottom"><div class="story-byline"><strong>{{ n.source }}</strong><span>{{ n.kind }} · <time datetime="{{ n.timestamp }}">{{ n.when }}</time></span></div>
-  <div class="ranking-preview"><span>Why this story</span><p>{{ (n.reasons | default([], true) | first) | default('Selected for topic relevance and source preference.', true) }}</p></div>
-  <details class="ranking"><summary><span class="ranking-action"><span class="ranking-closed">Show score breakdown</span><span class="ranking-open">Hide score breakdown</span> <span class="ranking-chevron" aria-hidden="true">⌄</span></span><span class="ranking-score">{{ n.score | round(0) | int }}/100</span></summary><div class="ranking-body"><p>Weighted points toward priority / 100.</p><ul>{% for reason in n.reasons | default([], true) %}<li>{{ reason }}</li>{% else %}<li>Selected for topic relevance and source preference.</li>{% endfor %}</ul><dl>{% for key,value in (n.parts | default({}, true)).items() %}<div><dt>{{ 'Source preference' if key == 'reliability' else key | capitalize }}</dt><dd>{{ value }} pts</dd></div>{% else %}<div><dt>Breakdown unavailable</dt><dd>Rebuild this edition</dd></div>{% endfor %}{% if n.penalty | default(0) %}<div><dt>Penalty</dt><dd>−{{ n.penalty }} pts</dd></div>{% endif %}</dl><p class="score-caveat">Editorial ranking, not a fact-check.</p></div></details></div>
+  <div class="ranking-preview"><p title="Why this story">{{ (n.reasons | default([], true) | first) | default('Selected for topic relevance and source preference.', true) }}</p></div>
+  <details class="ranking"><summary><span class="ranking-action"><span class="ranking-closed">Details & score</span><span class="ranking-open">Close details</span> <span class="ranking-chevron" aria-hidden="true">⌄</span></span><span class="ranking-score">{{ n.score | round(0) | int }}/100</span></summary><div class="ranking-body">{% if n.summary %}<p class="story-excerpt">{{ n.summary }}</p>{% endif %}<p>Weighted points toward priority / 100.</p><ul>{% for reason in n.reasons | default([], true) %}<li>{{ reason }}</li>{% else %}<li>Selected for topic relevance and source preference.</li>{% endfor %}</ul><dl>{% for key,value in (n.parts | default({}, true)).items() %}<div><dt>{{ 'Source preference' if key == 'reliability' else key | capitalize }}</dt><dd>{{ value }} pts</dd></div>{% else %}<div><dt>Breakdown unavailable</dt><dd>Rebuild this edition</dd></div>{% endfor %}{% if n.penalty | default(0) %}<div><dt>Penalty</dt><dd>−{{ n.penalty }} pts</dd></div>{% endif %}</dl><p class="score-caveat">Editorial ranking, not a fact-check.</p></div></details></div>
  </article>{% endfor %}
  </div>
  <p class="empty-news" id="empty-news" {% if news %}hidden{% endif %}>No stories matched this edition. Check source health below or widen the lookback window.</p>
@@ -111,8 +111,8 @@
   const query=input.value.trim().toLocaleLowerCase();
   const filtered=cards.filter(c=>(topic==='all'||c.dataset.group===topic)&&c.textContent.toLocaleLowerCase().includes(query));
   filtered.sort((a,b)=>sort.value==='newest'?Date.parse(b.dataset.time)-Date.parse(a.dataset.time):Number(b.dataset.score)-Number(a.dataset.score));
-  cards.forEach(c=>{c.hidden=true;c.classList.remove('lead-story');});
-  filtered.forEach((c,i)=>{container.appendChild(c);c.hidden=i>=limit;if(i===0)c.classList.add('lead-story');});
+  cards.forEach(c=>{c.hidden=true;});
+  filtered.forEach((c,i)=>{container.appendChild(c);c.hidden=i>=limit;});
   document.getElementById('results-note').textContent=`${Math.min(limit,filtered.length)} of ${filtered.length} stories · ${sort.value==='newest'?'newest first':'ranked for your interests'}`;
   const empty=document.getElementById('empty-news');empty.hidden=filtered.length>0;
   empty.textContent=cards.length?'No stories match these filters. Try another topic or search.':'No stories selected. Check source health below or widen the lookback window.';
@@ -123,34 +123,61 @@
   topic=b.dataset.topic;limit=12;document.querySelectorAll('[data-topic]').forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-pressed',String(x===b));});update();
  }));
  input.addEventListener('input',()=>{limit=12;update();});sort.addEventListener('change',()=>{limit=12;update();});more.addEventListener('click',()=>{limit+=12;update();});update();
- const cfg=JSON.parse(document.getElementById('weather-config').textContent);let lastWeather=Date.parse(cfg.built),busy=false;
+ const cfg=JSON.parse(document.getElementById('weather-config').textContent);
+ let lastWeather=Date.parse(cfg.cachedAt||cfg.built),lastAttempt=0,busy=false,highlighted='',refreshFailed=!!cfg.initialFailure;
  const rounded=x=>x==null?'—':Math.round(x);
+ function localHour(){
+  const parts=Object.fromEntries(new Intl.DateTimeFormat('en-CA',{timeZone:cfg.timezone,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',hourCycle:'h23'}).formatToParts(new Date()).map(p=>[p.type,p.value]));
+  return `${parts.year}-${parts.month}-${parts.day}T${parts.hour}:00`;
+ }
  const localDay=stamp=>new Intl.DateTimeFormat('en-CA',{timeZone:cfg.timezone,year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(stamp));
+ function highlightWeather(){
+  const now=localHour(),cells=[...document.querySelectorAll('.hour-cell')];let current=null;
+  cells.forEach(cell=>{
+   const active=cell.dataset.time===now;cell.classList.toggle('current-hour',active);
+   cell.classList.toggle('past-hour',cell.dataset.time<now);
+   if(active){cell.setAttribute('aria-current','time');current=cell;}else cell.removeAttribute('aria-current');
+  });
+  const status=document.getElementById('weather-current');
+  status.textContent=current?`${current.dataset.emoji} ${current.dataset.temp}${cfg.unit} · ${current.dataset.label} · current-hour forecast (${now.slice(11)})`:'No cached forecast for the current hour. Refresh or rebuild this edition.';
+  const date=cells.length?cells[0].dataset.time.slice(0,10):'';
+  const stamp=new Intl.DateTimeFormat('en-IN',{timeZone:cfg.timezone,dateStyle:'medium',timeStyle:'short'}).format(new Date(lastWeather));
+  document.getElementById('weather-note').textContent=(refreshFailed?'Refresh unavailable · ':'')+(date?`${date} · 00:00–23:00 · cached ${stamp}`:'Weather unavailable')+' · '+cfg.timezone+' · forecast, not a live observation';
+  // Move the horizontal strip only on initial load or an hour change, not each minute.
+  if(current&&highlighted!==now){
+   const scroller=document.querySelector('.hourly-scroll');
+   const left=current.getBoundingClientRect().left-scroller.getBoundingClientRect().left+scroller.scrollLeft;
+   if(scroller.scrollTo)scroller.scrollTo({left:Math.max(0,left),behavior:'auto'});else scroller.scrollLeft=Math.max(0,left);
+  }
+  highlighted=current?now:'';
+ }
  async function refreshWeather(){
-  if(!cfg.enabled||busy||document.hidden||(Date.now()-lastWeather<3600000&&localDay(lastWeather)===localDay(Date.now())))return;
-  busy=true;const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),15000);
+  if(!cfg.enabled||busy||document.hidden||(Date.now()-lastWeather<3600000&&localDay(lastWeather)===localDay(Date.now()))||Date.now()-lastAttempt<300000)return;
+  busy=true;lastAttempt=Date.now();const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),15000);
   try{
    const r=await fetch('https://api.open-meteo.com/v1/forecast?'+new URLSearchParams(cfg.params),{signal:ctrl.signal});if(!r.ok)throw new Error('Weather unavailable');
-   const data=await r.json(),h=data.hourly,d=data.daily;
-   const parts=Object.fromEntries(new Intl.DateTimeFormat('en-CA',{timeZone:cfg.timezone,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',hourCycle:'h23'}).formatToParts(new Date()).map(p=>[p.type,p.value]));
-   const calendarDay=`${parts.year}-${parts.month}-${parts.day}`;
+   const data=await r.json(),h=data.hourly,d=data.daily,calendarDay=localHour().slice(0,10);
    const selected=h.time.map((t,i)=>({t,i})).filter(x=>x.t.slice(0,10)===calendarDay);
-   if(!selected.length)throw new Error('Empty forecast');
+   const dayIndex=d.time.indexOf(calendarDay);
+   if(!selected.length||dayIndex<0)throw new Error('Incomplete forecast');
    const frag=document.createDocumentFragment();
    selected.forEach(({t,i})=>{
     const label=cfg.labels[h.weather_code[i]]||['Weather','🌡️'];const cell=document.createElement('div');cell.className='hour-cell';
-    const day='';
-    [[`${day} ${t.slice(11,16)}`,'hour-time'],[label[1],'weather-symbol'],[`${rounded(h.temperature_2m[i])}°`,'temperature'],[`Feels ${rounded(h.apparent_temperature[i])}°`,''],[`Rain ${rounded(h.precipitation_probability[i])}%`,'rain'],[`RH ${rounded(h.relative_humidity_2m[i])}%`,''],[`${rounded(h.wind_speed_10m[i])} ${cfg.windUnit}`,'']].forEach(([text,cls])=>{const el=document.createElement(cls==='temperature'?'strong':'span');el.className=cls;el.textContent=text;if(cls==='weather-symbol')el.title=label[0];cell.appendChild(el);});frag.appendChild(cell);
+    Object.assign(cell.dataset,{time:t,label:label[0],emoji:label[1],temp:String(rounded(h.temperature_2m[i]))});
+    [[t.slice(11,16),'hour-time'],[label[1],'weather-symbol'],[`${rounded(h.temperature_2m[i])}°`,'temperature'],[`Feels ${rounded(h.apparent_temperature[i])}°`,''],[`Rain ${rounded(h.precipitation_probability[i])}%`,'rain'],[`RH ${rounded(h.relative_humidity_2m[i])}%`,''],[`${rounded(h.wind_speed_10m[i])} ${cfg.windUnit}`,'']].forEach(([text,cls])=>{const el=document.createElement(cls==='temperature'?'strong':'span');el.className=cls;el.textContent=text;if(cls==='weather-symbol')el.title=label[0];cell.appendChild(el);});frag.appendChild(cell);
    });
+   const lab=cfg.labels[d.weather_code[dayIndex]]||['Weather','🌡️'];
+   const range=`${rounded(d.temperature_2m_min[dayIndex])}–${rounded(d.temperature_2m_max[dayIndex])}${cfg.unit} · Sun ↑ ${d.sunrise[dayIndex].slice(-5)} / ↓ ${d.sunset[dayIndex].slice(-5)}`;
    document.getElementById('hourly-cells').replaceChildren(frag);
-   const dayIndex=d.time.indexOf(calendarDay);if(dayIndex<0)throw new Error('Missing daily forecast');
-   const lab=cfg.labels[d.weather_code[dayIndex]]||['Weather','🌡️'];document.getElementById('weather-summary').textContent=lab[1]+' '+lab[0];
-   document.getElementById('weather-range').textContent=`${rounded(d.temperature_2m_min[dayIndex])}–${rounded(d.temperature_2m_max[dayIndex])}${cfg.unit} · Sun ↑ ${d.sunrise[dayIndex].slice(-5)} / ↓ ${d.sunset[dayIndex].slice(-5)}`;
-   document.getElementById('weather-note').textContent=calendarDay+' · 00:00–23:00 · rain probability in % · updated '+new Intl.DateTimeFormat('en-IN',{timeZone:cfg.timezone,dateStyle:'medium',timeStyle:'short'}).format(new Date());lastWeather=Date.now();
-  }catch(e){document.getElementById('weather-note').textContent='Refresh unavailable · showing the last forecast, if available. Edition built '+new Date(cfg.built).toLocaleString();}
-  finally{clearTimeout(timer);busy=false;}
+   document.getElementById('weather-summary').textContent=lab[1]+' '+lab[0];
+   document.getElementById('weather-range').textContent=range;
+   lastWeather=Date.now();refreshFailed=false;
+  }catch(e){refreshFailed=true;}
+  finally{clearTimeout(timer);busy=false;highlightWeather();}
  }
- refreshWeather();setInterval(refreshWeather,3600000);document.addEventListener('visibilitychange',refreshWeather);
+ function weatherTick(){if(!document.hidden){highlightWeather();refreshWeather();}}
+ weatherTick();setInterval(weatherTick,60000);document.addEventListener('visibilitychange',weatherTick);
+
 })();
 </script>
 </body>

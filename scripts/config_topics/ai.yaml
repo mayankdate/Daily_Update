@@ -1,0 +1,59 @@
+# Edit this topic’s watchlist in keywords/boost/query; source IDs refer to config_sources.yaml.
+# UTF-8; spaces for indentation; quote dates and IDs. Tokens stay outside YAML.
+id: ai
+name: AI & Models
+description: Models, research & what you can build.
+sources:
+- openai
+- anthropic
+- huggingface
+- ars
+- restofworld
+- verge
+dedicated_sources:
+- openai
+- anthropic
+- huggingface
+keywords:
+- artificial intelligence
+- generative ai
+- language model
+- large language model
+- llm
+- claude
+- chatgpt
+- machine learning
+- openai
+- anthropic
+- hugging face
+- gemma
+- ollama
+- llama
+- mistral
+- qwen
+- deepseek
+- transformer model
+- diffusion model
+boost:
+- local
+- open-source
+- inference
+- agent
+- reasoning
+- '4060'
+- ollama
+- gemma
+- quantization
+- on-device
+- consumer gpu
+- vram
+- reproducible
+- model weights
+- evaluation
+exclude:
+- stock price
+- price target
+- ai stocks
+- ai girlfriend
+query: '"artificial intelligence" OR "language model" OR "open weights" OR Claude OR ChatGPT OR Gemma
+  OR Qwen OR DeepSeek'

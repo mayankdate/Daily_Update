@@ -1,0 +1,33 @@
+# Frequently changed: countdowns, music artists and webcomic subscriptions.
+# UTF-8; spaces for indentation; quote dates and IDs. Tokens stay outside YAML.
+countdowns:
+- name: 90-Day Fitness Challenge
+  date: '2026-12-31'
+- name: Birthday
+  date: '2027-04-03'
+
+#WEBS COMICS
+webcomic_feeds:
+- name: xkcd
+  url: https://xkcd.com/rss.xml
+  lookback_days: 10
+  items: 2
+- name: oglaf
+  url: https://www.oglaf.com/feeds/rss/
+  lookback_days: 2
+  items: 2
+- name: IRO
+  url: https://www.irovedout.com/feed/
+  lookback_days: 2
+  items: 2
+
+# MUSIC
+music_artists:
+- name: Of Monsters and Men
+  spotify_id: 4dwdTW1Lfiq0cM8nBAqIIz
+- name: Woodkid
+  spotify_id: 44TGR1CzjKBxSHsSEy7bi9
+- name: Sia
+  spotify_id: 5WUlDfRSoLAfcVSX1WnrxN
+  #Lookback days for music feeds
+music_lookback_days: 15

@@ -1,0 +1,54 @@
+# Edit this topic’s watchlist in keywords/boost/query; source IDs refer to config_sources.yaml.
+# UTF-8; spaces for indentation; quote dates and IDs. Tokens stay outside YAML.
+id: gaming
+name: Gaming
+description: New worlds, meaningful updates & your watchlist.
+sources:
+- pcgamer
+- eurogamer
+- igngames
+- ars
+dedicated_sources:
+- pcgamer
+- eurogamer
+- igngames
+keywords:
+- video game
+- videogame
+- gaming
+- witcher
+- grand theft auto
+- gta 6
+- gta vi
+- steam
+- rpg
+- baldur
+- larian
+- disco elysium
+- nintendo
+- playstation
+- xbox
+- game developer
+boost:
+- witcher 4
+- witcher iv
+- gta 6
+- gta vi
+- grand theft auto
+- rpg
+- disco elysium
+- baldur
+- steam deck
+- larian
+- modding
+- patch notes
+- release date
+- indie game
+exclude:
+- coupon
+- promo code
+- sports betting
+- casino
+- slot machine
+query: '"Witcher 4" OR "Witcher IV" OR "GTA 6" OR "GTA VI" OR "Steam Deck" OR Larian OR "Disco Elysium"
+  OR "RPG release" OR "indie game"'

@@ -1,0 +1,91 @@
+# Edit this topic’s watchlist in keywords/boost/query; source IDs refer to config_sources.yaml.
+# UTF-8; spaces for indentation; quote dates and IDs. Tokens stay outside YAML.
+id: tech
+name: Tech & Devices
+description: New hardware, independent reviews & technology around the world.
+sources:
+- ars
+- verge
+- gsmarena
+- notebookcheck
+- guardian_tech
+- restofworld
+- cna
+- scmp
+dedicated_sources:
+- gsmarena
+- notebookcheck
+keywords:
+- technology
+- smartphone
+- phone review
+- laptop
+- tablet
+- wearable
+- smartwatch
+- headphones
+- earbuds
+- camera
+- processor
+- chipset
+- graphics card
+- gpu
+- nvidia
+- amd
+- intel
+- apple
+- samsung
+- google pixel
+- xiaomi
+- oneplus
+- sony
+- lenovo
+- asus
+- framework
+- robotics
+- robot
+- 3d printing
+- virtual reality
+- augmented reality
+- smart home
+- right to repair
+- cybersecurity
+- data breach
+- electric vehicle
+boost:
+- review
+- hands-on
+- benchmark
+- battery life
+- repairability
+- global launch
+- international availability
+- on-device
+- robotics
+- rtx 4060
+- linux
+- usb-c
+exclude:
+- coupon
+- promo code
+- shopping deals
+- stock price
+- price target
+query: '"smartphone launch" OR "laptop review" OR "device review" OR "hardware benchmark" OR robotics
+  OR "right to repair" OR "global technology"'
+useful_terms:
+- review
+- hands-on
+- tested
+- benchmark
+- comparison
+- repairability
+- battery life
+- availability
+important_terms:
+- launch
+- announced
+- release
+- recall
+- security update
+- global rollout

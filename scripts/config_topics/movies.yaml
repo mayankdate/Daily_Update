@@ -1,0 +1,106 @@
+# Movies, shows and the former Culture & Worlds watchlist, in one topic.
+id: movies
+name: Movies & Shows
+description: Movies, shows, sci-fi, Harry Potter, fantasy adaptations & audiobooks.
+sources:
+- deadline
+- variety
+- guardian_film
+- guardian_tv
+- netflix
+- appletv
+- adultswim
+- ign
+- scmp
+- cnalifestyle
+- potter
+dedicated_sources:
+- potter
+keywords:
+- ted lasso
+- rick and morty
+- science fiction
+- sci-fi
+- scifi
+- sci fi
+- dune
+- foundation
+- severance
+- silo
+- alien film
+- star trek
+- star wars
+- doctor who
+- black mirror
+- movie
+- film
+- cinema
+- television
+- tv series
+- streaming series
+- season premiere
+- trailer
+- animation
+- anime
+- harry potter
+- hogwarts
+- witcher series
+- witcher netflix
+- fantasy adaptation
+- fantasy series
+- lord of the rings
+- rings of power
+- house of the dragon
+- fantasy audiobook
+boost:
+- ted lasso
+- rick and morty
+- science fiction
+- sci-fi
+- foundation
+- severance
+- silo
+- dune
+- renewed
+- renewal
+- release date
+- premiere date
+- trailer
+- new season
+- international cinema
+- world premiere
+- harry potter
+- audiobook
+- full cast
+- hogwarts
+- adaptation
+- wizarding world
+- tolkien
+exclude:
+- ending explained
+- endings explained
+- episode recap
+- full recap
+- spoilers ahead
+- celebrity divorce
+- celebrity feud
+query: '"Ted Lasso" OR "Rick and Morty" OR "sci-fi film" OR "science fiction movie" OR "Foundation series"
+  OR "Severance series" OR "international film" OR "new streaming series" OR "Harry Potter" OR Hogwarts
+  OR "Witcher Netflix" OR "Lord of the Rings" OR "fantasy audiobook"'
+useful_terms:
+- review
+- trailer
+- release date
+- premiere date
+- where to watch
+- streaming
+- international release
+important_terms:
+- renewed
+- renewal
+- cancelled
+- canceled
+- premiere
+- release date
+- new season
+- trailer

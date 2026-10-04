@@ -1,0 +1,83 @@
+# Ranking, collection rules and topic display order.
+news:
+  lookback_days: 7
+  max_per_group: 10
+  max_per_source: 2
+  min_score: 35
+  half_life_hours: 36
+  google_discovery: true
+  workers: 6
+  timeout_seconds: 20
+  weights:
+    relevance: 35
+    reliability: 25
+    freshness: 15
+    usefulness: 15
+    importance: 10
+  useful_terms:
+  - tutorial
+  - guide
+  - open source
+  - open-source
+  - dataset
+  - code
+  - notebook
+  - package
+  - api
+  - benchmark
+  - how to
+  - review
+  - hands-on
+  - tested
+  - comparison
+  - explainer
+  - recipe
+  - itinerary
+  - release date
+  important_terms:
+  - release
+  - launch
+  - introducing
+  - security
+  - vulnerability
+  - breaking change
+  - deprecat
+  - available
+  - patch
+  - delay
+  - premiere
+  - renewed
+  - renewal
+  - cancelled
+  - canceled
+  - recall
+  - availability
+  - global rollout
+  noise_terms:
+  - coupon
+  - promo code
+  - best deals
+  - buy now
+  - sponsored
+  - discount code
+  - affiliate deal
+  - shopping deals
+  - giveaway
+  - sweepstakes
+  rumor_terms:
+  - rumor
+  - rumour
+  - leak
+  - reportedly
+  - allegedly
+news_hl: en-IN
+news_gl: IN
+news_ceid: IN:en
+topic_order:
+- ai
+- data
+- tech
+- gaming
+- movies
+- geopolitics
+- lifestyle

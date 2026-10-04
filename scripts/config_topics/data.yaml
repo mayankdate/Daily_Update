@@ -1,0 +1,57 @@
+# Edit this topic’s watchlist in keywords/boost/query; source IDs refer to config_sources.yaml.
+# UTF-8; spaces for indentation; quote dates and IDs. Tokens stay outside YAML.
+id: data
+name: Data & Building
+description: R, Python, statistics & useful tools.
+sources:
+- posit
+- pandas
+- sklearn
+- huggingface
+- ars
+dedicated_sources:
+- posit
+- pandas
+- sklearn
+keywords:
+- python
+- r language
+- rstudio
+- posit
+- shiny
+- quarto
+- pandas
+- statistics
+- data science
+- dataset
+- scikit-learn
+- biostatistics
+- epidemiology
+- tidyverse
+- ggplot2
+- polars
+- duckdb
+- jupyter
+- sql
+- causal inference
+- survival analysis
+- reproducibility
+- geospatial
+boost:
+- tutorial
+- package
+- release
+- visualization
+- survey
+- notebook
+- shiny
+- open data
+- biostatistics
+- epidemiology
+- causal inference
+- duckdb
+- quarto
+- reproducible
+exclude: []
+query: '"data science" OR RStudio OR tidyverse OR Shiny OR Quarto OR DuckDB OR "Python package" OR "statistical
+  software"'

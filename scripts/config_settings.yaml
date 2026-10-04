@@ -1,0 +1,17 @@
+# Rarely changed: identity, location, workout loadout, Notion IDs and weather refresh.
+# UTF-8; spaces for indentation; quote dates and IDs. Tokens stay outside YAML.
+owner_name: Mayank
+masthead_title: THE DAILY BRIEF
+timezone: Asia/Kolkata
+mask_private_tasks: true
+loadout: 1 · Full Gym
+weather:
+  name: Mumbai
+  latitude: 19.076
+  longitude: 72.8777
+  units: metric
+weather_browser_refresh: true
+notion:
+  tasks_data_source_id: 2e2bec68-aefa-81be-bfda-000b7366ef2d
+  workout_data_source_id: 28676ddd-d907-4643-aa88-10ffd7e38889
+  api_version: '2026-03-11'

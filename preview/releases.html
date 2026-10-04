@@ -31,6 +31,12 @@
 .music-section h2{font:30px var(--serif);margin-bottom:16px}.music-section h2>span{color:var(--accent)}.release-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.release-card{padding:18px;border:1px solid var(--line);background:var(--panel);min-width:0;overflow-wrap:anywhere}.release-card h3{font:23px/1.25 var(--serif);margin:8px 0}.release-card p{font:10px var(--mono);color:var(--muted);margin-bottom:14px}.release-source{display:block;font-size:10px;color:var(--muted);margin-top:9px}
 @media(max-width:1050px) and (min-width:701px){.conditions{grid-template-columns:minmax(0,1fr) 290px}.release-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:700px){.soundtrack{display:flex;align-self:flex-end;align-items:stretch;width:min(100%,330px);padding:12px;border-left:1px solid var(--line)}.soundtrack>.eyebrow{display:none}.soundtrack-copy{flex-direction:row;align-items:baseline;gap:8px}.soundtrack-copy strong{font-size:15px}.spotify-player{height:152px}.tasks li{padding:6px 0;font-size:13px}.tasks small{font-size:8px}.countdown strong{font-size:17px}.countdown span{font-size:12px}.day-panel>summary{font-size:21px;min-height:48px;padding:9px 0}.release-grid{grid-template-columns:minmax(0,1fr)}.music-section h2{font-size:27px}.ranking>summary{font-size:10px}.ranking-preview p{font-size:12px}}
+
+/* Dense briefing: equal-size cards, short metadata, optional excerpts. */
+.stories{gap:10px;align-items:start}.story{padding:14px 16px 0}.story-top{margin-bottom:9px;gap:8px}.story h3{font:normal 21px/1.27 var(--serif);letter-spacing:-.25px;margin-bottom:10px}.story-tag{font-size:8px;padding:2px 5px}.story-byline{display:flex;flex-direction:row;flex-wrap:wrap;align-items:baseline;gap:3px 8px;padding-bottom:8px}.story-byline strong{font-size:10px}.story-byline span{font-size:8px}.ranking-preview{padding:6px 0;border-top:0}.ranking-preview p{margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:10px}.ranking>summary{min-height:36px;font-size:9px}.ranking-body .story-excerpt{display:block;margin-bottom:12px;font:12px/1.6 var(--sans);overflow:visible}.ranking-body{padding-top:10px}.topic-tabs{flex-wrap:wrap}.topic-tabs button{padding:8px 12px;min-height:38px}.briefing-header{padding:20px 0}.briefing-header h2{font-size:48px}
+.weather-current{font:12px/1.6 var(--mono);color:var(--cyan);margin-top:9px}.weather-note{line-height:1.6}.hour-cell{position:relative;padding-top:22px}.hour-cell.past-hour{opacity:.62}.hour-cell.current-hour{opacity:1;background:var(--panel2);box-shadow:inset 0 0 0 1px var(--cyan)}.hour-cell.current-hour::before{content:'NOW';position:absolute;top:3px;left:0;right:0;color:var(--cyan);font:9px var(--mono);letter-spacing:1px}.hourly-scroll{position:relative}
+@media(min-width:1250px){.stories{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:700px){.topic-tabs{flex-wrap:nowrap}.topic-tabs button{min-height:44px}.story{padding:12px 14px 0}.story h3{font-size:21px;line-height:1.3;margin-bottom:8px}.story-top{margin-bottom:7px}.story-byline{gap:2px 7px;padding-bottom:5px}.story-byline strong{font-size:10px}.story-byline span{font-size:9px}.ranking-preview{padding:4px 0}.ranking-preview p{font-size:10px}.ranking>summary{min-height:44px;font-size:10px}.weather-current{font-size:10px}.briefing-header h2{font-size:40px}}
 </style>
 </head>
 <body>
@@ -47,79 +53,80 @@
  <div class="weather-main">
   <div class="weather-heading"><div><span class="eyebrow">LOCAL ATMOSPHERE</span><h2 id="weather-location">Mumbai <span id="weather-summary">⛅ Partly cloudy</span></h2></div>
   <div class="sun-times" id="weather-range">25–31°C<br>Sun ↑ 06:30 / ↓ 18:30</div></div>
-  <p class="weather-note" id="weather-note">2026-10-04 · 00:00–23:00 · rain probability in % · updated 04 Oct, 19:34 IST</p>
+  <p class="weather-current" id="weather-current" aria-live="polite">Hourly forecast · enable JavaScript for the current-hour marker.</p>
+  <p class="weather-note" id="weather-note">2026-10-04 · 00:00–23:00 · cached forecast · updated 04 Oct, 22:13 IST</p>
   <div class="hourly-scroll" tabindex="0" role="region" aria-label="Hourly forecast, scroll horizontally">
    <div class="hourly-cells" id="hourly-cells">
-   <div class="hour-cell">
+   <div class="hour-cell" data-time="2026-10-04T00:00" data-label="Partly cloudy" data-emoji="⛅" data-temp="29">
     <span class="hour-time">Sun 00:00</span><span class="weather-symbol" title="Partly cloudy">⛅</span>
     <strong>29°</strong><span>Feels 33°</span><span class="rain">Rain 45%</span><span>RH 78%</span><span>12 km/h</span>
-   </div><div class="hour-cell">
+   </div><div class="hour-cell" data-time="2026-10-04T01:00" data-label="Partly cloudy" data-emoji="⛅" data-temp="29">
     <span class="hour-time">Sun 01:00</span><span class="weather-symbol" title="Partly cloudy">⛅</span>
     <strong>29°</strong><span>Feels 33°</span><span class="rain">Rain 45%</span><span>RH 78%</span><span>12 km/h</span>
-   </div><div class="hour-cell">
+   </div><div class="hour-cell" data-time="2026-10-04T02:00" data-label="Partly cloudy" data-emoji="⛅" data-temp="29">
     <span class="hour-time">Sun 02:00</span><span class="weather-symbol" title="Partly cloudy">⛅</span>
     <strong>29°</strong><span>Feels 33°</span><span class="rain">Rain 45%</span><span>RH 78%</span><span>12 km/h</span>
-   </div><div class="hour-cell">
+   </div><div class="hour-cell" data-time="2026-10-04T03:00" data-label="Partly cloudy" data-emoji="⛅" data-temp="29">
     <span class="hour-time">Sun 03:00</span><span class="weather-symbol" title="Partly cloudy">⛅</span>
     <strong>29°</strong><span>Feels 33°</span><span class="rain">Rain 45%</span><span>RH 78%</span><span>12 km/h</span>
-   </div><div class="hour-cell">
+   </div><div class="hour-cell" data-time="2026-10-04T04:00" data-label="Partly cloudy" data-emoji="⛅" data-temp="29">
     <span class="hour-time">Sun 04:00</span><span class="weather-symbol" title="Partly cloudy">⛅</span>
     <strong>29°</strong><span>Feels 33°</span><span class="rain">Rain 45%</span><span>RH 78%</span><span>12 km/h</span>
-   </div><div class="hour-cell">
+   </div><div class="hour-cell" data-time="2026-10-04T05:00" data-label="Partly cloudy" data-emoji="⛅" data-temp="29">
     <span class="hour-time">Sun 05:00</span><span class="weather-symbol" title="Partly cloudy">⛅</span>
     <strong>29°</strong><span>Feels 33°</span><span class="rain">Rain 45%</span><span>RH 78%</span><span>12 km/h</span>
-   </div><div class="hour-cell">
+   </div><div class="hour-cell" data-time="2026-10-04T06:00" data-label="Partly cloudy" data-emoji="⛅" data-temp="29">
     <span class="hour-time">Sun 06:00</span><span class="weather-symbol" title="Partly cloudy">⛅</span>
     <strong>29°</strong><span>Feels 33°</span><span class="rain">Rain 45%</span><span>RH 78%</span><span>12 km/h</span>
-   </div><div class="hour-cell">
+   </div><div class="hour-cell" data-time="2026-10-04T07:00" data-label="Partly cloudy" data-emoji="⛅" data-temp="29">
     <span class="hour-time">Sun 07:00</span><span class="weather-symbol" title="Partly cloudy">⛅</span>
     <strong>29°</strong><span>Feels 33°</span><span class="rain">Rain 45%</span><span>RH 78%</span><span>12 km/h</span>
-   </div><div class="hour-cell">
+   </div><div class="hour-cell" data-time="2026-10-04T08:00" data-label="Partly cloudy" data-emoji="⛅" data-temp="29">
     <span class="hour-time">Sun 08:00</span><span class="weather-symbol" title="Partly cloudy">⛅</span>
     <strong>29°</strong><span>Feels 33°</span><span class="rain">Rain 45%</span><span>RH 78%</span><span>12 km/h</span>
-   </div><div class="hour-cell">
+   </div><div class="hour-cell" data-time="2026-10-04T09:00" data-label="Partly cloudy" data-emoji="⛅" data-temp="29">
     <span class="hour-time">Sun 09:00</span><span class="weather-symbol" title="Partly cloudy">⛅</span>
     <strong>29°</strong><span>Feels 33°</span><span class="rain">Rain 45%</span><span>RH 78%</span><span>12 km/h</span>
-   </div><div class="hour-cell">
+   </div><div class="hour-cell" data-time="2026-10-04T10:00" data-label="Partly cloudy" data-emoji="⛅" data-temp="29">
     <span class="hour-time">Sun 10:00</span><span class="weather-symbol" title="Partly cloudy">⛅</span>
     <strong>29°</strong><span>Feels 33°</span><span class="rain">Rain 45%</span><span>RH 78%</span><span>12 km/h</span>
-   </div><div class="hour-cell">
+   </div><div class="hour-cell" data-time="2026-10-04T11:00" data-label="Partly cloudy" data-emoji="⛅" data-temp="29">
     <span class="hour-time">Sun 11:00</span><span class="weather-symbol" title="Partly cloudy">⛅</span>
     <strong>29°</strong><span>Feels 33°</span><span class="rain">Rain 45%</span><span>RH 78%</span><span>12 km/h</span>
-   </div><div class="hour-cell">
+   </div><div class="hour-cell" data-time="2026-10-04T12:00" data-label="Partly cloudy" data-emoji="⛅" data-temp="29">
     <span class="hour-time">Sun 12:00</span><span class="weather-symbol" title="Partly cloudy">⛅</span>
     <strong>29°</strong><span>Feels 33°</span><span class="rain">Rain 45%</span><span>RH 78%</span><span>12 km/h</span>
-   </div><div class="hour-cell">
+   </div><div class="hour-cell" data-time="2026-10-04T13:00" data-label="Partly cloudy" data-emoji="⛅" data-temp="29">
     <span class="hour-time">Sun 13:00</span><span class="weather-symbol" title="Partly cloudy">⛅</span>
     <strong>29°</strong><span>Feels 33°</span><span class="rain">Rain 45%</span><span>RH 78%</span><span>12 km/h</span>
-   </div><div class="hour-cell">
+   </div><div class="hour-cell" data-time="2026-10-04T14:00" data-label="Partly cloudy" data-emoji="⛅" data-temp="29">
     <span class="hour-time">Sun 14:00</span><span class="weather-symbol" title="Partly cloudy">⛅</span>
     <strong>29°</strong><span>Feels 33°</span><span class="rain">Rain 45%</span><span>RH 78%</span><span>12 km/h</span>
-   </div><div class="hour-cell">
+   </div><div class="hour-cell" data-time="2026-10-04T15:00" data-label="Partly cloudy" data-emoji="⛅" data-temp="29">
     <span class="hour-time">Sun 15:00</span><span class="weather-symbol" title="Partly cloudy">⛅</span>
     <strong>29°</strong><span>Feels 33°</span><span class="rain">Rain 45%</span><span>RH 78%</span><span>12 km/h</span>
-   </div><div class="hour-cell">
+   </div><div class="hour-cell" data-time="2026-10-04T16:00" data-label="Partly cloudy" data-emoji="⛅" data-temp="29">
     <span class="hour-time">Sun 16:00</span><span class="weather-symbol" title="Partly cloudy">⛅</span>
     <strong>29°</strong><span>Feels 33°</span><span class="rain">Rain 45%</span><span>RH 78%</span><span>12 km/h</span>
-   </div><div class="hour-cell">
+   </div><div class="hour-cell" data-time="2026-10-04T17:00" data-label="Partly cloudy" data-emoji="⛅" data-temp="29">
     <span class="hour-time">Sun 17:00</span><span class="weather-symbol" title="Partly cloudy">⛅</span>
     <strong>29°</strong><span>Feels 33°</span><span class="rain">Rain 45%</span><span>RH 78%</span><span>12 km/h</span>
-   </div><div class="hour-cell">
+   </div><div class="hour-cell" data-time="2026-10-04T18:00" data-label="Partly cloudy" data-emoji="⛅" data-temp="29">
     <span class="hour-time">Sun 18:00</span><span class="weather-symbol" title="Partly cloudy">⛅</span>
     <strong>29°</strong><span>Feels 33°</span><span class="rain">Rain 45%</span><span>RH 78%</span><span>12 km/h</span>
-   </div><div class="hour-cell">
+   </div><div class="hour-cell" data-time="2026-10-04T19:00" data-label="Partly cloudy" data-emoji="⛅" data-temp="29">
     <span class="hour-time">Sun 19:00</span><span class="weather-symbol" title="Partly cloudy">⛅</span>
-    <strong>—°</strong><span>Feels 33°</span><span class="rain">Rain 45%</span><span>RH 78%</span><span>12 km/h</span>
-   </div><div class="hour-cell">
+    <strong>29°</strong><span>Feels 33°</span><span class="rain">Rain 45%</span><span>RH 78%</span><span>12 km/h</span>
+   </div><div class="hour-cell" data-time="2026-10-04T20:00" data-label="Partly cloudy" data-emoji="⛅" data-temp="29">
     <span class="hour-time">Sun 20:00</span><span class="weather-symbol" title="Partly cloudy">⛅</span>
     <strong>29°</strong><span>Feels 33°</span><span class="rain">Rain 45%</span><span>RH 78%</span><span>12 km/h</span>
-   </div><div class="hour-cell">
+   </div><div class="hour-cell" data-time="2026-10-04T21:00" data-label="Partly cloudy" data-emoji="⛅" data-temp="29">
     <span class="hour-time">Sun 21:00</span><span class="weather-symbol" title="Partly cloudy">⛅</span>
     <strong>29°</strong><span>Feels 33°</span><span class="rain">Rain 45%</span><span>RH 78%</span><span>12 km/h</span>
-   </div><div class="hour-cell">
+   </div><div class="hour-cell" data-time="2026-10-04T22:00" data-label="Partly cloudy" data-emoji="⛅" data-temp="—">
     <span class="hour-time">Sun 22:00</span><span class="weather-symbol" title="Partly cloudy">⛅</span>
-    <strong>29°</strong><span>Feels 33°</span><span class="rain">Rain 45%</span><span>RH 78%</span><span>12 km/h</span>
-   </div><div class="hour-cell">
+    <strong>—°</strong><span>Feels 33°</span><span class="rain">Rain 45%</span><span>RH 78%</span><span>12 km/h</span>
+   </div><div class="hour-cell" data-time="2026-10-04T23:00" data-label="Partly cloudy" data-emoji="⛅" data-temp="29">
     <span class="hour-time">Sun 23:00</span><span class="weather-symbol" title="Partly cloudy">⛅</span>
     <strong>29°</strong><span>Feels 33°</span><span class="rain">Rain 45%</span><span>RH 78%</span><span>12 km/h</span>
    </div>
@@ -137,8 +144,8 @@
  </div></details>
  <details class="day-panel" id="workout-panel" open><summary><span>Workout <small>3</small></span><span class="expand-mark" aria-hidden="true">+</span></summary><div class="panel-body"><p class="loadout">Sunday / 1 · Full Gym</p>
  <ul class="workouts"><li><strong>Goblet squat</strong><span>3 × 10–12 · 16 kg · 90s rest</span><small>Quads · Glutes</small></li><li><strong>Lat pulldown</strong><span>3 × 10–12 · 30 kg · 60s rest</span><small>Back</small></li><li><strong>Incline dumbbell press</strong><span>3 × 8–10 · 12 kg · 90s rest</span><small>Chest</small></li></ul></div></details>
- <details class="day-panel" id="countdowns-panel" open><summary><span>On the horizon <small>1</small></span><span class="expand-mark" aria-hidden="true">+</span></summary><div class="panel-body">
- <div class="countdown"><div><span>90-Day Fitness Challenge</span><small>Dec 31, 2026</small></div><strong>88 days</strong></div></div></details>
+ <details class="day-panel" id="countdowns-panel" open><summary><span>On the horizon <small>2</small></span><span class="expand-mark" aria-hidden="true">+</span></summary><div class="panel-body">
+ <div class="countdown"><div><span>90-Day Fitness Challenge</span><small>Dec 31, 2026</small></div><strong>88 days</strong></div><div class="countdown"><div><span>Birthday</span><small>Apr 3, 2027</small></div><strong>181 days</strong></div></div></details>
 </section>
 
 
@@ -151,130 +158,133 @@
 
 
 <main id="news">
- <div class="section-label"><span>02 / YOUR SIGNAL</span><span>15 SELECTED STORIES</span></div>
+ <div class="section-label"><span>02 / YOUR SIGNAL</span><span>18 SELECTED STORIES</span></div>
  <div class="briefing-header"><div><span class="eyebrow">THE WORLD, FILTERED FOR YOU</span><h2>The briefing<span>.</span></h2></div><p>Fresh ideas. Useful tools.<br>Worlds worth getting lost in.</p></div>
  <div class="news-controls" id="news-controls" hidden>
-  <nav class="topic-tabs" aria-label="Filter by topic"><button type="button" class="active" data-topic="all" aria-pressed="true">All signals <span>15</span></button><button type="button" data-topic="ai" aria-pressed="false">AI &amp; Models <span>4</span></button><button type="button" data-topic="data" aria-pressed="false">Data &amp; Building <span>4</span></button><button type="button" data-topic="gaming" aria-pressed="false">Gaming <span>4</span></button><button type="button" data-topic="culture" aria-pressed="false">Culture &amp; Worlds <span>2</span></button><button type="button" data-topic="geopolitics" aria-pressed="false">Geopolitics <span>1</span></button></nav>
+  <nav class="topic-tabs" aria-label="Filter by topic"><button type="button" class="active" data-topic="all" aria-pressed="true">All signals <span>18</span></button><button type="button" data-topic="ai" aria-pressed="false">AI &amp; Models <span>4</span></button><button type="button" data-topic="data" aria-pressed="false">Data &amp; Building <span>4</span></button><button type="button" data-topic="tech" aria-pressed="false">Tech &amp; Devices <span>1</span></button><button type="button" data-topic="gaming" aria-pressed="false">Gaming <span>4</span></button><button type="button" data-topic="movies" aria-pressed="false">Movies &amp; Shows <span>3</span></button><button type="button" data-topic="geopolitics" aria-pressed="false">Geopolitics <span>1</span></button><button type="button" data-topic="lifestyle" aria-pressed="false">Lifestyle <span>1</span></button></nav>
   <div class="filter-row"><label class="search-label"><span class="sr-only">Search stories</span><input id="story-search" type="search" placeholder="Search your briefing…" autocomplete="off"></label><label class="sort-label"><span class="sr-only">Sort stories</span><select id="story-sort"><option value="priority">Priority first</option><option value="newest">Newest first</option></select></label></div>
  </div>
  <p class="results-note" id="results-note" aria-live="polite">Ranked for your interests · source details on every story.</p>
  <div class="stories" id="stories">
- <article class="story lead-story" data-group="geopolitics" data-score="87.7" data-time="2026-10-04T18:34:42.831796+05:30">
-  <div class="story-top"><span class="eyebrow topic-name">Geopolitics</span><span class="story-tag">Practical</span></div>
-  <h3><a href="https://reuters.com/" target="_blank" rel="noopener noreferrer">Trade and technology: what export controls mean for supply chains <span class="external-arrow" aria-hidden="true">↗</span></a></h3>
-  <p class="story-excerpt">Sample geopolitics coverage about semiconductor export controls, trade and India. Illustrative content only.</p>
-  <div class="story-bottom"><div class="story-byline"><strong>Reuters</strong><span>News agency · <time datetime="2026-10-04T18:34:42.831796+05:30">Oct 4, 12:00</time></span></div>
-  <div class="ranking-preview"><span>Why this story</span><p>Topic signals: export controls, semiconductor</p></div>
-  <details class="ranking"><summary><span class="ranking-action"><span class="ranking-closed">Show score breakdown</span><span class="ranking-open">Hide score breakdown</span> <span class="ranking-chevron" aria-hidden="true">⌄</span></span><span class="ranking-score">88/100</span></summary><div class="ranking-body"><p>Weighted points toward priority / 100.</p><ul><li>Topic signals: export controls, semiconductor</li><li>Matches your interests: india, export controls, semiconductor</li><li>Practical cues: trade, export controls</li><li>Update cues: export controls</li></ul><dl><div><dt>Relevance</dt><dd>30.0 pts</dd></div><div><dt>Source preference</dt><dd>22.5 pts</dd></div><div><dt>Freshness</dt><dd>19.7 pts</dd></div><div><dt>Usefulness</dt><dd>10.5 pts</dd></div><div><dt>Importance</dt><dd>5.0 pts</dd></div></dl><p class="score-caveat">Editorial ranking, not a fact-check.</p></div></details></div>
- </article><article class="story " data-group="data" data-score="84.2" data-time="2026-10-04T16:34:42.831796+05:30">
+ <article class="story" data-group="tech" data-score="87.1" data-time="2026-10-04T21:13:32.078672+05:30">
+  <div class="story-top"><span class="eyebrow topic-name">Tech &amp; Devices</span><span class="story-tag">Practical</span></div>
+  <h3><a href="https://gsmarena.com/" target="_blank" rel="noopener noreferrer">A practical laptop review for everyday work <span class="external-arrow" aria-hidden="true">↗</span></a></h3>
+  <div class="story-bottom"><div class="story-byline"><strong>GSMArena</strong><span>Editorial · <time datetime="2026-10-04T21:13:32.078672+05:30">Oct 4, 12:00</time></span></div>
+  <div class="ranking-preview"><p title="Why this story">Topic signals: laptop</p></div>
+  <details class="ranking"><summary><span class="ranking-action"><span class="ranking-closed">Details & score</span><span class="ranking-open">Close details</span> <span class="ranking-chevron" aria-hidden="true">⌄</span></span><span class="ranking-score">87/100</span></summary><div class="ranking-body"><p class="story-excerpt">Illustrative hardware review with battery life and benchmark details.</p><p>Weighted points toward priority / 100.</p><ul><li>Topic signals: laptop</li><li>Matches your interests: review, benchmark, battery life</li><li>Practical cues: review, benchmark, battery life</li><li>Dedicated topic source</li></ul><dl><div><dt>Relevance</dt><dd>35.0 pts</dd></div><div><dt>Source preference</dt><dd>21.2 pts</dd></div><div><dt>Freshness</dt><dd>14.7 pts</dd></div><div><dt>Usefulness</dt><dd>14.2 pts</dd></div><div><dt>Importance</dt><dd>2.0 pts</dd></div></dl><p class="score-caveat">Editorial ranking, not a fact-check.</p></div></details></div>
+ </article><article class="story" data-group="data" data-score="83.4" data-time="2026-10-04T16:13:32.078672+05:30">
   <div class="story-top"><span class="eyebrow topic-name">Data &amp; Building</span><span class="story-tag">Practical</span></div>
   <h3><a href="https://opensource.posit.co/" target="_blank" rel="noopener noreferrer">From notebook to useful tool: build a dashboard you will actually use <span class="external-arrow" aria-hidden="true">↗</span></a></h3>
-  <p class="story-excerpt">A sample tutorial on Shiny, repeatable workflows, and sharing a clear view of your data.</p>
-  <div class="story-bottom"><div class="story-byline"><strong>Posit Open Source</strong><span>Maintainer / primary · <time datetime="2026-10-04T16:34:42.831796+05:30">Oct 4, 12:00</time></span></div>
-  <div class="ranking-preview"><span>Why this story</span><p>Topic signals: shiny</p></div>
-  <details class="ranking"><summary><span class="ranking-action"><span class="ranking-closed">Show score breakdown</span><span class="ranking-open">Hide score breakdown</span> <span class="ranking-chevron" aria-hidden="true">⌄</span></span><span class="ranking-score">84/100</span></summary><div class="ranking-body"><p>Weighted points toward priority / 100.</p><ul><li>Topic signals: shiny</li><li>Matches your interests: tutorial, notebook, shiny</li><li>Practical cues: tutorial, notebook</li><li>Dedicated topic source</li></ul><dl><div><dt>Relevance</dt><dd>30.0 pts</dd></div><div><dt>Source preference</dt><dd>22.5 pts</dd></div><div><dt>Freshness</dt><dd>19.2 pts</dd></div><div><dt>Usefulness</dt><dd>10.5 pts</dd></div><div><dt>Importance</dt><dd>2.0 pts</dd></div></dl><p class="score-caveat">Editorial ranking, not a fact-check.</p></div></details></div>
- </article><article class="story " data-group="ai" data-score="81.9" data-time="2026-10-04T17:34:42.831796+05:30">
+  <div class="story-bottom"><div class="story-byline"><strong>Posit Open Source</strong><span>Maintainer / primary · <time datetime="2026-10-04T16:13:32.078672+05:30">Oct 4, 12:00</time></span></div>
+  <div class="ranking-preview"><p title="Why this story">Topic signals: shiny</p></div>
+  <details class="ranking"><summary><span class="ranking-action"><span class="ranking-closed">Details & score</span><span class="ranking-open">Close details</span> <span class="ranking-chevron" aria-hidden="true">⌄</span></span><span class="ranking-score">83/100</span></summary><div class="ranking-body"><p class="story-excerpt">A sample tutorial on Shiny, repeatable workflows, and sharing a clear view of your data.</p><p>Weighted points toward priority / 100.</p><ul><li>Topic signals: shiny</li><li>Matches your interests: tutorial, notebook, shiny</li><li>Practical cues: tutorial, notebook</li><li>Dedicated topic source</li></ul><dl><div><dt>Relevance</dt><dd>35.0 pts</dd></div><div><dt>Source preference</dt><dd>22.5 pts</dd></div><div><dt>Freshness</dt><dd>13.4 pts</dd></div><div><dt>Usefulness</dt><dd>10.5 pts</dd></div><div><dt>Importance</dt><dd>2.0 pts</dd></div></dl><p class="score-caveat">Editorial ranking, not a fact-check.</p></div></details></div>
+ </article><article class="story" data-group="lifestyle" data-score="82.9" data-time="2026-10-04T19:13:32.078672+05:30">
+  <div class="story-top"><span class="eyebrow topic-name">Lifestyle</span><span class="story-tag">Practical</span></div>
+  <h3><a href="https://theguardian.com/" target="_blank" rel="noopener noreferrer">A world cuisine guide for your next meal <span class="external-arrow" aria-hidden="true">↗</span></a></h3>
+  <div class="story-bottom"><div class="story-byline"><strong>The Guardian · Food</strong><span>Editorial · <time datetime="2026-10-04T19:13:32.078672+05:30">Oct 4, 12:00</time></span></div>
+  <div class="ranking-preview"><p title="Why this story">Topic signals: recipe, cuisine, cooking</p></div>
+  <details class="ranking"><summary><span class="ranking-action"><span class="ranking-closed">Details & score</span><span class="ranking-open">Close details</span> <span class="ranking-chevron" aria-hidden="true">⌄</span></span><span class="ranking-score">83/100</span></summary><div class="ranking-body"><p class="story-excerpt">An illustrative recipe and cooking guide for this design preview.</p><p>Weighted points toward priority / 100.</p><ul><li>Topic signals: recipe, cuisine, cooking</li><li>Matches your interests: recipe, world cuisine</li><li>Practical cues: guide, recipe</li><li>Dedicated topic source</li></ul><dl><div><dt>Relevance</dt><dd>35.0 pts</dd></div><div><dt>Source preference</dt><dd>21.2 pts</dd></div><div><dt>Freshness</dt><dd>14.2 pts</dd></div><div><dt>Usefulness</dt><dd>10.5 pts</dd></div><div><dt>Importance</dt><dd>2.0 pts</dd></div></dl><p class="score-caveat">Editorial ranking, not a fact-check.</p></div></details></div>
+ </article><article class="story" data-group="ai" data-score="81.1" data-time="2026-10-04T17:13:32.078672+05:30">
   <div class="story-top"><span class="eyebrow topic-name">AI &amp; Models</span><span class="story-tag">Practical</span></div>
   <h3><a href="https://huggingface.co/" target="_blank" rel="noopener noreferrer">Smaller models, bigger possibilities: a practical guide to local AI <span class="external-arrow" aria-hidden="true">↗</span></a></h3>
-  <p class="story-excerpt">A sample story about running open-source models locally, comparing memory use, and making inference work on a consumer GPU.</p>
-  <div class="story-bottom"><div class="story-byline"><strong>Hugging Face</strong><span>Technical / community · <time datetime="2026-10-04T17:34:42.831796+05:30">Oct 4, 12:00</time></span></div>
-  <div class="ranking-preview"><span>Why this story</span><p>Topic signals: ai</p></div>
-  <details class="ranking"><summary><span class="ranking-action"><span class="ranking-closed">Show score breakdown</span><span class="ranking-open">Hide score breakdown</span> <span class="ranking-chevron" aria-hidden="true">⌄</span></span><span class="ranking-score">82/100</span></summary><div class="ranking-body"><p>Weighted points toward priority / 100.</p><ul><li>Topic signals: ai</li><li>Matches your interests: local, open-source, inference</li><li>Practical cues: guide, open-source</li><li>Dedicated topic source</li></ul><dl><div><dt>Relevance</dt><dd>30.0 pts</dd></div><div><dt>Source preference</dt><dd>20.0 pts</dd></div><div><dt>Freshness</dt><dd>19.4 pts</dd></div><div><dt>Usefulness</dt><dd>10.5 pts</dd></div><div><dt>Importance</dt><dd>2.0 pts</dd></div></dl><p class="score-caveat">Editorial ranking, not a fact-check.</p></div></details></div>
- </article><article class="story " data-group="data" data-score="79.4" data-time="2026-10-04T13:34:42.831796+05:30">
-  <div class="story-top"><span class="eyebrow topic-name">Data &amp; Building</span><span class="story-tag">Practical</span></div>
-  <h3><a href="https://github.com/" target="_blank" rel="noopener noreferrer">A new pandas release puts everyday data work first <span class="external-arrow" aria-hidden="true">↗</span></a></h3>
-  <p class="story-excerpt">Sample release coverage: a practical look at the changes that affect real analysis code.</p>
-  <div class="story-bottom"><div class="story-byline"><strong>pandas releases</strong><span>Maintainer / primary · <time datetime="2026-10-04T13:34:42.831796+05:30">Oct 4, 12:00</time></span></div>
-  <div class="ranking-preview"><span>Why this story</span><p>Topic signals: pandas</p></div>
-  <details class="ranking"><summary><span class="ranking-action"><span class="ranking-closed">Show score breakdown</span><span class="ranking-open">Hide score breakdown</span> <span class="ranking-chevron" aria-hidden="true">⌄</span></span><span class="ranking-score">79/100</span></summary><div class="ranking-body"><p>Weighted points toward priority / 100.</p><ul><li>Topic signals: pandas</li><li>Matches your interests: release</li><li>Practical cues: code</li><li>Update cues: release</li><li>Dedicated topic source</li></ul><dl><div><dt>Relevance</dt><dd>25.5 pts</dd></div><div><dt>Source preference</dt><dd>23.8 pts</dd></div><div><dt>Freshness</dt><dd>18.3 pts</dd></div><div><dt>Usefulness</dt><dd>6.8 pts</dd></div><div><dt>Importance</dt><dd>5.0 pts</dd></div></dl><p class="score-caveat">Editorial ranking, not a fact-check.</p></div></details></div>
- </article><article class="story " data-group="data" data-score="78.8" data-time="2026-10-04T07:34:42.831796+05:30">
-  <div class="story-top"><span class="eyebrow topic-name">Data &amp; Building</span><span class="story-tag">Practical</span></div>
-  <h3><a href="https://opensource.posit.co/" target="_blank" rel="noopener noreferrer">Better plots, clearer questions: a visualization field guide <span class="external-arrow" aria-hidden="true">↗</span></a></h3>
-  <p class="story-excerpt">A sample R tutorial on turning a statistical result into a useful visual explanation.</p>
-  <div class="story-bottom"><div class="story-byline"><strong>Posit Open Source</strong><span>Maintainer / primary · <time datetime="2026-10-04T07:34:42.831796+05:30">Oct 4, 12:00</time></span></div>
-  <div class="ranking-preview"><span>Why this story</span><p>Matches your interests: tutorial, visualization</p></div>
-  <details class="ranking"><summary><span class="ranking-action"><span class="ranking-closed">Show score breakdown</span><span class="ranking-open">Hide score breakdown</span> <span class="ranking-chevron" aria-hidden="true">⌄</span></span><span class="ranking-score">79/100</span></summary><div class="ranking-body"><p>Weighted points toward priority / 100.</p><ul><li>Matches your interests: tutorial, visualization</li><li>Practical cues: tutorial, guide</li><li>Dedicated topic source</li></ul><dl><div><dt>Relevance</dt><dd>27.0 pts</dd></div><div><dt>Source preference</dt><dd>22.5 pts</dd></div><div><dt>Freshness</dt><dd>16.8 pts</dd></div><div><dt>Usefulness</dt><dd>10.5 pts</dd></div><div><dt>Importance</dt><dd>2.0 pts</dd></div></dl><p class="score-caveat">Editorial ranking, not a fact-check.</p></div></details></div>
- </article><article class="story " data-group="ai" data-score="76.8" data-time="2026-10-04T10:34:42.831796+05:30">
+  <div class="story-bottom"><div class="story-byline"><strong>Hugging Face</strong><span>Technical / community · <time datetime="2026-10-04T17:13:32.078672+05:30">Oct 4, 12:00</time></span></div>
+  <div class="ranking-preview"><p title="Why this story">Topic signals: artificial intelligence</p></div>
+  <details class="ranking"><summary><span class="ranking-action"><span class="ranking-closed">Details & score</span><span class="ranking-open">Close details</span> <span class="ranking-chevron" aria-hidden="true">⌄</span></span><span class="ranking-score">81/100</span></summary><div class="ranking-body"><p class="story-excerpt">A sample story about running open-source models locally, comparing memory use, and making inference work on a consumer GPU. Artificial intelligence.</p><p>Weighted points toward priority / 100.</p><ul><li>Topic signals: artificial intelligence</li><li>Matches your interests: local, open-source, inference</li><li>Practical cues: guide, open-source</li><li>Dedicated topic source</li></ul><dl><div><dt>Relevance</dt><dd>35.0 pts</dd></div><div><dt>Source preference</dt><dd>20.0 pts</dd></div><div><dt>Freshness</dt><dd>13.6 pts</dd></div><div><dt>Usefulness</dt><dd>10.5 pts</dd></div><div><dt>Importance</dt><dd>2.0 pts</dd></div></dl><p class="score-caveat">Editorial ranking, not a fact-check.</p></div></details></div>
+ </article><article class="story" data-group="ai" data-score="78.8" data-time="2026-10-04T10:13:32.078672+05:30">
   <div class="story-top"><span class="eyebrow topic-name">AI &amp; Models</span><span class="story-tag">Practical</span></div>
   <h3><a href="https://anthropic.com/" target="_blank" rel="noopener noreferrer">Building agents you can inspect, test, and improve <span class="external-arrow" aria-hidden="true">↗</span></a></h3>
-  <p class="story-excerpt">A sample Claude API guide to debugging agent workflows and assessing useful behavior.</p>
-  <div class="story-bottom"><div class="story-byline"><strong>Anthropic</strong><span>Vendor / primary · <time datetime="2026-10-04T10:34:42.831796+05:30">Oct 4, 12:00</time></span></div>
-  <div class="ranking-preview"><span>Why this story</span><p>Topic signals: claude</p></div>
-  <details class="ranking"><summary><span class="ranking-action"><span class="ranking-closed">Show score breakdown</span><span class="ranking-open">Hide score breakdown</span> <span class="ranking-chevron" aria-hidden="true">⌄</span></span><span class="ranking-score">77/100</span></summary><div class="ranking-body"><p>Weighted points toward priority / 100.</p><ul><li>Topic signals: claude</li><li>Matches your interests: agent</li><li>Practical cues: guide, api</li><li>Dedicated topic source</li></ul><dl><div><dt>Relevance</dt><dd>25.5 pts</dd></div><div><dt>Source preference</dt><dd>21.2 pts</dd></div><div><dt>Freshness</dt><dd>17.6 pts</dd></div><div><dt>Usefulness</dt><dd>10.5 pts</dd></div><div><dt>Importance</dt><dd>2.0 pts</dd></div></dl><p class="score-caveat">Editorial ranking, not a fact-check.</p></div></details></div>
- </article><article class="story " data-group="data" data-score="74.6" data-time="2026-10-04T09:34:42.831796+05:30">
+  <div class="story-bottom"><div class="story-byline"><strong>Anthropic</strong><span>Vendor / primary · <time datetime="2026-10-04T10:13:32.078672+05:30">Oct 4, 12:00</time></span></div>
+  <div class="ranking-preview"><p title="Why this story">Topic signals: artificial intelligence, claude</p></div>
+  <details class="ranking"><summary><span class="ranking-action"><span class="ranking-closed">Details & score</span><span class="ranking-open">Close details</span> <span class="ranking-chevron" aria-hidden="true">⌄</span></span><span class="ranking-score">79/100</span></summary><div class="ranking-body"><p class="story-excerpt">A sample Claude API guide to debugging agent workflows and assessing useful behavior. Artificial intelligence.</p><p>Weighted points toward priority / 100.</p><ul><li>Topic signals: artificial intelligence, claude</li><li>Matches your interests: agent</li><li>Practical cues: guide, api</li><li>Dedicated topic source</li></ul><dl><div><dt>Relevance</dt><dd>33.2 pts</dd></div><div><dt>Source preference</dt><dd>21.2 pts</dd></div><div><dt>Freshness</dt><dd>11.9 pts</dd></div><div><dt>Usefulness</dt><dd>10.5 pts</dd></div><div><dt>Importance</dt><dd>2.0 pts</dd></div></dl><p class="score-caveat">Editorial ranking, not a fact-check.</p></div></details></div>
+ </article><article class="story" data-group="data" data-score="78.5" data-time="2026-10-04T09:13:32.078672+05:30">
   <div class="story-top"><span class="eyebrow topic-name">Data &amp; Building</span><span class="story-tag">Update</span></div>
   <h3><a href="https://github.com/" target="_blank" rel="noopener noreferrer">scikit-learn release: checking the changes before you upgrade <span class="external-arrow" aria-hidden="true">↗</span></a></h3>
-  <p class="story-excerpt">Sample maintainer release notes and a useful checklist for reproducible modeling.</p>
-  <div class="story-bottom"><div class="story-byline"><strong>scikit-learn releases</strong><span>Maintainer / primary · <time datetime="2026-10-04T09:34:42.831796+05:30">Oct 4, 12:00</time></span></div>
-  <div class="ranking-preview"><span>Why this story</span><p>Topic signals: scikit-learn</p></div>
-  <details class="ranking"><summary><span class="ranking-action"><span class="ranking-closed">Show score breakdown</span><span class="ranking-open">Hide score breakdown</span> <span class="ranking-chevron" aria-hidden="true">⌄</span></span><span class="ranking-score">75/100</span></summary><div class="ranking-body"><p>Weighted points toward priority / 100.</p><ul><li>Topic signals: scikit-learn</li><li>Matches your interests: release</li><li>Update cues: release</li><li>Dedicated topic source</li></ul><dl><div><dt>Relevance</dt><dd>25.5 pts</dd></div><div><dt>Source preference</dt><dd>23.8 pts</dd></div><div><dt>Freshness</dt><dd>17.3 pts</dd></div><div><dt>Usefulness</dt><dd>3.0 pts</dd></div><div><dt>Importance</dt><dd>5.0 pts</dd></div></dl><p class="score-caveat">Editorial ranking, not a fact-check.</p></div></details></div>
- </article><article class="story " data-group="culture" data-score="74.0" data-time="2026-10-04T11:34:42.831796+05:30">
-  <div class="story-top"><span class="eyebrow topic-name">Culture &amp; Worlds</span><span class="story-tag">Reading</span></div>
+  <div class="story-bottom"><div class="story-byline"><strong>scikit-learn releases</strong><span>Maintainer / primary · <time datetime="2026-10-04T09:13:32.078672+05:30">Oct 4, 12:00</time></span></div>
+  <div class="ranking-preview"><p title="Why this story">Topic signals: scikit-learn</p></div>
+  <details class="ranking"><summary><span class="ranking-action"><span class="ranking-closed">Details & score</span><span class="ranking-open">Close details</span> <span class="ranking-chevron" aria-hidden="true">⌄</span></span><span class="ranking-score">78/100</span></summary><div class="ranking-body"><p class="story-excerpt">Sample maintainer release notes and a useful checklist for reproducible modeling.</p><p>Weighted points toward priority / 100.</p><ul><li>Topic signals: scikit-learn</li><li>Matches your interests: release, reproducible</li><li>Update cues: release</li><li>Dedicated topic source</li></ul><dl><div><dt>Relevance</dt><dd>35.0 pts</dd></div><div><dt>Source preference</dt><dd>23.8 pts</dd></div><div><dt>Freshness</dt><dd>11.7 pts</dd></div><div><dt>Usefulness</dt><dd>3.0 pts</dd></div><div><dt>Importance</dt><dd>5.0 pts</dd></div></dl><p class="score-caveat">Editorial ranking, not a fact-check.</p></div></details></div>
+ </article><article class="story" data-group="geopolitics" data-score="78.2" data-time="2026-10-04T18:13:32.078672+05:30">
+  <div class="story-top"><span class="eyebrow topic-name">Geopolitics</span><span class="story-tag">Practical</span></div>
+  <h3><a href="https://reuters.com/" target="_blank" rel="noopener noreferrer">Trade and technology: what export controls mean for supply chains <span class="external-arrow" aria-hidden="true">↗</span></a></h3>
+  <div class="story-bottom"><div class="story-byline"><strong>Reuters</strong><span>News agency · <time datetime="2026-10-04T18:13:32.078672+05:30">Oct 4, 12:00</time></span></div>
+  <div class="ranking-preview"><p title="Why this story">Topic signals: export controls, semiconductor</p></div>
+  <details class="ranking"><summary><span class="ranking-action"><span class="ranking-closed">Details & score</span><span class="ranking-open">Close details</span> <span class="ranking-chevron" aria-hidden="true">⌄</span></span><span class="ranking-score">78/100</span></summary><div class="ranking-body"><p class="story-excerpt">Sample geopolitics coverage about semiconductor export controls, trade and India. Illustrative content only.</p><p>Weighted points toward priority / 100.</p><ul><li>Topic signals: export controls, semiconductor</li><li>Matches your interests: export controls</li><li>Practical cues: trade, export controls</li><li>Update cues: export controls</li></ul><dl><div><dt>Relevance</dt><dd>26.3 pts</dd></div><div><dt>Source preference</dt><dd>22.5 pts</dd></div><div><dt>Freshness</dt><dd>13.9 pts</dd></div><div><dt>Usefulness</dt><dd>10.5 pts</dd></div><div><dt>Importance</dt><dd>5.0 pts</dd></div></dl><p class="score-caveat">Editorial ranking, not a fact-check.</p></div></details></div>
+ </article><article class="story" data-group="data" data-score="78.0" data-time="2026-10-04T13:13:32.078672+05:30">
+  <div class="story-top"><span class="eyebrow topic-name">Data &amp; Building</span><span class="story-tag">Practical</span></div>
+  <h3><a href="https://github.com/" target="_blank" rel="noopener noreferrer">A new pandas release puts everyday data work first <span class="external-arrow" aria-hidden="true">↗</span></a></h3>
+  <div class="story-bottom"><div class="story-byline"><strong>pandas releases</strong><span>Maintainer / primary · <time datetime="2026-10-04T13:13:32.078672+05:30">Oct 4, 12:00</time></span></div>
+  <div class="ranking-preview"><p title="Why this story">Topic signals: pandas</p></div>
+  <details class="ranking"><summary><span class="ranking-action"><span class="ranking-closed">Details & score</span><span class="ranking-open">Close details</span> <span class="ranking-chevron" aria-hidden="true">⌄</span></span><span class="ranking-score">78/100</span></summary><div class="ranking-body"><p class="story-excerpt">Sample release coverage: a practical look at the changes that affect real analysis code.</p><p>Weighted points toward priority / 100.</p><ul><li>Topic signals: pandas</li><li>Matches your interests: release</li><li>Practical cues: code</li><li>Update cues: release</li><li>Dedicated topic source</li></ul><dl><div><dt>Relevance</dt><dd>29.8 pts</dd></div><div><dt>Source preference</dt><dd>23.8 pts</dd></div><div><dt>Freshness</dt><dd>12.6 pts</dd></div><div><dt>Usefulness</dt><dd>6.8 pts</dd></div><div><dt>Importance</dt><dd>5.0 pts</dd></div></dl><p class="score-caveat">Editorial ranking, not a fact-check.</p></div></details></div>
+ </article><article class="story" data-group="data" data-score="77.7" data-time="2026-10-04T07:13:32.078672+05:30">
+  <div class="story-top"><span class="eyebrow topic-name">Data &amp; Building</span><span class="story-tag">Practical</span></div>
+  <h3><a href="https://opensource.posit.co/" target="_blank" rel="noopener noreferrer">Better plots, clearer questions: a visualization field guide <span class="external-arrow" aria-hidden="true">↗</span></a></h3>
+  <div class="story-bottom"><div class="story-byline"><strong>Posit Open Source</strong><span>Maintainer / primary · <time datetime="2026-10-04T07:13:32.078672+05:30">Oct 4, 12:00</time></span></div>
+  <div class="ranking-preview"><p title="Why this story">Matches your interests: tutorial, visualization</p></div>
+  <details class="ranking"><summary><span class="ranking-action"><span class="ranking-closed">Details & score</span><span class="ranking-open">Close details</span> <span class="ranking-chevron" aria-hidden="true">⌄</span></span><span class="ranking-score">78/100</span></summary><div class="ranking-body"><p class="story-excerpt">A sample R tutorial on turning a statistical result into a useful visual explanation.</p><p>Weighted points toward priority / 100.</p><ul><li>Matches your interests: tutorial, visualization</li><li>Practical cues: tutorial, guide</li><li>Dedicated topic source</li></ul><dl><div><dt>Relevance</dt><dd>31.5 pts</dd></div><div><dt>Source preference</dt><dd>22.5 pts</dd></div><div><dt>Freshness</dt><dd>11.2 pts</dd></div><div><dt>Usefulness</dt><dd>10.5 pts</dd></div><div><dt>Importance</dt><dd>2.0 pts</dd></div></dl><p class="score-caveat">Editorial ranking, not a fact-check.</p></div></details></div>
+ </article><article class="story" data-group="movies" data-score="73.3" data-time="2026-10-04T11:13:32.078672+05:30">
+  <div class="story-top"><span class="eyebrow topic-name">Movies &amp; Shows</span><span class="story-tag">Reading</span></div>
   <h3><a href="https://harrypotter.com/" target="_blank" rel="noopener noreferrer">A familiar world, a different voice: behind the audiobook <span class="external-arrow" aria-hidden="true">↗</span></a></h3>
-  <p class="story-excerpt">A sample Harry Potter full cast audiobook update for your culture watchlist.</p>
-  <div class="story-bottom"><div class="story-byline"><strong>Harry Potter</strong><span>Official / primary · <time datetime="2026-10-04T11:34:42.831796+05:30">Oct 4, 12:00</time></span></div>
-  <div class="ranking-preview"><span>Why this story</span><p>Topic signals: harry potter</p></div>
-  <details class="ranking"><summary><span class="ranking-action"><span class="ranking-closed">Show score breakdown</span><span class="ranking-open">Hide score breakdown</span> <span class="ranking-chevron" aria-hidden="true">⌄</span></span><span class="ranking-score">74/100</span></summary><div class="ranking-body"><p>Weighted points toward priority / 100.</p><ul><li>Topic signals: harry potter</li><li>Matches your interests: harry potter, audiobook, full cast</li><li>Dedicated topic source</li></ul><dl><div><dt>Relevance</dt><dd>30.0 pts</dd></div><div><dt>Source preference</dt><dd>21.2 pts</dd></div><div><dt>Freshness</dt><dd>17.8 pts</dd></div><div><dt>Usefulness</dt><dd>3.0 pts</dd></div><div><dt>Importance</dt><dd>2.0 pts</dd></div></dl><p class="score-caveat">Editorial ranking, not a fact-check.</p></div></details></div>
- </article><article class="story " data-group="gaming" data-score="73.9" data-time="2026-10-04T15:34:42.831796+05:30">
+  <div class="story-bottom"><div class="story-byline"><strong>Harry Potter</strong><span>Official / primary · <time datetime="2026-10-04T11:13:32.078672+05:30">Oct 4, 12:00</time></span></div>
+  <div class="ranking-preview"><p title="Why this story">Topic signals: harry potter</p></div>
+  <details class="ranking"><summary><span class="ranking-action"><span class="ranking-closed">Details & score</span><span class="ranking-open">Close details</span> <span class="ranking-chevron" aria-hidden="true">⌄</span></span><span class="ranking-score">73/100</span></summary><div class="ranking-body"><p class="story-excerpt">A sample Harry Potter full cast audiobook update for your culture watchlist.</p><p>Weighted points toward priority / 100.</p><ul><li>Topic signals: harry potter</li><li>Matches your interests: harry potter, audiobook, full cast</li><li>Dedicated topic source</li></ul><dl><div><dt>Relevance</dt><dd>35.0 pts</dd></div><div><dt>Source preference</dt><dd>21.2 pts</dd></div><div><dt>Freshness</dt><dd>12.1 pts</dd></div><div><dt>Usefulness</dt><dd>3.0 pts</dd></div><div><dt>Importance</dt><dd>2.0 pts</dd></div></dl><p class="score-caveat">Editorial ranking, not a fact-check.</p></div></details></div>
+ </article><article class="story" data-group="gaming" data-score="73.1" data-time="2026-10-04T15:13:32.078672+05:30">
   <div class="story-top"><span class="eyebrow topic-name">Gaming</span><span class="story-tag">Reading</span></div>
   <h3><a href="https://pcgamer.com/" target="_blank" rel="noopener noreferrer">The worlds on your watchlist: RPG updates worth following <span class="external-arrow" aria-hidden="true">↗</span></a></h3>
-  <p class="story-excerpt">A sample roundup of meaningful Witcher and GTA 6 announcements, without the rumor mill.</p>
-  <div class="story-bottom"><div class="story-byline"><strong>PC Gamer</strong><span>Editorial · <time datetime="2026-10-04T15:34:42.831796+05:30">Oct 4, 12:00</time></span></div>
-  <div class="ranking-preview"><span>Why this story</span><p>Topic signals: witcher, gta, rpg</p></div>
-  <details class="ranking"><summary><span class="ranking-action"><span class="ranking-closed">Show score breakdown</span><span class="ranking-open">Hide score breakdown</span> <span class="ranking-chevron" aria-hidden="true">⌄</span></span><span class="ranking-score">74/100</span></summary><div class="ranking-body"><p>Weighted points toward priority / 100.</p><ul><li>Topic signals: witcher, gta, rpg</li><li>Matches your interests: witcher, gta 6, rpg</li><li>Dedicated topic source</li></ul><dl><div><dt>Relevance</dt><dd>30.0 pts</dd></div><div><dt>Source preference</dt><dd>20.0 pts</dd></div><div><dt>Freshness</dt><dd>18.9 pts</dd></div><div><dt>Usefulness</dt><dd>3.0 pts</dd></div><div><dt>Importance</dt><dd>2.0 pts</dd></div></dl><p class="score-caveat">Editorial ranking, not a fact-check.</p></div></details></div>
- </article><article class="story " data-group="culture" data-score="72.3" data-time="2026-10-04T04:34:42.831796+05:30">
-  <div class="story-top"><span class="eyebrow topic-name">Culture &amp; Worlds</span><span class="story-tag">Reading</span></div>
+  <div class="story-bottom"><div class="story-byline"><strong>PC Gamer</strong><span>Editorial · <time datetime="2026-10-04T15:13:32.078672+05:30">Oct 4, 12:00</time></span></div>
+  <div class="ranking-preview"><p title="Why this story">Topic signals: witcher, gta 6, rpg</p></div>
+  <details class="ranking"><summary><span class="ranking-action"><span class="ranking-closed">Details & score</span><span class="ranking-open">Close details</span> <span class="ranking-chevron" aria-hidden="true">⌄</span></span><span class="ranking-score">73/100</span></summary><div class="ranking-body"><p class="story-excerpt">A sample roundup of meaningful Witcher and GTA 6 announcements, without the rumor mill.</p><p>Weighted points toward priority / 100.</p><ul><li>Topic signals: witcher, gta 6, rpg</li><li>Matches your interests: gta 6, rpg</li><li>Dedicated topic source</li></ul><dl><div><dt>Relevance</dt><dd>35.0 pts</dd></div><div><dt>Source preference</dt><dd>20.0 pts</dd></div><div><dt>Freshness</dt><dd>13.1 pts</dd></div><div><dt>Usefulness</dt><dd>3.0 pts</dd></div><div><dt>Importance</dt><dd>2.0 pts</dd></div></dl><p class="score-caveat">Editorial ranking, not a fact-check.</p></div></details></div>
+ </article><article class="story" data-group="movies" data-score="71.8" data-time="2026-10-04T04:13:32.078672+05:30">
+  <div class="story-top"><span class="eyebrow topic-name">Movies &amp; Shows</span><span class="story-tag">Reading</span></div>
   <h3><a href="https://harrypotter.com/" target="_blank" rel="noopener noreferrer">Hogwarts on screen: an adaptation enters its next chapter <span class="external-arrow" aria-hidden="true">↗</span></a></h3>
-  <p class="story-excerpt">Sample official Harry Potter update used for filtering and layout checks.</p>
-  <div class="story-bottom"><div class="story-byline"><strong>Harry Potter</strong><span>Official / primary · <time datetime="2026-10-04T04:34:42.831796+05:30">Oct 4, 12:00</time></span></div>
-  <div class="ranking-preview"><span>Why this story</span><p>Topic signals: harry potter, hogwarts</p></div>
-  <details class="ranking"><summary><span class="ranking-action"><span class="ranking-closed">Show score breakdown</span><span class="ranking-open">Hide score breakdown</span> <span class="ranking-chevron" aria-hidden="true">⌄</span></span><span class="ranking-score">72/100</span></summary><div class="ranking-body"><p>Weighted points toward priority / 100.</p><ul><li>Topic signals: harry potter, hogwarts</li><li>Matches your interests: harry potter, hogwarts</li><li>Dedicated topic source</li></ul><dl><div><dt>Relevance</dt><dd>30.0 pts</dd></div><div><dt>Source preference</dt><dd>21.2 pts</dd></div><div><dt>Freshness</dt><dd>16.1 pts</dd></div><div><dt>Usefulness</dt><dd>3.0 pts</dd></div><div><dt>Importance</dt><dd>2.0 pts</dd></div></dl><p class="score-caveat">Editorial ranking, not a fact-check.</p></div></details></div>
- </article><article class="story " data-group="gaming" data-score="68.6" data-time="2026-10-04T12:34:42.831796+05:30">
-  <div class="story-top"><span class="eyebrow topic-name">Gaming</span><span class="story-tag">Reading</span></div>
-  <h3><a href="https://eurogamer.net/" target="_blank" rel="noopener noreferrer">Inside the design of a world that rewards curiosity <span class="external-arrow" aria-hidden="true">↗</span></a></h3>
-  <p class="story-excerpt">Sample reporting on exploration, choice, and the craft of building an RPG.</p>
-  <div class="story-bottom"><div class="story-byline"><strong>Eurogamer</strong><span>Editorial · <time datetime="2026-10-04T12:34:42.831796+05:30">Oct 4, 12:00</time></span></div>
-  <div class="ranking-preview"><span>Why this story</span><p>Topic signals: rpg</p></div>
-  <details class="ranking"><summary><span class="ranking-action"><span class="ranking-closed">Show score breakdown</span><span class="ranking-open">Hide score breakdown</span> <span class="ranking-chevron" aria-hidden="true">⌄</span></span><span class="ranking-score">69/100</span></summary><div class="ranking-body"><p>Weighted points toward priority / 100.</p><ul><li>Topic signals: rpg</li><li>Matches your interests: rpg</li><li>Dedicated topic source</li></ul><dl><div><dt>Relevance</dt><dd>25.5 pts</dd></div><div><dt>Source preference</dt><dd>20.0 pts</dd></div><div><dt>Freshness</dt><dd>18.1 pts</dd></div><div><dt>Usefulness</dt><dd>3.0 pts</dd></div><div><dt>Importance</dt><dd>2.0 pts</dd></div></dl><p class="score-caveat">Editorial ranking, not a fact-check.</p></div></details></div>
- </article><article class="story " data-group="gaming" data-score="67.6" data-time="2026-10-04T08:34:42.831796+05:30">
-  <div class="story-top"><span class="eyebrow topic-name">Gaming</span><span class="story-tag">Reading</span></div>
-  <h3><a href="https://pcgamer.com/" target="_blank" rel="noopener noreferrer">Witcher watch: the updates that matter for your next adventure <span class="external-arrow" aria-hidden="true">↗</span></a></h3>
-  <p class="story-excerpt">A sample story showing how tracked franchises receive a relevance boost.</p>
-  <div class="story-bottom"><div class="story-byline"><strong>PC Gamer</strong><span>Editorial · <time datetime="2026-10-04T08:34:42.831796+05:30">Oct 4, 12:00</time></span></div>
-  <div class="ranking-preview"><span>Why this story</span><p>Topic signals: witcher</p></div>
-  <details class="ranking"><summary><span class="ranking-action"><span class="ranking-closed">Show score breakdown</span><span class="ranking-open">Hide score breakdown</span> <span class="ranking-chevron" aria-hidden="true">⌄</span></span><span class="ranking-score">68/100</span></summary><div class="ranking-body"><p>Weighted points toward priority / 100.</p><ul><li>Topic signals: witcher</li><li>Matches your interests: witcher</li><li>Dedicated topic source</li></ul><dl><div><dt>Relevance</dt><dd>25.5 pts</dd></div><div><dt>Source preference</dt><dd>20.0 pts</dd></div><div><dt>Freshness</dt><dd>17.1 pts</dd></div><div><dt>Usefulness</dt><dd>3.0 pts</dd></div><div><dt>Importance</dt><dd>2.0 pts</dd></div></dl><p class="score-caveat">Editorial ranking, not a fact-check.</p></div></details></div>
- </article><article class="story " data-group="ai" data-score="67.6" data-time="2026-10-04T06:34:42.831796+05:30">
+  <div class="story-bottom"><div class="story-byline"><strong>Harry Potter</strong><span>Official / primary · <time datetime="2026-10-04T04:13:32.078672+05:30">Oct 4, 12:00</time></span></div>
+  <div class="ranking-preview"><p title="Why this story">Topic signals: harry potter, hogwarts</p></div>
+  <details class="ranking"><summary><span class="ranking-action"><span class="ranking-closed">Details & score</span><span class="ranking-open">Close details</span> <span class="ranking-chevron" aria-hidden="true">⌄</span></span><span class="ranking-score">72/100</span></summary><div class="ranking-body"><p class="story-excerpt">Sample official Harry Potter update used for filtering and layout checks.</p><p>Weighted points toward priority / 100.</p><ul><li>Topic signals: harry potter, hogwarts</li><li>Matches your interests: harry potter, hogwarts, adaptation</li><li>Dedicated topic source</li></ul><dl><div><dt>Relevance</dt><dd>35.0 pts</dd></div><div><dt>Source preference</dt><dd>21.2 pts</dd></div><div><dt>Freshness</dt><dd>10.6 pts</dd></div><div><dt>Usefulness</dt><dd>3.0 pts</dd></div><div><dt>Importance</dt><dd>2.0 pts</dd></div></dl><p class="score-caveat">Editorial ranking, not a fact-check.</p></div></details></div>
+ </article><article class="story" data-group="movies" data-score="71.6" data-time="2026-10-04T20:13:32.078672+05:30">
+  <div class="story-top"><span class="eyebrow topic-name">Movies &amp; Shows</span><span class="story-tag">Update</span></div>
+  <h3><a href="https://deadline.com/" target="_blank" rel="noopener noreferrer">Ted Lasso: a new season on the watchlist <span class="external-arrow" aria-hidden="true">↗</span></a></h3>
+  <div class="story-bottom"><div class="story-byline"><strong>Deadline</strong><span>Editorial · <time datetime="2026-10-04T20:13:32.078672+05:30">Oct 4, 12:00</time></span></div>
+  <div class="ranking-preview"><p title="Why this story">Topic signals: ted lasso</p></div>
+  <details class="ranking"><summary><span class="ranking-action"><span class="ranking-closed">Details & score</span><span class="ranking-open">Close details</span> <span class="ranking-chevron" aria-hidden="true">⌄</span></span><span class="ranking-score">72/100</span></summary><div class="ranking-body"><p class="story-excerpt">Illustrative TV release-date coverage, not a real announcement.</p><p>Weighted points toward priority / 100.</p><ul><li>Topic signals: ted lasso</li><li>Matches your interests: ted lasso, new season</li><li>Update cues: new season</li></ul><dl><div><dt>Relevance</dt><dd>28.0 pts</dd></div><div><dt>Source preference</dt><dd>21.2 pts</dd></div><div><dt>Freshness</dt><dd>14.4 pts</dd></div><div><dt>Usefulness</dt><dd>3.0 pts</dd></div><div><dt>Importance</dt><dd>5.0 pts</dd></div></dl><p class="score-caveat">Editorial ranking, not a fact-check.</p></div></details></div>
+ </article><article class="story" data-group="ai" data-score="68.5" data-time="2026-10-04T06:13:32.078672+05:30">
   <div class="story-top"><span class="eyebrow topic-name">AI &amp; Models</span><span class="story-tag">Practical</span></div>
   <h3><a href="https://openai.com/" target="_blank" rel="noopener noreferrer">A new API release for developers building everyday tools <span class="external-arrow" aria-hidden="true">↗</span></a></h3>
-  <p class="story-excerpt">Sample primary-source coverage of a product launch. Vendor claims remain labelled.</p>
-  <div class="story-bottom"><div class="story-byline"><strong>OpenAI</strong><span>Vendor / primary · <time datetime="2026-10-04T06:34:42.831796+05:30">Oct 4, 12:00</time></span></div>
-  <div class="ranking-preview"><span>Why this story</span><p>Practical cues: api</p></div>
-  <details class="ranking"><summary><span class="ranking-action"><span class="ranking-closed">Show score breakdown</span><span class="ranking-open">Hide score breakdown</span> <span class="ranking-chevron" aria-hidden="true">⌄</span></span><span class="ranking-score">68/100</span></summary><div class="ranking-body"><p>Weighted points toward priority / 100.</p><ul><li>Practical cues: api</li><li>Update cues: release</li><li>Dedicated topic source</li></ul><dl><div><dt>Relevance</dt><dd>18.0 pts</dd></div><div><dt>Source preference</dt><dd>21.2 pts</dd></div><div><dt>Freshness</dt><dd>16.6 pts</dd></div><div><dt>Usefulness</dt><dd>6.8 pts</dd></div><div><dt>Importance</dt><dd>5.0 pts</dd></div></dl><p class="score-caveat">Editorial ranking, not a fact-check.</p></div></details></div>
- </article><article class="story " data-group="ai" data-score="67.3" data-time="2026-10-04T14:34:42.831796+05:30">
+  <div class="story-bottom"><div class="story-byline"><strong>OpenAI</strong><span>Vendor / primary · <time datetime="2026-10-04T06:13:32.078672+05:30">Oct 4, 12:00</time></span></div>
+  <div class="ranking-preview"><p title="Why this story">Topic signals: artificial intelligence</p></div>
+  <details class="ranking"><summary><span class="ranking-action"><span class="ranking-closed">Details & score</span><span class="ranking-open">Close details</span> <span class="ranking-chevron" aria-hidden="true">⌄</span></span><span class="ranking-score">68/100</span></summary><div class="ranking-body"><p class="story-excerpt">Sample primary-source coverage of a product launch. Vendor claims remain labelled. Artificial intelligence.</p><p>Weighted points toward priority / 100.</p><ul><li>Topic signals: artificial intelligence</li><li>Practical cues: api</li><li>Update cues: release</li><li>Dedicated topic source</li></ul><dl><div><dt>Relevance</dt><dd>24.5 pts</dd></div><div><dt>Source preference</dt><dd>21.2 pts</dd></div><div><dt>Freshness</dt><dd>11.0 pts</dd></div><div><dt>Usefulness</dt><dd>6.8 pts</dd></div><div><dt>Importance</dt><dd>5.0 pts</dd></div></dl><p class="score-caveat">Editorial ranking, not a fact-check.</p></div></details></div>
+ </article><article class="story" data-group="gaming" data-score="67.2" data-time="2026-10-04T12:13:32.078672+05:30">
+  <div class="story-top"><span class="eyebrow topic-name">Gaming</span><span class="story-tag">Reading</span></div>
+  <h3><a href="https://eurogamer.net/" target="_blank" rel="noopener noreferrer">Inside the design of a world that rewards curiosity <span class="external-arrow" aria-hidden="true">↗</span></a></h3>
+  <div class="story-bottom"><div class="story-byline"><strong>Eurogamer</strong><span>Editorial · <time datetime="2026-10-04T12:13:32.078672+05:30">Oct 4, 12:00</time></span></div>
+  <div class="ranking-preview"><p title="Why this story">Topic signals: rpg</p></div>
+  <details class="ranking"><summary><span class="ranking-action"><span class="ranking-closed">Details & score</span><span class="ranking-open">Close details</span> <span class="ranking-chevron" aria-hidden="true">⌄</span></span><span class="ranking-score">67/100</span></summary><div class="ranking-body"><p class="story-excerpt">Sample reporting on exploration, choice, and the craft of building an RPG.</p><p>Weighted points toward priority / 100.</p><ul><li>Topic signals: rpg</li><li>Matches your interests: rpg</li><li>Dedicated topic source</li></ul><dl><div><dt>Relevance</dt><dd>29.8 pts</dd></div><div><dt>Source preference</dt><dd>20.0 pts</dd></div><div><dt>Freshness</dt><dd>12.4 pts</dd></div><div><dt>Usefulness</dt><dd>3.0 pts</dd></div><div><dt>Importance</dt><dd>2.0 pts</dd></div></dl><p class="score-caveat">Editorial ranking, not a fact-check.</p></div></details></div>
+ </article><article class="story" data-group="ai" data-score="64.1" data-time="2026-10-04T14:13:32.078672+05:30">
   <div class="story-top"><span class="eyebrow topic-name">AI &amp; Models</span><span class="story-tag">Practical</span></div>
   <h3><a href="https://arstechnica.com/" target="_blank" rel="noopener noreferrer">What a model benchmark can tell you—and what it cannot <span class="external-arrow" aria-hidden="true">↗</span></a></h3>
-  <p class="story-excerpt">A sample guide to reading evaluations and asking better questions about capability.</p>
-  <div class="story-bottom"><div class="story-byline"><strong>Ars Technica</strong><span>Editorial · <time datetime="2026-10-04T14:34:42.831796+05:30">Oct 4, 12:00</time></span></div>
-  <div class="ranking-preview"><span>Why this story</span><p>Topic signals: model</p></div>
-  <details class="ranking"><summary><span class="ranking-action"><span class="ranking-closed">Show score breakdown</span><span class="ranking-open">Hide score breakdown</span> <span class="ranking-chevron" aria-hidden="true">⌄</span></span><span class="ranking-score">67/100</span></summary><div class="ranking-body"><p>Weighted points toward priority / 100.</p><ul><li>Topic signals: model</li><li>Practical cues: guide, benchmark</li></ul><dl><div><dt>Relevance</dt><dd>15.0 pts</dd></div><div><dt>Source preference</dt><dd>21.2 pts</dd></div><div><dt>Freshness</dt><dd>18.6 pts</dd></div><div><dt>Usefulness</dt><dd>10.5 pts</dd></div><div><dt>Importance</dt><dd>2.0 pts</dd></div></dl><p class="score-caveat">Editorial ranking, not a fact-check.</p></div></details></div>
- </article><article class="story " data-group="gaming" data-score="65.3" data-time="2026-10-04T05:34:42.831796+05:30">
+  <div class="story-bottom"><div class="story-byline"><strong>Ars Technica</strong><span>Editorial · <time datetime="2026-10-04T14:13:32.078672+05:30">Oct 4, 12:00</time></span></div>
+  <div class="ranking-preview"><p title="Why this story">Topic signals: artificial intelligence</p></div>
+  <details class="ranking"><summary><span class="ranking-action"><span class="ranking-closed">Details & score</span><span class="ranking-open">Close details</span> <span class="ranking-chevron" aria-hidden="true">⌄</span></span><span class="ranking-score">64/100</span></summary><div class="ranking-body"><p class="story-excerpt">A sample guide to reading evaluations and asking better questions about capability. Artificial intelligence.</p><p>Weighted points toward priority / 100.</p><ul><li>Topic signals: artificial intelligence</li><li>Practical cues: guide, benchmark</li></ul><dl><div><dt>Relevance</dt><dd>17.5 pts</dd></div><div><dt>Source preference</dt><dd>21.2 pts</dd></div><div><dt>Freshness</dt><dd>12.9 pts</dd></div><div><dt>Usefulness</dt><dd>10.5 pts</dd></div><div><dt>Importance</dt><dd>2.0 pts</dd></div></dl><p class="score-caveat">Editorial ranking, not a fact-check.</p></div></details></div>
+ </article><article class="story" data-group="gaming" data-score="61.0" data-time="2026-10-04T08:13:32.078672+05:30">
+  <div class="story-top"><span class="eyebrow topic-name">Gaming</span><span class="story-tag">Reading</span></div>
+  <h3><a href="https://pcgamer.com/" target="_blank" rel="noopener noreferrer">Witcher watch: the updates that matter for your next adventure <span class="external-arrow" aria-hidden="true">↗</span></a></h3>
+  <div class="story-bottom"><div class="story-byline"><strong>PC Gamer</strong><span>Editorial · <time datetime="2026-10-04T08:13:32.078672+05:30">Oct 4, 12:00</time></span></div>
+  <div class="ranking-preview"><p title="Why this story">Topic signals: witcher</p></div>
+  <details class="ranking"><summary><span class="ranking-action"><span class="ranking-closed">Details & score</span><span class="ranking-open">Close details</span> <span class="ranking-chevron" aria-hidden="true">⌄</span></span><span class="ranking-score">61/100</span></summary><div class="ranking-body"><p class="story-excerpt">A sample story showing how tracked franchises receive a relevance boost.</p><p>Weighted points toward priority / 100.</p><ul><li>Topic signals: witcher</li><li>Dedicated topic source</li></ul><dl><div><dt>Relevance</dt><dd>24.5 pts</dd></div><div><dt>Source preference</dt><dd>20.0 pts</dd></div><div><dt>Freshness</dt><dd>11.5 pts</dd></div><div><dt>Usefulness</dt><dd>3.0 pts</dd></div><div><dt>Importance</dt><dd>2.0 pts</dd></div></dl><p class="score-caveat">Editorial ranking, not a fact-check.</p></div></details></div>
+ </article><article class="story" data-group="gaming" data-score="59.8" data-time="2026-10-04T05:13:32.078672+05:30">
   <div class="story-top"><span class="eyebrow topic-name">Gaming</span><span class="story-tag">Update</span></div>
   <h3><a href="https://eurogamer.net/" target="_blank" rel="noopener noreferrer">A patch worth revisiting: when a game finds its rhythm <span class="external-arrow" aria-hidden="true">↗</span></a></h3>
-  <p class="story-excerpt">A sample game patch report used to demonstrate the show-more control.</p>
-  <div class="story-bottom"><div class="story-byline"><strong>Eurogamer</strong><span>Editorial · <time datetime="2026-10-04T05:34:42.831796+05:30">Oct 4, 12:00</time></span></div>
-  <div class="ranking-preview"><span>Why this story</span><p>Topic signals: game</p></div>
-  <details class="ranking"><summary><span class="ranking-action"><span class="ranking-closed">Show score breakdown</span><span class="ranking-open">Hide score breakdown</span> <span class="ranking-chevron" aria-hidden="true">⌄</span></span><span class="ranking-score">65/100</span></summary><div class="ranking-body"><p>Weighted points toward priority / 100.</p><ul><li>Topic signals: game</li><li>Update cues: patch</li><li>Dedicated topic source</li></ul><dl><div><dt>Relevance</dt><dd>21.0 pts</dd></div><div><dt>Source preference</dt><dd>20.0 pts</dd></div><div><dt>Freshness</dt><dd>16.3 pts</dd></div><div><dt>Usefulness</dt><dd>3.0 pts</dd></div><div><dt>Importance</dt><dd>5.0 pts</dd></div></dl><p class="score-caveat">Editorial ranking, not a fact-check.</p></div></details></div>
+  <div class="story-bottom"><div class="story-byline"><strong>Eurogamer</strong><span>Editorial · <time datetime="2026-10-04T05:13:32.078672+05:30">Oct 4, 12:00</time></span></div>
+  <div class="ranking-preview"><p title="Why this story">Update cues: patch</p></div>
+  <details class="ranking"><summary><span class="ranking-action"><span class="ranking-closed">Details & score</span><span class="ranking-open">Close details</span> <span class="ranking-chevron" aria-hidden="true">⌄</span></span><span class="ranking-score">60/100</span></summary><div class="ranking-body"><p class="story-excerpt">A sample game patch report used to demonstrate the show-more control.</p><p>Weighted points toward priority / 100.</p><ul><li>Update cues: patch</li><li>Dedicated topic source</li></ul><dl><div><dt>Relevance</dt><dd>21.0 pts</dd></div><div><dt>Source preference</dt><dd>20.0 pts</dd></div><div><dt>Freshness</dt><dd>10.8 pts</dd></div><div><dt>Usefulness</dt><dd>3.0 pts</dd></div><div><dt>Importance</dt><dd>5.0 pts</dd></div></dl><p class="score-caveat">Editorial ranking, not a fact-check.</p></div></details></div>
  </article>
  </div>
  <p class="empty-news" id="empty-news" hidden>No stories matched this edition. Check source health below or widen the lookback window.</p>
  <button class="button more-button" type="button" id="show-more" hidden>Show more stories ↓</button>
- <details class="source-health"><summary>Behind the briefing <span>14/14 feed requests available</span></summary><div class="health-body"><p>Scores balance topic relevance, editable source preferences, freshness, practical cues and update cues. Similar headlines are removed, and each source has a cap. Scores do not verify claims or establish independent corroboration. Broadly similar reporting may still appear.</p><ul><li><span>openai / rss</span><span class="">ok · 12 entries</span></li><li><span>anthropic / rss</span><span class="">ok · 12 entries</span></li><li><span>huggingface / rss</span><span class="">ok · 12 entries</span></li><li><span>ars / rss</span><span class="">ok · 12 entries</span></li><li><span>posit / rss</span><span class="">ok · 12 entries</span></li><li><span>pandas / rss</span><span class="">ok · 12 entries</span></li><li><span>sklearn / rss</span><span class="">ok · 12 entries</span></li><li><span>pcgamer / rss</span><span class="">ok · 12 entries</span></li><li><span>eurogamer / rss</span><span class="">ok · 12 entries</span></li><li><span>bbc / rss</span><span class="">ok · 12 entries</span></li><li><span>guardian / rss</span><span class="">ok · 12 entries</span></li><li><span>reuters / rss</span><span class="">ok · 12 entries</span></li><li><span>ap / rss</span><span class="">ok · 12 entries</span></li><li><span>potter / rss</span><span class="">ok · 12 entries</span></li></ul></div></details>
+ <details class="source-health"><summary>Behind the briefing <span>44/44 feed requests available</span></summary><div class="health-body"><p>Scores balance topic relevance, editable source preferences, freshness, practical cues and update cues. Similar headlines are removed, and each source has a cap. Scores do not verify claims or establish independent corroboration. Broadly similar reporting may still appear.</p><ul><li><span>openai / rss</span><span class="">ok · 12 entries</span></li><li><span>anthropic / rss</span><span class="">ok · 12 entries</span></li><li><span>huggingface / rss</span><span class="">ok · 12 entries</span></li><li><span>ars / rss</span><span class="">ok · 12 entries</span></li><li><span>posit / rss</span><span class="">ok · 12 entries</span></li><li><span>pandas / rss</span><span class="">ok · 12 entries</span></li><li><span>sklearn / rss</span><span class="">ok · 12 entries</span></li><li><span>pcgamer / rss</span><span class="">ok · 12 entries</span></li><li><span>eurogamer / rss</span><span class="">ok · 12 entries</span></li><li><span>bbc / rss</span><span class="">ok · 12 entries</span></li><li><span>guardian / rss</span><span class="">ok · 12 entries</span></li><li><span>reuters / rss</span><span class="">ok · 12 entries</span></li><li><span>ap / rss</span><span class="">ok · 12 entries</span></li><li><span>potter / rss</span><span class="">ok · 12 entries</span></li><li><span>ign / rss</span><span class="">ok · 12 entries</span></li><li><span>igngames / rss</span><span class="">ok · 12 entries</span></li><li><span>restofworld / rss</span><span class="">ok · 12 entries</span></li><li><span>verge / rss</span><span class="">ok · 12 entries</span></li><li><span>gsmarena / rss</span><span class="">ok · 12 entries</span></li><li><span>notebookcheck / rss</span><span class="">ok · 12 entries</span></li><li><span>guardian_tech / rss</span><span class="">ok · 12 entries</span></li><li><span>deadline / rss</span><span class="">ok · 12 entries</span></li><li><span>variety / rss</span><span class="">ok · 12 entries</span></li><li><span>guardian_film / rss</span><span class="">ok · 12 entries</span></li><li><span>guardian_tv / rss</span><span class="">ok · 12 entries</span></li><li><span>netflix / rss</span><span class="">ok · 12 entries</span></li><li><span>appletv / rss</span><span class="">ok · 12 entries</span></li><li><span>adultswim / rss</span><span class="">ok · 12 entries</span></li><li><span>guardian_fashion / rss</span><span class="">ok · 12 entries</span></li><li><span>guardian_food / rss</span><span class="">ok · 12 entries</span></li><li><span>guardian_travel / rss</span><span class="">ok · 12 entries</span></li><li><span>fashionbeans / rss</span><span class="">ok · 12 entries</span></li><li><span>seriouseats / rss</span><span class="">ok · 12 entries</span></li><li><span>lonelyplanet / rss</span><span class="">ok · 12 entries</span></li><li><span>cnalifestyle / rss</span><span class="">ok · 12 entries</span></li><li><span>scmp / rss</span><span class="">ok · 12 entries</span></li><li><span>france24 / rss</span><span class="">ok · 12 entries</span></li><li><span>dw / rss</span><span class="">ok · 12 entries</span></li><li><span>aljazeera / rss</span><span class="">ok · 12 entries</span></li><li><span>cna / rss</span><span class="">ok · 12 entries</span></li><li><span>africanews / rss</span><span class="">ok · 12 entries</span></li><li><span>batimes / rss</span><span class="">ok · 12 entries</span></li><li><span>abc / rss</span><span class="">ok · 12 entries</span></li><li><span>japantimes / rss</span><span class="">ok · 12 entries</span></li></ul></div></details>
 </main>
 
 <section class="comics-section"><div class="section-label"><span>03 / THE FUNNY PAGES</span><span>A SMALL DETOUR</span></div><div class="comic-strip"><a href="https://xkcd.com/" target="_blank" rel="noopener noreferrer"><span class="eyebrow">xkcd</span><strong>A small dose of perspective ↗</strong><small>Sample comic</small></a><a href="https://www.irovedout.com/" target="_blank" rel="noopener noreferrer"><span class="eyebrow">IRO</span><strong>Back to the world beyond ↗</strong><small>Sample comic</small></a><a href="https://www.oglaf.com/" target="_blank" rel="noopener noreferrer"><span class="eyebrow">oglaf</span><strong>Something completely different ↗</strong><small>Sample comic</small></a></div></section>
-<footer><span>THE DAILY BRIEF <span class="accent">/</span> Mayank</span><span>Built 2026-10-04 19:34 IST · <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Weather by Open-Meteo</a></span><a href="#top" id="back-top">Back to top ↑</a></footer>
+<footer><span>THE DAILY BRIEF <span class="accent">/</span> Mayank</span><span>Built 2026-10-04 22:13 IST · <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Weather by Open-Meteo</a></span><a href="#top" id="back-top">Back to top ↑</a></footer>
 </div>
-<script id="weather-config" type="application/json">{"built": "2026-10-04T19:34:42.831796+05:30", "enabled": false, "labels": {"0": ["Clear", "\u2600\ufe0f"], "1": ["Mostly clear", "\ud83c\udf24\ufe0f"], "2": ["Partly cloudy", "\u26c5"], "3": ["Overcast", "\u2601\ufe0f"], "45": ["Fog", "\ud83c\udf2b\ufe0f"], "48": ["Fog", "\ud83c\udf2b\ufe0f"], "51": ["Drizzle", "\ud83c\udf27\ufe0f"], "53": ["Drizzle", "\ud83c\udf27\ufe0f"], "55": ["Drizzle", "\ud83c\udf27\ufe0f"], "61": ["Rain", "\ud83c\udf27\ufe0f"], "63": ["Rain", "\ud83c\udf27\ufe0f"], "65": ["Heavy rain", "\u26c8\ufe0f"], "71": ["Snow", "\ud83c\udf28\ufe0f"], "73": ["Snow", "\ud83c\udf28\ufe0f"], "75": ["Heavy snow", "\u2744\ufe0f"], "80": ["Showers", "\ud83c\udf26\ufe0f"], "81": ["Showers", "\ud83c\udf26\ufe0f"], "82": ["Heavy showers", "\u26c8\ufe0f"], "95": ["Thunderstorm", "\u26c8\ufe0f"], "96": ["Thunderstorm", "\u26c8\ufe0f"], "99": ["Thunderstorm", "\u26c8\ufe0f"]}, "location": "Mumbai", "params": {"daily": "sunrise,sunset,temperature_2m_max,temperature_2m_min,weather_code", "forecast_days": 1, "hourly": "temperature_2m,apparent_temperature,precipitation_probability,relative_humidity_2m,wind_speed_10m,weather_code", "latitude": 19.076, "longitude": 72.8777, "temperature_unit": "celsius", "timezone": "Asia/Kolkata", "wind_speed_unit": "kmh"}, "timezone": "Asia/Kolkata", "unit": "\u00b0C", "windUnit": "km/h"}</script>
+<script id="weather-config" type="application/json">{"built": "2026-10-04T22:13:32.078672+05:30", "enabled": false, "labels": {"0": ["Clear", "\u2600\ufe0f"], "1": ["Mostly clear", "\ud83c\udf24\ufe0f"], "2": ["Partly cloudy", "\u26c5"], "3": ["Overcast", "\u2601\ufe0f"], "45": ["Fog", "\ud83c\udf2b\ufe0f"], "48": ["Fog", "\ud83c\udf2b\ufe0f"], "51": ["Drizzle", "\ud83c\udf27\ufe0f"], "53": ["Drizzle", "\ud83c\udf27\ufe0f"], "55": ["Drizzle", "\ud83c\udf27\ufe0f"], "61": ["Rain", "\ud83c\udf27\ufe0f"], "63": ["Rain", "\ud83c\udf27\ufe0f"], "65": ["Heavy rain", "\u26c8\ufe0f"], "71": ["Snow", "\ud83c\udf28\ufe0f"], "73": ["Snow", "\ud83c\udf28\ufe0f"], "75": ["Heavy snow", "\u2744\ufe0f"], "80": ["Showers", "\ud83c\udf26\ufe0f"], "81": ["Showers", "\ud83c\udf26\ufe0f"], "82": ["Heavy showers", "\u26c8\ufe0f"], "95": ["Thunderstorm", "\u26c8\ufe0f"], "96": ["Thunderstorm", "\u26c8\ufe0f"], "99": ["Thunderstorm", "\u26c8\ufe0f"]}, "location": "Mumbai", "params": {"daily": "sunrise,sunset,temperature_2m_max,temperature_2m_min,weather_code", "forecast_days": 1, "hourly": "temperature_2m,apparent_temperature,precipitation_probability,relative_humidity_2m,wind_speed_10m,weather_code", "latitude": 19.076, "longitude": 72.8777, "temperature_unit": "celsius", "timezone": "Asia/Kolkata", "wind_speed_unit": "kmh"}, "timezone": "Asia/Kolkata", "unit": "\u00b0C", "windUnit": "km/h"}</script>
 <script>
 (function(){
  'use strict';
@@ -291,8 +301,8 @@
   const query=input.value.trim().toLocaleLowerCase();
   const filtered=cards.filter(c=>(topic==='all'||c.dataset.group===topic)&&c.textContent.toLocaleLowerCase().includes(query));
   filtered.sort((a,b)=>sort.value==='newest'?Date.parse(b.dataset.time)-Date.parse(a.dataset.time):Number(b.dataset.score)-Number(a.dataset.score));
-  cards.forEach(c=>{c.hidden=true;c.classList.remove('lead-story');});
-  filtered.forEach((c,i)=>{container.appendChild(c);c.hidden=i>=limit;if(i===0)c.classList.add('lead-story');});
+  cards.forEach(c=>{c.hidden=true;});
+  filtered.forEach((c,i)=>{container.appendChild(c);c.hidden=i>=limit;});
   document.getElementById('results-note').textContent=`${Math.min(limit,filtered.length)} of ${filtered.length} stories · ${sort.value==='newest'?'newest first':'ranked for your interests'}`;
   const empty=document.getElementById('empty-news');empty.hidden=filtered.length>0;
   empty.textContent=cards.length?'No stories match these filters. Try another topic or search.':'No stories selected. Check source health below or widen the lookback window.';
@@ -303,34 +313,61 @@
   topic=b.dataset.topic;limit=12;document.querySelectorAll('[data-topic]').forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-pressed',String(x===b));});update();
  }));
  input.addEventListener('input',()=>{limit=12;update();});sort.addEventListener('change',()=>{limit=12;update();});more.addEventListener('click',()=>{limit+=12;update();});update();
- const cfg=JSON.parse(document.getElementById('weather-config').textContent);let lastWeather=Date.parse(cfg.built),busy=false;
+ const cfg=JSON.parse(document.getElementById('weather-config').textContent);
+ let lastWeather=Date.parse(cfg.cachedAt||cfg.built),lastAttempt=0,busy=false,highlighted='',refreshFailed=!!cfg.initialFailure;
  const rounded=x=>x==null?'—':Math.round(x);
+ function localHour(){
+  const parts=Object.fromEntries(new Intl.DateTimeFormat('en-CA',{timeZone:cfg.timezone,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',hourCycle:'h23'}).formatToParts(new Date()).map(p=>[p.type,p.value]));
+  return `${parts.year}-${parts.month}-${parts.day}T${parts.hour}:00`;
+ }
  const localDay=stamp=>new Intl.DateTimeFormat('en-CA',{timeZone:cfg.timezone,year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(stamp));
+ function highlightWeather(){
+  const now=localHour(),cells=[...document.querySelectorAll('.hour-cell')];let current=null;
+  cells.forEach(cell=>{
+   const active=cell.dataset.time===now;cell.classList.toggle('current-hour',active);
+   cell.classList.toggle('past-hour',cell.dataset.time<now);
+   if(active){cell.setAttribute('aria-current','time');current=cell;}else cell.removeAttribute('aria-current');
+  });
+  const status=document.getElementById('weather-current');
+  status.textContent=current?`${current.dataset.emoji} ${current.dataset.temp}${cfg.unit} · ${current.dataset.label} · current-hour forecast (${now.slice(11)})`:'No cached forecast for the current hour. Refresh or rebuild this edition.';
+  const date=cells.length?cells[0].dataset.time.slice(0,10):'';
+  const stamp=new Intl.DateTimeFormat('en-IN',{timeZone:cfg.timezone,dateStyle:'medium',timeStyle:'short'}).format(new Date(lastWeather));
+  document.getElementById('weather-note').textContent=(refreshFailed?'Refresh unavailable · ':'')+(date?`${date} · 00:00–23:00 · cached ${stamp}`:'Weather unavailable')+' · '+cfg.timezone+' · forecast, not a live observation';
+  // Move the horizontal strip only on initial load or an hour change, not each minute.
+  if(current&&highlighted!==now){
+   const scroller=document.querySelector('.hourly-scroll');
+   const left=current.getBoundingClientRect().left-scroller.getBoundingClientRect().left+scroller.scrollLeft;
+   if(scroller.scrollTo)scroller.scrollTo({left:Math.max(0,left),behavior:'auto'});else scroller.scrollLeft=Math.max(0,left);
+  }
+  highlighted=current?now:'';
+ }
  async function refreshWeather(){
-  if(!cfg.enabled||busy||document.hidden||(Date.now()-lastWeather<3600000&&localDay(lastWeather)===localDay(Date.now())))return;
-  busy=true;const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),15000);
+  if(!cfg.enabled||busy||document.hidden||(Date.now()-lastWeather<3600000&&localDay(lastWeather)===localDay(Date.now()))||Date.now()-lastAttempt<300000)return;
+  busy=true;lastAttempt=Date.now();const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),15000);
   try{
    const r=await fetch('https://api.open-meteo.com/v1/forecast?'+new URLSearchParams(cfg.params),{signal:ctrl.signal});if(!r.ok)throw new Error('Weather unavailable');
-   const data=await r.json(),h=data.hourly,d=data.daily;
-   const parts=Object.fromEntries(new Intl.DateTimeFormat('en-CA',{timeZone:cfg.timezone,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',hourCycle:'h23'}).formatToParts(new Date()).map(p=>[p.type,p.value]));
-   const calendarDay=`${parts.year}-${parts.month}-${parts.day}`;
+   const data=await r.json(),h=data.hourly,d=data.daily,calendarDay=localHour().slice(0,10);
    const selected=h.time.map((t,i)=>({t,i})).filter(x=>x.t.slice(0,10)===calendarDay);
-   if(!selected.length)throw new Error('Empty forecast');
+   const dayIndex=d.time.indexOf(calendarDay);
+   if(!selected.length||dayIndex<0)throw new Error('Incomplete forecast');
    const frag=document.createDocumentFragment();
    selected.forEach(({t,i})=>{
     const label=cfg.labels[h.weather_code[i]]||['Weather','🌡️'];const cell=document.createElement('div');cell.className='hour-cell';
-    const day='';
-    [[`${day} ${t.slice(11,16)}`,'hour-time'],[label[1],'weather-symbol'],[`${rounded(h.temperature_2m[i])}°`,'temperature'],[`Feels ${rounded(h.apparent_temperature[i])}°`,''],[`Rain ${rounded(h.precipitation_probability[i])}%`,'rain'],[`RH ${rounded(h.relative_humidity_2m[i])}%`,''],[`${rounded(h.wind_speed_10m[i])} ${cfg.windUnit}`,'']].forEach(([text,cls])=>{const el=document.createElement(cls==='temperature'?'strong':'span');el.className=cls;el.textContent=text;if(cls==='weather-symbol')el.title=label[0];cell.appendChild(el);});frag.appendChild(cell);
+    Object.assign(cell.dataset,{time:t,label:label[0],emoji:label[1],temp:String(rounded(h.temperature_2m[i]))});
+    [[t.slice(11,16),'hour-time'],[label[1],'weather-symbol'],[`${rounded(h.temperature_2m[i])}°`,'temperature'],[`Feels ${rounded(h.apparent_temperature[i])}°`,''],[`Rain ${rounded(h.precipitation_probability[i])}%`,'rain'],[`RH ${rounded(h.relative_humidity_2m[i])}%`,''],[`${rounded(h.wind_speed_10m[i])} ${cfg.windUnit}`,'']].forEach(([text,cls])=>{const el=document.createElement(cls==='temperature'?'strong':'span');el.className=cls;el.textContent=text;if(cls==='weather-symbol')el.title=label[0];cell.appendChild(el);});frag.appendChild(cell);
    });
+   const lab=cfg.labels[d.weather_code[dayIndex]]||['Weather','🌡️'];
+   const range=`${rounded(d.temperature_2m_min[dayIndex])}–${rounded(d.temperature_2m_max[dayIndex])}${cfg.unit} · Sun ↑ ${d.sunrise[dayIndex].slice(-5)} / ↓ ${d.sunset[dayIndex].slice(-5)}`;
    document.getElementById('hourly-cells').replaceChildren(frag);
-   const dayIndex=d.time.indexOf(calendarDay);if(dayIndex<0)throw new Error('Missing daily forecast');
-   const lab=cfg.labels[d.weather_code[dayIndex]]||['Weather','🌡️'];document.getElementById('weather-summary').textContent=lab[1]+' '+lab[0];
-   document.getElementById('weather-range').textContent=`${rounded(d.temperature_2m_min[dayIndex])}–${rounded(d.temperature_2m_max[dayIndex])}${cfg.unit} · Sun ↑ ${d.sunrise[dayIndex].slice(-5)} / ↓ ${d.sunset[dayIndex].slice(-5)}`;
-   document.getElementById('weather-note').textContent=calendarDay+' · 00:00–23:00 · rain probability in % · updated '+new Intl.DateTimeFormat('en-IN',{timeZone:cfg.timezone,dateStyle:'medium',timeStyle:'short'}).format(new Date());lastWeather=Date.now();
-  }catch(e){document.getElementById('weather-note').textContent='Refresh unavailable · showing the last forecast, if available. Edition built '+new Date(cfg.built).toLocaleString();}
-  finally{clearTimeout(timer);busy=false;}
+   document.getElementById('weather-summary').textContent=lab[1]+' '+lab[0];
+   document.getElementById('weather-range').textContent=range;
+   lastWeather=Date.now();refreshFailed=false;
+  }catch(e){refreshFailed=true;}
+  finally{clearTimeout(timer);busy=false;highlightWeather();}
  }
- refreshWeather();setInterval(refreshWeather,3600000);document.addEventListener('visibilitychange',refreshWeather);
+ function weatherTick(){if(!document.hidden){highlightWeather();refreshWeather();}}
+ weatherTick();setInterval(weatherTick,60000);document.addEventListener('visibilitychange',weatherTick);
+
 })();
 </script>
 </body>

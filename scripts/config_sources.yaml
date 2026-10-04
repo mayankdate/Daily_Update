@@ -1,0 +1,281 @@
+# Publisher registry. Scores are editorial preferences, not accuracy probabilities. RSS availability can change.
+# UTF-8; spaces for indentation; quote dates and IDs. Tokens stay outside YAML.
+openai:
+  name: OpenAI
+  domain: openai.com
+  kind: Vendor / primary
+  reliability: 85
+  rss: https://openai.com/news/rss.xml
+anthropic:
+  name: Anthropic
+  domain: anthropic.com
+  kind: Vendor / primary
+  reliability: 85
+  rss: null
+huggingface:
+  name: Hugging Face
+  domain: huggingface.co
+  kind: Technical / community
+  reliability: 80
+  rss: https://huggingface.co/blog/feed.xml
+ars:
+  name: Ars Technica
+  domain: arstechnica.com
+  kind: Editorial
+  reliability: 85
+  rss: https://feeds.arstechnica.com/arstechnica/index
+posit:
+  name: Posit Open Source
+  domain: opensource.posit.co
+  kind: Maintainer / primary
+  reliability: 90
+  rss: https://opensource.posit.co/blog/index.xml
+pandas:
+  name: pandas releases
+  domain: github.com
+  path_prefix: /pandas-dev/pandas/
+  kind: Maintainer / primary
+  reliability: 95
+  rss: https://github.com/pandas-dev/pandas/releases.atom
+sklearn:
+  name: scikit-learn releases
+  domain: github.com
+  path_prefix: /scikit-learn/scikit-learn/
+  kind: Maintainer / primary
+  reliability: 95
+  rss: https://github.com/scikit-learn/scikit-learn/releases.atom
+pcgamer:
+  name: PC Gamer
+  domain: pcgamer.com
+  kind: Editorial
+  reliability: 80
+  rss: https://www.pcgamer.com/rss/
+eurogamer:
+  name: Eurogamer
+  domain: eurogamer.net
+  kind: Editorial
+  reliability: 80
+  rss: https://www.eurogamer.net/feed
+bbc:
+  name: BBC News
+  domain: bbc.com
+  kind: Editorial
+  reliability: 85
+  rss: https://feeds.bbci.co.uk/news/world/rss.xml
+  domain_aliases:
+  - bbc.co.uk
+guardian:
+  name: The Guardian
+  domain: theguardian.com
+  kind: Editorial
+  reliability: 85
+  rss: https://www.theguardian.com/world/rss
+reuters:
+  name: Reuters
+  domain: reuters.com
+  kind: News agency
+  reliability: 90
+  rss: null
+ap:
+  name: Associated Press
+  domain: apnews.com
+  kind: News agency
+  reliability: 90
+  rss: null
+potter:
+  name: Harry Potter
+  domain: harrypotter.com
+  kind: Official / primary
+  reliability: 85
+  rss: null
+ign:
+  name: IGN
+  domain: ign.com
+  kind: Editorial
+  reliability: 80
+  rss: https://feeds.feedburner.com/ign/all
+igngames:
+  name: IGN Games
+  domain: ign.com
+  kind: Editorial
+  reliability: 80
+  rss: https://feeds.feedburner.com/ign/games-all
+restofworld:
+  name: Rest of World
+  domain: restofworld.org
+  kind: Editorial
+  reliability: 85
+  rss: https://restofworld.org/feed/latest/
+verge:
+  name: The Verge
+  domain: theverge.com
+  kind: Editorial
+  reliability: 85
+  rss: https://www.theverge.com/rss/index.xml
+gsmarena:
+  name: GSMArena
+  domain: gsmarena.com
+  kind: Editorial
+  reliability: 85
+  rss: https://www.gsmarena.com/rss-news-reviews.php3
+notebookcheck:
+  name: Notebookcheck
+  domain: notebookcheck.net
+  kind: Editorial
+  reliability: 85
+  rss: https://www.notebookcheck.net/News.152.100.html
+guardian_tech:
+  name: The Guardian · Technology
+  domain: theguardian.com
+  kind: Editorial
+  reliability: 85
+  rss: https://www.theguardian.com/technology/rss
+  path_prefix: /technology/
+deadline:
+  name: Deadline
+  domain: deadline.com
+  kind: Editorial
+  reliability: 85
+  rss: https://deadline.com/feed/
+variety:
+  name: Variety
+  domain: variety.com
+  kind: Editorial
+  reliability: 85
+  rss: https://variety.com/feed/
+guardian_film:
+  name: The Guardian · Film
+  domain: theguardian.com
+  kind: Editorial
+  reliability: 85
+  rss: https://www.theguardian.com/film/rss
+  path_prefix: /film/
+guardian_tv:
+  name: The Guardian · TV & Radio
+  domain: theguardian.com
+  kind: Editorial
+  reliability: 85
+  rss: https://www.theguardian.com/tv-and-radio/rss
+  path_prefix: /tv-and-radio/
+netflix:
+  name: Netflix Tudum
+  domain: netflix.com
+  kind: Official / primary
+  reliability: 85
+  rss: null
+  path_prefix: /tudum/
+appletv:
+  name: Apple TV Press
+  domain: apple.com
+  kind: Official / primary
+  reliability: 85
+  rss: null
+  path_prefix: /tv-pr/
+adultswim:
+  name: Adult Swim
+  domain: adultswim.com
+  kind: Official / primary
+  reliability: 85
+  rss: null
+guardian_fashion:
+  name: The Guardian · Fashion
+  domain: theguardian.com
+  kind: Editorial
+  reliability: 82
+  rss: https://www.theguardian.com/fashion/rss
+  path_prefix: /fashion/
+guardian_food:
+  name: The Guardian · Food
+  domain: theguardian.com
+  kind: Editorial
+  reliability: 85
+  rss: https://www.theguardian.com/food/rss
+  path_prefix: /food/
+guardian_travel:
+  name: The Guardian · Travel
+  domain: theguardian.com
+  kind: Editorial
+  reliability: 85
+  rss: https://www.theguardian.com/travel/rss
+  path_prefix: /travel/
+fashionbeans:
+  name: FashionBeans · Men's Style
+  domain: fashionbeans.com
+  kind: Editorial
+  reliability: 75
+  rss: https://www.fashionbeans.com/feed/
+seriouseats:
+  name: Serious Eats
+  domain: seriouseats.com
+  kind: Editorial
+  reliability: 85
+  rss: null
+lonelyplanet:
+  name: Lonely Planet
+  domain: lonelyplanet.com
+  kind: Editorial
+  reliability: 85
+  rss: null
+cnalifestyle:
+  name: CNA Lifestyle
+  domain: cnalifestyle.channelnewsasia.com
+  kind: Editorial
+  reliability: 82
+  rss: null
+scmp:
+  name: South China Morning Post
+  domain: scmp.com
+  kind: Editorial
+  reliability: 82
+  rss: null
+france24:
+  name: France 24 · English
+  domain: france24.com
+  kind: Editorial
+  reliability: 85
+  rss: https://www.france24.com/en/rss
+  path_prefix: /en/
+dw:
+  name: DW · English
+  domain: dw.com
+  kind: Editorial
+  reliability: 85
+  rss: https://rss.dw.com/xml/rss-en-all
+  path_prefix: /en/
+aljazeera:
+  name: Al Jazeera · English
+  domain: aljazeera.com
+  kind: Editorial
+  reliability: 82
+  rss: https://www.aljazeera.com/xml/rss/all.xml
+cna:
+  name: CNA · World
+  domain: channelnewsasia.com
+  kind: Editorial
+  reliability: 85
+  rss: https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml&category=6311
+africanews:
+  name: Africanews · English
+  domain: africanews.com
+  kind: Editorial
+  reliability: 80
+  rss: null
+batimes:
+  name: Buenos Aires Times
+  domain: batimes.com.ar
+  kind: Editorial
+  reliability: 80
+  rss: null
+abc:
+  name: ABC News · Australia
+  domain: abc.net.au
+  kind: Editorial
+  reliability: 85
+  rss: null
+  path_prefix: /news/
+japantimes:
+  name: The Japan Times
+  domain: japantimes.co.jp
+  kind: Editorial
+  reliability: 82
+  rss: https://www.japantimes.co.jp/feed/

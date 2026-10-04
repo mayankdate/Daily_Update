@@ -1,0 +1,116 @@
+# Edit this topic’s watchlist in keywords/boost/query; source IDs refer to config_sources.yaml.
+# UTF-8; spaces for indentation; quote dates and IDs. Tokens stay outside YAML.
+id: geopolitics
+name: Geopolitics
+description: Global conflicts, diplomacy, elections, trade & regional shifts.
+sources:
+- reuters
+- ap
+- bbc
+- guardian
+- france24
+- dw
+- aljazeera
+- cna
+- africanews
+- batimes
+- abc
+- japantimes
+dedicated_sources: []
+keywords:
+- war
+- conflict
+- ceasefire
+- peace talks
+- sanctions
+- tariff
+- tariffs
+- trade deal
+- trade war
+- diplomacy
+- diplomatic
+- summit
+- nato
+- united nations
+- ukraine
+- russia
+- china
+- taiwan
+- iran
+- israel
+- gaza
+- lebanon
+- south china sea
+- red sea
+- shipping
+- export controls
+- semiconductor
+- nuclear
+- border
+- election
+- elections
+- coup
+- treaty
+- military
+- africa
+- sudan
+- sahel
+- ethiopia
+- congo
+- latin america
+- brazil
+- argentina
+- venezuela
+- mexico
+- european union
+- asean
+- southeast asia
+- myanmar
+- korea
+- japan
+- pacific
+- australia
+- arctic
+- climate diplomacy
+- migration
+- humanitarian
+- debt crisis
+- brics
+- g20
+boost:
+- peace talks
+- ceasefire
+- humanitarian
+- trade agreement
+- export controls
+- energy security
+- shipping
+- sanctions
+- regional analysis
+useful_terms:
+- explainer
+- explained
+- analysis
+- what it means
+- trade
+- energy
+- shipping
+- export controls
+important_terms:
+- ceasefire
+- sanctions
+- tariff
+- treaty
+- invasion
+- escalation
+- election
+- coup
+- nuclear
+- export controls
+rumor_terms:
+- rumor
+- rumour
+- unverified
+exclude: []
+query: geopolitics OR diplomacy OR sanctions OR ceasefire OR tariffs OR "peace talks" OR "African Union"
+  OR ASEAN OR "Latin America" OR "Pacific islands"
