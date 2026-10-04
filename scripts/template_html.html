@@ -1,231 +1,143 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#101918">
+<meta name="description" content="A personal daily briefing: your day, your interests, and the stories worth opening.">
 <title>{{ masthead_title }} — {{ date_short }}</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-<script>
-    // Apply saved theme before CSS loads so there's no flash of wrong theme.
-    (function () {
-        var saved = localStorage.getItem("theme");
-        if (saved === "dark" || saved === "light") {
-            document.documentElement.setAttribute("data-theme", saved);
-        }
-    })();
-</script>
-<style>
-{{ css }}
-</style>
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="./favicon.ico" sizes="any">
+<script>try { var t = localStorage.getItem('brief-theme') || localStorage.getItem('theme'); if(t === 'light' || t === 'dark') document.documentElement.dataset.theme=t; } catch(e) {}</script>
+<style>{{ css | safe }}</style>
 </head>
 <body>
+<a class="skip-link" href="#news">Skip to the news</a>
 <div class="page">
+{% if demo %}<div class="demo-banner">DESIGN PREVIEW · Illustrative stories and sample personal data. Not a live edition.</div>{% endif %}
+<header class="masthead">
+  <div class="eyebrow header-rail"><span><span class="status-dot"></span> PERSONAL EDITION / {{ owner_name }}</span><button type="button" class="theme-toggle" aria-label="Switch color theme">◐ <span>Theme</span></button></div>
+  <div class="masthead-main"><h1>{{ masthead_title }}</h1><p>Stay curious.<br><em>Keep your signal.</em></p></div>
+  <div class="dateline"><span>{{ date_long }}</span><span>YOUR DAY. YOUR WORLD.</span></div>
+</header>
 
-    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light/dark mode" title="Toggle light/dark mode">
-        <span class="theme-icon-light">☀</span>
-        <span class="theme-icon-dark">☾</span>
-    </button>
+<section class="conditions" aria-label="Weather and soundtrack">
+ <div class="weather-main">
+  <div class="weather-heading"><div><span class="eyebrow">LOCAL ATMOSPHERE</span><h2 id="weather-location">{{ weather_client.location }} <span id="weather-summary">{% if weather %}{{ weather.emoji }} {{ weather.summary }}{% endif %}</span></h2></div>
+  <div class="sun-times" id="weather-range">{% if weather %}{{ weather.min }}–{{ weather.max }}{{ weather.unit }}<br>Sun ↑ {{ weather.sunrise }} / ↓ {{ weather.sunset }}{% endif %}</div></div>
+  <p class="weather-note" id="weather-note">{% if weather %}Next 24 hours · rain probability in % · updated {{ weather.updated }}{% else %}Weather unavailable at build time.{% endif %}</p>
+  <div class="hourly-scroll" tabindex="0" role="region" aria-label="Hourly forecast, scroll horizontally">
+   <div class="hourly-cells" id="hourly-cells">
+   {% if weather %}{% for c in weather.cells %}<div class="hour-cell">
+    <span class="hour-time">{{ c.day }} {{ c.hour }}</span><span class="weather-symbol" title="{{ c.label }}">{{ c.emoji }}</span>
+    <strong>{{ c.temp }}°</strong><span>Feels {{ c.feels }}°</span><span class="rain">Rain {{ c.precip }}%</span><span>RH {{ c.humidity }}%</span><span>{{ c.wind }} {{ weather.wind_unit }}</span>
+   </div>{% endfor %}{% endif %}
+   </div>
+  </div>
+ </div>
+ <aside class="soundtrack" aria-label="Today's soundtrack">
+  <span class="eyebrow">ON THE RECORD</span>
+  {% if soundtrack %}<span class="record-icon" aria-hidden="true">◉</span><div class="soundtrack-copy"><span class="muted">Today's soundtrack</span><strong>{{ soundtrack.artist }}</strong></div><a class="button small" href="https://open.spotify.com/artist/{{ soundtrack.spotify_id }}" target="_blank" rel="noopener noreferrer">Open Spotify ↗</a>
+  {% else %}<p class="muted">No soundtrack artist configured.</p>{% endif %}
+  {% if build_status.get("Music releases") == "unavailable" %}<small class="music-status muted">Release check unavailable.</small>{% endif %}
+  {% if music_releases %}<details class="releases"><summary>{{ music_releases | length }} recent releases</summary><ul>{% for m in music_releases %}<li><a href="{{ m.url }}" target="_blank" rel="noopener noreferrer">{{ m.artist }} · {{ m.title }}</a><small>{{ m.date }}</small></li>{% endfor %}</ul></details>{% endif %}
+ </aside>
+</section>
 
-    <header class="masthead">
-        <h1>{{ masthead_title }}</h1>
-        <div class="tagline">Est. 2026 · All the news fit to serve one subscriber.</div>
-    </header>
+<div class="section-label"><span>01 / THE DAY AHEAD</span><a href="#news">Jump to the briefing ↓</a></div>
+<section class="daily-grid" aria-label="Your day">
+ <details class="day-panel" id="tasks-panel" open><summary><span>Tasks <small>{{ tasks | length }}</small></span><span class="expand-mark" aria-hidden="true">+</span></summary><div class="panel-body">
+ {% if build_status.get('Tasks') == 'unavailable' %}<p class="empty">Tasks unavailable. Check the Notion connection.</p>{% elif tasks %}
+ <ul class="tasks">{% for t in tasks %}<li class="{% if t.done %}done{% endif %}"><span class="check" aria-label="{% if t.done %}Complete{% else %}Incomplete{% endif %}">{% if t.done %}✓{% endif %}</span><span>{{ t.title }}{% if t.type %}<small>{{ t.type }}</small>{% endif %}</span></li>{% endfor %}</ul>
+ {% else %}<p class="empty">A clear calendar. Nothing scheduled today.</p>{% endif %}</div></details>
+ <details class="day-panel" id="workout-panel" open><summary><span>Workout <small>{{ workouts | length }}</small></span><span class="expand-mark" aria-hidden="true">+</span></summary><div class="panel-body"><p class="loadout">{{ weekday }} / {{ loadout }}</p>
+ {% if build_status.get('Workout') == 'unavailable' %}<p class="empty">Workout unavailable. Check the Notion connection.</p>{% elif workouts %}<ul class="workouts">{% for w in workouts %}<li><strong>{{ w.name }}</strong><span>{% if w.sets is not none %}{{ w.sets | round(0) | int }} × {{ w.reps or '—' }}{% endif %}{% if w.weight_kg is not none %} · {{ w.weight_kg }} kg{% endif %}{% if w.rest %} · {{ w.rest | round(0) | int }}s rest{% endif %}</span>{% if w.muscles %}<small>{{ w.muscles | join(' · ') }}</small>{% endif %}</li>{% endfor %}</ul>{% else %}<p class="empty">No workout scheduled for this day and loadout.</p>{% endif %}</div></details>
+ <details class="day-panel" id="countdowns-panel" open><summary><span>On the horizon <small>{{ countdowns | length }}</small></span><span class="expand-mark" aria-hidden="true">+</span></summary><div class="panel-body">
+ {% for c in countdowns %}<div class="countdown"><strong>{{ c.label }}</strong><span>{{ c.name }}</span><small>{{ c.date_pretty }}</small></div>{% else %}<p class="empty">No countdowns yet.</p>{% endfor %}</div></details>
+</section>
 
-    <div class="dateline">
-        <span>Vol. {{ volume }}, No. {{ issue }}</span>
-        <span class="center">{{ date_long }}</span>
-        <span>Loadout: {{ loadout }}</span>
-    </div>
+<main id="news">
+ <div class="section-label"><span>02 / YOUR SIGNAL</span><span>{{ news | length }} SELECTED STORIES</span></div>
+ <div class="briefing-header"><div><span class="eyebrow">THE WORLD, FILTERED FOR YOU</span><h2>The briefing<span>.</span></h2></div><p>Fresh ideas. Useful tools.<br>Worlds worth getting lost in.</p></div>
+ <div class="news-controls" id="news-controls" hidden>
+  <nav class="topic-tabs" aria-label="Filter by topic"><button type="button" class="active" data-topic="all" aria-pressed="true">All signals <span>{{ news | length }}</span></button>{% for t in topics %}<button type="button" data-topic="{{ t.id }}" aria-pressed="false">{{ t.name }} <span>{{ news | selectattr('group_id','equalto',t.id) | list | length }}</span></button>{% endfor %}</nav>
+  <div class="filter-row"><label class="search-label"><span class="sr-only">Search stories</span><input id="story-search" type="search" placeholder="Search your briefing…" autocomplete="off"></label><label class="sort-label"><span class="sr-only">Sort stories</span><select id="story-sort"><option value="priority">Priority first</option><option value="newest">Newest first</option></select></label></div>
+ </div>
+ <p class="results-note" id="results-note" aria-live="polite">Ranked for your interests · source details on every story.</p>
+ <div class="stories" id="stories">
+ {% for n in news %}<article class="story {% if loop.first %}lead-story{% endif %}" data-group="{{ n.group_id }}" data-score="{{ n.score }}" data-time="{{ n.timestamp }}">
+  <div class="story-top"><span class="eyebrow topic-name">{{ n.group_name }}</span><span class="story-tag">{{ n.tag }}</span></div>
+  <h3><a href="{{ n.url }}" target="_blank" rel="noopener noreferrer">{{ n.title }} <span class="external-arrow" aria-hidden="true">↗</span></a></h3>
+  {% if n.summary %}<p class="story-excerpt">{{ n.summary }}</p>{% endif %}
+  <div class="story-bottom"><div class="story-byline"><strong>{{ n.source }}</strong><span>{{ n.kind }} · <time datetime="{{ n.timestamp }}">{{ n.when }}</time></span></div>
+  <details class="ranking"><summary>Why this story <span>{{ n.score | round(0) | int }}</span></summary><div class="ranking-body"><p>Priority score / 100 · an editorial heuristic, not a fact-check.</p><ul>{% for reason in n.reasons %}<li>{{ reason }}</li>{% endfor %}</ul><dl>{% for key,value in n.parts.items() %}<div><dt>{{ key | capitalize }}</dt><dd>{{ value }}</dd></div>{% endfor %}{% if n.penalty %}<div><dt>Penalty</dt><dd>−{{ n.penalty }}</dd></div>{% endif %}</dl></div></details></div>
+ </article>{% endfor %}
+ </div>
+ <p class="empty-news" id="empty-news" {% if news %}hidden{% endif %}>No stories matched this edition. Check source health below or widen the lookback window.</p>
+ <button class="button more-button" type="button" id="show-more" hidden>Show more stories ↓</button>
+ <details class="source-health"><summary>Behind the briefing <span>{{ source_status | selectattr('status','equalto','ok') | list | length }}/{{ source_status | length }} feed requests available</span></summary><div class="health-body"><p>Scores balance topic relevance, editable source preferences, freshness, practical cues and update cues. Similar headlines are removed, and each source has a cap. Scores do not verify claims or establish independent corroboration. Broadly similar reporting may still appear.</p><ul>{% for s in source_status %}<li><span>{{ s.id }} / {{ s.method }}</span><span class="{% if s.status != 'ok' %}warning{% endif %}">{{ s.status }}{% if s.status == 'ok' %} · {{ s.entries }} entries{% endif %}</span></li>{% endfor %}</ul></div></details>
+</main>
 
-    {# ---------- WEATHER ---------- #}
-    <section class="weather">
-        <div class="weather-head">
-            <div class="weather-headline">
-                <span class="weather-emoji">{{ weather.emoji }}</span>
-                <div>
-                    <div class="weather-location">{{ weather.location }}</div>
-                    <div class="weather-summary">{{ weather.summary }} · {{ weather.min }}{{ weather.unit }} / {{ weather.max }}{{ weather.unit }}</div>
-                </div>
-            </div>
-            <div class="weather-sun">
-                <span>↑ {{ weather.sunrise }}</span>
-                <span>↓ {{ weather.sunset }}</span>
-            </div>
-        </div>
-
-        <div class="timeline">
-            <div class="timeline-bar">
-                <div class="sun-arc" style="left: {{ weather.sunrise_pct }}%; width: {{ weather.sunset_pct - weather.sunrise_pct }}%"></div>
-                <span class="sun-marker rise" style="left: {{ weather.sunrise_pct }}%" title="Sunrise {{ weather.sunrise }}">☀</span>
-                <span class="sun-marker set"  style="left: {{ weather.sunset_pct }}%"  title="Sunset {{ weather.sunset }}">☾</span>
-            </div>
-            <div class="timeline-cells">
-                {% for cell in weather.cells %}
-                <div class="hour-cell">
-                    <div class="hour-emoji">{{ cell.emoji }}</div>
-                    <div class="hour-temp">{{ cell.temp }}°</div>
-                    <div class="hour-time">{{ cell.hour }}</div>
-                    {% if cell.precip and cell.precip > 20 %}<div class="hour-precip">{{ cell.precip }}%</div>{% endif %}
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
-
-    {# ---------- TASKS + WORKOUT + COUNTDOWNS ---------- #}
-    <div class="three-up">
-
-        <section class="minimal">
-            <h2><span class="kicker">The Day Ahead</span>Tasks</h2>
-            <hr class="section-rule">
-            {% if tasks %}
-                <ul class="task-list">
-                {% for t in tasks %}
-                    <li>
-                        {% if t.type %}<span class="task-type {{ t.type_class }}">{{ t.type }}</span>{% endif %}
-                        <span class="task-text {% if t.done %}task-done{% endif %}">{{ t.title }}</span>
-                    </li>
-                {% endfor %}
-                </ul>
-            {% else %}
-                <p class="empty-note">No tasks scheduled.</p>
-            {% endif %}
-        </section>
-
-        <section class="minimal">
-            <h2><span class="kicker">Iron &amp; Sweat</span>Workout</h2>
-            <hr class="section-rule">
-            {% if workouts %}
-                <ul class="workout-min">
-                {% for w in workouts %}
-                    <li>
-                        <div class="workout-name-min">{{ w.name }}</div>
-                        <div class="workout-meta-min">
-                            {% if w.sets %}{{ w.sets }}×{{ w.reps or '?' }}{% endif %}
-                            {% if w.weight_kg %} · {{ w.weight_kg }}kg{% endif %}
-                            {% if w.rest %} · rest {{ w.rest }}s{% endif %}
-                        </div>
-                    </li>
-                {% endfor %}
-                </ul>
-            {% else %}
-                <p class="empty-note">Rest day on {{ weekday }}.</p>
-            {% endif %}
-        </section>
-
-        <section class="minimal countdown-section">
-            <h2><span class="kicker">The Horizon</span>Countdowns</h2>
-            <hr class="section-rule">
-            {% if countdowns %}
-                <ul class="countdown-list">
-                {% for c in countdowns %}
-                    <li class="countdown-item">
-                        <div class="countdown-days {% if c.days_left == 0 %}today{% elif c.days_left < 0 %}past{% endif %}">
-                            {{ c.label }}
-                        </div>
-                        <div class="countdown-name">{{ c.name }}</div>
-                        <div class="countdown-date">{{ c.date_pretty }}</div>
-                    </li>
-                {% endfor %}
-                </ul>
-            {% else %}
-                <p class="empty-note">Nothing on the horizon.</p>
-            {% endif %}
-        </section>
-
-    </div>
-
-    {# ---------- MUSIC / SOUNDTRACK ---------- #}
-    <section>
-        {% if music_releases %}
-            <h2><span class="kicker">Pressing Vinyl</span>New Releases</h2>
-            <hr class="section-rule">
-            <ul class="feed-list">
-            {% for m in music_releases %}
-                <li class="feed-item">
-                    <span class="feed-source">{{ m.artist }}</span>
-                    <a href="{{ m.url }}" target="_blank" rel="noopener">{{ m.title }}</a>
-                    <span class="feed-time">{{ m.date }} · {{ m.type }}</span>
-                </li>
-            {% endfor %}
-            </ul>
-        {% elif soundtrack %}
-            <h2><span class="kicker">Today's Soundtrack</span>{{ soundtrack.artist }}</h2>
-            <hr class="section-rule">
-            <div class="spotify-embed">
-                <iframe
-                    src="{{ soundtrack.embed_url }}"
-                    width="100%" height="152" frameborder="0"
-                    allowtransparency="true"
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                    loading="lazy"></iframe>
-            </div>
-        {% endif %}
-    </section>
-
-    {# ---------- COMICS ---------- #}
-    <section>
-        <h2><span class="kicker">The Funny Pages</span>Webcomics</h2>
-        <hr class="section-rule">
-        {% if comics %}
-            <ul class="feed-list">
-            {% for c in comics %}
-                <li class="feed-item">
-                    <span class="feed-source">{{ c.source }}</span>
-                    <a href="{{ c.url }}" target="_blank" rel="noopener">{{ c.title }}</a>
-                    <span class="feed-time">{{ c.when }}</span>
-                </li>
-            {% endfor %}
-            </ul>
-        {% else %}
-            <p class="empty-note">No new strips today.</p>
-        {% endif %}
-    </section>
-
-    {# ---------- NEWS: one section per topic ---------- #}
-    {% for feed in news %}
-    <section>
-        <h2><span class="kicker">From the Wires</span>{{ feed.name }}</h2>
-        <hr class="section-rule">
-        {% if feed.entries %}
-            <ul class="story-list">
-            {% for n in feed.entries %}
-                <li class="story-card {% if loop.first %}story-lead{% endif %}">
-                    <a class="story-link" href="{{ n.url }}" target="_blank" rel="noopener">
-                        <h3 class="story-title">{{ n.title }}</h3>
-                        <div class="story-meta">
-                            <span class="story-source">{{ n.source }}</span>
-                            <span class="story-time">{{ n.when }}</span>
-                        </div>
-                    </a>
-                </li>
-            {% endfor %}
-            </ul>
-        {% else %}
-            <p class="empty-note">Quiet on this front.</p>
-        {% endif %}
-    </section>
-    {% endfor %}
-
-    <footer>
-        Built {{ built_at }} · Edition for {{ owner_name }}
-    </footer>
-
+<section class="comics-section"><div class="section-label"><span>03 / THE FUNNY PAGES</span><span>A SMALL DETOUR</span></div>{% for name,status in build_status.items() %}{% if name.startswith("Comic:") and status == "unavailable" %}<p class="integration-note">{{ name }} · feed unavailable this build.</p>{% endif %}{% endfor %}<div class="comic-strip">{% for c in comics %}<a href="{{ c.url }}" target="_blank" rel="noopener noreferrer"><span class="eyebrow">{{ c.source }}</span><strong>{{ c.title }} ↗</strong><small>{{ c.when }}</small></a>{% else %}<p class="empty">No recent comic updates available.</p>{% endfor %}</div></section>
+<footer><span>THE DAILY BRIEF <span class="accent">/</span> {{ owner_name }}</span><span>Built {{ built_at }} · <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Weather by Open-Meteo</a></span><a href="#top" id="back-top">Back to top ↑</a></footer>
 </div>
-
+<script id="weather-config" type="application/json">{{ weather_client | tojson }}</script>
 <script>
-    function toggleTheme() {
-        var cur = document.documentElement.getAttribute("data-theme");
-        if (!cur) {
-            cur = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-        }
-        var next = cur === "dark" ? "light" : "dark";
-        document.documentElement.setAttribute("data-theme", next);
-        localStorage.setItem("theme", next);
-    }
+(function(){
+ 'use strict';
+ document.querySelector('.theme-toggle').addEventListener('click',function(){
+  const next=document.documentElement.dataset.theme==='dark'?'light':'dark';
+  document.documentElement.dataset.theme=next; try{localStorage.setItem('brief-theme',next);}catch(e){}
+ });
+ document.getElementById('back-top').addEventListener('click',function(e){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'});});
+ if(window.matchMedia('(max-width: 700px)').matches){document.getElementById('workout-panel').open=false;document.getElementById('countdowns-panel').open=false;}
+ const cards=[...document.querySelectorAll('.story')],container=document.getElementById('stories');
+ let topic='all',limit=12;
+ const input=document.getElementById('story-search'),sort=document.getElementById('story-sort'),more=document.getElementById('show-more');
+ function update(){
+  const query=input.value.trim().toLocaleLowerCase();
+  const filtered=cards.filter(c=>(topic==='all'||c.dataset.group===topic)&&c.textContent.toLocaleLowerCase().includes(query));
+  filtered.sort((a,b)=>sort.value==='newest'?Date.parse(b.dataset.time)-Date.parse(a.dataset.time):Number(b.dataset.score)-Number(a.dataset.score));
+  cards.forEach(c=>{c.hidden=true;c.classList.remove('lead-story');});
+  filtered.forEach((c,i)=>{container.appendChild(c);c.hidden=i>=limit;if(i===0)c.classList.add('lead-story');});
+  document.getElementById('results-note').textContent=`${Math.min(limit,filtered.length)} of ${filtered.length} stories · ${sort.value==='newest'?'newest first':'ranked for your interests'}`;
+  const empty=document.getElementById('empty-news');empty.hidden=filtered.length>0;
+  empty.textContent=cards.length?'No stories match these filters. Try another topic or search.':'No stories selected. Check source health below or widen the lookback window.';
+  more.hidden=filtered.length<=limit;
+ }
+ document.getElementById('news-controls').hidden=false;
+ document.querySelectorAll('[data-topic]').forEach(b=>b.addEventListener('click',()=>{
+  topic=b.dataset.topic;limit=12;document.querySelectorAll('[data-topic]').forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-pressed',String(x===b));});update();
+ }));
+ input.addEventListener('input',()=>{limit=12;update();});sort.addEventListener('change',()=>{limit=12;update();});more.addEventListener('click',()=>{limit+=12;update();});update();
+ const cfg=JSON.parse(document.getElementById('weather-config').textContent);let lastWeather=Date.parse(cfg.built),busy=false;
+ const rounded=x=>x==null?'—':Math.round(x);
+ async function refreshWeather(){
+  if(!cfg.enabled||busy||document.hidden||Date.now()-lastWeather<3600000)return;
+  busy=true;const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),15000);
+  try{
+   const r=await fetch('https://api.open-meteo.com/v1/forecast?'+new URLSearchParams(cfg.params),{signal:ctrl.signal});if(!r.ok)throw new Error('Weather unavailable');
+   const data=await r.json(),h=data.hourly,d=data.daily;
+   const parts=Object.fromEntries(new Intl.DateTimeFormat('en-CA',{timeZone:cfg.timezone,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',hourCycle:'h23'}).formatToParts(new Date()).map(p=>[p.type,p.value]));
+   const floor=`${parts.year}-${parts.month}-${parts.day}T${parts.hour}:00`;
+   const selected=h.time.map((t,i)=>({t,i})).filter(x=>x.t>=floor).slice(0,24);
+   if(!selected.length)throw new Error('Empty forecast');
+   const frag=document.createDocumentFragment();
+   selected.forEach(({t,i})=>{
+    const label=cfg.labels[h.weather_code[i]]||['Weather','🌡️'];const cell=document.createElement('div');cell.className='hour-cell';
+    const day=t.slice(0,10)===floor.slice(0,10)?'Today':'Tomorrow';
+    [[`${day} ${t.slice(11,16)}`,'hour-time'],[label[1],'weather-symbol'],[`${rounded(h.temperature_2m[i])}°`,'temperature'],[`Feels ${rounded(h.apparent_temperature[i])}°`,''],[`Rain ${rounded(h.precipitation_probability[i])}%`,'rain'],[`RH ${rounded(h.relative_humidity_2m[i])}%`,''],[`${rounded(h.wind_speed_10m[i])} ${cfg.windUnit}`,'']].forEach(([text,cls])=>{const el=document.createElement(cls==='temperature'?'strong':'span');el.className=cls;el.textContent=text;if(cls==='weather-symbol')el.title=label[0];cell.appendChild(el);});frag.appendChild(cell);
+   });
+   document.getElementById('hourly-cells').replaceChildren(frag);
+   const lab=cfg.labels[d.weather_code[0]]||['Weather','🌡️'];document.getElementById('weather-summary').textContent=lab[1]+' '+lab[0];
+   document.getElementById('weather-range').textContent=`${rounded(d.temperature_2m_min[0])}–${rounded(d.temperature_2m_max[0])}${cfg.unit} · Sun ↑ ${d.sunrise[0].slice(-5)} / ↓ ${d.sunset[0].slice(-5)}`;
+   document.getElementById('weather-note').textContent='Next 24 hours · rain probability in % · updated '+new Intl.DateTimeFormat('en-IN',{timeZone:cfg.timezone,dateStyle:'medium',timeStyle:'short'}).format(new Date());lastWeather=Date.now();
+  }catch(e){document.getElementById('weather-note').textContent='Refresh unavailable · showing the last forecast, if available. Edition built '+new Date(cfg.built).toLocaleString();}
+  finally{clearTimeout(timer);busy=false;}
+ }
+ refreshWeather();setInterval(refreshWeather,3600000);document.addEventListener('visibilitychange',refreshWeather);
+})();
 </script>
-
 </body>
 </html>

@@ -22,3 +22,10 @@ __pycache__/
 # OS
 .DS_Store
 Thumbs.db
+
+# Never commit executed notebooks or credentials
+.env
+.env.*
+!.env.example
+*executed*.ipynb
+.cache/

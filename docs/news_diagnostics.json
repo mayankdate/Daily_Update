@@ -1,0 +1,4100 @@
+{
+  "built_at": "2026-10-04T19:10:03.637541+05:30",
+  "sources": [
+    {
+      "id": "ars",
+      "method": "rss",
+      "status": "ok",
+      "entries": 20
+    },
+    {
+      "id": "eurogamer",
+      "method": "rss",
+      "status": "ok",
+      "entries": 100
+    },
+    {
+      "id": "huggingface",
+      "method": "rss",
+      "status": "ok",
+      "entries": 873
+    },
+    {
+      "id": "openai",
+      "method": "rss",
+      "status": "ok",
+      "entries": 1245
+    },
+    {
+      "id": "pandas",
+      "method": "rss",
+      "status": "ok",
+      "entries": 10
+    },
+    {
+      "id": "pcgamer",
+      "method": "rss",
+      "status": "ok",
+      "entries": 50
+    },
+    {
+      "id": "posit",
+      "method": "rss",
+      "status": "ok",
+      "entries": 20
+    },
+    {
+      "id": "sklearn",
+      "method": "rss",
+      "status": "ok",
+      "entries": 10
+    },
+    {
+      "id": "ai",
+      "method": "discovery",
+      "status": "ok",
+      "entries": 100
+    },
+    {
+      "id": "data",
+      "method": "discovery",
+      "status": "ok",
+      "entries": 100
+    },
+    {
+      "id": "gaming",
+      "method": "discovery",
+      "status": "ok",
+      "entries": 100
+    },
+    {
+      "id": "culture",
+      "method": "discovery",
+      "status": "ok",
+      "entries": 8
+    }
+  ],
+  "candidates": [
+    {
+      "title": "Apple changes full-disk access permissions to curb abuse from AI agents",
+      "summary": "Meta says FDA isn't sufficient to Muse reading messages. Apple begs to differ.",
+      "url": "https://arstechnica.com/security/2026/10/apple-changes-full-disk-access-permissions-to-curb-abuse-from-ai-agents/",
+      "source_id": "ars",
+      "source": "Ars Technica",
+      "kind": "Editorial",
+      "when": "Oct 3, 04:33",
+      "timestamp": "2026-10-03T04:33:16+05:30",
+      "discovery": false,
+      "group_id": "ai",
+      "group_name": "AI & Models",
+      "score": 52.7,
+      "parts": {
+        "relevance": 15.0,
+        "reliability": 21.2,
+        "freshness": 11.5,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Topic match and source preference"
+      ],
+      "tag": "Reading",
+      "id": "5432f5b94c34f514"
+    },
+    {
+      "title": "The 7-year-old Nvidia Shield TV is now $100 more expensive due to AI",
+      "summary": "Initially launched in 2019, the Nvidia Shield TV Pro now retails for $299.99.",
+      "url": "https://arstechnica.com/gadgets/2026/10/the-7-year-old-nvidia-shield-tv-is-now-100-more-expensive-thanks-to-ai/",
+      "source_id": "ars",
+      "source": "Ars Technica",
+      "kind": "Editorial",
+      "when": "Oct 2, 20:22",
+      "timestamp": "2026-10-02T20:22:16+05:30",
+      "discovery": false,
+      "group_id": "ai",
+      "group_name": "AI & Models",
+      "score": 51.4,
+      "parts": {
+        "relevance": 15.0,
+        "reliability": 21.2,
+        "freshness": 10.2,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Topic match and source preference"
+      ],
+      "tag": "Reading",
+      "id": "a08a24d3f61d4df5"
+    },
+    {
+      "title": "Venus' mysterious haze is actually cosmic dust",
+      "summary": "A physical model show that iron dust and sulfuric acid create the right properties.",
+      "url": "https://arstechnica.com/science/2026/10/venus-mysterious-haze-is-actually-cosmic-dust/",
+      "source_id": "ars",
+      "source": "Ars Technica",
+      "kind": "Editorial",
+      "when": "Oct 2, 03:57",
+      "timestamp": "2026-10-02T03:57:04+05:30",
+      "discovery": false,
+      "group_id": "ai",
+      "group_name": "AI & Models",
+      "score": 49.2,
+      "parts": {
+        "relevance": 15.0,
+        "reliability": 21.2,
+        "freshness": 8.0,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Topic match and source preference"
+      ],
+      "tag": "Reading",
+      "id": "f0be6c8325b25584"
+    },
+    {
+      "title": "PlatinumGames boss hints he wants to expand Bayonetta as Stellar Blade director calls the series \"indispensable\"",
+      "summary": "PlatinumGames president Atsushi Inaba has hinted he'd like to expand the character of Bayonetta and broaden her world. Read more",
+      "url": "https://www.eurogamer.net/platinumgames-bayonetta-expand-atsushi-inaba-stellar-blade",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Oct 4, 19:07",
+      "timestamp": "2026-10-04T19:07:29+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 63.0,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 20.0,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "1084b1b1c4e52ab2"
+    },
+    {
+      "title": "RuneScape Reignited launches 2 December",
+      "summary": "Jagex is offering long-time, lapsed, and new RuneScape players a clean slate with RuneScape Reignited. Read more",
+      "url": "https://www.eurogamer.net/runescape-reignited-launch-date-2-december-economy-reset",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Oct 4, 18:10",
+      "timestamp": "2026-10-04T18:10:21+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 65.7,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 19.7,
+        "usefulness": 3.0,
+        "importance": 5.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Update cues: launch",
+        "Dedicated topic source"
+      ],
+      "tag": "Update",
+      "id": "6ae093ee5c49106d"
+    },
+    {
+      "title": "Fourth RuneScape officially revealed",
+      "summary": "Jagex has announced a fourth MMO in the RuneScape series. Read more",
+      "url": "https://www.eurogamer.net/jagex-runescape-4-mmo-unreal-engine-animated-series-moistcr1tikal",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Oct 4, 16:42",
+      "timestamp": "2026-10-04T16:42:52+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 62.3,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 19.3,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "d101bcf16e6030d7"
+    },
+    {
+      "title": "Nivalis Nights dares to ask what if Cyberpunk 2077 met Dave the Diver and Stardew Valley? And for now at least I'm loving the answer",
+      "summary": "As I throw open the windows on my first day in Nivalis, breathing in the city's neon-streaked air and watching the smog roil across the blackened sky, my government-mandated AI automata informs me the district is in lockdown and a",
+      "url": "https://www.eurogamer.net/nivalis-nights-now-playing",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Oct 4, 14:31",
+      "timestamp": "2026-10-04T14:31:54+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 61.7,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 18.7,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "4b6f5a89778fa69a"
+    },
+    {
+      "title": "Final Fantasy 7 Revelation director says he \"did his best\" to fight for a full disc release",
+      "summary": "Final Fantasy 7 Revelation director Naoki Hamaguchi has responded to fans asking for a full disc version of the game, saying he \"did [his] best\" to push for physical media as the industry edges towards an all-digital future. Read ",
+      "url": "https://www.eurogamer.net/final-fantasy-7-revelation-naoki-hamaguchi-disc-release-physical-media",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Oct 3, 22:55",
+      "timestamp": "2026-10-03T22:55:03+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 63.9,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 14.9,
+        "usefulness": 3.0,
+        "importance": 5.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Update cues: release",
+        "Dedicated topic source"
+      ],
+      "tag": "Update",
+      "id": "f4b1b0b880539615"
+    },
+    {
+      "title": "Sony in talks to land Battlefield movie from Christopher McQuarrie and Michael B. Jordan",
+      "summary": "Sony is reportedly in talks to acquire a big-screen adaptation of Electronic Arts' Battlefield, with Christopher McQuarrie attached to write, direct and produce, and Michael B. Jordan on board to produce. Read more",
+      "url": "https://www.eurogamer.net/sony-battlefield-movie-christopher-mcquarrie-michael-b-jordan",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Oct 3, 21:54",
+      "timestamp": "2026-10-03T21:54:38+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 57.7,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 14.7,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "175f97aacc144f99"
+    },
+    {
+      "title": "Capcom plans to evolve RE Engine into an \"AI-generation game engine\"",
+      "summary": "Capcom wants to transform its in-house RE Engine into what it's calling an \"AI-generation game engine\". Read more",
+      "url": "https://www.eurogamer.net/capcom-re-engine-ai-generation-game-engine-rex-project",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Oct 3, 20:17",
+      "timestamp": "2026-10-03T20:17:09+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 60.4,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 14.4,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "44d8eabe41677769"
+    },
+    {
+      "title": "Metro Redux's Next-Gen Update arrives this month as franchise passes 50 million sales",
+      "summary": "A free next-gen update is coming to Metro 2033 Redux and Metro Last Light Redux on 22nd October for PC (29th October for consoles). Read more",
+      "url": "https://www.eurogamer.net/metro-redux-next-gen-update-50-million-sales-metro-2039",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Oct 3, 17:34",
+      "timestamp": "2026-10-03T17:34:23+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 56.8,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 13.8,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "f19d809fdca44b38"
+    },
+    {
+      "title": "Memory shortages set to persist into 2028, warns Micron CEO",
+      "summary": "Micron has warned that global RAM shortages show no sign of easing, telling investors on its earnings call that it has already sold most of next year's production. Read more",
+      "url": "https://www.eurogamer.net/micron-ram-shortage-2028-earnings-ai-demand",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Oct 3, 16:04",
+      "timestamp": "2026-10-03T16:04:13+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 56.5,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 13.5,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "3a5d70af70631653"
+    },
+    {
+      "title": "\"We felt that fans were getting a bit desensitised to the violence\" Gears of War: E-Day devs made a \"big investment\" in gore, and weirdly, it works",
+      "summary": "Buoyed by some commendatory early reviews and fantastic initial player numbers , Gears of War: E-Day has found a solid audience a weekend before general release. And a large part of its appeal is the combat; I noted in my review I",
+      "url": "https://www.eurogamer.net/we-felt-that-fans-were-getting-a-bit-desensitised-to-the-violence-gears-of-war-e-day-devs-made-a-big-investment-in-gore-and-weirdly-it-works",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Oct 3, 14:30",
+      "timestamp": "2026-10-03T14:30:00+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 56.2,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 13.2,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "762837a51783a64f"
+    },
+    {
+      "title": "What we've been playing - \"That's one of gaming's great cities, that is\"",
+      "summary": "Hello and welcome back to our regular feature where we write a little about the games we've been playing. This week, Bertie's witcher skills are a bit rusty; Dom goes through the Gears; Kelsey enjoys a horror game that feels just ",
+      "url": "https://www.eurogamer.net/what-weve-been-playing-thats-one-of-gamings-great-cities-that-is",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Oct 3, 12:30",
+      "timestamp": "2026-10-03T12:30:00+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 67.8,
+      "parts": {
+        "relevance": 30.0,
+        "reliability": 20.0,
+        "freshness": 12.8,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Matches your interests: witcher",
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "92641b62b44b63ff"
+    },
+    {
+      "title": "GTA 6's 18+ age rating reveals Lucia and Jason can partake in drug use \"directly from their inventory\" and \"at any time\"",
+      "summary": "GTA 6 is seemingly adding another naughty pastime to the series' already mammoth collection of naughty pastimes. Joining the strip clubs and violent car-jackings and carefree murder is \"frequent and prominent\" drug use that you ca",
+      "url": "https://www.eurogamer.net/gta6-age-rating-pegi-lucia-jason-drug-use",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Oct 3, 00:38",
+      "timestamp": "2026-10-03T00:38:59+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 61.3,
+      "parts": {
+        "relevance": 25.5,
+        "reliability": 20.0,
+        "freshness": 10.8,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Matches your interests: gta 6",
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "3da3467731b03d93"
+    },
+    {
+      "title": "\"This is your Dreamcast moment\": Former PlayStation boss thinks Xbox needs to \"pick a lane\" with exclusive games to fix itself",
+      "summary": "Former PlayStation boss Shawn Layden has some thoughts on where Team Xbox is at right now and where the green machine can go from here, but the console maker needs to \"pick a lane\" with exclusive games, either way. Read more",
+      "url": "https://www.eurogamer.net/dreamcast-moment-former-playstation-boss-xbox-exclusive-games",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Oct 2, 23:26",
+      "timestamp": "2026-10-02T23:26:08+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 53.6,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 10.6,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "469cc5744807706f"
+    },
+    {
+      "title": "Kingdom Come: Deliverance 2 boss hopes GTA 6 pushes game prices up because it's \"long overdue and also necessary for this business to survive\"",
+      "summary": "Warhorse Studios co-founder Martin Klima - the developer behind last year's historical RPG Kingdom Come: Deliverance 2 - is crossing his fingers for higher game prices, and he thinks GTA 6 might be the one to usher in a new normal",
+      "url": "https://www.eurogamer.net/kingdom-come-deliverance-gta6-higher-game-prices",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Oct 2, 22:22",
+      "timestamp": "2026-10-02T22:22:25+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 65.5,
+      "parts": {
+        "relevance": 30.0,
+        "reliability": 20.0,
+        "freshness": 10.5,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Matches your interests: gta 6, rpg",
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "5fcadaf6fcfa897e"
+    },
+    {
+      "title": "Grand Theft Auto 6 may be the first GTA to have full-on \"sex scenes\", Hot Coffee not included",
+      "summary": "Grand Theft Auto 6 may feature actual sex scenes. The suggestion comes from an age-rating description for GTA 6 on the PlayStation Store, which states - if viewing the New Zealand or Australian versions of the Store - there are \"s",
+      "url": "https://www.eurogamer.net/gta-6-sex-scenes-pegi-esrb-ratings-boards",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Oct 2, 19:29",
+      "timestamp": "2026-10-02T19:29:39+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 65.0,
+      "parts": {
+        "relevance": 30.0,
+        "reliability": 20.0,
+        "freshness": 10.0,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Matches your interests: gta 6, grand theft auto",
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "3f9e3ad1121d7b67"
+    },
+    {
+      "title": "Halo's new steward Activision reportedly considering rebooting the series, with a team in Sledgehammer Games leading the charge",
+      "summary": "We recently learned that Microsoft gave development of its next Halo game to Activision , where \"a new purpose-built team\" - separate from the teams working on Call of Duty - has been created to oversee the franchise going forward",
+      "url": "https://www.eurogamer.net/halo-activision-rumours-slegehammer-games-reboot",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Oct 2, 18:44",
+      "timestamp": "2026-10-02T18:44:39+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 43.9,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 9.9,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 12,
+      "reasons": [
+        "Dedicated topic source",
+        "Unconfirmed headline language: −12"
+      ],
+      "tag": "Unconfirmed",
+      "id": "1f30af30a2d3802b"
+    },
+    {
+      "title": "Star Wars: Galactic Racer review",
+      "summary": "A few years ago, I had the chance to ask Alex Ward, the co-founder of Criterion Games, about the driving model for the Burnout series. I had heard from a friend that beneath the arcadey immediacy lay physics of rare nuance and bea",
+      "url": "https://www.eurogamer.net/star-wars-galactic-racer-review",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Oct 2, 18:30",
+      "timestamp": "2026-10-02T18:30:00+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 52.9,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 9.9,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "07c8f80ab240cc1c"
+    },
+    {
+      "title": "CD Projekt Red addresses divisive lighting changes in a new Witcher 3 Remastered PC patch",
+      "summary": "A second hotfix has been released for The Witcher 3 Remastered edition that directly addresses lighting concerns on PC, as well as a couple of other notable issues. Read more",
+      "url": "https://www.eurogamer.net/witcher-3-remastered-lighting-patch-pc",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Oct 2, 16:39",
+      "timestamp": "2026-10-02T16:39:05+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 63.1,
+      "parts": {
+        "relevance": 25.5,
+        "reliability": 20.0,
+        "freshness": 9.6,
+        "usefulness": 3.0,
+        "importance": 5.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Matches your interests: witcher",
+        "Update cues: patch",
+        "Dedicated topic source"
+      ],
+      "tag": "Update",
+      "id": "bf28e8fc000fd827"
+    },
+    {
+      "title": "Gears of War: E-Day is missing iconic features like chainsaw duels and meat shields, but The Coalition says we shouldn't worry - they're \"not gone from the franchise\"",
+      "summary": "Gears of War: E-Day arrived for early adopters yesterday, available for anyone who bought either the Premium Edition, Premium Upgrade Edition, or Collector's Edition version of the game. As it arrived, however, some players noted ",
+      "url": "https://www.eurogamer.net/gears-of-war-eday-missing-features-update",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Oct 2, 16:26",
+      "timestamp": "2026-10-02T16:26:20+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 55.6,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 9.6,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "62a1703489a014d0"
+    },
+    {
+      "title": "PS5 gets \"AI-guided upscaling\" a bit like PS5 Pro's, and it's available now in Marvel's Wolverine and Ghost of Yotei",
+      "summary": "AI image upscaling is coming to PlayStation 5, Sony has announced, and it's available already in two games: Marvel's Wolverine and Ghost of Yotei . Read more",
+      "url": "https://www.eurogamer.net/ps5-ai-upscaling-qssr-marvels-wolverine-ghost-yotei",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Oct 2, 14:58",
+      "timestamp": "2026-10-02T14:58:14+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 55.4,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 9.4,
+        "usefulness": 3.0,
+        "importance": 5.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Update cues: available",
+        "Dedicated topic source"
+      ],
+      "tag": "Update",
+      "id": "ce0bf80b010958a2"
+    },
+    {
+      "title": "Aion 2's imminent worldwide release could be huge as early access founders' packs outsell major games, and player numbers soar",
+      "summary": "Aion 2's much-awaited worldwide release is days away, following its release in Korea and Taiwan roughly a year ago. Despite this, the MMO has soared - high up Steam's most played game chart. Read more",
+      "url": "https://www.eurogamer.net/aion-2-western-release-steam-player-numbers",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Oct 1, 20:41",
+      "timestamp": "2026-10-01T20:41:16+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 59.2,
+      "parts": {
+        "relevance": 24.0,
+        "reliability": 20.0,
+        "freshness": 7.2,
+        "usefulness": 3.0,
+        "importance": 5.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Update cues: release",
+        "Dedicated topic source"
+      ],
+      "tag": "Update",
+      "id": "47da37751f182899"
+    },
+    {
+      "title": "007 First Light gets free new DLC today, adding New Game Plus and Photo modes, new TacSim missions and more",
+      "summary": "James Bond game 007 First Light is getting free DLC today in an Extended Operations update. This adds much-asked-for features to the game - such as New Game Plus, a new harder difficulty mode, a photo mode - as well as more TacSim",
+      "url": "https://www.eurogamer.net/007-james-bond-first-light-free-dlc",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Oct 1, 19:58",
+      "timestamp": "2026-10-01T19:58:56+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 53.2,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 7.2,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "31961a2fbf64d5a5"
+    },
+    {
+      "title": "Ace Combat 8 developer apologises for Belkan War pre-order backlash, explains why it happened and vows to explore possible solutions",
+      "summary": "The early access launch of Ace Combat 8: Wings of Theve kicked off on a down note due to some confusion regarding one of the game's pre-order bonuses. Pre-orders of the flight action game include a copy of 2006's Ace Combat Zero: ",
+      "url": "https://www.eurogamer.net/ace-combat-8-the-belkan-war-pre-order-bonus-backlash-response",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Oct 1, 19:25",
+      "timestamp": "2026-10-01T19:25:47+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 53.1,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 7.1,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "6d929ebfe30811a3"
+    },
+    {
+      "title": "Gears of War E-Day campaign review - turns out you can teach old Cogs new tricks",
+      "summary": "\"Look ma, no face,\" growls Marcus Fenix as I land a headshot on an Elite Sniper from across the map. The foley, wet with viscera and meat, drips and gloops in my ears. A nearby Locust roars its outrage, a chainsaw revs up to my le",
+      "url": "https://www.eurogamer.net/gears-of-war-eday-campaign-review",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Oct 1, 18:30",
+      "timestamp": "2026-10-01T18:30:33+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 50.0,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 7.0,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "c63b52e5bb5116fa"
+    },
+    {
+      "title": "Witcher 3 Remastered patch addressing \"various lighting adjustments\" rolls out",
+      "summary": "Since The Witcher 3: Wild Hunt - Remastered's launch earlier this week, the debate around its lighting changes - whether it's overly brightened and washed out - has waged on. Now, CD Projekt Red has rolled out a patch for PlayStat",
+      "url": "https://www.eurogamer.net/witcher-3-lighting-brightness-patch-remastered",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Oct 1, 17:37",
+      "timestamp": "2026-10-01T17:37:40+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 60.4,
+      "parts": {
+        "relevance": 25.5,
+        "reliability": 20.0,
+        "freshness": 6.9,
+        "usefulness": 3.0,
+        "importance": 5.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Matches your interests: witcher",
+        "Update cues: patch",
+        "Dedicated topic source"
+      ],
+      "tag": "Update",
+      "id": "a1297f849b97414e"
+    },
+    {
+      "title": "Krafton pulls the plug on another PUBG game, Black Budget, less than a year after it was announced",
+      "summary": "PUBG publisher Krafton announced today it is ending development of PUBG: Black Budget, the extraction shooter spin-off announced nearly a year ago. Read more",
+      "url": "https://www.eurogamer.net/krafton-pulls-the-plug-on-another-pubg-game-black-budget-less-than-a-year-after-it-was-announced",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Oct 1, 17:33",
+      "timestamp": "2026-10-01T17:33:41+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 52.9,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 6.9,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "9e89fc407df4bfba"
+    },
+    {
+      "title": "New Uncharted game reportedly in the works at Naughty Dog, and it's not a remake",
+      "summary": "Uncharted series developer Naughty Dog is reportedly early in development on a new game in the action-adventure series. That's according to a report from MP1st , which said the game is bringing back series protagonist Nathan Drake",
+      "url": "https://www.eurogamer.net/new-uncharted-game-naughty-dog-report",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Oct 1, 16:09",
+      "timestamp": "2026-10-01T16:09:54+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 40.8,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 6.8,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 12,
+      "reasons": [
+        "Dedicated topic source",
+        "Unconfirmed headline language: −12"
+      ],
+      "tag": "Unconfirmed",
+      "id": "11c39844f503e09c"
+    },
+    {
+      "title": "Here are our PS Plus monthly games for October 2026",
+      "summary": "Sony has revealed the games coming this month to PlayStation Plus, which are available to everyone from 6th October. Read more",
+      "url": "https://www.eurogamer.net/playstation-ps-plus-games-lineup-october-2026",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Oct 1, 16:09",
+      "timestamp": "2026-10-01T16:09:11+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 49.8,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 6.8,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "5197ee6e4e0fe15d"
+    },
+    {
+      "title": "As Xbox swings the axe, Gears of War: E-Day developers fear they'll be laid off straight after launch - and right before they'd be due their bonuses",
+      "summary": "Back in July, new Xbox CEO Asha Sharma announced a total of 3,200 job cuts across Microsoft's gaming arm , with roughly half of those cuts being made alongside that announcement. The impact was vast. Various developers at Xbox stu",
+      "url": "https://www.eurogamer.net/the-coalition-gears-of-war-e-day-worried-layoffs-no-bonus",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Oct 1, 15:22",
+      "timestamp": "2026-10-01T15:22:39+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 55.7,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 6.7,
+        "usefulness": 3.0,
+        "importance": 5.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Update cues: launch",
+        "Dedicated topic source"
+      ],
+      "tag": "Update",
+      "id": "c14bed6cc01a94ae"
+    },
+    {
+      "title": "The Division studio Massive expands to take control of Splinter Cell and Ghost Recon, and a new IP, in Ubisoft's most recent reorganisation",
+      "summary": "Ubisoft has expanded the remit of Swedish studio Massive Entertainment - responsible for The Division series, Star Wars Outlaws and Avatar: Frontiers of Pandora - to become a second major part of the company and include more of it",
+      "url": "https://www.eurogamer.net/massive-entertainment-the-division-splinter-cell-ghost-recon",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Oct 1, 14:32",
+      "timestamp": "2026-10-01T14:32:25+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 49.6,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 6.6,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "59a808ba697bd93a"
+    },
+    {
+      "title": "Former Halo lead suggests three ways Activision could revive the legendary series, and urges the company to hire laid off Bungie staff",
+      "summary": "Halo's ex-franchise director, Frank O'Connor, has given Activision a few pointers now that it's in charge of making the next Halo game with a \"purpose-built team.\" Top of the list, hire some devs who were laid off from Bungie and ",
+      "url": "https://www.eurogamer.net/halo-lead-activision-revive-hire-bungie-developers",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Oct 1, 00:56",
+      "timestamp": "2026-10-01T00:56:32+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 51.4,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 5.4,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "c5e2e22ff780833c"
+    },
+    {
+      "title": "\"Xbox is not for sale\": CEO Asha Sharma says \"we will do whatever it takes\" to turn the console maker's fortunes around",
+      "summary": "Despite mass layoffs at multiple first-party studios and major internal shakeups, CEO Asha Sharma has shot down speculation about a potential Xbox buyout. Read more",
+      "url": "https://www.eurogamer.net/xbox-not-for-sale-ceo-asha-sharma-console",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Oct 1, 00:05",
+      "timestamp": "2026-10-01T00:05:09+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 48.4,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 5.4,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "cce1d98181eea3e9"
+    },
+    {
+      "title": "GTA 6 completely \"re-engineered\" Rockstar's weather systems to \"achieve a sense of scale we haven't felt before,\" adding hurricanes, rainbows and heavy rain",
+      "summary": "If you thought Red Dead Redemption 2 's heavy winds and even heavier rain looked impressive, you might be happy to learn that Rockstar Games went back and \"re-engineered our weather system\" for GTA 6 . Hurricanes, rainbows and \"ve",
+      "url": "https://www.eurogamer.net/gta6-rockstar-weather-systems-hurricanes-rainbows-rain",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Sep 30, 22:34",
+      "timestamp": "2026-09-30T22:34:55+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 55.8,
+      "parts": {
+        "relevance": 25.5,
+        "reliability": 20.0,
+        "freshness": 5.3,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Matches your interests: gta 6",
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "2e9cbc6c1a6740e4"
+    },
+    {
+      "title": "It's not even out yet, but Valve's Deadlock just became one of the most played games on Steam",
+      "summary": "Valve's new MOBA Deadlock - a sort of cross between Dota and Overwatch - might not be fully released yet, or even accessible by vast portions of the public,but that hasn't stopped its latest update propelling it to being one of th",
+      "url": "https://www.eurogamer.net/deadlock-update-steam-most-played-games",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Sep 30, 20:54",
+      "timestamp": "2026-09-30T20:54:38+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 51.1,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 5.1,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "e7a454c618752007"
+    },
+    {
+      "title": "Tinker, Bard, Illusionist - Blizzard seemingly surveying World of Warcraft: Forever players about never-before-seen classes to add to the game",
+      "summary": "World of Warcraft: Forever players claim to have been sent a survey asking whether they'd be interested in a variety of new classes for the upcoming MMO - and some of them are very interesting. Read more",
+      "url": "https://www.eurogamer.net/world-of-warcraft-forever-class-survey",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Sep 30, 19:48",
+      "timestamp": "2026-09-30T19:48:14+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 51.0,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 5.0,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "4a83fa683286a872"
+    },
+    {
+      "title": "\"My god this new lighting is lifeless\" - The Witcher 3 Remastered Edition divides players for a few key reasons",
+      "summary": "Yesterday's free Witcher 3: Wild Hunt - Remastered upgrade might have propelled the old role-playing game to new heights, in terms of player popularity , but not everyone is happy with what's changed. A particular point of content",
+      "url": "https://www.eurogamer.net/witcher-3-remastered-community-reaction-lighting",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Sep 30, 19:45",
+      "timestamp": "2026-09-30T19:45:01+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 58.5,
+      "parts": {
+        "relevance": 28.5,
+        "reliability": 20.0,
+        "freshness": 5.0,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Matches your interests: witcher",
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "526036e1a760ede5"
+    },
+    {
+      "title": "Warlock: Dungeons & Dragons developers hope to set aside the Baldur's Gate 3 comparisons and build their own kind of open world",
+      "summary": "This probably feels like a bit of an odd place to start, but Warlock: Dungeons & Dragons isn't Fable. Yet, when I sat down to watch developer Invoke Studios' Gamescom demo of Warlock with no real idea of what to expect, it was the",
+      "url": "https://www.eurogamer.net/warlock-dungeons-dragons-gamescom-preview",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Sep 30, 19:30",
+      "timestamp": "2026-09-30T19:30:34+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 52.5,
+      "parts": {
+        "relevance": 22.5,
+        "reliability": 20.0,
+        "freshness": 5.0,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Matches your interests: baldur",
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "77b0d1089a00669e"
+    },
+    {
+      "title": "As handholding mechanics come under fire elsewhere, Control Resonant devs confirm they made a \"conscious decision\" not to use yellow paint",
+      "summary": "Control Resonant is one of the few modern open-world games which doesn't always point you to where you should go next. This desire to give players time to figure their way around is the reason why, according to the game's director",
+      "url": "https://www.eurogamer.net/control-resonant-yellow-paint-conscious-decision-marvels-wolverine",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Sep 30, 18:52",
+      "timestamp": "2026-09-30T18:52:13+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 51.0,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 5.0,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "b2eb0839c96d3aae"
+    },
+    {
+      "title": "Monster Hunter Wilds on Switch 2 runs at a stable 30FPS, but it took Capcom a \"painstaking, seemingly endless process\" to get there",
+      "summary": "A lot has already been said of Monster Hunter Wilds ' upcoming Switch 2 port . The game, with all its free DLC updates - including new monsters - will be available 5th December, arriving with local co-op support to harken back to ",
+      "url": "https://www.eurogamer.net/monster-hunter-wilds-switch-2-performance-capcom",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Sep 30, 18:24",
+      "timestamp": "2026-09-30T18:24:26+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 50.9,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 4.9,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "b04bdbd9f8d65946"
+    },
+    {
+      "title": "Crimson Desert's Charting the Unknown DLC delayed by two weeks \"to deliver a more polished and stable gameplay experience\"",
+      "summary": "Crimson Desert developer Pearl Abyss today announced it's delaying Charting the Unknown, the game's first post-launch add-on. Previously set for release 15th October, the DLC's release date has been pushed back to 29th October - a",
+      "url": "https://www.eurogamer.net/crimson-desert-charting-the-unknown-dlc-delayed",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Sep 30, 17:10",
+      "timestamp": "2026-09-30T17:10:08+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 53.9,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 4.9,
+        "usefulness": 3.0,
+        "importance": 5.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Update cues: delay",
+        "Dedicated topic source"
+      ],
+      "tag": "Update",
+      "id": "7ecabbad131155cb"
+    },
+    {
+      "title": "Xbox Mythic Achievements roll out to Insiders and are retroactively awarded as far back as Xbox 360 games",
+      "summary": "The rumoured Xbox Mythic Achievements - the equivalent of PlayStation's Platinum Trophies - have been officially announced, and they're rolling out for Xbox Insiders now. Read more",
+      "url": "https://www.eurogamer.net/xbox-mythic-achievements-playstation-trophies",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Sep 30, 16:30",
+      "timestamp": "2026-09-30T16:30:01+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 47.8,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 4.8,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "bfad9a2b8e3bdc0c"
+    },
+    {
+      "title": "Xbox's disc-to-digital feature rolls out for Series consoles and Xbox One, allowing you to digitise your game-disc collection",
+      "summary": "After about a month in testing , Xbox's disc-to-digital feature has officially launched for all owners of Xbox consoles. The feature allows users to turn Xbox One and Xbox Series X discs into digital copies. Read more",
+      "url": "https://www.eurogamer.net/xbox-disc-to-digital-convert-ownership-release",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Sep 30, 16:23",
+      "timestamp": "2026-09-30T16:23:43+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 50.8,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 4.8,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "3a29343b7fc3abbc"
+    },
+    {
+      "title": "Call of Duty: Modern Warfare 4 is getting a Counter-Strike-inspired game mode that I can't believe it never had before",
+      "summary": "On top of featuring all the game modes you expect from a Call of Duty game, Modern Warfare 4 is courting the competitive scene with something entirely new for the series: a game mode called Collateral. Read more",
+      "url": "https://www.eurogamer.net/call-of-duty-modern-warfare-4-counter-strike-collateral",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Sep 30, 13:46",
+      "timestamp": "2026-09-30T13:46:08+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 50.6,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 4.6,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "a42dae848ae69160"
+    },
+    {
+      "title": "The Witcher 3 surges to its highest Steam concurrent player-count ever, following Remastered edition's release",
+      "summary": "The Witcher 3 's newly released Remastered edition has dramatically rekindled interest in the 11-year-old role-playing game, which is currently enjoying its highest concurrent player-count on Steam ever. Read more",
+      "url": "https://www.eurogamer.net/witcher-3-steam-most-played-record-remastered",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Sep 29, 21:54",
+      "timestamp": "2026-09-29T21:54:48+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 61.7,
+      "parts": {
+        "relevance": 30.0,
+        "reliability": 20.0,
+        "freshness": 3.7,
+        "usefulness": 3.0,
+        "importance": 5.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Matches your interests: witcher",
+        "Update cues: release",
+        "Dedicated topic source"
+      ],
+      "tag": "Update",
+      "id": "2b0b476707cbe949"
+    },
+    {
+      "title": "You can now watch one of this year's best orchestral game-music performances, celebrating Hades 1 and 2, online for free",
+      "summary": "The outrageously enjoyable Hades musical orchestral concert, Ballads of the Underworld , is now available to watch in its entirety, online, for free. Read more",
+      "url": "https://www.eurogamer.net/watch-hades-orchestral-performance-recording",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Sep 29, 20:58",
+      "timestamp": "2026-09-29T20:58:16+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 49.6,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 3.6,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "0b37f56937b3e55e"
+    },
+    {
+      "title": "Don't worry if you're struggling in human form in The Blood of Dawnwalker - \"it should be harder\" playing that way",
+      "summary": "If you've been playing Medieval vampire RPG The Blood of Dawnwalker and you're wondering why you're having a hard time during the day, as a human, versus as at night as a vampire, then don't worry: you're experiencing the game as ",
+      "url": "https://www.eurogamer.net/blood-of-dawnwalker-harder-as-human-easier-as-vampire",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Sep 29, 19:32",
+      "timestamp": "2026-09-29T19:32:00+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 57.1,
+      "parts": {
+        "relevance": 28.5,
+        "reliability": 20.0,
+        "freshness": 3.6,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Matches your interests: rpg",
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "26caff02a56a740b"
+    },
+    {
+      "title": "Controversy erupts around Ace Combat 8 on PC as bundled Belkan War re-release remains problematically attached to the new game, whereas it's standalone on console",
+      "summary": "Early access to Ace Combat 8: Wings of Theve is now available to owners of the game's Deluxe Edition, but the launch has been soured due to publisher Bandai Namco's handling of one particular pre-order bonus. Read more",
+      "url": "https://www.eurogamer.net/ace-combat-8-the-belkan-war-pre-order-bonus-steam-community-reaction",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Sep 29, 18:45",
+      "timestamp": "2026-09-29T18:45:16+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 52.5,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 3.5,
+        "usefulness": 3.0,
+        "importance": 5.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Update cues: release",
+        "Dedicated topic source"
+      ],
+      "tag": "Update",
+      "id": "09d3608f73f533bd"
+    },
+    {
+      "title": "Mexican lawmakers join the fight for digital games ownership with a new consumer rights initiative",
+      "summary": "Another country has entered the fray as ongoing debates around digital video game ownership ignite across the world. Read more",
+      "url": "https://www.eurogamer.net/mexican-lawmakers-join-fight-digital-games-ownership",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Sep 29, 18:24",
+      "timestamp": "2026-09-29T18:24:23+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 49.5,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 3.5,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "1b9c973fa634c566"
+    },
+    {
+      "title": "What's the intended difficulty for Gears of War: E-Day? \"I can tell you right now, it's Hardcore\" says The Coalition creative director",
+      "summary": "Xbox and The Coalition are making a big deal about Gears of War: E-Day's campaign, ahead of its Xbox and PC launch on 1st October. The game goes back in time to study the origins of the Locust scourge, placing you in the big, stom",
+      "url": "https://www.eurogamer.net/gears-of-war-eday-difficulty-hardcore",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Sep 29, 17:29",
+      "timestamp": "2026-09-29T17:29:15+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 49.5,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 3.5,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "ec4c7660d33185a3"
+    },
+    {
+      "title": "The Elder Scrolls Online is partly why Skyrim never got a Fallout: New Vegas-style spin-off, says Bethesda veteran",
+      "summary": "Why did The Elder Scrolls 5: Skyrim never receive a spin-off like Bethesda's Fallout 3 did, with Fallout: New Vegas ? According to Skyrim co-lead designer Kurt Kuhlmann, it's because of The Elder Scrolls Online. Speaking to FRVR (",
+      "url": "https://www.eurogamer.net/the-elder-scrolls-online-skyrim-spin-off-fallout-new-vegas-bethesda",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Sep 29, 16:14",
+      "timestamp": "2026-09-29T16:14:39+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 46.4,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 3.4,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "2f6b0b4615fdd0a8"
+    },
+    {
+      "title": "Wardogs early access review",
+      "summary": "It took me four attempts to successfully parachute into a Wardogs match. On the first try, I opened my parachute far too early, and was promptly sniped from the sky by one of the many sharpshooters that populate Wardogs' battlefie",
+      "url": "https://www.eurogamer.net/wardogs-early-access-review",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Sep 29, 15:57",
+      "timestamp": "2026-09-29T15:57:30+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 46.4,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 3.4,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "1ab4651f14eea01c"
+    },
+    {
+      "title": "All versions of The Witcher 3 \"that exist in the world\" will be upgraded with the free Remastered edition today",
+      "summary": "CD Projekt Red has clarified to Eurogamer that \"all versions of The Witcher 3: Wild Hunt that exist in the world\" are to be updated with the free Remastered edition upgrade today. That update, by the way, rolls out from 11am BST .",
+      "url": "https://www.eurogamer.net/all-versions-of-the-witcher-3-that-exist-in-the-world-will-be-upgraded-with-the-free-remastered-edition-today",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Sep 29, 15:18",
+      "timestamp": "2026-09-29T15:18:51+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 53.8,
+      "parts": {
+        "relevance": 25.5,
+        "reliability": 20.0,
+        "freshness": 3.3,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Matches your interests: witcher",
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "acce88f78b93362a"
+    },
+    {
+      "title": "Sony is introducing an anti-scalping lottery system for PS5 Pros in Japan as supply shortages persist",
+      "summary": "Sony is introducing a lottery system for PS5 Pros on its Japanese online store for when demand for new consoles outstrips the limited supply. Read more",
+      "url": "https://www.eurogamer.net/sony-ps5-pro-lottery-system-japan-supply-shortage",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Sep 29, 14:41",
+      "timestamp": "2026-09-29T14:41:17+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 49.3,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 3.3,
+        "usefulness": 3.0,
+        "importance": 5.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Update cues: introducing",
+        "Dedicated topic source"
+      ],
+      "tag": "Update",
+      "id": "1e3093ce163ca7b2"
+    },
+    {
+      "title": "Naughty Dog confirms two more The Last of Us projects are in the works, won't show off Intergalactic: The Heretic Prophet until 2027",
+      "summary": "Naughty Dog fans, pick up your ears - it's been a busy night for fans of the PlayStation studio. First of all, in a letter celebrating The Last of Us Day 2026, studio head Neil Druckmann confirmed that two new projects within The ",
+      "url": "https://www.eurogamer.net/naughty-dog-confirms-two-more-the-last-of-us-projects-are-in-the-works-wont-show-off-intergalactic-the-heretic-prophet-until-2027",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Sep 29, 14:06",
+      "timestamp": "2026-09-29T14:06:23+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 46.3,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 3.3,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "86f1839a7fc36380"
+    },
+    {
+      "title": "In another unprecedented move, Call of Duty: Modern Warfare 4 is changing double XP tokens so they count down in match and not real-time",
+      "summary": "Just days after announcing a silly skin off toggle for Call of Duty: Warzone , Activision has returned to share some even better news for Modern Warfare 4. At launch and beyond, double XP tokens will count down only when you're ac",
+      "url": "https://www.eurogamer.net/call-of-duty-modern-warfare-4-double-xp-tokens-count-down-change",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Sep 29, 13:52",
+      "timestamp": "2026-09-29T13:52:00+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 46.3,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 3.3,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "bb90091def6393b1"
+    },
+    {
+      "title": "Double Fine's releasing its next game, Thank You Bus Driver, just months after splitting from Xbox",
+      "summary": "Double Fine's wasted no time at all as an independent game studio (again) after splitting from former owner Xbox earlier this summer. The storied developer is releasing its whacky driving sim, Thank You Bus Driver, in roughly two ",
+      "url": "https://www.eurogamer.net/double-fine-thank-you-bus-driver-xbox-release-date",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Sep 29, 00:35",
+      "timestamp": "2026-09-29T00:35:03+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 48.7,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 2.7,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "27279fe9323b215a"
+    },
+    {
+      "title": "\"What if London existed in the Grand Theft Auto universe?\" One fan has answered with a GTA-style map of the city",
+      "summary": "\"What if London existed in the Grand Theft Auto universe? What if Rockstar created a GTA game set in London?\" Anyone sitting in the venn diagram centre of GTA fan and cartography sicko might be happy to learn that YouTuber CityEd ",
+      "url": "https://www.eurogamer.net/london-gta-rockstar-map-city-rockstar",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Sep 28, 23:23",
+      "timestamp": "2026-09-28T23:23:19+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 56.2,
+      "parts": {
+        "relevance": 28.5,
+        "reliability": 20.0,
+        "freshness": 2.7,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Matches your interests: grand theft auto",
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "84b48c0eb1540023"
+    },
+    {
+      "title": "Ubisoft's calling its next push into gen-AI game development Motherbrain",
+      "summary": "Ubisoft is internally calling its latest generative-AI initiative 'Motherbrain' - you know, like the evil supercomputer turned gross brain-in-a-jar monster from Nintendo's Metroid series - according to trademarks filed by the Assa",
+      "url": "https://www.eurogamer.net/ubisoft-gen-ai-game-motherbrain-assassins-creed",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Sep 28, 22:28",
+      "timestamp": "2026-09-28T22:28:05+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 48.6,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 2.6,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "311658d36b41e302"
+    },
+    {
+      "title": "The Witcher 3 Remastered is an extraordinarily generous upgrade that doesn't change the game, but does make it new again",
+      "summary": "It's tricky to appraise the Remastered edition of The Witcher 3: Wild Hunt because on the one hand, everything about it is extraordinary. It's a free upgrade to an 11-year-old game that showcases a level of support and generosity ",
+      "url": "https://www.eurogamer.net/witcher-3-wild-hunt-remastered-generous-upgrade-makes-it-new-again",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Sep 28, 20:44",
+      "timestamp": "2026-09-28T20:44:11+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 56.1,
+      "parts": {
+        "relevance": 28.5,
+        "reliability": 20.0,
+        "freshness": 2.6,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Matches your interests: witcher",
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "6e0a553ca7a17098"
+    },
+    {
+      "title": "Dark Souls 2 can now be played in its entirety with drop-in, drop-out co-op, thanks to its own seamless multiplayer mod",
+      "summary": "The popular - and always appreciated - seamless co-op mod has finally come to Dark Souls 2: Scholar of the First Sin , the only game of the trilogy to have spent years without it. Mod creator Yui, who's responsible for the seamles",
+      "url": "https://www.eurogamer.net/dark-souls-2-seamless-co-op-mod",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Sep 28, 19:42",
+      "timestamp": "2026-09-28T19:42:15+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 48.5,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 2.5,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "96e3a3f87e370fb2"
+    },
+    {
+      "title": "If you want an early taste of The Witcher 3's Songs of the Past expansion, you can listen to five tracks from the OST right now",
+      "summary": "Back in August, CD Projekt Red properly revealed new Witcher 3 expansion Songs of the Past during Gamescom's Opening Night Live show. Whilst I got to experience a hands-off demo of the new content ( which I loved ), no one in the ",
+      "url": "https://www.eurogamer.net/the-witcher-3-songs-of-the-past-expansion-five-tracks-ost",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Sep 28, 19:00",
+      "timestamp": "2026-09-28T19:00:05+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 53.0,
+      "parts": {
+        "relevance": 25.5,
+        "reliability": 20.0,
+        "freshness": 2.5,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Matches your interests: witcher",
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "8a0cdcfa1525eee2"
+    },
+    {
+      "title": "Blizzard gifts Diablo 4 players one of the game's rarest crafting materials to apologise for Season 15 issues",
+      "summary": "Diablo 4 's Season of Hell's Legacy began over two weeks ago following a banner BlizzCon , but its launch has been surprisingly wobbly. The season initially suffered a multi-hour delay thanks to log-in errors and server issues , b",
+      "url": "https://www.eurogamer.net/diablo-4-free-gift-season-of-hells-legacy-server-issues",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Sep 28, 18:57",
+      "timestamp": "2026-09-28T18:57:56+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 48.5,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 2.5,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "56babb769517fe38"
+    },
+    {
+      "title": "Call of Duty: Warzone will soon make it possible to toggle all those silly skins off, something no one thought could ever happen",
+      "summary": "Call of Duty: Modern Warfare 4 is introducing a highly-requested feature to Warzone later this year. With the launch of the game's first season, players will be able to turn off character skins from other Call of Duty games in the",
+      "url": "https://www.eurogamer.net/call-of-duty-warzone-skin-toggle-modern-warfare-4",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Sep 28, 17:49",
+      "timestamp": "2026-09-28T17:49:33+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 48.5,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 2.5,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "6a47c207cc82dc9a"
+    },
+    {
+      "title": "As World of Warcraft: Forever's beta popularity grows, Blizzard has yet again had to increase the server cap",
+      "summary": "World of Warcraft: Forever's beta appears to be growing in popularity, as one of Blizzard's leads has revealed the server capacity had to be increased over the weekend. Read more",
+      "url": "https://www.eurogamer.net/world-of-warcraft-forever-beta-server-cap-increase",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Sep 28, 14:26",
+      "timestamp": "2026-09-28T14:26:07+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 45.3,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 2.3,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "ef07c62277987a17"
+    },
+    {
+      "title": "Marvel's Wolverine finally lets you turn off \"fart gas\" scent trails completely, but there's a catch",
+      "summary": "Marvel's Wolverine has received a new update that should hopefully bring an end to the \"fart gas\" scent trails saga. The latest patch, version 1.001.006, includes an option to turn off scent trails for Whiskey Bottle collectibles,",
+      "url": "https://www.eurogamer.net/marvels-wolverine-patch-turn-off-scent-trails",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Sep 28, 13:42",
+      "timestamp": "2026-09-28T13:42:52+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 45.3,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 2.3,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "f89fb47f33b69e16"
+    },
+    {
+      "title": "Five Nights at Freddy's is coming to Fortnite for Fortnitemares",
+      "summary": "Epic has confirmed that Five Nights at Freddy's is joining Fortnite for this year's Fortnitemares event. Read more",
+      "url": "https://www.eurogamer.net/fortnite-five-nights-at-freddys-fortnitemares-collab",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Sep 27, 20:55",
+      "timestamp": "2026-09-27T20:55:18+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 44.8,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 1.8,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "1856a4257d1b7fa0"
+    },
+    {
+      "title": "Xbox is reportedly paying a \"fraction\" of the $400 million Kojima quoted Sony for Physint",
+      "summary": "A reported $400 million budget for Hideo Kojima 's Physint has already been walked back over the weekend, with multiple outlets now saying Xbox is paying nowhere near that figure for Hideo Kojima's stealth game. Read more",
+      "url": "https://www.eurogamer.net/xbox-kojima-physint-budget-fraction-400-million",
+      "source_id": "eurogamer",
+      "source": "Eurogamer",
+      "kind": "Editorial",
+      "when": "Sep 27, 19:55",
+      "timestamp": "2026-09-27T19:55:52+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 35.8,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 1.8,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 12,
+      "reasons": [
+        "Dedicated topic source",
+        "Unconfirmed headline language: −12"
+      ],
+      "tag": "Unconfirmed",
+      "id": "0bb801d9d866edcb"
+    },
+    {
+      "title": "The Agent Said It Was Done. The Database Disagreed.",
+      "summary": "",
+      "url": "https://huggingface.co/blog/microsoft/thinkingbox",
+      "source_id": "huggingface",
+      "source": "Hugging Face",
+      "kind": "Technical / community",
+      "when": "Oct 4, 04:26",
+      "timestamp": "2026-10-04T04:26:48+05:30",
+      "discovery": false,
+      "group_id": "ai",
+      "group_name": "AI & Models",
+      "score": 63.7,
+      "parts": {
+        "relevance": 22.5,
+        "reliability": 20.0,
+        "freshness": 16.2,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Matches your interests: agent",
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "bd1136d0fcfd6f13"
+    },
+    {
+      "title": "Open-sourcing AstaBrief, the fast report-generation model in Asta",
+      "summary": "",
+      "url": "https://huggingface.co/blog/allenai/astabrief",
+      "source_id": "huggingface",
+      "source": "Hugging Face",
+      "kind": "Technical / community",
+      "when": "Oct 2, 20:49",
+      "timestamp": "2026-10-02T20:49:50+05:30",
+      "discovery": false,
+      "group_id": "ai",
+      "group_name": "AI & Models",
+      "score": 56.2,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 10.2,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "e81b1dea7ce0fb42"
+    },
+    {
+      "title": "AutoSynthData: Generating Training Data for Enterprise Agents",
+      "summary": "",
+      "url": "https://huggingface.co/blog/ServiceNow-AI/autosynthdata",
+      "source_id": "huggingface",
+      "source": "Hugging Face",
+      "kind": "Technical / community",
+      "when": "Oct 2, 09:31",
+      "timestamp": "2026-10-02T09:31:31+05:30",
+      "discovery": false,
+      "group_id": "ai",
+      "group_name": "AI & Models",
+      "score": 51.7,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 8.7,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "56c490db040147f1"
+    },
+    {
+      "title": "Open TTS Leaderboard: Scalable Evaluation for Multilingual Text-to-Speech and Voice Cloning",
+      "summary": "",
+      "url": "https://huggingface.co/blog/open-tts-leaderboard",
+      "source_id": "huggingface",
+      "source": "Hugging Face",
+      "kind": "Technical / community",
+      "when": "Sep 30, 05:30",
+      "timestamp": "2026-09-30T05:30:00+05:30",
+      "discovery": false,
+      "group_id": "ai",
+      "group_name": "AI & Models",
+      "score": 47.1,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 4.1,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "74c2ff7e2707d1f6"
+    },
+    {
+      "title": "NVIDIA Kumo Tabular Sets a New Accuracy-Efficiency Frontier for Tabular Prediction",
+      "summary": "",
+      "url": "https://huggingface.co/blog/nvidia/kumo-tabular",
+      "source_id": "huggingface",
+      "source": "Hugging Face",
+      "kind": "Technical / community",
+      "when": "Sep 29, 21:00",
+      "timestamp": "2026-09-29T21:00:38+05:30",
+      "discovery": false,
+      "group_id": "ai",
+      "group_name": "AI & Models",
+      "score": 46.6,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 3.6,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "dc53fce90c6f36f5"
+    },
+    {
+      "title": "Getting the Source Right, Not Just the Fact: Source-Aware Verification for MCP Agents",
+      "summary": "",
+      "url": "https://huggingface.co/blog/MultiverseComputingCAI/getting-the-source-right-not-just-the-fact-source",
+      "source_id": "huggingface",
+      "source": "Hugging Face",
+      "kind": "Technical / community",
+      "when": "Sep 29, 18:37",
+      "timestamp": "2026-09-29T18:37:00+05:30",
+      "discovery": false,
+      "group_id": "ai",
+      "group_name": "AI & Models",
+      "score": 46.5,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 3.5,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "afa8c33f8eb7996a"
+    },
+    {
+      "title": "Holo4: powering generalist computer-use agents",
+      "summary": "",
+      "url": "https://huggingface.co/blog/Hcompany/holo4",
+      "source_id": "huggingface",
+      "source": "Hugging Face",
+      "kind": "Technical / community",
+      "when": "Sep 28, 15:14",
+      "timestamp": "2026-09-28T15:14:05+05:30",
+      "discovery": false,
+      "group_id": "ai",
+      "group_name": "AI & Models",
+      "score": 45.4,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 2.4,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "09d1d26fa19dd694"
+    },
+    {
+      "title": "A model guide for the GPT-6 family",
+      "summary": "Learn how startups can choose GPT-6 models, tune reasoning effort, improve prompts and skills, coordinate tools, and prepare workflows for production.",
+      "url": "https://openai.com/index/practical-guide-building-gpt-6",
+      "source_id": "openai",
+      "source": "OpenAI",
+      "kind": "Vendor / primary",
+      "when": "Oct 2, 21:45",
+      "timestamp": "2026-10-02T21:45:00+05:30",
+      "discovery": false,
+      "group_id": "ai",
+      "group_name": "AI & Models",
+      "score": 65.9,
+      "parts": {
+        "relevance": 25.5,
+        "reliability": 21.2,
+        "freshness": 10.4,
+        "usefulness": 6.8,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Matches your interests: reasoning",
+        "Practical cues: guide",
+        "Dedicated topic source"
+      ],
+      "tag": "Practical",
+      "id": "c38af6e5cae43e23"
+    },
+    {
+      "title": "Chatham scales its capital markets expertise with OpenAI",
+      "summary": "Chatham Financial uses Codex and GPT-5.6 to build technology and redesign workflows, cutting trade validation from 30 minutes to under 4.",
+      "url": "https://openai.com/index/chatham-financial",
+      "source_id": "openai",
+      "source": "OpenAI",
+      "kind": "Vendor / primary",
+      "when": "Oct 2, 05:30",
+      "timestamp": "2026-10-02T05:30:00+05:30",
+      "discovery": false,
+      "group_id": "ai",
+      "group_name": "AI & Models",
+      "score": 52.4,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 21.2,
+        "freshness": 8.2,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "882596cbc7639eb4"
+    },
+    {
+      "title": "The eternal complement",
+      "summary": "Advanced AI may matter most for the routine work behind breakthrough ideas. Explore why execution could shape the next economy and the pace of progress.",
+      "url": "https://openai.com/index/the-eternal-complement",
+      "source_id": "openai",
+      "source": "OpenAI",
+      "kind": "Vendor / primary",
+      "when": "Oct 1, 22:30",
+      "timestamp": "2026-10-01T22:30:00+05:30",
+      "discovery": false,
+      "group_id": "ai",
+      "group_name": "AI & Models",
+      "score": 54.6,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 21.2,
+        "freshness": 7.4,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "b8087b88cb63ae7f"
+    },
+    {
+      "title": "How Albertsons Companies is reimagining retail from the inside out",
+      "summary": "Albertsons Cos. is using ChatGPT Enterprise and the OpenAI API to help teams work faster and make grocery shopping easier for millions of customers.",
+      "url": "https://openai.com/index/albertsons-reimagining-retail",
+      "source_id": "openai",
+      "source": "OpenAI",
+      "kind": "Vendor / primary",
+      "when": "Oct 1, 21:30",
+      "timestamp": "2026-10-01T21:30:00+05:30",
+      "discovery": false,
+      "group_id": "ai",
+      "group_name": "AI & Models",
+      "score": 58.3,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 21.2,
+        "freshness": 7.3,
+        "usefulness": 6.8,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Practical cues: api",
+        "Dedicated topic source"
+      ],
+      "tag": "Practical",
+      "id": "637d3dfa247fa816"
+    },
+    {
+      "title": "The Den frees up 10-15 hours a week to grow with ChatGPT Work",
+      "summary": "As it opens a new location, the social club prepares grant applications in 2 hours instead of 3 days and liquor-license materials in 3 hours instead of 4 days.",
+      "url": "https://openai.com/index/the-den-family-social",
+      "source_id": "openai",
+      "source": "OpenAI",
+      "kind": "Vendor / primary",
+      "when": "Oct 1, 05:30",
+      "timestamp": "2026-10-01T05:30:00+05:30",
+      "discovery": false,
+      "group_id": "ai",
+      "group_name": "AI & Models",
+      "score": 53.0,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 21.2,
+        "freshness": 5.8,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "2167384f51e2a446"
+    },
+    {
+      "title": "Disrupting a coordinated model-distillation campaign",
+      "summary": "Learn how OpenAI disrupted a campaign to extract protected model reasoning and is strengthening defenses against adversarial distillation.",
+      "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign",
+      "source_id": "openai",
+      "source": "OpenAI",
+      "kind": "Vendor / primary",
+      "when": "Sep 30, 16:00",
+      "timestamp": "2026-09-30T16:00:00+05:30",
+      "discovery": false,
+      "group_id": "ai",
+      "group_name": "AI & Models",
+      "score": 56.5,
+      "parts": {
+        "relevance": 25.5,
+        "reliability": 21.2,
+        "freshness": 4.8,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Matches your interests: reasoning",
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "90249c2a3882c6d3"
+    },
+    {
+      "title": "Helping small businesses put AI to work",
+      "summary": "OpenAI is partnering with America’s SBDC to expand hands-on AI training and local support for small businesses, alongside a new report on how small teams are using AI.",
+      "url": "https://openai.com/index/helping-small-businesses-put-ai-to-work",
+      "source_id": "openai",
+      "source": "OpenAI",
+      "kind": "Vendor / primary",
+      "when": "Sep 30, 15:30",
+      "timestamp": "2026-09-30T15:30:00+05:30",
+      "discovery": false,
+      "group_id": "ai",
+      "group_name": "AI & Models",
+      "score": 56.4,
+      "parts": {
+        "relevance": 25.5,
+        "reliability": 21.2,
+        "freshness": 4.7,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Matches your interests: local",
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "061338e668ed6974"
+    },
+    {
+      "title": "DevDay 2026 Recap",
+      "summary": "Explore more than 20 announcements from OpenAI DevDay 2026, including GPT-6 Astra, ChatGPT, Codex, APIs, security, and new tools for builders.",
+      "url": "https://openai.com/index/devday-2026-recap",
+      "source_id": "openai",
+      "source": "OpenAI",
+      "kind": "Vendor / primary",
+      "when": "Sep 29, 15:30",
+      "timestamp": "2026-09-29T15:30:00+05:30",
+      "discovery": false,
+      "group_id": "ai",
+      "group_name": "AI & Models",
+      "score": 50.6,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 21.2,
+        "freshness": 3.4,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "6071f63e21f64254"
+    },
+    {
+      "title": "Introducing GPT-6.1 Sol",
+      "summary": "Meet GPT-6.1 Sol: near-Astra intelligence for coding, computer use, and professional work at one-fifth of Astra’s standard API input and output token prices.",
+      "url": "https://openai.com/index/introducing-gpt-6-1-sol",
+      "source_id": "openai",
+      "source": "OpenAI",
+      "kind": "Vendor / primary",
+      "when": "Sep 29, 15:30",
+      "timestamp": "2026-09-29T15:30:00+05:30",
+      "discovery": false,
+      "group_id": "ai",
+      "group_name": "AI & Models",
+      "score": 54.4,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 21.2,
+        "freshness": 3.4,
+        "usefulness": 6.8,
+        "importance": 5.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Practical cues: api",
+        "Update cues: introducing",
+        "Dedicated topic source"
+      ],
+      "tag": "Practical",
+      "id": "d6b9f5e651b1891e"
+    },
+    {
+      "title": "Introducing dots",
+      "summary": "Dots by OpenAI are proactive assistants that can keep working across complex projects and everyday tasks. Learn how dots help you stay in control while work moves forward.",
+      "url": "https://openai.com/index/introducing-dots",
+      "source_id": "openai",
+      "source": "OpenAI",
+      "kind": "Vendor / primary",
+      "when": "Sep 29, 05:30",
+      "timestamp": "2026-09-29T05:30:00+05:30",
+      "discovery": false,
+      "group_id": "ai",
+      "group_name": "AI & Models",
+      "score": 50.1,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 21.2,
+        "freshness": 2.9,
+        "usefulness": 3.0,
+        "importance": 5.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Update cues: introducing",
+        "Dedicated topic source"
+      ],
+      "tag": "Update",
+      "id": "dec620cb7225d243"
+    },
+    {
+      "title": "How we will do better for Australia",
+      "summary": "OpenAI apologises for incidents involving Australian government websites and outlines stronger safeguards and support to strengthen Australia’s cyber defences.",
+      "url": "https://openai.com/index/how-we-will-do-better-for-australia",
+      "source_id": "openai",
+      "source": "OpenAI",
+      "kind": "Vendor / primary",
+      "when": "Sep 29, 00:30",
+      "timestamp": "2026-09-29T00:30:00+05:30",
+      "discovery": false,
+      "group_id": "ai",
+      "group_name": "AI & Models",
+      "score": 46.9,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 21.2,
+        "freshness": 2.7,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "50d71cd52400f551"
+    },
+    {
+      "title": "Towards safety cases for frontier AI training",
+      "summary": "Our early guidelines for safety cases in frontier AI training cover technical safeguards, operational practices, and investigating misalignment incidents",
+      "url": "https://openai.com/index/towards-safety-cases-for-frontier-ai-training",
+      "source_id": "openai",
+      "source": "OpenAI",
+      "kind": "Vendor / primary",
+      "when": "Sep 29, 00:30",
+      "timestamp": "2026-09-29T00:30:00+05:30",
+      "discovery": false,
+      "group_id": "ai",
+      "group_name": "AI & Models",
+      "score": 49.9,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 21.2,
+        "freshness": 2.7,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "2fc54b690d7b20a2"
+    },
+    {
+      "title": "The Lenfest Institute grows landmark program with expanded OpenAI support",
+      "summary": "OpenAI is expanding the Lenfest AI Collaborative and Fellowship Program with $5 million in funding and up to $5 million in software credits and engineering support.",
+      "url": "https://openai.com/index/lenfest-ai-collaborative-expansion",
+      "source_id": "openai",
+      "source": "OpenAI",
+      "kind": "Vendor / primary",
+      "when": "Sep 28, 12:30",
+      "timestamp": "2026-09-28T12:30:00+05:30",
+      "discovery": false,
+      "group_id": "ai",
+      "group_name": "AI & Models",
+      "score": 49.5,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 21.2,
+        "freshness": 2.3,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "0adf5bb2a473897d"
+    },
+    {
+      "title": "Basis completes a tax workbook 2x faster with GPT-6 Astra",
+      "summary": "GPT-6 Astra completed a 50-tab tax workbook twice as fast as GPT-5.6 Sol, and its stronger understanding of user intent gives Basis more confidence in real-world use.",
+      "url": "https://openai.com/index/basis-tax-workbook-with-astra",
+      "source_id": "openai",
+      "source": "OpenAI",
+      "kind": "Vendor / primary",
+      "when": "Sep 28, 05:30",
+      "timestamp": "2026-09-28T05:30:00+05:30",
+      "discovery": false,
+      "group_id": "ai",
+      "group_name": "AI & Models",
+      "score": 46.3,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 21.2,
+        "freshness": 2.1,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "eb674100bb687fff"
+    },
+    {
+      "title": "Are you a Codex Original?",
+      "summary": "We’re collecting real stories of builders, tinkerers, researchers, and creators who are using Codex to do incredible things. If you want to be a part of the next chapter of the Codex Originals program, tell us more about your stor",
+      "url": "https://openai.com/form/codex-originals",
+      "source_id": "openai",
+      "source": "OpenAI",
+      "kind": "Vendor / primary",
+      "when": "Sep 28, 05:30",
+      "timestamp": "2026-09-28T05:30:00+05:30",
+      "discovery": false,
+      "group_id": "ai",
+      "group_name": "AI & Models",
+      "score": 46.3,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 21.2,
+        "freshness": 2.1,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "833e9419a34f8836"
+    },
+    {
+      "title": "v3.2.0.dev0",
+      "summary": "DEV: Start 3.2.0 dev",
+      "url": "https://github.com/pandas-dev/pandas/releases/tag/v3.2.0.dev0",
+      "source_id": "pandas",
+      "source": "pandas releases",
+      "kind": "Maintainer / primary",
+      "when": "Sep 30, 18:55",
+      "timestamp": "2026-09-30T18:55:24+05:30",
+      "discovery": false,
+      "group_id": "data",
+      "group_name": "Data & Building",
+      "score": 51.8,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 23.8,
+        "freshness": 5.0,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "57dd193099af753d"
+    },
+    {
+      "title": "pandas 3.1.0rc0",
+      "summary": "We are pleased to announce a release candidate for pandas 3.1.0. See the whatsnew for a list of all the changes. The release can be installed from PyPI: python -m pip install --upgrade --pre pandas==3.1.0rc0 Or from conda-forge co",
+      "url": "https://github.com/pandas-dev/pandas/releases/tag/v3.1.0rc0",
+      "source_id": "pandas",
+      "source": "pandas releases",
+      "kind": "Maintainer / primary",
+      "when": "Sep 30, 19:43",
+      "timestamp": "2026-09-30T19:43:00+05:30",
+      "discovery": false,
+      "group_id": "data",
+      "group_name": "Data & Building",
+      "score": 62.3,
+      "parts": {
+        "relevance": 28.5,
+        "reliability": 23.8,
+        "freshness": 5.0,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Matches your interests: release",
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "f2e5c5c15cac669c"
+    },
+    {
+      "title": "Grand Theft Auto 6 features 'detailed decapitation' and 'frequent and prominent' drug use, according to hastily deleted PEGI rating",
+      "summary": "Jason and Lucia can also snort cocaine \"directly from their hand at any time.\"",
+      "url": "https://www.pcgamer.com/games/grand-theft-auto/grand-theft-auto-6-features-detailed-decapitation-and-frequent-and-prominent-drug-use-according-to-hastily-deleted-pegi-rating/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 4, 17:19",
+      "timestamp": "2026-10-04T17:19:18+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 67.0,
+      "parts": {
+        "relevance": 22.5,
+        "reliability": 20.0,
+        "freshness": 19.5,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Matches your interests: grand theft auto",
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "4181c4e8cde05a5a"
+    },
+    {
+      "title": "An OpenAI model was caught trying to cheat at StarCraft, and of course it did it by stealing a human's work",
+      "summary": "GPT-6 Astra tried to get a leg-up in Blizzard's RTS by pilfering a human-created bot.",
+      "url": "https://www.pcgamer.com/software/ai/an-openai-model-was-caught-trying-to-cheat-at-starcraft-and-of-course-it-did-it-by-stealing-a-humans-work/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 4, 16:19",
+      "timestamp": "2026-10-04T16:19:26+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 62.2,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 19.2,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "33f3a3d873912b50"
+    },
+    {
+      "title": "GTA 6 won't be letting up on the satire: 'If you are going to put all this effort into creating a version of today's world, it has to be more over the top, more insane, more in your face'",
+      "summary": "Lucia and Jason's appearance in a fashion magazine gives us a couple more titbits of GTA info.",
+      "url": "https://www.pcgamer.com/games/grand-theft-auto/gta-6-wont-be-letting-up-on-the-satire-if-you-are-going-to-put-all-this-effort-into-creating-a-version-of-todays-world-it-has-to-be-more-over-the-top-more-insane-more-in-your-face/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 4, 08:44",
+      "timestamp": "2026-10-04T08:44:41+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 67.7,
+      "parts": {
+        "relevance": 25.5,
+        "reliability": 20.0,
+        "freshness": 17.2,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Matches your interests: gta 6",
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "72b3a6c09720c16c"
+    },
+    {
+      "title": "One of the most popular Total War: Warhammer 3 mods was 'deliberately corrupted' by its creator to sabotage AI-made copies",
+      "summary": "SFO Grimhammer 3 has since been restored to its original version, but the point's been made.",
+      "url": "https://www.pcgamer.com/games/strategy/one-of-the-most-popular-total-war-warhammer-3-mods-was-deliberately-corrupted-by-its-creator-to-sabotage-ai-made-copies/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 4, 06:46",
+      "timestamp": "2026-10-04T06:46:02+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 59.7,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 16.7,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "3c07a8743c66deaa"
+    },
+    {
+      "title": "Crimson Desert DLC delayed by 2 weeks, please join me in wishing the devs a fond 'take your time, please drink some water'",
+      "summary": "Even a man forged from steel falters sometimes.",
+      "url": "https://www.pcgamer.com/games/rpg/crimson-desert-dlc-delayed-by-2-weeks-please-join-me-in-wishing-the-devs-a-fond-take-your-time-please-drink-some-water/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 4, 04:49",
+      "timestamp": "2026-10-04T04:49:41+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 62.3,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 16.3,
+        "usefulness": 3.0,
+        "importance": 5.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Update cues: delay",
+        "Dedicated topic source"
+      ],
+      "tag": "Update",
+      "id": "8f8a3cb67747f664"
+    },
+    {
+      "title": "Valorant player claims to have inherited hardware ban through secondhand CPU, Riot anticheat boss disputes parts of story",
+      "summary": "Unlikely, but not impossible?",
+      "url": "https://www.pcgamer.com/games/fps/valorant-player-claims-to-have-inherited-hardware-ban-through-secondhand-cpu-riot-anticheat-boss-disputes-parts-of-story/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 4, 04:11",
+      "timestamp": "2026-10-04T04:11:35+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 59.1,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 16.1,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "6b3508b8808de0a9"
+    },
+    {
+      "title": "RuneScape 4 announced at RuneFest, full MMO sequel started as expansion to survival game Dragonwilds",
+      "summary": "An unstoppable juggernaut.",
+      "url": "https://www.pcgamer.com/games/mmo/runescape-4-announced-at-runefest-full-mmo-sequel-started-as-expansion-to-survival-game-dragonwilds/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 4, 03:14",
+      "timestamp": "2026-10-04T03:14:49+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 61.9,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 15.9,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "99e9084ef8b2394d"
+    },
+    {
+      "title": "The Witcher 3's remaster just brought it to a new all-time concurrent player count peak",
+      "summary": "Toss a coin—oh, it's a free upgrade.",
+      "url": "https://www.pcgamer.com/games/the-witcher/the-witcher-3s-remaster-just-brought-it-to-a-new-all-time-concurrent-player-count-peak/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 3, 22:10",
+      "timestamp": "2026-10-03T22:10:35+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 65.3,
+      "parts": {
+        "relevance": 25.5,
+        "reliability": 20.0,
+        "freshness": 14.8,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Matches your interests: witcher",
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "2ee32f6cf273673d"
+    },
+    {
+      "title": "Forget what PC Gamer said: The Witcher 3 will always be my 2015 GOTY",
+      "summary": "And now it looks better than ever.",
+      "url": "https://www.pcgamer.com/games/the-witcher/forget-what-pc-gamer-said-the-witcher-3-will-always-be-my-2015-goty/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 3, 22:09",
+      "timestamp": "2026-10-03T22:09:49+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 65.3,
+      "parts": {
+        "relevance": 25.5,
+        "reliability": 20.0,
+        "freshness": 14.8,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Matches your interests: witcher",
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "46f2a9c57fed98bd"
+    },
+    {
+      "title": "Deadlock is the king of MOBA character designs, and it's all thanks to Valve's embrace of New Yorkyness",
+      "summary": "I want to be a part of it…",
+      "url": "https://www.pcgamer.com/games/moba/deadlock-is-the-king-of-moba-character-designs-and-its-all-thanks-to-valves-embrace-of-new-yorkyness/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 3, 21:36",
+      "timestamp": "2026-10-03T21:36:23+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 57.6,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 14.6,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "b14aba3516595118"
+    },
+    {
+      "title": "Has your life ever been changed by someone you met in an MMO?",
+      "summary": "Raise a glass to your digital ride-or-dies.",
+      "url": "https://www.pcgamer.com/games/mmo/has-your-life-ever-been-changed-by-someone-you-met-in-an-mmo/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 3, 21:30",
+      "timestamp": "2026-10-03T21:30:00+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 57.6,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 14.6,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "8c4d632759e1fcbf"
+    },
+    {
+      "title": "11 underappreciated games you should buy in the Steam Autumn Sale, according to some of our biggest genre sickos",
+      "summary": "We asked 11 very particular PCG staffers what game they think everyone should buy in Steam's Autumn Sale—here's what they picked.",
+      "url": "https://www.pcgamer.com/games/11-underappreciated-games-you-should-buy-in-the-steam-autumn-sale-according-to-some-of-our-biggest-genre-sickos/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 3, 21:30",
+      "timestamp": "2026-10-03T21:30:00+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 63.6,
+      "parts": {
+        "relevance": 24.0,
+        "reliability": 20.0,
+        "freshness": 14.6,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "590aa6bd70974b33"
+    },
+    {
+      "title": "Fallen London is where the writers of Baldur's Gate 3, Dishonored and Stellaris come to let their hair down",
+      "summary": "These interactive short stories are too bold and surprising to stay secret.",
+      "url": "https://www.pcgamer.com/games/rpg/fallen-london-is-where-the-writers-of-baldurs-gate-3-dishonored-and-stellaris-come-to-let-their-hair-down/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 3, 20:30",
+      "timestamp": "2026-10-03T20:30:00+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 61.9,
+      "parts": {
+        "relevance": 22.5,
+        "reliability": 20.0,
+        "freshness": 14.4,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Matches your interests: baldur",
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "9f24f6a14775a72a"
+    },
+    {
+      "title": "Deadlock's new hero Rat King has over 100 voice lines dedicated to throwing rats at you",
+      "summary": "Chat King.",
+      "url": "https://www.pcgamer.com/games/moba/deadlocks-new-hero-rat-king-has-over-100-voice-lines-dedicated-to-throwing-rats-at-you/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 3, 19:19",
+      "timestamp": "2026-10-03T19:19:02+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 57.2,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 14.2,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "c7ef53641630f066"
+    },
+    {
+      "title": "2026 is the year big brands have finally pushed gaming mouse technology forwards",
+      "summary": "I'm not sure niche brands would be able to change the industry like this.",
+      "url": "https://www.pcgamer.com/hardware/gaming-mice/2026-is-the-year-big-brands-have-finally-pushed-gaming-mouse-technology-forwards/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 3, 18:30",
+      "timestamp": "2026-10-03T18:30:00+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 60.0,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 14.0,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "5000d66d967ef230"
+    },
+    {
+      "title": "007 First Light gets free DLC that will finally let you drive James Bond's Aston Martin properly",
+      "summary": "Extended Operations adds two TacSim missions, new game plus, and a photo mode.",
+      "url": "https://www.pcgamer.com/games/action/007-first-light-gets-free-dlc-that-will-finally-let-you-drive-james-bonds-aston-martin-properly/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 3, 17:54",
+      "timestamp": "2026-10-03T17:54:15+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 59.9,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 13.9,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "97c2696acb50718e"
+    },
+    {
+      "title": "Bored with roguelikes? You might still want to play Dicevaders, a game about perfecting dice rolls",
+      "summary": "Lead an alien invasion in this fun-but-fair game of colossal damage numbers.",
+      "url": "https://www.pcgamer.com/games/roguelike/bored-with-roguelikes-you-might-still-want-to-play-dicevaders-a-game-about-perfecting-dice-rolls/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 3, 16:47",
+      "timestamp": "2026-10-03T16:47:53+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 59.7,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 13.7,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "a8800d8fc8d03795"
+    },
+    {
+      "title": "Capcom announces plans to transform its RE Engine into an 'AI-generation game engine'",
+      "summary": "But that isn't necessarily the same as a generative AI game engine.",
+      "url": "https://www.pcgamer.com/gaming-industry/game-development/capcom-announces-plans-to-transform-its-re-engine-into-an-ai-generation-game-engine/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 3, 16:12",
+      "timestamp": "2026-10-03T16:12:31+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 59.6,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 13.6,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "6e8dba8009b18dc9"
+    },
+    {
+      "title": "GTA 6 marketing stunt reveals none of our UK editors have heard of the Miami Heat",
+      "summary": "I don't even know ball but I feel like I'm losing my mind.",
+      "url": "https://www.pcgamer.com/games/grand-theft-auto/gta-6-marketing-stunt-reveals-none-of-our-uk-editors-have-heard-of-the-miami-heat/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 3, 04:19",
+      "timestamp": "2026-10-03T04:19:09+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 61.9,
+      "parts": {
+        "relevance": 25.5,
+        "reliability": 20.0,
+        "freshness": 11.4,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Matches your interests: gta 6",
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "d2fbd1816bfb0e32"
+    },
+    {
+      "title": "Let's catch you up on all the latest news from Steam's 20 most-wishlisted games",
+      "summary": "Get up to speed on Steam's most anticipated games.",
+      "url": "https://www.pcgamer.com/games/lets-catch-you-up-on-all-the-latest-news-from-steams-20-most-wishlisted-games/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 3, 04:04",
+      "timestamp": "2026-10-03T04:04:28+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 57.4,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 11.4,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "0eb92bfe6c8afddc"
+    },
+    {
+      "title": "Valve's patch note supremacy",
+      "summary": "The king of patch notes reclaims its throne.",
+      "url": "https://www.pcgamer.com/gaming-industry/game-development/valves-patch-note-supremacy/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 3, 03:37",
+      "timestamp": "2026-10-03T03:37:36+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 57.3,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 11.3,
+        "usefulness": 3.0,
+        "importance": 5.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Update cues: patch",
+        "Dedicated topic source"
+      ],
+      "tag": "Update",
+      "id": "308a77d98da61c0a"
+    },
+    {
+      "title": "For once, I'm happy to see expensive corporate lawyers forcing a fan project offline",
+      "summary": "Apart from blatantly using the Fallout name, Fallout: New York was also completely AI generated, and it looks awful.",
+      "url": "https://www.pcgamer.com/games/fallout/for-once-im-happy-to-see-expensive-corporate-lawyers-forcing-a-fan-project-offline/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 3, 03:33",
+      "timestamp": "2026-10-03T03:33:36+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 54.3,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 11.3,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "0cfd99871c28a3ea"
+    },
+    {
+      "title": "AI guys beefing with the pope: A brief recap",
+      "summary": "The pope took on 'AI art' this week, saying that \"there is an ontological difference ... between art and what a machine can generate.\"",
+      "url": "https://www.pcgamer.com/software/ai/ai-guys-beefing-with-the-pope-a-brief-recap/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 3, 03:06",
+      "timestamp": "2026-10-03T03:06:24+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 54.2,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 11.2,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "2e09528dce0dac17"
+    },
+    {
+      "title": "I've been skeptical about Bandai Namco's upcoming Gundam game—but then I saw this model kit's chainsaw macuahuitl",
+      "summary": "It's a compelling argument.",
+      "url": "https://www.pcgamer.com/games/action/ive-been-skeptical-about-bandai-namcos-upcoming-gundam-game-but-then-i-saw-this-model-kits-chainsaw-macuahuitl/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 3, 02:25",
+      "timestamp": "2026-10-03T02:25:33+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 57.1,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 11.1,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "9f979e139e6f4cd9"
+    },
+    {
+      "title": "After 30 years they finally let Ace Combat's director fly in a real jet, and I'm taking credit",
+      "summary": "This is what a man looks like after fulfilling a lifelong dream.",
+      "url": "https://www.pcgamer.com/games/sim/after-30-years-they-finally-let-ace-combats-director-fly-in-a-real-jet-and-im-taking-credit/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 3, 01:14",
+      "timestamp": "2026-10-03T01:14:33+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 53.9,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 10.9,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "68c5604fac63f933"
+    },
+    {
+      "title": "Destiny 2 might be back, but the Bungie Store is going away",
+      "summary": "Bungie is 'building a new home for our merchandise that's more aligned with our current goals and vision,' and for some reason that means the old home has to go away.",
+      "url": "https://www.pcgamer.com/games/fps/destiny-2-might-be-back-but-the-bungie-store-is-going-away/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 3, 00:00",
+      "timestamp": "2026-10-03T00:00:45+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 53.7,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 10.7,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "738615aeefdb53ef"
+    },
+    {
+      "title": "7 musical clips of this incredibly charming magical school life sim with its goofy classmates and delightful soundtrack",
+      "summary": "Turn your sound on to experience the delight of a voice acted magic school life sim.",
+      "url": "https://www.pcgamer.com/games/life-sim/7-musical-clips-of-this-incredibly-charming-magical-school-life-sim-with-its-goofy-classmates-and-delightful-soundtrack/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 2, 23:48",
+      "timestamp": "2026-10-02T23:48:59+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 53.7,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 10.7,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "b3cf7bdeff2afd79"
+    },
+    {
+      "title": "Dear former NFL head coach Mike Tomlin: Your 12-year Minecraft city is beautiful",
+      "summary": "It may or may not have contributed to the Steelers' years of postseason woes—but at least it's walkable.",
+      "url": "https://www.pcgamer.com/games/survival-crafting/dear-former-nfl-head-coach-mike-tomlin-your-12-year-minecraft-city-is-beautiful/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 2, 23:41",
+      "timestamp": "2026-10-02T23:41:22+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 53.7,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 10.7,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "eddabe40cb1c924b"
+    },
+    {
+      "title": "I added October-appropriate zombies to Grand Theft Auto 5",
+      "summary": "Brains, and so on.",
+      "url": "https://www.pcgamer.com/games/grand-theft-auto/i-added-october-appropriate-zombies-to-grand-theft-auto-5/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 2, 22:30",
+      "timestamp": "2026-10-02T22:30:00+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 58.0,
+      "parts": {
+        "relevance": 22.5,
+        "reliability": 20.0,
+        "freshness": 10.5,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Matches your interests: grand theft auto",
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "9336b7ff0a37cc0e"
+    },
+    {
+      "title": "The upcoming sim about making games is so deep your in-game game can even get cyberleeked",
+      "summary": "Let's Build a Dungeon isn't just about making a game, but all the stuff you have to deal with while making a game.",
+      "url": "https://www.pcgamer.com/games/sim/the-upcoming-sim-about-making-games-is-so-deep-your-in-game-game-can-even-get-cyberleeked/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 2, 21:43",
+      "timestamp": "2026-10-02T21:43:24+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 56.4,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 10.4,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "7c1aa53c2a998f4c"
+    },
+    {
+      "title": "A surprisingly in-depth dressmaking simulator has the cosy gamers in a chokehold",
+      "summary": "From original designs to surprisingly faithful recreations.",
+      "url": "https://www.pcgamer.com/games/sim/a-surprisingly-in-depth-dressmaking-simulator-has-the-cosy-gamers-in-a-chokehold/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 2, 21:35",
+      "timestamp": "2026-10-02T21:35:38+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 53.4,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 10.4,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "8c4b5184d70ab9b9"
+    },
+    {
+      "title": "I'm going to teach you to love hidden object games",
+      "summary": "Or at least to respect them. I'd settle for that. And if you feel like embarking on a journey of discovery, I can help with that, too.",
+      "url": "https://www.pcgamer.com/games/im-going-to-teach-you-to-love-hidden-object-games/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 2, 20:18",
+      "timestamp": "2026-10-02T20:18:25+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 53.2,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 10.2,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "55c41379bd51d8a2"
+    },
+    {
+      "title": "The WoW: Forever beta's nerf to dungeon XP isn't nearly as bad as it seems",
+      "summary": "The danger of skimming patch notes.",
+      "url": "https://www.pcgamer.com/games/world-of-warcraft/the-wow-forever-betas-nerf-to-dungeon-xp-isnt-nearly-as-bad-as-it-seems/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 2, 20:00",
+      "timestamp": "2026-10-02T20:00:42+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 53.1,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 10.1,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "9e2ed4777cf73f91"
+    },
+    {
+      "title": "Final Fantasy 7 Revelation director on its 'very extravagant' final Sephiroth fight and whether anyone will ever pull something like this trilogy off again",
+      "summary": "Naoki Hamaguchi discusses the final chapter of Square Enix's elaborate remake project.",
+      "url": "https://www.pcgamer.com/games/final-fantasy/final-fantasy-7-revelation-director-on-its-very-extravagant-final-sephiroth-fight-and-whether-anyone-will-ever-pull-something-like-this-trilogy-off-again/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 2, 18:56",
+      "timestamp": "2026-10-02T18:56:45+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 53.0,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 10.0,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "ea807e024c9e17b8"
+    },
+    {
+      "title": "Star Wars: Galactic Racer review – Run-based bash racer with Burnout-style takedowns",
+      "summary": "F-Zero Company.",
+      "url": "https://www.pcgamer.com/games/racing/star-wars-galactic-racer-review/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 2, 17:30",
+      "timestamp": "2026-10-02T17:30:00+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 52.8,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 9.8,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "1ea701a9181a0382"
+    },
+    {
+      "title": "In my quest to find the perfect mouse for me, I've ended up with two completely different ones",
+      "summary": "I guess I'm just picky.",
+      "url": "https://www.pcgamer.com/hardware/gaming-mice/in-my-quest-to-find-the-perfect-mouse-for-me-ive-ended-up-with-two-completely-different-ones/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 2, 17:23",
+      "timestamp": "2026-10-02T17:23:19+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 52.7,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 9.7,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "60aa3bb2dfacc28a"
+    },
+    {
+      "title": "Metal desks nearly destroyed a Valorant tournament",
+      "summary": "And players have been urged to switch to wired mice.",
+      "url": "https://www.pcgamer.com/hardware/gaming-mice/metal-desks-nearly-destroyed-a-valorant-tournament/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 2, 17:21",
+      "timestamp": "2026-10-02T17:21:40+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 52.7,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 9.7,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "a59ad6c0fce0accb"
+    },
+    {
+      "title": "Riot needed absurd player counts 'in the high hundreds of thousands, if not millions' for 2XKO, dooming it from launch",
+      "summary": "The cost is too dang high.",
+      "url": "https://www.pcgamer.com/games/fighting/riots-absurd-expectations-of-player-counts-in-the-high-hundreds-of-thousands-if-not-millions-doomed-2xko-from-the-start/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 2, 16:46",
+      "timestamp": "2026-10-02T16:46:39+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 55.7,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 9.7,
+        "usefulness": 3.0,
+        "importance": 5.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Update cues: launch",
+        "Dedicated topic source"
+      ],
+      "tag": "Update",
+      "id": "24e3268fbad81e49"
+    },
+    {
+      "title": "Looks like you will have to pinky promise you won't export your RTX 5090 if you buy a gaming PC from Micro Center now",
+      "summary": "That's a whole lot of paperwork just for a new rig.",
+      "url": "https://www.pcgamer.com/hardware/graphics-cards/looks-like-you-will-have-to-pinky-promise-you-wont-export-your-rtx-5090-if-you-buy-a-gaming-pc-from-micro-center-now/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 2, 16:01",
+      "timestamp": "2026-10-02T16:01:31+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 55.6,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 9.6,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "b4f92507bee4e976"
+    },
+    {
+      "title": "Unscrupulous Airbnb host tries to get $1,700 out of Redditor with AI-generated pic of overflowing toilet",
+      "summary": "A true phantom pooper.",
+      "url": "https://www.pcgamer.com/software/ai/unscrupulous-airbnb-host-tries-to-get-usd1-700-out-of-redditor-with-ai-generated-pic-of-overflowing-toilet/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 2, 15:46",
+      "timestamp": "2026-10-02T15:46:45+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 52.5,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 9.5,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "aa05ac6f4d0e6c35"
+    },
+    {
+      "title": "Turns out you can download more battery as Valve's latest update for Steam Frame adds up to 12%",
+      "summary": "Some power efficiency improvements for Steam Frame in the 0.4.3 beta update.",
+      "url": "https://www.pcgamer.com/hardware/vr-hardware/turns-out-you-can-download-more-battery-as-valves-latest-update-for-steam-frame-adds-up-to-12-percent/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 2, 15:23",
+      "timestamp": "2026-10-02T15:23:15+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 55.5,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 9.5,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "d0b20dcaa6b3d3f2"
+    },
+    {
+      "title": "I hate having to prove my brand loyalty just for the chance to buy hardware at full price",
+      "summary": "My kingdom for a reasonably priced and readily available bit of kit.",
+      "url": "https://www.pcgamer.com/hardware/i-hate-having-to-prove-my-brand-loyalty-just-for-the-chance-to-buy-hardware-at-full-price/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 2, 14:43",
+      "timestamp": "2026-10-02T14:43:11+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 52.4,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 9.4,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "b411f1883d63d530"
+    },
+    {
+      "title": "After a record-breaking September, 'it's safe to say Steam's yearly revenue will blow past $20B for the first time'",
+      "summary": "Alinea Analytics points out that Steam's not slowing down.",
+      "url": "https://www.pcgamer.com/software/platforms/after-a-record-breaking-september-its-safe-to-say-steams-yearly-revenue-will-blow-past-usd20b-for-the-first-time/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 2, 08:20",
+      "timestamp": "2026-10-02T08:20:39+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 54.6,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 8.6,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "d44ef416a4b0cdc7"
+    },
+    {
+      "title": "9 new 2026 games on sale in the Steam Autumn Sale",
+      "summary": "Including three $70 games that are now under $50.",
+      "url": "https://www.pcgamer.com/software/platforms/9-new-2026-games-on-sale-in-the-steam-autumn-sale/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 2, 06:16",
+      "timestamp": "2026-10-02T06:16:56+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 54.3,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 8.3,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "f85d6ad978f4faaa"
+    },
+    {
+      "title": "There's something even scarier than Huggy Wuggy in the Playtime toy factory this weekend",
+      "summary": "Poppy Playtime's multiplayer prequel, Escape from Playtime, is in open beta on Steam until Sunday.",
+      "url": "https://www.pcgamer.com/games/horror/theres-something-even-scarier-than-huggy-wuggy-in-the-playtime-toy-factory-this-weekend/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 2, 04:03",
+      "timestamp": "2026-10-02T04:03:50+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 54.0,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 8.0,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "c4451c396b619cca"
+    },
+    {
+      "title": "There are so many games coming out in October you guys",
+      "summary": "We're all spoiled by choice this month.",
+      "url": "https://www.pcgamer.com/games/pc-game-release-dates-october-2026/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 2, 04:02",
+      "timestamp": "2026-10-02T04:02:52+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 51.0,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 8.0,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "9baa06fd3c340fe0"
+    },
+    {
+      "title": "Masters of Albion, Peter Molyneux's final game, just got a huge update and, [vigorous, lips-pursed nodding of approval], suddenly the old god game magic is back",
+      "summary": "And there's a tantalising, titan-sized teaser included, too",
+      "url": "https://www.pcgamer.com/games/strategy/masters-of-albion-peter-molyneuxs-final-game-just-got-a-huge-update-and-vigorous-lips-pursed-nodding-of-approval-suddenly-the-old-god-game-magic-is-back/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 2, 03:05",
+      "timestamp": "2026-10-02T03:05:00+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 53.9,
+      "parts": {
+        "relevance": 21.0,
+        "reliability": 20.0,
+        "freshness": 7.9,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "73fc0e666e8a5e96"
+    },
+    {
+      "title": "If Ace Combat's too pricey, this excellent indie alternative is on sale for just $12.50",
+      "summary": "And it's got better out-of-the-box HOTAS and VR support, too.",
+      "url": "https://www.pcgamer.com/games/action/if-ace-combats-too-pricey-this-excellent-indie-alternative-is-on-sale-for-just-usd12-50/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 2, 02:48",
+      "timestamp": "2026-10-02T02:48:50+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 50.9,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 20.0,
+        "freshness": 7.9,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "58421cbd975e639c"
+    },
+    {
+      "title": "One story about my first 30 minutes in this post-apocalyptic robot game led multiple people to buy it",
+      "summary": "Radiosol released on Steam this week.",
+      "url": "https://www.pcgamer.com/games/adventure/one-story-about-my-first-30-minutes-in-this-post-apocalyptic-robot-game-led-multiple-people-to-buy-it/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 2, 02:36",
+      "timestamp": "2026-10-02T02:36:12+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 56.9,
+      "parts": {
+        "relevance": 24.0,
+        "reliability": 20.0,
+        "freshness": 7.9,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "60fee4b1548af404"
+    },
+    {
+      "title": "'Open world fatigue' is one reason indie RPG Entropy is borrowing from the classics: 'PS1, PS2, GameCube games really never outstayed their welcome'",
+      "summary": "Except Drakengard.",
+      "url": "https://www.pcgamer.com/games/rpg/open-world-fatigue-is-one-reason-indie-rpg-entropy-is-borrowing-from-the-classics-ps1-ps2-gamecube-games-really-never-outstayed-their-welcome/",
+      "source_id": "pcgamer",
+      "source": "PC Gamer",
+      "kind": "Editorial",
+      "when": "Oct 2, 02:34",
+      "timestamp": "2026-10-02T02:34:15+05:30",
+      "discovery": false,
+      "group_id": "gaming",
+      "group_name": "Gaming",
+      "score": 58.4,
+      "parts": {
+        "relevance": 25.5,
+        "reliability": 20.0,
+        "freshness": 7.9,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Matches your interests: rpg",
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "0efbde9e552e94c7"
+    },
+    {
+      "title": "Introducing shinyreact: React UI backed by a Shiny server",
+      "summary": "We’re excited to introduce shinyreact , a new package for R and Python. It lets you write the UI of a Shiny app in React, with any component library on npm, while reducing your Shiny server code to data-only logic. shinyreact spli",
+      "url": "https://opensource.posit.co/blog/2026-09-30_introducing-shinyreact/",
+      "source_id": "posit",
+      "source": "Posit Open Source",
+      "kind": "Maintainer / primary",
+      "when": "Sep 30, 05:30",
+      "timestamp": "2026-09-30T05:30:00+05:30",
+      "discovery": false,
+      "group_id": "data",
+      "group_name": "Data & Building",
+      "score": 72.1,
+      "parts": {
+        "relevance": 30.0,
+        "reliability": 22.5,
+        "freshness": 4.1,
+        "usefulness": 10.5,
+        "importance": 5.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Matches your interests: package, shiny",
+        "Practical cues: code, package",
+        "Update cues: introducing",
+        "Dedicated topic source"
+      ],
+      "tag": "Practical",
+      "id": "8f3d48f8137cbbe0"
+    },
+    {
+      "title": "Multiple tables, saved conversations, and take-home dashboards: querychat R 0.4.0 and Python 0.9.0",
+      "summary": "I’m thrilled to share the latest querychat release for both R (v0.4.0) and Python (v0.9.0). Grab the latest from CRAN or PyPI: R Python install.packages ( \"querychat\" ) pip install -U querychat This release adds several headline f",
+      "url": "https://opensource.posit.co/blog/2026-09-29_querychat-tables-handoff/",
+      "source_id": "posit",
+      "source": "Posit Open Source",
+      "kind": "Maintainer / primary",
+      "when": "Sep 29, 05:30",
+      "timestamp": "2026-09-29T05:30:00+05:30",
+      "discovery": false,
+      "group_id": "data",
+      "group_name": "Data & Building",
+      "score": 55.9,
+      "parts": {
+        "relevance": 25.5,
+        "reliability": 22.5,
+        "freshness": 2.9,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Matches your interests: release",
+        "Dedicated topic source"
+      ],
+      "tag": "Reading",
+      "id": "8ee2a13657b414b7"
+    }
+  ],
+  "selection": {
+    "candidate_count": 146,
+    "selected_count": 19,
+    "selected_ids": [
+      "8f3d48f8137cbbe0",
+      "92641b62b44b63ff",
+      "72b3a6c09720c16c",
+      "4181c4e8cde05a5a",
+      "c38af6e5cae43e23",
+      "6ae093ee5c49106d",
+      "5fcadaf6fcfa897e",
+      "2ee32f6cf273673d",
+      "bd1136d0fcfd6f13",
+      "f2e5c5c15cac669c",
+      "637d3dfa247fa816",
+      "90249c2a3882c6d3",
+      "e81b1dea7ce0fb42",
+      "8ee2a13657b414b7",
+      "5432f5b94c34f514",
+      "57dd193099af753d",
+      "56c490db040147f1",
+      "a08a24d3f61d4df5",
+      "f0be6c8325b25584"
+    ]
+  }
+}

@@ -1,55 +1,35 @@
-name: Build daily brief
-
+name: Build the Daily Brief
 on:
   schedule:
-    # 00:30 UTC == 06:00 IST. Runs every day.
-    - cron: "30 0 * * *"
-  workflow_dispatch:   # manual "Run workflow" button
-
+    - cron: '30 0,6,12,18 * * *' # 06:00, 12:00, 18:00, 00:00 IST
+  workflow_dispatch:
 permissions:
-  contents: write      # needed to commit the rendered HTML back to the repo
-
+  contents: write
+concurrency:
+  group: daily-brief-build
+  cancel-in-progress: false
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
-
+    timeout-minutes: 15
     steps:
-      - name: Check out repo
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
-          cache: "pip"
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          pip install jupyter nbconvert
-
-      - name: Execute notebook
+          python-version: '3.12'
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Build edition
         env:
           NOTION_TASKS_TOKEN: ${{ secrets.NOTION_TASKS_TOKEN }}
           NOTION_WORKOUT_TOKEN: ${{ secrets.NOTION_WORKOUT_TOKEN }}
+        run: python -m nbconvert --to notebook --execute scripts/build_brief.ipynb --output /tmp/daily-brief-executed.ipynb --ExecutePreprocessor.timeout=600
+      - name: Commit rendered edition
         run: |
-          jupyter nbconvert \
-            --to notebook \
-            --execute scripts/build_brief.ipynb \
-            --output executed.ipynb \
-            --output-dir /tmp \
-            --ExecutePreprocessor.timeout=300
-
-      - name: Commit rendered brief
-        run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add docs/
-          if git diff --cached --quiet; then
-            echo "No changes."
-          else
-            git commit -m "Daily brief: $(date -u +%Y-%m-%d)"
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update daily brief'
             git push
           fi

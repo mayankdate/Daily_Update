@@ -1,80 +1,29 @@
-# Daily Brief
+# Daily Brief — notebook-first personal newspaper
 
-Personal "daily newspaper" built from Notion (tasks + workout dashboard), live weather, countdown dates, webcomic RSS feeds, MusicBrainz release data, Spotify as a music fallback, and Google News. GitHub Actions runs it each morning, renders a single scrolling HTML page, and commits it back.
+Keep all configuration and backend logic in `scripts/build_brief.ipynb`. Do not convert this project into a service, framework app, or collection of Python modules unless explicitly requested. Templates live beside the notebook; output lives in `docs/` for the existing GitHub Pages project.
 
-## Sections (top to bottom)
+## UI constraints
 
-1. **Weather** — horizontal timeline across 24 hours (every 3h), sunrise/sunset markers, min/max.
-2. **Tasks + Workout + Countdowns** — three slim columns.
-3. **Music** — new releases if any, else a Spotify "soundtrack of the day" embed.
-4. **Comics** — latest strips from each configured feed.
-5. **News** — one full section per topic group, lead card + grid of recent stories.
+- Modern newspaper plus restrained cyberpunk: editorial serif headlines, dark green panels, cyan/lime accents, system fonts. Maintain light mode.
+- Mobile-first. Weather and topic controls may scroll horizontally; the entire page must not overflow. Tasks/workout/countdowns are stacked native details panels; tasks start open on phones.
+- No volume/issue numbers. Gym loadout belongs in Workout only.
+- **Do not restore a standalone Spotify section or embedded player.** A compact soundtrack artist/button sits beside weather. Recent music releases use a compact expandable list there.
+- Keep filters, search, priority/newest sort, show more, visible timestamps, source labels and score explanations. Progressive fallback must leave stories readable without JavaScript.
+- Use Jinja autoescaping for external strings. Only trusted local stylesheet contents use `safe`; API URLs must be HTTP(S).
+- New favicon assets must be copied from scripts to docs on every build.
 
-A small light/dark toggle sits in the top-right corner. Preference is remembered in the browser (localStorage).
+## Backend
 
-## Layout
+Configuration uses CONFIG (personal/build settings), SOURCES (domain/type/editorial reliability preference/RSS), TOPICS (keywords/dedicated sources/boosts/exclusions). Scores are adjustable heuristics, not fact-checks. Never present source preferences as measured accuracy or independent corroboration. Preserve vendor/maintainer/community/editorial labels.
 
-```
-.
-├── .github/workflows/daily-brief.yml
-├── data/                               (reserved)
-├── documents/                          (reserved)
-├── docs/                               GitHub Pages serves this folder
-│   ├── index.html                      redirect to daily_brief.html
-│   └── daily_brief.html                the brief
-├── scripts/
-│   ├── build_brief.ipynb               config + build
-│   ├── template_html.html              page shell
-│   └── template_css.css                styles
-├── .gitignore
-├── CLAUDE.md
-├── notion_tasks_token.txt              LOCAL ONLY, gitignored
-├── notion_workoutdash_token.txt        LOCAL ONLY, gitignored
-└── requirements.txt
-```
+Direct RSS collection runs once per source in a bounded thread pool. Google discovery is optional and strictly allowlisted using publisher source metadata, not names inferred from a title. GitHub feeds must keep repository path restrictions. Keep freshness filtering, future-date rejection, conservative duplicate removal and publisher caps. Do not silently fill failed topics with random sources.
 
-## Config highlights
+Weather is a 24-hour forecast window from build time; browser refresh is optional and public. News/Notion/countdowns require a rebuild. Failures must be explicit, with per-source status and public-news-only `docs/news_diagnostics.json`.
 
-All in the `CONFIG` dict at the top of `scripts/build_brief.ipynb`.
+Preserve the user's Notion data-source IDs, property names, artist IDs, comic feeds and local token filenames. Missing credentials must not crash unrelated sections. Never commit tokens, executed notebook outputs, or private fixtures. Masking private task titles requires an actual checked `Private` property and does not make public HTML private.
 
-- `mask_private_tasks: True` + a `Private` checkbox column on the Notion Tasks database → private tasks render as `(private task)` in the HTML. Safe for a public repo.
-- `loadout` — exact match to a Notion `Loadout` multi-select option.
-- `weather` — latitude, longitude, name, metric/imperial. No API key.
-- `countdowns` — list of `{name, date}`. Shows days remaining.
-- `webcomic_feeds` — each entry has its own `lookback_days` and `items` cap.
-- `music_artists` — name + Spotify artist ID. The ID is the last path segment of the artist's `open.spotify.com` URL. Leave blank to skip the soundtrack.
-- `news_feeds` — each entry has a `name`, a list of `queries` (merged + deduped), and an `items` cap for the front page. `news_items_on_topic_page` controls the per-topic page.
+## Verification
 
-## Spotify soundtrack behavior
+Compile every notebook code cell. Verify ranking and source allowlists with fixtures, including malformed dates, feed timeouts, duplicate titles/URLs and different release versions. Render with StrictUndefined, including empty and failed sections. Check phone widths (320/390px), tablet and desktop; filter/search/sort/theme/show-more; no full-page horizontal overflow; no music iframe. Preview content must stay explicitly labelled as samples. Run the public integrations separately from private Notion checks.
 
-- Picked deterministically by day-of-year, so you get a different artist each morning.
-- Only shown when there are no new music releases from `music_artists`.
-- **Autoplay with sound is blocked by every modern browser** unless you've already clicked something on the page. The embed loads ready; one click plays it. There is no browser-side workaround for this.
-
-## Running locally
-
-```bash
-python -m venv .venv
-source .venv/bin/activate       # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-pip install jupyter
-
-echo "secret_xxx..." > notion_tasks_token.txt
-echo "secret_yyy..." > notion_workoutdash_token.txt
-
-jupyter notebook scripts/build_brief.ipynb
-# or run end-to-end:
-jupyter nbconvert --to notebook --execute scripts/build_brief.ipynb --output /tmp/executed.ipynb
-```
-
-Open `docs/daily_brief.html`.
-
-## GitHub Actions
-
-Secrets: `NOTION_TASKS_TOKEN`, `NOTION_WORKOUT_TOKEN`.
-Permissions: Settings → Actions → General → "Read and write permissions".
-Schedule: 00:30 UTC = 06:00 IST, daily.
-
-## Cost
-
-Public repo: Actions unlimited. Private repo: 2,000 min/month free; one run ~1 min.
+Use README.md for setup, refresh behavior, selection limitations and GitHub Pages deployment assumptions.
