@@ -1,7 +1,19 @@
 name: Build the Daily Brief
 on:
   schedule:
-    - cron: '30 0,6,12,18 * * *' # 06:00, 12:00, 18:00, 00:00 IST
+    # 00:00 and 12:00 IST (UTC+5:30) are 18:30 and 06:30 UTC
+    - cron: '30 6,18 * * *'
+    
+    # --- ALTERNATIVE TIMEZONE OPTIONS (Run at 00:00 & 12:00 local time) ---
+    # - cron: '0 0,12 * * *'   # 00:00 & 12:00 UTC / GMT
+    # - cron: '0 5,17 * * *'   # 00:00 & 12:00 EST / 05:00 & 17:00 UTC (US Eastern Standard, UTC-5)
+    # - cron: '0 4,16 * * *'   # 00:00 & 12:00 EDT / 04:00 & 16:00 UTC (US Eastern Daylight, UTC-4)
+    # - cron: '0 8,20 * * *'   # 00:00 & 12:00 PST / 08:00 & 20:00 UTC (US Pacific Standard, UTC-8)
+    # - cron: '0 11,23 * * *'  # 00:00 & 12:00 CET / 11:00 & 23:00 UTC (Central European, UTC+1)
+    # - cron: '0 10,22 * * *'  # 00:00 & 12:00 CEST / 10:00 & 22:00 UTC (Central European Summer, UTC+2)
+    # - cron: '0 3,15 * * *'   # 00:00 & 12:00 JST / 03:00 & 15:00 UTC (Japan Standard, UTC+9)
+    # - cron: '0 1,13 * * *'   # 00:00 & 12:00 AEDT / 01:00 & 13:00 UTC (Australian Eastern Daylight, UTC+11)
+    
   workflow_dispatch:
 permissions:
   contents: write

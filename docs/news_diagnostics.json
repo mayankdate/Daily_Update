@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-10-04T19:11:36.612522+05:30",
+  "built_at": "2026-10-04T19:43:27.727115+05:30",
   "sources": [
     {
       "id": "ars",
@@ -8,10 +8,22 @@
       "entries": 20
     },
     {
+      "id": "bbc",
+      "method": "rss",
+      "status": "ok",
+      "entries": 22
+    },
+    {
       "id": "eurogamer",
       "method": "rss",
       "status": "ok",
       "entries": 100
+    },
+    {
+      "id": "guardian",
+      "method": "rss",
+      "status": "ok",
+      "entries": 45
     },
     {
       "id": "huggingface",
@@ -72,6 +84,12 @@
       "method": "discovery",
       "status": "ok",
       "entries": 8
+    },
+    {
+      "id": "geopolitics",
+      "method": "discovery",
+      "status": "ok",
+      "entries": 100
     }
   ],
   "candidates": [
@@ -97,7 +115,7 @@
       },
       "penalty": 0,
       "reasons": [
-        "Topic match and source preference"
+        "Topic signals: ai"
       ],
       "tag": "Reading",
       "id": "5432f5b94c34f514"
@@ -114,17 +132,17 @@
       "discovery": false,
       "group_id": "ai",
       "group_name": "AI & Models",
-      "score": 51.4,
+      "score": 51.3,
       "parts": {
         "relevance": 15.0,
         "reliability": 21.2,
-        "freshness": 10.2,
+        "freshness": 10.1,
         "usefulness": 3.0,
         "importance": 2.0
       },
       "penalty": 0,
       "reasons": [
-        "Topic match and source preference"
+        "Topic signals: ai"
       ],
       "tag": "Reading",
       "id": "a08a24d3f61d4df5"
@@ -151,10 +169,176 @@
       },
       "penalty": 0,
       "reasons": [
-        "Topic match and source preference"
+        "Topic signals: model"
       ],
       "tag": "Reading",
       "id": "f0be6c8325b25584"
+    },
+    {
+      "title": "Australia investigating Flydubai co-pilot's links to country",
+      "summary": "State police and the country's security agency are looking into the co-pilot, who attempted to take control of a Flydubai plane travelling to Israel.",
+      "url": "https://www.bbc.co.uk/news/articles/cxly4nym57q9o?at_medium=RSS&at_campaign=rss",
+      "source_id": "bbc",
+      "source": "BBC News",
+      "kind": "Editorial",
+      "when": "Oct 4, 11:49",
+      "timestamp": "2026-10-04T11:49:17+05:30",
+      "discovery": false,
+      "group_id": "geopolitics",
+      "group_name": "Geopolitics",
+      "score": 59.0,
+      "parts": {
+        "relevance": 15.0,
+        "reliability": 21.2,
+        "freshness": 17.8,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Topic signals: israel"
+      ],
+      "tag": "Reading",
+      "id": "9cb46d2de4f10241"
+    },
+    {
+      "title": "What to know about Brazil's election pitting Lula against Flávio Bolsonaro",
+      "summary": "Polls suggest the election will be a closely run contest between the left-wing incumbent and his right-wing rival.",
+      "url": "https://www.bbc.co.uk/news/articles/c6wyz0r2n0djo?at_medium=RSS&at_campaign=rss",
+      "source_id": "bbc",
+      "source": "BBC News",
+      "kind": "Editorial",
+      "when": "Oct 4, 16:33",
+      "timestamp": "2026-10-04T16:33:20+05:30",
+      "discovery": false,
+      "group_id": "geopolitics",
+      "group_name": "Geopolitics",
+      "score": 63.3,
+      "parts": {
+        "relevance": 15.0,
+        "reliability": 21.2,
+        "freshness": 19.1,
+        "usefulness": 3.0,
+        "importance": 5.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Topic signals: election",
+        "Update cues: election"
+      ],
+      "tag": "Update",
+      "id": "e458ae1763710423"
+    },
+    {
+      "title": "Kim wins Asian Games gold to secure military exemption",
+      "summary": "Golfer Tom Kim wins gold at the Asian Games to secure an exemption from mandatory service in South Korea's military.",
+      "url": "https://www.bbc.co.uk/sport/golf/articles/cmy0rn425k4xo?at_medium=RSS&at_campaign=rss",
+      "source_id": "bbc",
+      "source": "BBC News",
+      "kind": "Editorial",
+      "when": "Oct 3, 14:21",
+      "timestamp": "2026-10-03T14:21:14+05:30",
+      "discovery": false,
+      "group_id": "geopolitics",
+      "group_name": "Geopolitics",
+      "score": 54.3,
+      "parts": {
+        "relevance": 15.0,
+        "reliability": 21.2,
+        "freshness": 13.1,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Topic signals: military"
+      ],
+      "tag": "Reading",
+      "id": "4aa1b7cd058ee881"
+    },
+    {
+      "title": "Why Canada is preparing for a (long shot) US invasion",
+      "summary": "Prime Minister Mark Carney has said the military is running scenarios in the unlikely case the US invades Canada.",
+      "url": "https://www.bbc.co.uk/news/articles/c9m2mjj3yvg4o?at_medium=RSS&at_campaign=rss",
+      "source_id": "bbc",
+      "source": "BBC News",
+      "kind": "Editorial",
+      "when": "Oct 4, 05:00",
+      "timestamp": "2026-10-04T05:00:06+05:30",
+      "discovery": false,
+      "group_id": "geopolitics",
+      "group_name": "Geopolitics",
+      "score": 60.4,
+      "parts": {
+        "relevance": 15.0,
+        "reliability": 21.2,
+        "freshness": 16.2,
+        "usefulness": 3.0,
+        "importance": 5.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Topic signals: military",
+        "Update cues: invasion"
+      ],
+      "tag": "Update",
+      "id": "fc8ac5d5c906edb6"
+    },
+    {
+      "title": "Why has Brazil accused the US of election interference?",
+      "summary": "The Latin American country will vote for its next president, as Lula da Silva and Bolsonaro clash over sovereignty, security and ties with Washington.",
+      "url": "https://www.bbc.co.uk/news/videos/c3eweld0nddeo?at_medium=RSS&at_campaign=rss",
+      "source_id": "bbc",
+      "source": "BBC News",
+      "kind": "Editorial",
+      "when": "Oct 3, 19:22",
+      "timestamp": "2026-10-03T19:22:13+05:30",
+      "discovery": false,
+      "group_id": "geopolitics",
+      "group_name": "Geopolitics",
+      "score": 58.3,
+      "parts": {
+        "relevance": 15.0,
+        "reliability": 21.2,
+        "freshness": 14.1,
+        "usefulness": 3.0,
+        "importance": 5.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Topic signals: election",
+        "Update cues: election"
+      ],
+      "tag": "Update",
+      "id": "67e2945c33adbb86"
+    },
+    {
+      "title": "Will Spain's housing crisis lead to a snap election?",
+      "summary": "The BBC's Guy Hedgecoe is in Madrid, where a series of marches have been scheduled, after Spain's Congress rejected measures aimed at tackling the country's housing crisis.",
+      "url": "https://www.bbc.co.uk/news/videos/cmgj9vz2zxelo?at_medium=RSS&at_campaign=rss",
+      "source_id": "bbc",
+      "source": "BBC News",
+      "kind": "Editorial",
+      "when": "Oct 3, 17:56",
+      "timestamp": "2026-10-03T17:56:30+05:30",
+      "discovery": false,
+      "group_id": "geopolitics",
+      "group_name": "Geopolitics",
+      "score": 58.0,
+      "parts": {
+        "relevance": 15.0,
+        "reliability": 21.2,
+        "freshness": 13.8,
+        "usefulness": 3.0,
+        "importance": 5.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Topic signals: election",
+        "Update cues: election"
+      ],
+      "tag": "Update",
+      "id": "bdfb94b5705c7272"
     },
     {
       "title": "PlatinumGames boss hints he wants to expand Bayonetta as Stellar Blade director calls the series \"indispensable\"",
@@ -168,11 +352,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 63.0,
+      "score": 62.8,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 20.0,
+        "freshness": 19.8,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -195,11 +379,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 65.7,
+      "score": 65.6,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 19.7,
+        "freshness": 19.6,
         "usefulness": 3.0,
         "importance": 5.0
       },
@@ -223,11 +407,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 62.3,
+      "score": 62.1,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 19.3,
+        "freshness": 19.1,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -250,11 +434,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 61.7,
+      "score": 61.6,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 18.7,
+        "freshness": 18.6,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -277,16 +461,17 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 63.9,
+      "score": 63.8,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.0,
-        "freshness": 14.9,
+        "freshness": 14.8,
         "usefulness": 3.0,
         "importance": 5.0
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game",
         "Update cues: release",
         "Dedicated topic source"
       ],
@@ -305,11 +490,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 57.7,
+      "score": 57.6,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 14.7,
+        "freshness": 14.6,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -332,16 +517,17 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 60.4,
+      "score": 60.3,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.0,
-        "freshness": 14.4,
+        "freshness": 14.3,
         "usefulness": 3.0,
         "importance": 2.0
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -359,11 +545,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 56.8,
+      "score": 56.7,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 13.8,
+        "freshness": 13.7,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -386,11 +572,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 56.5,
+      "score": 56.4,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 13.5,
+        "freshness": 13.4,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -413,11 +599,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 56.2,
+      "score": 56.1,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 13.2,
+        "freshness": 13.1,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -440,16 +626,17 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 67.8,
+      "score": 67.7,
       "parts": {
         "relevance": 30.0,
         "reliability": 20.0,
-        "freshness": 12.8,
+        "freshness": 12.7,
         "usefulness": 3.0,
         "importance": 2.0
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game, gaming, witcher",
         "Matches your interests: witcher",
         "Dedicated topic source"
       ],
@@ -468,16 +655,17 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 61.3,
+      "score": 61.2,
       "parts": {
         "relevance": 25.5,
         "reliability": 20.0,
-        "freshness": 10.8,
+        "freshness": 10.7,
         "usefulness": 3.0,
         "importance": 2.0
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: gta",
         "Matches your interests: gta 6",
         "Dedicated topic source"
       ],
@@ -523,16 +711,17 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 65.5,
+      "score": 65.4,
       "parts": {
         "relevance": 30.0,
         "reliability": 20.0,
-        "freshness": 10.5,
+        "freshness": 10.4,
         "usefulness": 3.0,
         "importance": 2.0
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game, gta, rpg",
         "Matches your interests: gta 6, rpg",
         "Dedicated topic source"
       ],
@@ -561,6 +750,7 @@
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: gta",
         "Matches your interests: gta 6, grand theft auto",
         "Dedicated topic source"
       ],
@@ -589,6 +779,7 @@
       },
       "penalty": 12,
       "reasons": [
+        "Topic signals: game",
         "Dedicated topic source",
         "Unconfirmed headline language: −12"
       ],
@@ -607,11 +798,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 52.9,
+      "score": 52.8,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 9.9,
+        "freshness": 9.8,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -644,6 +835,7 @@
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: witcher",
         "Matches your interests: witcher",
         "Update cues: patch",
         "Dedicated topic source"
@@ -663,16 +855,17 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 55.6,
+      "score": 55.5,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.0,
-        "freshness": 9.6,
+        "freshness": 9.5,
         "usefulness": 3.0,
         "importance": 2.0
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -690,11 +883,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 55.4,
+      "score": 55.3,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 9.4,
+        "freshness": 9.3,
         "usefulness": 3.0,
         "importance": 5.0
       },
@@ -728,6 +921,7 @@
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game, steam",
         "Update cues: release",
         "Dedicated topic source"
       ],
@@ -746,16 +940,17 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 53.2,
+      "score": 53.1,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.0,
-        "freshness": 7.2,
+        "freshness": 7.1,
         "usefulness": 3.0,
         "importance": 2.0
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -773,16 +968,17 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 53.1,
+      "score": 53.0,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.0,
-        "freshness": 7.1,
+        "freshness": 7.0,
         "usefulness": 3.0,
         "importance": 2.0
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -800,11 +996,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 50.0,
+      "score": 49.9,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 7.0,
+        "freshness": 6.9,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -837,6 +1033,7 @@
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: witcher",
         "Matches your interests: witcher",
         "Update cues: patch",
         "Dedicated topic source"
@@ -866,6 +1063,7 @@
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -883,16 +1081,17 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 40.8,
+      "score": 40.7,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.0,
-        "freshness": 6.8,
+        "freshness": 6.7,
         "usefulness": 3.0,
         "importance": 2.0
       },
       "penalty": 12,
       "reasons": [
+        "Topic signals: game",
         "Dedicated topic source",
         "Unconfirmed headline language: −12"
       ],
@@ -911,11 +1110,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 49.8,
+      "score": 49.7,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 6.8,
+        "freshness": 6.7,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -938,16 +1137,17 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 55.7,
+      "score": 55.6,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.0,
-        "freshness": 6.7,
+        "freshness": 6.6,
         "usefulness": 3.0,
         "importance": 5.0
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: gaming",
         "Update cues: launch",
         "Dedicated topic source"
       ],
@@ -1003,6 +1203,7 @@
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -1020,11 +1221,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 48.4,
+      "score": 48.3,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 5.4,
+        "freshness": 5.3,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -1047,16 +1248,17 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 55.8,
+      "score": 55.7,
       "parts": {
         "relevance": 25.5,
         "reliability": 20.0,
-        "freshness": 5.3,
+        "freshness": 5.2,
         "usefulness": 3.0,
         "importance": 2.0
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: gta",
         "Matches your interests: gta 6",
         "Dedicated topic source"
       ],
@@ -1085,6 +1287,7 @@
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: steam",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -1112,6 +1315,7 @@
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -1139,6 +1343,7 @@
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game, witcher",
         "Matches your interests: witcher",
         "Dedicated topic source"
       ],
@@ -1185,16 +1390,17 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 51.0,
+      "score": 50.9,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.0,
-        "freshness": 5.0,
+        "freshness": 4.9,
         "usefulness": 3.0,
         "importance": 2.0
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -1222,6 +1428,7 @@
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -1239,16 +1446,17 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 53.9,
+      "score": 53.8,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.0,
-        "freshness": 4.9,
+        "freshness": 4.8,
         "usefulness": 3.0,
         "importance": 5.0
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game",
         "Update cues: delay",
         "Dedicated topic source"
       ],
@@ -1304,6 +1512,7 @@
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -1331,6 +1540,7 @@
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -1348,16 +1558,17 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 61.7,
+      "score": 61.6,
       "parts": {
         "relevance": 30.0,
         "reliability": 20.0,
-        "freshness": 3.7,
+        "freshness": 3.6,
         "usefulness": 3.0,
         "importance": 5.0
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game, witcher, steam",
         "Matches your interests: witcher",
         "Update cues: release",
         "Dedicated topic source"
@@ -1387,6 +1598,7 @@
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -1404,16 +1616,17 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 57.1,
+      "score": 57.0,
       "parts": {
         "relevance": 28.5,
         "reliability": 20.0,
-        "freshness": 3.6,
+        "freshness": 3.5,
         "usefulness": 3.0,
         "importance": 2.0
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game, rpg",
         "Matches your interests: rpg",
         "Dedicated topic source"
       ],
@@ -1442,6 +1655,7 @@
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game",
         "Update cues: release",
         "Dedicated topic source"
       ],
@@ -1470,6 +1684,7 @@
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -1497,6 +1712,7 @@
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -1541,11 +1757,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 46.4,
+      "score": 46.3,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 3.4,
+        "freshness": 3.3,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -1578,6 +1794,7 @@
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: witcher",
         "Matches your interests: witcher",
         "Dedicated topic source"
       ],
@@ -1651,11 +1868,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 46.3,
+      "score": 46.2,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 3.3,
+        "freshness": 3.2,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -1688,6 +1905,7 @@
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -1705,16 +1923,17 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 56.2,
+      "score": 56.1,
       "parts": {
         "relevance": 28.5,
         "reliability": 20.0,
-        "freshness": 2.7,
+        "freshness": 2.6,
         "usefulness": 3.0,
         "importance": 2.0
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game, gta",
         "Matches your interests: grand theft auto",
         "Dedicated topic source"
       ],
@@ -1743,6 +1962,7 @@
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -1760,16 +1980,17 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 56.1,
+      "score": 56.0,
       "parts": {
         "relevance": 28.5,
         "reliability": 20.0,
-        "freshness": 2.6,
+        "freshness": 2.5,
         "usefulness": 3.0,
         "importance": 2.0
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game, witcher",
         "Matches your interests: witcher",
         "Dedicated topic source"
       ],
@@ -1798,6 +2019,7 @@
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -1825,6 +2047,7 @@
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: witcher",
         "Matches your interests: witcher",
         "Dedicated topic source"
       ],
@@ -1853,6 +2076,7 @@
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -1870,16 +2094,17 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 48.5,
+      "score": 48.4,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.0,
-        "freshness": 2.5,
+        "freshness": 2.4,
         "usefulness": 3.0,
         "importance": 2.0
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -1988,11 +2213,286 @@
       },
       "penalty": 12,
       "reasons": [
+        "Topic signals: game",
         "Dedicated topic source",
         "Unconfirmed headline language: −12"
       ],
       "tag": "Unconfirmed",
       "id": "0bb801d9d866edcb"
+    },
+    {
+      "title": "Brazil goes to polls in decisive election for future of Latin America",
+      "summary": "Lula and Flávio Bolsonaro face off in battle between leftwing incumbent and far-right son of jailed ex-president Brazilians are going to the polls in the first round of a highly polarised and high-stakes presidential election that",
+      "url": "https://www.theguardian.com/world/2026/oct/04/brazil-presidential-election-lula-flavio-bolsonaro",
+      "source_id": "guardian",
+      "source": "The Guardian",
+      "kind": "Editorial",
+      "when": "Oct 4, 19:22",
+      "timestamp": "2026-10-04T19:22:33+05:30",
+      "discovery": false,
+      "group_id": "geopolitics",
+      "group_name": "Geopolitics",
+      "score": 64.1,
+      "parts": {
+        "relevance": 15.0,
+        "reliability": 21.2,
+        "freshness": 19.9,
+        "usefulness": 3.0,
+        "importance": 5.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Topic signals: election",
+        "Update cues: election"
+      ],
+      "tag": "Update",
+      "id": "be09c0d8e3a4c640"
+    },
+    {
+      "title": "Brazil’s neck-and-neck election offers test for growing pro-Trump Latin American bloc",
+      "summary": "Sunday’s poll pits the leftist incumbent Lula against the son of a former far-right president convicted of staging a coup ‘No one disrespects Our Lady’: fears for Brazil’s patron saint grip country ahead of election Shortly after ",
+      "url": "https://www.theguardian.com/world/2026/oct/03/brazil-election-lula-bolsonaro-trump",
+      "source_id": "guardian",
+      "source": "The Guardian",
+      "kind": "Editorial",
+      "when": "Oct 3, 12:30",
+      "timestamp": "2026-10-03T12:30:35+05:30",
+      "discovery": false,
+      "group_id": "geopolitics",
+      "group_name": "Geopolitics",
+      "score": 59.9,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 21.2,
+        "freshness": 12.7,
+        "usefulness": 3.0,
+        "importance": 5.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Topic signals: election, coup",
+        "Update cues: election"
+      ],
+      "tag": "Update",
+      "id": "58e172c23ef9c017"
+    },
+    {
+      "title": "Brazil’s Lula says only he can stop rise of fascism under Bolsonaro’s son",
+      "summary": "President leads huge rally in Rio before election on Sunday seen as most important for decades The Brazilian president, Luiz Inácio Lula da Silva, has claimed he is the only thing standing in the way of far-right “fascists” reclai",
+      "url": "https://www.theguardian.com/world/2026/oct/02/brazil-lula-stop-fascism-bolsonaro-son",
+      "source_id": "guardian",
+      "source": "The Guardian",
+      "kind": "Editorial",
+      "when": "Oct 3, 02:42",
+      "timestamp": "2026-10-03T02:42:29+05:30",
+      "discovery": false,
+      "group_id": "geopolitics",
+      "group_name": "Geopolitics",
+      "score": 52.3,
+      "parts": {
+        "relevance": 15.0,
+        "reliability": 21.2,
+        "freshness": 11.1,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Topic signals: election"
+      ],
+      "tag": "Reading",
+      "id": "75e79b497c156b49"
+    },
+    {
+      "title": "UK car industry faces ‘difficult trade-off’ between Chinese and EU markets",
+      "summary": "Britain under pressure to put tariffs on cheap Chinese vehicle imports ahead of protectionist trade measures Britain’s car industry is grappling with a “difficult trade-off” between China and Europe, as manufacturers struggle to b",
+      "url": "https://www.theguardian.com/business/2026/oct/04/uk-car-industry-trade-off-china-made-in-europe-laws",
+      "source_id": "guardian",
+      "source": "The Guardian",
+      "kind": "Editorial",
+      "when": "Oct 4, 10:30",
+      "timestamp": "2026-10-04T10:30:18+05:30",
+      "discovery": false,
+      "group_id": "geopolitics",
+      "group_name": "Geopolitics",
+      "score": 74.5,
+      "parts": {
+        "relevance": 27.0,
+        "reliability": 21.2,
+        "freshness": 17.5,
+        "usefulness": 6.8,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Topic signals: tariffs, china",
+        "Matches your interests: china, trade",
+        "Practical cues: trade"
+      ],
+      "tag": "Practical",
+      "id": "7054108348c00707"
+    },
+    {
+      "title": "Chalmers says global economic turmoil will drive budget cuts, but Australia should avoid recession",
+      "summary": "Treasurer says ‘very substantial and intensifying pressure’ on federal budget as he points finger at private sector for driving up inflation amid Middle East conflict Get our new political email , free app or daily news podcast Ji",
+      "url": "https://www.theguardian.com/business/2026/oct/04/chalmers-says-global-economic-turmoil-will-drive-budget-cuts-but-australia-should-avoid-recession",
+      "source_id": "guardian",
+      "source": "The Guardian",
+      "kind": "Editorial",
+      "when": "Oct 4, 07:11",
+      "timestamp": "2026-10-04T07:11:13+05:30",
+      "discovery": false,
+      "group_id": "geopolitics",
+      "group_name": "Geopolitics",
+      "score": 57.9,
+      "parts": {
+        "relevance": 15.0,
+        "reliability": 21.2,
+        "freshness": 16.7,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Topic signals: conflict"
+      ],
+      "tag": "Reading",
+      "id": "6308b5c87ed97e57"
+    },
+    {
+      "title": "French education minister says up to 500 schools will remain partially or fully closed on Monday after student protests – Europe live",
+      "summary": "At least 5,000 people, mainly teenagers, have been arrested while dozens of people, including students and teachers, have been injured Germany is Ukraine’s largest donor and has sent Kyiv more than €43.3 billion ($48.8 billion) si",
+      "url": "https://www.theguardian.com/world/live/2026/oct/04/friedrich-merz-german-chancellor-ukraine-kyiv-russia-strikes-war-zelenskyy-putin-europe-latest-news-updates",
+      "source_id": "guardian",
+      "source": "The Guardian",
+      "kind": "Editorial",
+      "when": "Oct 4, 19:25",
+      "timestamp": "2026-10-04T19:25:16+05:30",
+      "discovery": false,
+      "group_id": "geopolitics",
+      "group_name": "Geopolitics",
+      "score": 61.1,
+      "parts": {
+        "relevance": 15.0,
+        "reliability": 21.2,
+        "freshness": 19.9,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Topic signals: ukraine"
+      ],
+      "tag": "Reading",
+      "id": "47a3c398474df357"
+    },
+    {
+      "title": "Russia strikes Kyiv bridge as German chancellor visits Ukraine in show of support",
+      "summary": "Attack happened shortly after Friedrich Merz arrived in city, on unannounced visit intended to underline Germany’s backing Russia has struck another major bridge in Kyiv as the German chancellor, Friedrich Merz, arrived in the cap",
+      "url": "https://www.theguardian.com/world/2026/oct/04/russia-strikes-kyiv-bridge-german-chancellor-merz-visits-ukraine",
+      "source_id": "guardian",
+      "source": "The Guardian",
+      "kind": "Editorial",
+      "when": "Oct 4, 17:23",
+      "timestamp": "2026-10-04T17:23:09+05:30",
+      "discovery": false,
+      "group_id": "geopolitics",
+      "group_name": "Geopolitics",
+      "score": 63.5,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 21.2,
+        "freshness": 19.3,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Topic signals: ukraine, russia"
+      ],
+      "tag": "Reading",
+      "id": "10d038589e2dda4b"
+    },
+    {
+      "title": "Jacob Rees-Mogg accuses Tucker Carlson of ‘verging on defending Hitler’",
+      "summary": "Former Tory minister defends UK decision to enter war in podcast with US rightwinger and Putin sympathiser The former Tory minister Jacob Rees-Mogg has found himself defending Britain’s decision to fight against Adolf Hitler after",
+      "url": "https://www.theguardian.com/us-news/2026/oct/04/jacob-rees-mogg-tucker-carlson-adolf-hitler-second-world-war-uk-armed-forces-vladimir-putin",
+      "source_id": "guardian",
+      "source": "The Guardian",
+      "kind": "Editorial",
+      "when": "Oct 4, 16:23",
+      "timestamp": "2026-10-04T16:23:22+05:30",
+      "discovery": false,
+      "group_id": "geopolitics",
+      "group_name": "Geopolitics",
+      "score": 60.3,
+      "parts": {
+        "relevance": 15.0,
+        "reliability": 21.2,
+        "freshness": 19.1,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Topic signals: war"
+      ],
+      "tag": "Reading",
+      "id": "87bb0997bb992cb2"
+    },
+    {
+      "title": "NAZA film-makers say they spoke to more than 100 sources about Israeli actions in Gaza",
+      "summary": "Team behind documentary push back against IDF attempt to discredit its exposure of military systems The team behind the award-winning film NAZA, which details the Israeli military’s targeting policies in Gaza and its alleged accep",
+      "url": "https://www.theguardian.com/film/2026/oct/01/makers-naza-film-spoke-more-than-100-sources-israeli-actions-gaza",
+      "source_id": "guardian",
+      "source": "The Guardian",
+      "kind": "Editorial",
+      "when": "Oct 1, 23:15",
+      "timestamp": "2026-10-01T23:15:09+05:30",
+      "discovery": false,
+      "group_id": "geopolitics",
+      "group_name": "Geopolitics",
+      "score": 51.6,
+      "parts": {
+        "relevance": 18.0,
+        "reliability": 21.2,
+        "freshness": 7.4,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Topic signals: gaza, military"
+      ],
+      "tag": "Reading",
+      "id": "7474c1d4f48972be"
+    },
+    {
+      "title": "Court quashes block on mothers and children in Gaza joining families in UK",
+      "summary": "Immigration court judge finds ‘unsafe journeys’ policy was applied unlawfully to two families A decision by the Home Office to block mothers and children in Gaza from joining their families in the UK has been quashed by a court. F",
+      "url": "https://www.theguardian.com/politics/2026/oct/04/court-quashes-block-on-mothers-and-children-in-gaza-joining-families-in-uk",
+      "source_id": "guardian",
+      "source": "The Guardian",
+      "kind": "Editorial",
+      "when": "Oct 4, 16:30",
+      "timestamp": "2026-10-04T16:30:28+05:30",
+      "discovery": false,
+      "group_id": "geopolitics",
+      "group_name": "Geopolitics",
+      "score": 60.3,
+      "parts": {
+        "relevance": 15.0,
+        "reliability": 21.2,
+        "freshness": 19.1,
+        "usefulness": 3.0,
+        "importance": 2.0
+      },
+      "penalty": 0,
+      "reasons": [
+        "Topic signals: gaza"
+      ],
+      "tag": "Reading",
+      "id": "322573ee3e711953"
     },
     {
       "title": "The Agent Said It Was Done. The Database Disagreed.",
@@ -2006,11 +2506,11 @@
       "discovery": false,
       "group_id": "ai",
       "group_name": "AI & Models",
-      "score": 63.7,
+      "score": 63.5,
       "parts": {
         "relevance": 22.5,
         "reliability": 20.0,
-        "freshness": 16.2,
+        "freshness": 16.0,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -2044,6 +2544,7 @@
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: model",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -2061,11 +2562,11 @@
       "discovery": false,
       "group_id": "ai",
       "group_name": "AI & Models",
-      "score": 51.7,
+      "score": 51.6,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 8.7,
+        "freshness": 8.6,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -2169,11 +2670,11 @@
       "discovery": false,
       "group_id": "ai",
       "group_name": "AI & Models",
-      "score": 45.4,
+      "score": 45.3,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 2.4,
+        "freshness": 2.3,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -2196,16 +2697,17 @@
       "discovery": false,
       "group_id": "ai",
       "group_name": "AI & Models",
-      "score": 65.9,
+      "score": 65.8,
       "parts": {
         "relevance": 25.5,
         "reliability": 21.2,
-        "freshness": 10.4,
+        "freshness": 10.3,
         "usefulness": 6.8,
         "importance": 2.0
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: model",
         "Matches your interests: reasoning",
         "Practical cues: guide",
         "Dedicated topic source"
@@ -2225,11 +2727,11 @@
       "discovery": false,
       "group_id": "ai",
       "group_name": "AI & Models",
-      "score": 52.4,
+      "score": 52.3,
       "parts": {
         "relevance": 18.0,
         "reliability": 21.2,
-        "freshness": 8.2,
+        "freshness": 8.1,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -2262,6 +2764,7 @@
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: ai",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -2289,6 +2792,7 @@
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: chatgpt",
         "Practical cues: api",
         "Dedicated topic source"
       ],
@@ -2317,6 +2821,7 @@
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: chatgpt",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -2334,16 +2839,17 @@
       "discovery": false,
       "group_id": "ai",
       "group_name": "AI & Models",
-      "score": 56.5,
+      "score": 56.4,
       "parts": {
         "relevance": 25.5,
         "reliability": 21.2,
-        "freshness": 4.8,
+        "freshness": 4.7,
         "usefulness": 3.0,
         "importance": 2.0
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: model",
         "Matches your interests: reasoning",
         "Dedicated topic source"
       ],
@@ -2372,6 +2878,7 @@
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: ai",
         "Matches your interests: local",
         "Dedicated topic source"
       ],
@@ -2390,16 +2897,17 @@
       "discovery": false,
       "group_id": "ai",
       "group_name": "AI & Models",
-      "score": 50.6,
+      "score": 50.5,
       "parts": {
         "relevance": 21.0,
         "reliability": 21.2,
-        "freshness": 3.4,
+        "freshness": 3.3,
         "usefulness": 3.0,
         "importance": 2.0
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: chatgpt",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -2417,11 +2925,11 @@
       "discovery": false,
       "group_id": "ai",
       "group_name": "AI & Models",
-      "score": 54.4,
+      "score": 54.3,
       "parts": {
         "relevance": 18.0,
         "reliability": 21.2,
-        "freshness": 3.4,
+        "freshness": 3.3,
         "usefulness": 6.8,
         "importance": 5.0
       },
@@ -2511,6 +3019,7 @@
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: ai",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -2538,6 +3047,7 @@
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: ai",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -2555,11 +3065,11 @@
       "discovery": false,
       "group_id": "ai",
       "group_name": "AI & Models",
-      "score": 46.3,
+      "score": 46.2,
       "parts": {
         "relevance": 18.0,
         "reliability": 21.2,
-        "freshness": 2.1,
+        "freshness": 2.0,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -2582,11 +3092,11 @@
       "discovery": false,
       "group_id": "ai",
       "group_name": "AI & Models",
-      "score": 46.3,
+      "score": 46.2,
       "parts": {
         "relevance": 18.0,
         "reliability": 21.2,
-        "freshness": 2.1,
+        "freshness": 2.0,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -2609,11 +3119,11 @@
       "discovery": false,
       "group_id": "data",
       "group_name": "Data & Building",
-      "score": 51.8,
+      "score": 51.7,
       "parts": {
         "relevance": 18.0,
         "reliability": 23.8,
-        "freshness": 5.0,
+        "freshness": 4.9,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -2646,6 +3156,7 @@
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: python, pandas",
         "Matches your interests: release",
         "Dedicated topic source"
       ],
@@ -2664,11 +3175,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 67.0,
+      "score": 66.8,
       "parts": {
         "relevance": 22.5,
         "reliability": 20.0,
-        "freshness": 19.5,
+        "freshness": 19.3,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -2692,11 +3203,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 62.2,
+      "score": 62.0,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 19.2,
+        "freshness": 19.0,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -2719,16 +3230,17 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 67.7,
+      "score": 67.6,
       "parts": {
         "relevance": 25.5,
         "reliability": 20.0,
-        "freshness": 17.2,
+        "freshness": 17.1,
         "usefulness": 3.0,
         "importance": 2.0
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: gta",
         "Matches your interests: gta 6",
         "Dedicated topic source"
       ],
@@ -2747,11 +3259,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 59.7,
+      "score": 59.6,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 16.7,
+        "freshness": 16.6,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -2774,11 +3286,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 62.3,
+      "score": 62.1,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 16.3,
+        "freshness": 16.1,
         "usefulness": 3.0,
         "importance": 5.0
       },
@@ -2802,11 +3314,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 59.1,
+      "score": 59.0,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 16.1,
+        "freshness": 16.0,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -2829,16 +3341,17 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 61.9,
+      "score": 61.8,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.0,
-        "freshness": 15.9,
+        "freshness": 15.8,
         "usefulness": 3.0,
         "importance": 2.0
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -2856,16 +3369,17 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 65.3,
+      "score": 65.2,
       "parts": {
         "relevance": 25.5,
         "reliability": 20.0,
-        "freshness": 14.8,
+        "freshness": 14.7,
         "usefulness": 3.0,
         "importance": 2.0
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: witcher",
         "Matches your interests: witcher",
         "Dedicated topic source"
       ],
@@ -2884,16 +3398,17 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 65.3,
+      "score": 65.1,
       "parts": {
         "relevance": 25.5,
         "reliability": 20.0,
-        "freshness": 14.8,
+        "freshness": 14.6,
         "usefulness": 3.0,
         "importance": 2.0
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: witcher",
         "Matches your interests: witcher",
         "Dedicated topic source"
       ],
@@ -2912,11 +3427,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 57.6,
+      "score": 57.5,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 14.6,
+        "freshness": 14.5,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -2939,11 +3454,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 57.6,
+      "score": 57.5,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 14.6,
+        "freshness": 14.5,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -2966,16 +3481,17 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 63.6,
+      "score": 63.5,
       "parts": {
         "relevance": 24.0,
         "reliability": 20.0,
-        "freshness": 14.6,
+        "freshness": 14.5,
         "usefulness": 3.0,
         "importance": 2.0
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game, steam",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -2993,11 +3509,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 61.9,
+      "score": 61.8,
       "parts": {
         "relevance": 22.5,
         "reliability": 20.0,
-        "freshness": 14.4,
+        "freshness": 14.3,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -3021,11 +3537,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 57.2,
+      "score": 57.1,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 14.2,
+        "freshness": 14.1,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -3048,16 +3564,17 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 60.0,
+      "score": 59.9,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.0,
-        "freshness": 14.0,
+        "freshness": 13.9,
         "usefulness": 3.0,
         "importance": 2.0
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: gaming",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -3075,16 +3592,17 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 59.9,
+      "score": 59.8,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.0,
-        "freshness": 13.9,
+        "freshness": 13.8,
         "usefulness": 3.0,
         "importance": 2.0
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -3102,16 +3620,17 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 59.7,
+      "score": 59.6,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.0,
-        "freshness": 13.7,
+        "freshness": 13.6,
         "usefulness": 3.0,
         "importance": 2.0
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -3129,16 +3648,17 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 59.5,
+      "score": 59.4,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.0,
-        "freshness": 13.5,
+        "freshness": 13.4,
         "usefulness": 3.0,
         "importance": 2.0
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -3156,16 +3676,17 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 61.9,
+      "score": 61.8,
       "parts": {
         "relevance": 25.5,
         "reliability": 20.0,
-        "freshness": 11.4,
+        "freshness": 11.3,
         "usefulness": 3.0,
         "importance": 2.0
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: gta",
         "Matches your interests: gta 6",
         "Dedicated topic source"
       ],
@@ -3184,16 +3705,17 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 57.4,
+      "score": 57.3,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.0,
-        "freshness": 11.4,
+        "freshness": 11.3,
         "usefulness": 3.0,
         "importance": 2.0
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: steam",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -3211,11 +3733,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 57.3,
+      "score": 57.2,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 11.3,
+        "freshness": 11.2,
         "usefulness": 3.0,
         "importance": 5.0
       },
@@ -3239,11 +3761,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 54.3,
+      "score": 54.2,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 11.3,
+        "freshness": 11.2,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -3266,11 +3788,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 54.2,
+      "score": 54.1,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 11.2,
+        "freshness": 11.1,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -3293,16 +3815,17 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 57.1,
+      "score": 57.0,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.0,
-        "freshness": 11.1,
+        "freshness": 11.0,
         "usefulness": 3.0,
         "importance": 2.0
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -3320,11 +3843,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 53.9,
+      "score": 53.8,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 10.9,
+        "freshness": 10.8,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -3347,11 +3870,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 53.7,
+      "score": 53.6,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 10.7,
+        "freshness": 10.6,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -3374,11 +3897,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 53.7,
+      "score": 53.6,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 10.7,
+        "freshness": 10.6,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -3401,11 +3924,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 53.7,
+      "score": 53.6,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 10.7,
+        "freshness": 10.6,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -3428,11 +3951,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 58.0,
+      "score": 57.9,
       "parts": {
         "relevance": 22.5,
         "reliability": 20.0,
-        "freshness": 10.5,
+        "freshness": 10.4,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -3456,16 +3979,17 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 56.4,
+      "score": 56.3,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.0,
-        "freshness": 10.4,
+        "freshness": 10.3,
         "usefulness": 3.0,
         "importance": 2.0
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -3483,11 +4007,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 53.4,
+      "score": 53.3,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 10.4,
+        "freshness": 10.3,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -3510,11 +4034,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 53.2,
+      "score": 53.1,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 10.2,
+        "freshness": 10.1,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -3537,11 +4061,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 53.1,
+      "score": 53.0,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 10.1,
+        "freshness": 10.0,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -3564,11 +4088,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 53.0,
+      "score": 52.9,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 10.0,
+        "freshness": 9.9,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -3591,11 +4115,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 52.8,
+      "score": 52.7,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 9.8,
+        "freshness": 9.7,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -3672,11 +4196,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 55.7,
+      "score": 55.6,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 9.7,
+        "freshness": 9.6,
         "usefulness": 3.0,
         "importance": 5.0
       },
@@ -3700,16 +4224,17 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 55.6,
+      "score": 55.5,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.0,
-        "freshness": 9.6,
+        "freshness": 9.5,
         "usefulness": 3.0,
         "importance": 2.0
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: gaming",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -3727,11 +4252,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 52.5,
+      "score": 52.4,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 9.5,
+        "freshness": 9.4,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -3754,16 +4279,17 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 55.5,
+      "score": 55.4,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.0,
-        "freshness": 9.5,
+        "freshness": 9.4,
         "usefulness": 3.0,
         "importance": 2.0
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: steam",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -3781,11 +4307,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 52.4,
+      "score": 52.3,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 9.4,
+        "freshness": 9.3,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -3818,6 +4344,7 @@
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: steam",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -3835,16 +4362,17 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 54.3,
+      "score": 54.2,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.0,
-        "freshness": 8.3,
+        "freshness": 8.2,
         "usefulness": 3.0,
         "importance": 2.0
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: steam",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -3872,6 +4400,7 @@
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: steam",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -3926,6 +4455,7 @@
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -3943,11 +4473,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 50.9,
+      "score": 50.8,
       "parts": {
         "relevance": 18.0,
         "reliability": 20.0,
-        "freshness": 7.9,
+        "freshness": 7.8,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -3970,16 +4500,17 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 56.9,
+      "score": 56.8,
       "parts": {
         "relevance": 24.0,
         "reliability": 20.0,
-        "freshness": 7.9,
+        "freshness": 7.8,
         "usefulness": 3.0,
         "importance": 2.0
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: game, steam",
         "Dedicated topic source"
       ],
       "tag": "Reading",
@@ -3997,16 +4528,17 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 58.4,
+      "score": 58.3,
       "parts": {
         "relevance": 25.5,
         "reliability": 20.0,
-        "freshness": 7.9,
+        "freshness": 7.8,
         "usefulness": 3.0,
         "importance": 2.0
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: rpg",
         "Matches your interests: rpg",
         "Dedicated topic source"
       ],
@@ -4035,6 +4567,7 @@
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: python, shiny",
         "Matches your interests: package, shiny",
         "Practical cues: code, package",
         "Update cues: introducing",
@@ -4065,6 +4598,7 @@
       },
       "penalty": 0,
       "reasons": [
+        "Topic signals: python",
         "Matches your interests: release",
         "Dedicated topic source"
       ],
@@ -4073,9 +4607,10 @@
     }
   ],
   "selection": {
-    "candidate_count": 146,
-    "selected_count": 19,
+    "candidate_count": 162,
+    "selected_count": 25,
     "selected_ids": [
+      "7054108348c00707",
       "8f3d48f8137cbbe0",
       "92641b62b44b63ff",
       "72b3a6c09720c16c",
@@ -4084,8 +4619,13 @@
       "6ae093ee5c49106d",
       "5fcadaf6fcfa897e",
       "2ee32f6cf273673d",
+      "be09c0d8e3a4c640",
+      "10d038589e2dda4b",
       "bd1136d0fcfd6f13",
+      "e458ae1763710423",
       "f2e5c5c15cac669c",
+      "fc8ac5d5c906edb6",
+      "9cb46d2de4f10241",
       "637d3dfa247fa816",
       "90249c2a3882c6d3",
       "e81b1dea7ce0fb42",

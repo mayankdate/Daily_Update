@@ -10,14 +10,16 @@ A personal newspaper with a modern editorial/cyberpunk design, built in one edit
 4. Open `scripts/build_brief.ipynb`, review the configuration cell, and Run All. This writes `docs/index.html`, `docs/daily_brief.html`, both favicons, and `docs/news_diagnostics.json`.
 5. Open `docs/index.html` locally or push your rendered `docs/` folder to your existing GitHub Pages repository.
 
-The included `preview/index.html` uses **illustrative sample content**, clearly labelled on the page. It is for inspecting the layout before connecting Notion. Preview links lead to publisher homepages rather than fictional article URLs. The rendered `docs/` edition was built using public integrations; it does not contain your Notion task/workout data. Run your notebook to replace it with your personal edition.
+The included `preview/index.html` uses **illustrative sample content**, clearly labelled on the page. It is for inspecting the layout before connecting Notion. Preview links lead to publisher homepages rather than fictional article URLs. The included `docs/` starts with the same labelled sample preview. Run your notebook to replace it with your personal edition. `preview/releases.html` demonstrates the new-release state; `preview/many.html` demonstrates a longer countdown list.
 
 ## What changed
 
 - Dark green-black panels, warm editorial type, lime and cyan accents. A remembered light theme is also included. System fonts keep the page fast and avoid font downloads.
 - Phone layout: swipable hourly weather, stacked collapsible daily panels, horizontally scrollable topic filters, full-width readable story cards, and generous tap targets.
 - Gym loadout appears only inside Workout. The volume/issue numbers are gone.
-- **Music fallback is a compact artist label and an Open Spotify button next to weather. There is no embedded player or standalone music section.** Recent releases appear in an expandable list in the same small panel. The artist link is still available when releases exist.
+- **Music is conditional:** without recent releases, a compact 152px Spotify player sits beside weather (right-aligned beneath it on phones). When tracked artists have releases, the player disappears and a dedicated music section lists them with artist/title Spotify search links. Search links avoid guessing a track or album ID; the button says “Find on Spotify.” Detection uses MusicBrainz and the configurable `music_lookback_days` (currently 60). Release groups are paginated; one failed artist check does not discard other artists’ releases. Failed checks are labelled.
+- Compact task rows without checkboxes, plus compact countdown rows that fit additional events.
+- A visible “Why this story” reason and a clearly labelled score disclosure showing weighted points.
 - News filters, instant search, priority/newest sorting, show more, publisher labels, and an expandable score explanation per story.
 - Comics are a compact horizontal strip at the end on phones.
 - SVG and multi-resolution ICO favicons. The mark is a simple D for Daily Brief; replace the two files in `scripts/` to use a personal logo.
@@ -30,7 +32,7 @@ The first code cell contains three sections:
 - `SOURCES`: named publishers with a domain, optional RSS/Atom URL, source type, and an editable reliability preference from 0–100.
 - `TOPICS`: group names, source IDs, keyword gates, interest boosts, title exclusions, and optional discovery queries.
 
-Defaults include AI & Models; Data & Building (R/Python/statistics); Gaming (with Witcher/GTA/RPG boosts); and Culture & Worlds (Harry Potter/Hogwarts). Add or rename a group in `TOPICS`; navigation and filters regenerate automatically. IDs must be unique lowercase slugs. Broad sources need a keyword match; `dedicated_sources` bypass that gate. Each story is assigned to its highest-scoring group, so cross-topic stories do not appear twice.
+Defaults include AI & Models; Data & Building (R/Python/statistics); Gaming (with Witcher/GTA/RPG boosts); Culture & Worlds (Harry Potter/Hogwarts); and Geopolitics (conflicts, diplomacy, trade, sanctions, and technology policy, with India/Asia interests). Geopolitics uses BBC/Guardian world feeds and allowlisted Reuters/AP discovery, with topic-specific usefulness, importance, and rumor terms. These preferences are editable; no source is treated as infallible. Add or rename a group in `TOPICS`; navigation and filters regenerate automatically. IDs must be unique lowercase slugs. Broad sources need a keyword match; `dedicated_sources` bypass that gate. Each story is assigned to its highest-scoring group, so cross-topic stories do not appear twice.
 
 To add a publisher, add one entry to `SOURCES` and include its ID in a topic's `sources`. Add it to `dedicated_sources` only if its entire feed is relevant. GitHub sources use a repository `path_prefix` so unrelated repositories cannot inherit their ranking preference.
 
@@ -56,9 +58,9 @@ Collection fetches direct feeds once, with bounded parallelism and timeouts. Opt
 
 ## Weather freshness
 
-The notebook requests the next 24 hourly forecast slots from Open-Meteo, starting at the build hour and crossing midnight as needed. Each slot includes temperature, feels-like temperature, rain probability, humidity and wind; metric/imperial follows CONFIG.
+The notebook requests the current **local calendar day, 00:00 through 23:00**, using `CONFIG["timezone"]` (Asia/Kolkata). It includes earlier hours even if you run it in the evening and never fills the list with tomorrow’s hours. Each slot includes temperature, feels-like temperature, rain probability, humidity and wind; metric/imperial follows CONFIG.
 
-When the forecast is at least one hour old, the browser can refresh it directly from the public API, then retry hourly while the page is open or when returning to an old tab. This needs internet access and no secret. On failure, the last rendered forecast remains with an explicit failure/build-time note. Set `weather_browser_refresh=False` to use only the build snapshot. **Hourly forecasts are not minute-by-minute observations.** News, Notion and countdowns refresh only when the notebook rebuilds.
+When the forecast is at least one hour old or the local calendar date has changed, the browser can refresh it directly from the public API, then retry hourly while the page is open or when returning to an old tab. Refresh keeps the same full-calendar-day rule and explicitly labels the forecast date, including when an old edition remains open overnight. This needs internet access and no secret. On failure, the last rendered forecast remains with an explicit failure/build-time note. Set `weather_browser_refresh=False` to use only the build snapshot. **Hourly forecasts are not minute-by-minute observations.** News, Notion and countdowns refresh only when the notebook rebuilds.
 
 ## GitHub automation
 
@@ -98,4 +100,4 @@ Direct RSS endpoints were checked during this update. Runtime diagnostics, not a
 
 ## Validation in this update
 
-All notebook cells compile and the notebook schema validates. Fixture checks cover ranking, source allowlists, freshness, duplicate handling, malformed/future dates, failed feeds, 24-hour weather windows, escaped external text, empty integrations, and both music states. A public-data run completed and selected 19 stories from 12 successful feed requests. Notion could not be live-tested without your local tokens. MusicBrainz and two comic feeds returned unusable responses in this environment; those failures are surfaced. DOM interaction tests also passed for topic filters, search/empty results, sorting, pagination, mobile panel defaults and theme persistence writes. Browser-based visual verification was blocked by the execution environment, so the supplied preview should be checked on your phone before publishing.
+Notebook syntax/schema and fixture checks pass for calendar-day weather (midnight, midday and late evening), conditional music states, release pagination/failures, source matching, geopolitics scoring, ranking explanations and HTML escaping. DOM checks cover filters/search/sort/show-more/theme plus browser weather refresh and midnight date rollover. Browser visual verification and live Spotify playback could not be completed because this environment blocks the browser process. Check the included previews on your phone before publishing. Notion credentials are not included or required for sample previews.

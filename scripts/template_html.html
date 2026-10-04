@@ -22,11 +22,11 @@
   <div class="dateline"><span>{{ date_long }}</span><span>YOUR DAY. YOUR WORLD.</span></div>
 </header>
 
-<section class="conditions" aria-label="Weather and soundtrack">
+<section class="conditions{% if music_releases or not soundtrack %} weather-only{% endif %}" aria-label="Weather and soundtrack">
  <div class="weather-main">
   <div class="weather-heading"><div><span class="eyebrow">LOCAL ATMOSPHERE</span><h2 id="weather-location">{{ weather_client.location }} <span id="weather-summary">{% if weather %}{{ weather.emoji }} {{ weather.summary }}{% endif %}</span></h2></div>
   <div class="sun-times" id="weather-range">{% if weather %}{{ weather.min }}–{{ weather.max }}{{ weather.unit }}<br>Sun ↑ {{ weather.sunrise }} / ↓ {{ weather.sunset }}{% endif %}</div></div>
-  <p class="weather-note" id="weather-note">{% if weather %}Next 24 hours · rain probability in % · updated {{ weather.updated }}{% else %}Weather unavailable at build time.{% endif %}</p>
+  <p class="weather-note" id="weather-note">{% if weather %}{{ weather.date }} · 00:00–23:00 · rain probability in % · updated {{ weather.updated }}{% else %}Weather unavailable at build time.{% endif %}</p>
   <div class="hourly-scroll" tabindex="0" role="region" aria-label="Hourly forecast, scroll horizontally">
    <div class="hourly-cells" id="hourly-cells">
    {% if weather %}{% for c in weather.cells %}<div class="hour-cell">
@@ -36,26 +36,37 @@
    </div>
   </div>
  </div>
+ {% if not music_releases and soundtrack %}
  <aside class="soundtrack" aria-label="Today's soundtrack">
   <span class="eyebrow">ON THE RECORD</span>
-  {% if soundtrack %}<span class="record-icon" aria-hidden="true">◉</span><div class="soundtrack-copy"><span class="muted">Today's soundtrack</span><strong>{{ soundtrack.artist }}</strong></div><a class="button small" href="https://open.spotify.com/artist/{{ soundtrack.spotify_id }}" target="_blank" rel="noopener noreferrer">Open Spotify ↗</a>
-  {% else %}<p class="muted">No soundtrack artist configured.</p>{% endif %}
+  <div class="soundtrack-copy"><span class="muted">Today's soundtrack</span><strong>{{ soundtrack.artist }}</strong></div>
+  <iframe class="spotify-player" title="Spotify player: {{ soundtrack.artist }}" src="{{ soundtrack.embed_url }}" width="100%" height="152" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
+  <a class="spotify-fallback" href="https://open.spotify.com/artist/{{ soundtrack.spotify_id }}" target="_blank" rel="noopener noreferrer">Open in Spotify ↗</a>
   {% if build_status.get("Music releases") == "unavailable" %}<small class="music-status muted">Release check unavailable.</small>{% endif %}
-  {% if music_releases %}<details class="releases"><summary>{{ music_releases | length }} recent releases</summary><ul>{% for m in music_releases %}<li><a href="{{ m.url }}" target="_blank" rel="noopener noreferrer">{{ m.artist }} · {{ m.title }}</a><small>{{ m.date }}</small></li>{% endfor %}</ul></details>{% endif %}
  </aside>
+ {% endif %}
 </section>
 
 <div class="section-label"><span>01 / THE DAY AHEAD</span><a href="#news">Jump to the briefing ↓</a></div>
 <section class="daily-grid" aria-label="Your day">
  <details class="day-panel" id="tasks-panel" open><summary><span>Tasks <small>{{ tasks | length }}</small></span><span class="expand-mark" aria-hidden="true">+</span></summary><div class="panel-body">
  {% if build_status.get('Tasks') == 'unavailable' %}<p class="empty">Tasks unavailable. Check the Notion connection.</p>{% elif tasks %}
- <ul class="tasks">{% for t in tasks %}<li class="{% if t.done %}done{% endif %}"><span class="check" aria-label="{% if t.done %}Complete{% else %}Incomplete{% endif %}">{% if t.done %}✓{% endif %}</span><span>{{ t.title }}{% if t.type %}<small>{{ t.type }}</small>{% endif %}</span></li>{% endfor %}</ul>
+ <ul class="tasks">{% for t in tasks %}<li class="{% if t.done %}done{% endif %}"><span class="task-title">{{ t.title }}</span>{% if t.type %}<small>{{ t.type }}</small>{% endif %}{% if t.done %}<span class="sr-only">Completed</span>{% endif %}</li>{% endfor %}</ul>
  {% else %}<p class="empty">A clear calendar. Nothing scheduled today.</p>{% endif %}</div></details>
  <details class="day-panel" id="workout-panel" open><summary><span>Workout <small>{{ workouts | length }}</small></span><span class="expand-mark" aria-hidden="true">+</span></summary><div class="panel-body"><p class="loadout">{{ weekday }} / {{ loadout }}</p>
  {% if build_status.get('Workout') == 'unavailable' %}<p class="empty">Workout unavailable. Check the Notion connection.</p>{% elif workouts %}<ul class="workouts">{% for w in workouts %}<li><strong>{{ w.name }}</strong><span>{% if w.sets is not none %}{{ w.sets | round(0) | int }} × {{ w.reps or '—' }}{% endif %}{% if w.weight_kg is not none %} · {{ w.weight_kg }} kg{% endif %}{% if w.rest %} · {{ w.rest | round(0) | int }}s rest{% endif %}</span>{% if w.muscles %}<small>{{ w.muscles | join(' · ') }}</small>{% endif %}</li>{% endfor %}</ul>{% else %}<p class="empty">No workout scheduled for this day and loadout.</p>{% endif %}</div></details>
  <details class="day-panel" id="countdowns-panel" open><summary><span>On the horizon <small>{{ countdowns | length }}</small></span><span class="expand-mark" aria-hidden="true">+</span></summary><div class="panel-body">
- {% for c in countdowns %}<div class="countdown"><strong>{{ c.label }}</strong><span>{{ c.name }}</span><small>{{ c.date_pretty }}</small></div>{% else %}<p class="empty">No countdowns yet.</p>{% endfor %}</div></details>
+ {% for c in countdowns %}<div class="countdown"><div><span>{{ c.name }}</span><small>{{ c.date_pretty }}</small></div><strong>{{ c.label }}</strong></div>{% else %}<p class="empty">No countdowns yet.</p>{% endfor %}</div></details>
 </section>
+
+{% if music_releases %}
+<section class="music-section" aria-labelledby="music-title">
+ <div class="section-label"><span>ON THE RECORD / NEW MUSIC</span><span>{{ music_releases | length }} RECENT RELEASES</span></div>
+ <h2 id="music-title">Fresh from your artists<span>.</span></h2>
+ {% if build_status.get("Music releases") == "unavailable" %}<p class="integration-note">Some release checks were unavailable.</p>{% endif %}
+ <div class="release-grid">{% for m in music_releases %}<article class="release-card"><span class="eyebrow">{{ m.artist }}</span><h3>{{ m.title }}</h3><p>{{ m.type }} · {{ m.date }}</p><a class="button small" href="{{ m.spotify_url }}" target="_blank" rel="noopener noreferrer">Find on Spotify ↗</a><a class="release-source" href="{{ m.url }}" target="_blank" rel="noopener noreferrer">Release details ↗</a></article>{% endfor %}</div>
+</section>
+{% endif %}
 
 <main id="news">
  <div class="section-label"><span>02 / YOUR SIGNAL</span><span>{{ news | length }} SELECTED STORIES</span></div>
@@ -71,7 +82,8 @@
   <h3><a href="{{ n.url }}" target="_blank" rel="noopener noreferrer">{{ n.title }} <span class="external-arrow" aria-hidden="true">↗</span></a></h3>
   {% if n.summary %}<p class="story-excerpt">{{ n.summary }}</p>{% endif %}
   <div class="story-bottom"><div class="story-byline"><strong>{{ n.source }}</strong><span>{{ n.kind }} · <time datetime="{{ n.timestamp }}">{{ n.when }}</time></span></div>
-  <details class="ranking"><summary>Why this story <span>{{ n.score | round(0) | int }}</span></summary><div class="ranking-body"><p>Priority score / 100 · an editorial heuristic, not a fact-check.</p><ul>{% for reason in n.reasons %}<li>{{ reason }}</li>{% endfor %}</ul><dl>{% for key,value in n.parts.items() %}<div><dt>{{ key | capitalize }}</dt><dd>{{ value }}</dd></div>{% endfor %}{% if n.penalty %}<div><dt>Penalty</dt><dd>−{{ n.penalty }}</dd></div>{% endif %}</dl></div></details></div>
+  <div class="ranking-preview"><span>Why this story</span><p>{{ (n.reasons | default([], true) | first) | default('Selected for topic relevance and source preference.', true) }}</p></div>
+  <details class="ranking"><summary><span class="ranking-action"><span class="ranking-closed">Show score breakdown</span><span class="ranking-open">Hide score breakdown</span> <span class="ranking-chevron" aria-hidden="true">⌄</span></span><span class="ranking-score">{{ n.score | round(0) | int }}/100</span></summary><div class="ranking-body"><p>Weighted points toward priority / 100.</p><ul>{% for reason in n.reasons | default([], true) %}<li>{{ reason }}</li>{% else %}<li>Selected for topic relevance and source preference.</li>{% endfor %}</ul><dl>{% for key,value in (n.parts | default({}, true)).items() %}<div><dt>{{ 'Source preference' if key == 'reliability' else key | capitalize }}</dt><dd>{{ value }} pts</dd></div>{% else %}<div><dt>Breakdown unavailable</dt><dd>Rebuild this edition</dd></div>{% endfor %}{% if n.penalty | default(0) %}<div><dt>Penalty</dt><dd>−{{ n.penalty }} pts</dd></div>{% endif %}</dl><p class="score-caveat">Editorial ranking, not a fact-check.</p></div></details></div>
  </article>{% endfor %}
  </div>
  <p class="empty-news" id="empty-news" {% if news %}hidden{% endif %}>No stories matched this edition. Check source health below or widen the lookback window.</p>
@@ -113,26 +125,28 @@
  input.addEventListener('input',()=>{limit=12;update();});sort.addEventListener('change',()=>{limit=12;update();});more.addEventListener('click',()=>{limit+=12;update();});update();
  const cfg=JSON.parse(document.getElementById('weather-config').textContent);let lastWeather=Date.parse(cfg.built),busy=false;
  const rounded=x=>x==null?'—':Math.round(x);
+ const localDay=stamp=>new Intl.DateTimeFormat('en-CA',{timeZone:cfg.timezone,year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(stamp));
  async function refreshWeather(){
-  if(!cfg.enabled||busy||document.hidden||Date.now()-lastWeather<3600000)return;
+  if(!cfg.enabled||busy||document.hidden||(Date.now()-lastWeather<3600000&&localDay(lastWeather)===localDay(Date.now())))return;
   busy=true;const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),15000);
   try{
    const r=await fetch('https://api.open-meteo.com/v1/forecast?'+new URLSearchParams(cfg.params),{signal:ctrl.signal});if(!r.ok)throw new Error('Weather unavailable');
    const data=await r.json(),h=data.hourly,d=data.daily;
    const parts=Object.fromEntries(new Intl.DateTimeFormat('en-CA',{timeZone:cfg.timezone,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',hourCycle:'h23'}).formatToParts(new Date()).map(p=>[p.type,p.value]));
-   const floor=`${parts.year}-${parts.month}-${parts.day}T${parts.hour}:00`;
-   const selected=h.time.map((t,i)=>({t,i})).filter(x=>x.t>=floor).slice(0,24);
+   const calendarDay=`${parts.year}-${parts.month}-${parts.day}`;
+   const selected=h.time.map((t,i)=>({t,i})).filter(x=>x.t.slice(0,10)===calendarDay);
    if(!selected.length)throw new Error('Empty forecast');
    const frag=document.createDocumentFragment();
    selected.forEach(({t,i})=>{
     const label=cfg.labels[h.weather_code[i]]||['Weather','🌡️'];const cell=document.createElement('div');cell.className='hour-cell';
-    const day=t.slice(0,10)===floor.slice(0,10)?'Today':'Tomorrow';
+    const day='';
     [[`${day} ${t.slice(11,16)}`,'hour-time'],[label[1],'weather-symbol'],[`${rounded(h.temperature_2m[i])}°`,'temperature'],[`Feels ${rounded(h.apparent_temperature[i])}°`,''],[`Rain ${rounded(h.precipitation_probability[i])}%`,'rain'],[`RH ${rounded(h.relative_humidity_2m[i])}%`,''],[`${rounded(h.wind_speed_10m[i])} ${cfg.windUnit}`,'']].forEach(([text,cls])=>{const el=document.createElement(cls==='temperature'?'strong':'span');el.className=cls;el.textContent=text;if(cls==='weather-symbol')el.title=label[0];cell.appendChild(el);});frag.appendChild(cell);
    });
    document.getElementById('hourly-cells').replaceChildren(frag);
-   const lab=cfg.labels[d.weather_code[0]]||['Weather','🌡️'];document.getElementById('weather-summary').textContent=lab[1]+' '+lab[0];
-   document.getElementById('weather-range').textContent=`${rounded(d.temperature_2m_min[0])}–${rounded(d.temperature_2m_max[0])}${cfg.unit} · Sun ↑ ${d.sunrise[0].slice(-5)} / ↓ ${d.sunset[0].slice(-5)}`;
-   document.getElementById('weather-note').textContent='Next 24 hours · rain probability in % · updated '+new Intl.DateTimeFormat('en-IN',{timeZone:cfg.timezone,dateStyle:'medium',timeStyle:'short'}).format(new Date());lastWeather=Date.now();
+   const dayIndex=d.time.indexOf(calendarDay);if(dayIndex<0)throw new Error('Missing daily forecast');
+   const lab=cfg.labels[d.weather_code[dayIndex]]||['Weather','🌡️'];document.getElementById('weather-summary').textContent=lab[1]+' '+lab[0];
+   document.getElementById('weather-range').textContent=`${rounded(d.temperature_2m_min[dayIndex])}–${rounded(d.temperature_2m_max[dayIndex])}${cfg.unit} · Sun ↑ ${d.sunrise[dayIndex].slice(-5)} / ↓ ${d.sunset[dayIndex].slice(-5)}`;
+   document.getElementById('weather-note').textContent=calendarDay+' · 00:00–23:00 · rain probability in % · updated '+new Intl.DateTimeFormat('en-IN',{timeZone:cfg.timezone,dateStyle:'medium',timeStyle:'short'}).format(new Date());lastWeather=Date.now();
   }catch(e){document.getElementById('weather-note').textContent='Refresh unavailable · showing the last forecast, if available. Edition built '+new Date(cfg.built).toLocaleString();}
   finally{clearTimeout(timer);busy=false;}
  }
