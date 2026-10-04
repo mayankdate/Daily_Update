@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-10-04T22:21:17.209844+05:30",
+  "built_at": "2026-10-04T22:26:06.655518+05:30",
   "sources": [
     {
       "id": "aljazeera",
@@ -188,18 +188,6 @@
       "entries": 100
     },
     {
-      "id": "data",
-      "method": "discovery",
-      "status": "ok",
-      "entries": 100
-    },
-    {
-      "id": "tech",
-      "method": "discovery",
-      "status": "ok",
-      "entries": 100
-    },
-    {
       "id": "gaming",
       "method": "discovery",
       "status": "ok",
@@ -212,7 +200,19 @@
       "entries": 78
     },
     {
+      "id": "data",
+      "method": "discovery",
+      "status": "ok",
+      "entries": 100
+    },
+    {
       "id": "geopolitics",
+      "method": "discovery",
+      "status": "ok",
+      "entries": 100
+    },
+    {
+      "id": "tech",
       "method": "discovery",
       "status": "ok",
       "entries": 100
@@ -292,11 +292,11 @@
       "discovery": false,
       "group_id": "geopolitics",
       "group_name": "Geopolitics",
-      "score": 57.9,
+      "score": 57.8,
       "parts": {
         "relevance": 17.5,
         "reliability": 20.5,
-        "freshness": 14.9,
+        "freshness": 14.8,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -427,11 +427,11 @@
       "discovery": false,
       "group_id": "geopolitics",
       "group_name": "Geopolitics",
-      "score": 60.6,
+      "score": 60.5,
       "parts": {
         "relevance": 17.5,
         "reliability": 20.5,
-        "freshness": 14.6,
+        "freshness": 14.5,
         "usefulness": 3.0,
         "importance": 5.0
       },
@@ -618,11 +618,11 @@
       "discovery": false,
       "group_id": "geopolitics",
       "group_name": "Geopolitics",
-      "score": 60.2,
+      "score": 60.1,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.5,
-        "freshness": 13.7,
+        "freshness": 13.6,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -645,11 +645,11 @@
       "discovery": false,
       "group_id": "geopolitics",
       "group_name": "Geopolitics",
-      "score": 63.0,
+      "score": 62.9,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.5,
-        "freshness": 13.5,
+        "freshness": 13.4,
         "usefulness": 3.0,
         "importance": 5.0
       },
@@ -673,11 +673,11 @@
       "discovery": false,
       "group_id": "geopolitics",
       "group_name": "Geopolitics",
-      "score": 60.0,
+      "score": 59.9,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.5,
-        "freshness": 13.5,
+        "freshness": 13.4,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -851,28 +851,28 @@
       "id": "47c8b7572a694d72"
     },
     {
-      "title": "Yemen announces military campaign to reclaim land from Iran-backed Houthis",
+      "title": "Yemen's government announces all-out war to reclaim land from Houthis",
       "summary": "The Yemeni president's announcement comes amid an exchange of strikes between the Houthis and the Saudi-led coalition.",
       "url": "https://www.bbc.co.uk/news/articles/cx8dzj9vpp01o?at_medium=RSS&at_campaign=rss",
       "source_id": "bbc",
       "source": "BBC News",
       "kind": "Editorial",
-      "when": "Oct 4, 19:54",
-      "timestamp": "2026-10-04T19:54:56+05:30",
+      "when": "Oct 4, 22:21",
+      "timestamp": "2026-10-04T22:21:30+05:30",
       "discovery": false,
       "group_id": "geopolitics",
       "group_name": "Geopolitics",
-      "score": 61.5,
+      "score": 58.7,
       "parts": {
-        "relevance": 21.0,
+        "relevance": 17.5,
         "reliability": 21.2,
-        "freshness": 14.3,
+        "freshness": 15.0,
         "usefulness": 3.0,
         "importance": 2.0
       },
       "penalty": 0,
       "reasons": [
-        "Topic signals: iran, military"
+        "Topic signals: war"
       ],
       "tag": "Reading",
       "id": "1834bb77d1c91ab8"
@@ -889,11 +889,11 @@
       "discovery": false,
       "group_id": "geopolitics",
       "group_name": "Geopolitics",
-      "score": 61.6,
+      "score": 61.5,
       "parts": {
         "relevance": 21.0,
         "reliability": 21.2,
-        "freshness": 14.4,
+        "freshness": 14.3,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -1136,11 +1136,11 @@
       "discovery": false,
       "group_id": "geopolitics",
       "group_name": "Geopolitics",
-      "score": 51.8,
+      "score": 51.7,
       "parts": {
         "relevance": 17.5,
         "reliability": 21.2,
-        "freshness": 8.1,
+        "freshness": 8.0,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -1409,11 +1409,11 @@
       "discovery": false,
       "group_id": "geopolitics",
       "group_name": "Geopolitics",
-      "score": 57.2,
+      "score": 57.1,
       "parts": {
         "relevance": 17.5,
         "reliability": 21.2,
-        "freshness": 13.5,
+        "freshness": 13.4,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -1463,11 +1463,11 @@
       "discovery": false,
       "group_id": "geopolitics",
       "group_name": "Geopolitics",
-      "score": 56.6,
+      "score": 56.5,
       "parts": {
         "relevance": 17.5,
         "reliability": 21.2,
-        "freshness": 12.9,
+        "freshness": 12.8,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -1518,11 +1518,11 @@
       "discovery": false,
       "group_id": "geopolitics",
       "group_name": "Geopolitics",
-      "score": 55.4,
+      "score": 55.3,
       "parts": {
         "relevance": 17.5,
         "reliability": 21.2,
-        "freshness": 11.7,
+        "freshness": 11.6,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -1816,11 +1816,11 @@
       "discovery": false,
       "group_id": "geopolitics",
       "group_name": "Geopolitics",
-      "score": 57.3,
+      "score": 57.2,
       "parts": {
         "relevance": 28.0,
         "reliability": 21.2,
-        "freshness": 3.1,
+        "freshness": 3.0,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -2090,11 +2090,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 59.5,
+      "score": 59.4,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.0,
-        "freshness": 13.5,
+        "freshness": 13.4,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -2144,11 +2144,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 58.6,
+      "score": 58.5,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.0,
-        "freshness": 9.6,
+        "freshness": 9.5,
         "usefulness": 3.0,
         "importance": 5.0
       },
@@ -2393,11 +2393,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 66.0,
+      "score": 65.9,
       "parts": {
         "relevance": 35.0,
         "reliability": 20.0,
-        "freshness": 6.0,
+        "freshness": 5.9,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -2451,11 +2451,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 39.6,
+      "score": 39.5,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.0,
-        "freshness": 5.6,
+        "freshness": 5.5,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -3873,11 +3873,11 @@
       "discovery": false,
       "group_id": "geopolitics",
       "group_name": "Geopolitics",
-      "score": 58.1,
+      "score": 58.0,
       "parts": {
         "relevance": 17.5,
         "reliability": 21.2,
-        "freshness": 14.4,
+        "freshness": 14.3,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -4144,11 +4144,11 @@
       "discovery": false,
       "group_id": "geopolitics",
       "group_name": "Geopolitics",
-      "score": 56.5,
+      "score": 56.4,
       "parts": {
         "relevance": 17.5,
         "reliability": 21.2,
-        "freshness": 12.8,
+        "freshness": 12.7,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -4171,11 +4171,11 @@
       "discovery": false,
       "group_id": "geopolitics",
       "group_name": "Geopolitics",
-      "score": 56.5,
+      "score": 56.4,
       "parts": {
         "relevance": 17.5,
         "reliability": 21.2,
-        "freshness": 12.8,
+        "freshness": 12.7,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -4418,11 +4418,11 @@
       "discovery": false,
       "group_id": "tech",
       "group_name": "Tech & Devices",
-      "score": 58.2,
+      "score": 58.1,
       "parts": {
         "relevance": 21.0,
         "reliability": 21.2,
-        "freshness": 11.0,
+        "freshness": 10.9,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -4445,11 +4445,11 @@
       "discovery": false,
       "group_id": "tech",
       "group_name": "Tech & Devices",
-      "score": 67.2,
+      "score": 67.1,
       "parts": {
         "relevance": 26.2,
         "reliability": 21.2,
-        "freshness": 11.0,
+        "freshness": 10.9,
         "usefulness": 6.8,
         "importance": 2.0
       },
@@ -4502,11 +4502,11 @@
       "discovery": false,
       "group_id": "tech",
       "group_name": "Tech & Devices",
-      "score": 60.5,
+      "score": 60.4,
       "parts": {
         "relevance": 24.5,
         "reliability": 21.2,
-        "freshness": 9.8,
+        "freshness": 9.7,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -4891,11 +4891,11 @@
       "discovery": false,
       "group_id": "geopolitics",
       "group_name": "Geopolitics",
-      "score": 67.9,
+      "score": 67.8,
       "parts": {
         "relevance": 24.5,
         "reliability": 21.2,
-        "freshness": 14.2,
+        "freshness": 14.1,
         "usefulness": 3.0,
         "importance": 5.0
       },
@@ -5164,11 +5164,11 @@
       "discovery": false,
       "group_id": "geopolitics",
       "group_name": "Geopolitics",
-      "score": 58.1,
+      "score": 58.0,
       "parts": {
         "relevance": 17.5,
         "reliability": 21.2,
-        "freshness": 14.4,
+        "freshness": 14.3,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -5383,11 +5383,11 @@
       "discovery": false,
       "group_id": "movies",
       "group_name": "Movies & Shows",
-      "score": 53.9,
+      "score": 53.8,
       "parts": {
         "relevance": 17.5,
         "reliability": 21.2,
-        "freshness": 6.4,
+        "freshness": 6.3,
         "usefulness": 6.8,
         "importance": 2.0
       },
@@ -5602,11 +5602,11 @@
       "discovery": false,
       "group_id": "movies",
       "group_name": "Movies & Shows",
-      "score": 56.2,
+      "score": 56.1,
       "parts": {
         "relevance": 26.3,
         "reliability": 21.2,
-        "freshness": 3.7,
+        "freshness": 3.6,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -5829,11 +5829,11 @@
       "discovery": false,
       "group_id": "lifestyle",
       "group_name": "Lifestyle",
-      "score": 54.1,
+      "score": 54.0,
       "parts": {
         "relevance": 24.5,
         "reliability": 21.2,
-        "freshness": 3.4,
+        "freshness": 3.3,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -5913,11 +5913,11 @@
       "discovery": false,
       "group_id": "lifestyle",
       "group_name": "Lifestyle",
-      "score": 77.2,
+      "score": 77.1,
       "parts": {
         "relevance": 29.8,
         "reliability": 21.2,
-        "freshness": 13.7,
+        "freshness": 13.6,
         "usefulness": 10.5,
         "importance": 2.0
       },
@@ -6000,11 +6000,11 @@
       "discovery": false,
       "group_id": "lifestyle",
       "group_name": "Lifestyle",
-      "score": 49.4,
+      "score": 49.3,
       "parts": {
         "relevance": 21.0,
         "reliability": 21.2,
-        "freshness": 2.2,
+        "freshness": 2.1,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -6492,11 +6492,11 @@
       "discovery": false,
       "group_id": "ai",
       "group_name": "AI & Models",
-      "score": 47.5,
+      "score": 47.4,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.0,
-        "freshness": 1.5,
+        "freshness": 1.4,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -6740,11 +6740,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 30.8,
+      "score": 30.7,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.0,
-        "freshness": 9.8,
+        "freshness": 9.7,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -6795,11 +6795,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 55.4,
+      "score": 55.3,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.0,
-        "freshness": 9.4,
+        "freshness": 9.3,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -6878,11 +6878,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 52.5,
+      "score": 52.4,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.0,
-        "freshness": 6.5,
+        "freshness": 6.4,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -7158,11 +7158,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 51.8,
+      "score": 51.7,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.0,
-        "freshness": 5.8,
+        "freshness": 5.7,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -7185,11 +7185,11 @@
       "discovery": false,
       "group_id": "geopolitics",
       "group_name": "Geopolitics",
-      "score": 64.1,
+      "score": 64.0,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.5,
-        "freshness": 13.8,
+        "freshness": 13.7,
         "usefulness": 6.8,
         "importance": 2.0
       },
@@ -7321,11 +7321,11 @@
       "discovery": false,
       "group_id": "geopolitics",
       "group_name": "Geopolitics",
-      "score": 69.0,
+      "score": 68.9,
       "parts": {
         "relevance": 31.5,
         "reliability": 20.5,
-        "freshness": 12.0,
+        "freshness": 11.9,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -7375,11 +7375,11 @@
       "discovery": false,
       "group_id": "geopolitics",
       "group_name": "Geopolitics",
-      "score": 58.4,
+      "score": 58.3,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.5,
-        "freshness": 11.9,
+        "freshness": 11.8,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -7402,11 +7402,11 @@
       "discovery": false,
       "group_id": "geopolitics",
       "group_name": "Geopolitics",
-      "score": 68.4,
+      "score": 68.3,
       "parts": {
         "relevance": 28.0,
         "reliability": 20.5,
-        "freshness": 11.9,
+        "freshness": 11.8,
         "usefulness": 3.0,
         "importance": 5.0
       },
@@ -7511,11 +7511,11 @@
       "discovery": false,
       "group_id": "geopolitics",
       "group_name": "Geopolitics",
-      "score": 61.2,
+      "score": 61.1,
       "parts": {
         "relevance": 17.5,
         "reliability": 20.5,
-        "freshness": 11.4,
+        "freshness": 11.3,
         "usefulness": 6.8,
         "importance": 5.0
       },
@@ -7540,11 +7540,11 @@
       "discovery": false,
       "group_id": "geopolitics",
       "group_name": "Geopolitics",
-      "score": 54.4,
+      "score": 54.3,
       "parts": {
         "relevance": 17.5,
         "reliability": 20.5,
-        "freshness": 11.4,
+        "freshness": 11.3,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -7648,11 +7648,11 @@
       "discovery": false,
       "group_id": "tech",
       "group_name": "Tech & Devices",
-      "score": 62.1,
+      "score": 62.0,
       "parts": {
         "relevance": 21.0,
         "reliability": 21.2,
-        "freshness": 14.9,
+        "freshness": 14.8,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -7730,11 +7730,11 @@
       "discovery": false,
       "group_id": "tech",
       "group_name": "Tech & Devices",
-      "score": 61.9,
+      "score": 61.8,
       "parts": {
         "relevance": 21.0,
         "reliability": 21.2,
-        "freshness": 14.7,
+        "freshness": 14.6,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -7816,11 +7816,11 @@
       "discovery": false,
       "group_id": "tech",
       "group_name": "Tech & Devices",
-      "score": 67.9,
+      "score": 67.8,
       "parts": {
         "relevance": 24.5,
         "reliability": 21.2,
-        "freshness": 14.2,
+        "freshness": 14.1,
         "usefulness": 3.0,
         "importance": 5.0
       },
@@ -7875,11 +7875,11 @@
       "discovery": false,
       "group_id": "tech",
       "group_name": "Tech & Devices",
-      "score": 68.3,
+      "score": 68.2,
       "parts": {
         "relevance": 28.0,
         "reliability": 21.2,
-        "freshness": 14.1,
+        "freshness": 14.0,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -8016,11 +8016,11 @@
       "discovery": false,
       "group_id": "tech",
       "group_name": "Tech & Devices",
-      "score": 67.3,
+      "score": 67.2,
       "parts": {
         "relevance": 24.5,
         "reliability": 21.2,
-        "freshness": 13.6,
+        "freshness": 13.5,
         "usefulness": 3.0,
         "importance": 5.0
       },
@@ -8072,11 +8072,11 @@
       "discovery": false,
       "group_id": "tech",
       "group_name": "Tech & Devices",
-      "score": 67.2,
+      "score": 67.1,
       "parts": {
         "relevance": 24.5,
         "reliability": 21.2,
-        "freshness": 13.5,
+        "freshness": 13.4,
         "usefulness": 3.0,
         "importance": 5.0
       },
@@ -8265,11 +8265,11 @@
       "discovery": false,
       "group_id": "tech",
       "group_name": "Tech & Devices",
-      "score": 59.7,
+      "score": 59.6,
       "parts": {
         "relevance": 21.0,
         "reliability": 21.2,
-        "freshness": 12.5,
+        "freshness": 12.4,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -8654,11 +8654,11 @@
       "discovery": false,
       "group_id": "tech",
       "group_name": "Tech & Devices",
-      "score": 55.9,
+      "score": 55.8,
       "parts": {
         "relevance": 21.0,
         "reliability": 21.2,
-        "freshness": 8.7,
+        "freshness": 8.6,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -8846,11 +8846,11 @@
       "discovery": false,
       "group_id": "tech",
       "group_name": "Tech & Devices",
-      "score": 55.5,
+      "score": 55.4,
       "parts": {
         "relevance": 21.0,
         "reliability": 21.2,
-        "freshness": 8.3,
+        "freshness": 8.2,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -8901,11 +8901,11 @@
       "discovery": false,
       "group_id": "tech",
       "group_name": "Tech & Devices",
-      "score": 58.9,
+      "score": 58.8,
       "parts": {
         "relevance": 24.5,
         "reliability": 21.2,
-        "freshness": 8.2,
+        "freshness": 8.1,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -8986,11 +8986,11 @@
       "discovery": false,
       "group_id": "tech",
       "group_name": "Tech & Devices",
-      "score": 55.2,
+      "score": 55.1,
       "parts": {
         "relevance": 21.0,
         "reliability": 21.2,
-        "freshness": 8.0,
+        "freshness": 7.9,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -9013,11 +9013,11 @@
       "discovery": false,
       "group_id": "tech",
       "group_name": "Tech & Devices",
-      "score": 55.2,
+      "score": 55.1,
       "parts": {
         "relevance": 21.0,
         "reliability": 21.2,
-        "freshness": 8.0,
+        "freshness": 7.9,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -9095,11 +9095,11 @@
       "discovery": false,
       "group_id": "tech",
       "group_name": "Tech & Devices",
-      "score": 54.7,
+      "score": 54.6,
       "parts": {
         "relevance": 21.0,
         "reliability": 21.2,
-        "freshness": 7.5,
+        "freshness": 7.4,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -9400,11 +9400,11 @@
       "discovery": false,
       "group_id": "tech",
       "group_name": "Tech & Devices",
-      "score": 53.7,
+      "score": 53.6,
       "parts": {
         "relevance": 21.0,
         "reliability": 21.2,
-        "freshness": 6.5,
+        "freshness": 6.4,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -9454,11 +9454,11 @@
       "discovery": false,
       "group_id": "tech",
       "group_name": "Tech & Devices",
-      "score": 57.0,
+      "score": 56.9,
       "parts": {
         "relevance": 24.5,
         "reliability": 21.2,
-        "freshness": 6.3,
+        "freshness": 6.2,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -9482,11 +9482,11 @@
       "discovery": false,
       "group_id": "tech",
       "group_name": "Tech & Devices",
-      "score": 53.5,
+      "score": 53.4,
       "parts": {
         "relevance": 21.0,
         "reliability": 21.2,
-        "freshness": 6.3,
+        "freshness": 6.2,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -9811,11 +9811,11 @@
       "discovery": false,
       "group_id": "tech",
       "group_name": "Tech & Devices",
-      "score": 53.1,
+      "score": 53.0,
       "parts": {
         "relevance": 21.0,
         "reliability": 21.2,
-        "freshness": 5.9,
+        "freshness": 5.8,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -10121,11 +10121,11 @@
       "discovery": false,
       "group_id": "tech",
       "group_name": "Tech & Devices",
-      "score": 55.8,
+      "score": 55.7,
       "parts": {
         "relevance": 21.0,
         "reliability": 21.2,
-        "freshness": 5.6,
+        "freshness": 5.5,
         "usefulness": 3.0,
         "importance": 5.0
       },
@@ -10425,11 +10425,11 @@
       "discovery": false,
       "group_id": "tech",
       "group_name": "Tech & Devices",
-      "score": 52.5,
+      "score": 52.4,
       "parts": {
         "relevance": 21.0,
         "reliability": 21.2,
-        "freshness": 5.3,
+        "freshness": 5.2,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -10782,11 +10782,11 @@
       "discovery": false,
       "group_id": "tech",
       "group_name": "Tech & Devices",
-      "score": 51.7,
+      "score": 51.6,
       "parts": {
         "relevance": 21.0,
         "reliability": 21.2,
-        "freshness": 4.5,
+        "freshness": 4.4,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -12301,11 +12301,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 64.4,
+      "score": 64.3,
       "parts": {
         "relevance": 24.5,
         "reliability": 20.0,
-        "freshness": 14.9,
+        "freshness": 14.8,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -12356,11 +12356,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 60.8,
+      "score": 60.7,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.0,
-        "freshness": 14.8,
+        "freshness": 14.7,
         "usefulness": 3.0,
         "importance": 2.0
       },
@@ -12466,11 +12466,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 59.4,
+      "score": 59.3,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.0,
-        "freshness": 13.4,
+        "freshness": 13.3,
         "usefulness": 3.0,
         "importance": 2.0
       },

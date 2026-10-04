@@ -75,9 +75,9 @@ news_gl: IN
 news_ceid: IN:en
 topic_order:
 - ai
-- data
-- tech
 - gaming
 - movies
+- data
 - geopolitics
+- tech
 - lifestyle
