@@ -7,7 +7,7 @@ A personal newspaper with a modern editorial/cyberpunk design, built in one edit
 1. Copy `scripts/`, `requirements.txt`, `CLAUDE.md`, and `.gitignore` into the matching places in your project. Merge any project-specific ignore rules you have added.
 2. Keep your existing local `notion_tasks_token.txt` and `notion_workoutdash_token.txt` in the project root. Tokens are not included in this download.
 3. In VS Code, select your `.venv` Python kernel. In that environment run `python -m pip install -r requirements.txt`.
-4. Open `scripts/build_brief.ipynb`, review the configuration cell, and Run All. This writes `docs/index.html`, `docs/daily_brief.html`, both favicons, and `docs/news_diagnostics.json`.
+4. Open `scripts/build_brief.ipynb`, edit `scripts/config.yaml`, and Run All. This writes `docs/index.html`, `docs/daily_brief.html`, both favicons, and `docs/news_diagnostics.json`.
 5. Open `docs/index.html` locally or push your rendered `docs/` folder to your existing GitHub Pages repository.
 
 The included `preview/index.html` uses **illustrative sample content**, clearly labelled on the page. It is for inspecting the layout before connecting Notion. Preview links lead to publisher homepages rather than fictional article URLs. The included `docs/` starts with the same labelled sample preview. Run your notebook to replace it with your personal edition. `preview/releases.html` demonstrates the new-release state; `preview/many.html` demonstrates a longer countdown list.
@@ -26,15 +26,31 @@ The included `preview/index.html` uses **illustrative sample content**, clearly 
 
 ## Configuration
 
-The first code cell contains three sections:
+All editable configuration lives in **`scripts/config.yaml`**. The notebook loads it when you Run All:
 
-- `CONFIG`: your identity, weather, workouts, countdowns, comics, artists, and ranking controls.
-- `SOURCES`: named publishers with a domain, optional RSS/Atom URL, source type, and an editable reliability preference from 0–100.
-- `TOPICS`: group names, source IDs, keyword gates, interest boosts, title exclusions, and optional discovery queries.
+```text
+scripts/
+  config.yaml          ← edit preferences here
+  build_brief.ipynb     ← run the build here
+  template_html.html
+  template_css.css
+```
 
-Defaults include AI & Models; Data & Building (R/Python/statistics); Gaming (with Witcher/GTA/RPG boosts); Culture & Worlds (Harry Potter/Hogwarts); and Geopolitics (conflicts, diplomacy, trade, sanctions, and technology policy, with India/Asia interests). Geopolitics uses BBC/Guardian world feeds and allowlisted Reuters/AP discovery, with topic-specific usefulness, importance, and rumor terms. These preferences are editable; no source is treated as infallible. Add or rename a group in `TOPICS`; navigation and filters regenerate automatically. IDs must be unique lowercase slugs. Broad sources need a keyword match; `dedicated_sources` bypass that gate. Each story is assigned to its highest-scoring group, so cross-topic stories do not appear twice.
+- `settings`: your identity, weather, workouts, countdowns, comics, artists, ranking controls, and Notion source IDs.
+- `sources`: named publishers with a domain, optional RSS/Atom URL, source type, and an editable reliability preference from 0–100.
+- `topics`: group names, source IDs, keyword gates, interest boosts, title exclusions, and optional discovery queries.
 
-To add a publisher, add one entry to `SOURCES` and include its ID in a topic's `sources`. Add it to `dedicated_sources` only if its entire feed is relevant. GitHub sources use a repository `path_prefix` so unrelated repositories cannot inherit their ranking preference.
+Defaults include AI & Models; Data & Building (R/Python/statistics); Gaming (with Witcher/GTA/RPG boosts); Culture & Worlds (Harry Potter/Hogwarts); and Geopolitics (conflicts, diplomacy, trade, sanctions, and technology policy, with India/Asia interests). Geopolitics uses BBC/Guardian world feeds and allowlisted Reuters/AP discovery, with topic-specific usefulness, importance, and rumor terms. These preferences are editable; no source is treated as infallible. Add or rename a group in `topics`; navigation and filters regenerate automatically. IDs must be unique lowercase slugs. Broad sources need a keyword match; `dedicated_sources` bypass that gate. Each story is assigned to its highest-scoring group, so cross-topic stories do not appear twice.
+
+To add a publisher, add one entry to `sources` and include its ID in a topic's `sources`. Add it to `dedicated_sources` only if its entire feed is relevant. GitHub sources use a repository `path_prefix` so unrelated repositories cannot inherit their ranking preference.
+
+### Editing YAML
+
+Use spaces for indentation, `true`/`false` for switches, and `null` for an empty RSS URL. Add list entries with `-`. Dates should be quoted, e.g. `date: '2026-12-31'` (unquoted countdown dates also work). Notion and Spotify IDs should remain strings. Tokens stay in their existing files or environment variables; do not put tokens in YAML.
+
+After editing, **Run All** so the configuration is reloaded before fetching and rendering. The loader finds `scripts/config.yaml` from either the root or a descendant folder. It reports malformed YAML, duplicate keys, missing sections, and unknown source IDs. Topic IDs and ranking weights are validated by the existing news logic.
+
+Install the updated requirements once to add PyYAML. For subsequent updates, preserve your customized `config.yaml` when replacing the notebook/templates. The existing scheduled workflow installs requirements and loads this same file automatically.
 
 ## Selection and reliability
 
@@ -73,7 +89,8 @@ The supplied workflow is for the existing GitHub Pages **Deploy from a branch �
 ## Files
 
 ```
-scripts/build_brief.ipynb     Configuration + all Python build logic
+scripts/config.yaml          All editable preferences, sources and topic groups
+scripts/build_brief.ipynb     Configuration loader + all Python build logic
 scripts/template_html.html  Semantic page template + small browser interactions
 scripts/template_css.css    Responsive light/dark theme
 scripts/favicon.svg         Editable vector favicon

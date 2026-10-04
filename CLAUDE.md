@@ -1,6 +1,6 @@
 # Daily Brief — notebook-first personal newspaper
 
-Keep all configuration and backend logic in `scripts/build_brief.ipynb`. Do not convert this project into a service, framework app, or collection of Python modules unless explicitly requested. Templates live beside the notebook; output lives in `docs/` for the existing GitHub Pages project.
+Keep editable configuration in `scripts/config.yaml` and backend logic in `scripts/build_brief.ipynb`. The notebook loads YAML into CONFIG, SOURCES, and TOPICS; do not duplicate settings inside it. Do not convert this project into a service, framework app, or collection of Python modules unless explicitly requested. Templates live beside the notebook; output lives in `docs/` for the existing GitHub Pages project.
 
 ## UI constraints
 
@@ -14,7 +14,7 @@ Keep all configuration and backend logic in `scripts/build_brief.ipynb`. Do not 
 
 ## Backend
 
-Configuration uses CONFIG (personal/build settings), SOURCES (domain/type/editorial reliability preference/RSS), TOPICS (keywords/dedicated sources/boosts/exclusions). Scores are adjustable heuristics, not fact-checks. Never present source preferences as measured accuracy or independent corroboration. Preserve vendor/maintainer/community/editorial labels.
+YAML sections are settings (personal/build/Notion settings), sources (domain/type/editorial reliability preference/RSS), and topics (keywords/dedicated sources/boosts/exclusions). Preserve customized YAML during future code updates. Use the safe YAML loader and retain duplicate-key validation. Scores are adjustable heuristics, not fact-checks. Never present source preferences as measured accuracy or independent corroboration. Preserve vendor/maintainer/community/editorial labels.
 
 Direct RSS collection runs once per source in a bounded thread pool. Google discovery is optional and strictly allowlisted using publisher source metadata, not names inferred from a title. GitHub feeds must keep repository path restrictions. Keep freshness filtering, future-date rejection, conservative duplicate removal and publisher caps. Do not silently fill failed topics with random sources.
 

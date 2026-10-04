@@ -7,3 +7,4 @@ tzdata>=2024.2
 nbformat>=5.10,<6
 nbconvert>=7.16,<8
 ipykernel>=6.29,<8
+PyYAML>=6.0.2,<7
