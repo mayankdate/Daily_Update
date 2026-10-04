@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-10-04T19:11:10.857202+05:30",
+  "built_at": "2026-10-04T19:11:36.612522+05:30",
   "sources": [
     {
       "id": "ars",
@@ -3808,11 +3808,11 @@
       "discovery": false,
       "group_id": "gaming",
       "group_name": "Gaming",
-      "score": 54.6,
+      "score": 54.5,
       "parts": {
         "relevance": 21.0,
         "reliability": 20.0,
-        "freshness": 8.6,
+        "freshness": 8.5,
         "usefulness": 3.0,
         "importance": 2.0
       },
