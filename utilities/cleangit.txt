@@ -1,0 +1,21 @@
+Run this in terminal:
+
+
+git rm -r --cached .
+git add .
+git commit -m "Reapply .gitignore to project files"
+git push
+
+
+#FULL REPO RESET
+
+Remove-Item -Recurse -Force .git
+git init
+git add -A
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/mayankdate/.git
+git push -u origin main
+
+#FULL REMOTE REPO OVERRIDE
+git push -u origin main --force
