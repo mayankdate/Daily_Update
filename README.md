@@ -4,9 +4,9 @@ A personal newspaper with a modern editorial/cyberpunk design, built in one edit
 
 ## Update your existing project
 
-1. Copy `scripts/`, `requirements.txt`, `CLAUDE.md`, and `.gitignore` into the matching places in your project. Merge any project-specific ignore rules you have added.
+1. Copy `scripts/`, `pyproject.toml`, `uv.lock`, `.python-version`, `CLAUDE.md`, and `.gitignore` into the matching places in your project. Merge any project-specific ignore rules you have added.
 2. Keep your existing local `notion_tasks_token.txt` and `notion_workoutdash_token.txt` in the project root. Tokens are not included in this download.
-3. In VS Code, select your `.venv` Python kernel. In that environment run `python -m pip install -r requirements.txt`.
+3. Run `uv sync` in the project folder (needs [uv](https://docs.astral.sh/uv/)). It creates `.venv` with the exact package versions in `uv.lock`. In VS Code, select that `.venv` as the notebook kernel.
 4. Open `scripts/build_brief.ipynb`, edit the split configuration files described below, and Run All. This writes `docs/index.html`, `docs/daily_brief.html`, both favicons, and `docs/news_diagnostics.json`.
 5. Open `docs/index.html` locally or push your rendered `docs/` folder to your existing GitHub Pages repository.
 
@@ -51,7 +51,7 @@ To add a topic, copy a file in `config_topics/`, give it a unique `id`, and edit
 
 Movie/show/game tracking is in that topic's `keywords`, `boost`, and `query`; music/comics/countdowns live in `config_tracked.yaml`. There are no duplicate watchlist settings to synchronize. Source IDs in topics refer to `config_sources.yaml`. `dedicated_sources` bypasses keyword matching, so use it only for focused feeds.
 
-Use spaces, `true`/`false`, and `null` for an empty RSS URL. Quote dates and IDs. Unquoted countdown dates are also supported. Install requirements once if you have not already added PyYAML. Future notebook/template updates should preserve your customized configuration files.
+Use spaces, `true`/`false`, and `null` for an empty RSS URL. Quote dates and IDs. Unquoted countdown dates are also supported. Run `uv sync` once if you have not already added PyYAML. Future notebook/template updates should preserve your customized configuration files.
 
 English/global coverage remains exactly as supplied. A Google News edition is not a worldwide filter; the global source list provides geographic breadth. RSS availability, article language, streaming availability, publisher-level diversity, and spoiler filtering retain the existing limitations. Source scores are editorial preferences, not accuracy measurements.
 
@@ -108,7 +108,7 @@ scripts/favicon.svg         Editable vector favicon
 scripts/favicon.ico         Browser fallback (16–256px)
 docs/                       Rendered edition, persistent weather cache + news diagnostics
 preview/                    Labelled sample preview + icons
-requirements.txt            Notebook/build dependencies
+pyproject.toml, uv.lock     Notebook/build dependencies (managed with uv)
 .github/workflows/          Optional build schedule
 CLAUDE.md                   Project handoff notes
 ```
